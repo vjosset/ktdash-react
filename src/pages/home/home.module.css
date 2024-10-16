@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+    padding-top: rem(180px);
+    padding-bottom: rem(130px);
+    background: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, .75), rgba(32, 32, 32, 1)), url('../../assets/homesplash_5.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        padding-top: rem(80px);
+        padding-bottom: rem(50px);
+    }
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    padding: 15px;
+}
+
+.title {
+    font-weight: 800;
+    font-size: rem(40px);
+    letter-spacing: rem(-1px);
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    color: var(--mantine-color-white);
+    margin-bottom: var(--mantine-spacing-xs);
+    text-align: center;
+    font-family:
+        Greycliff CF,
+        var(--mantine-font-family);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: rem(28px);
+        text-align: left;
+    }
+}
+
+.description {
+    color: var(--mantine-color-white);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: var(--mantine-font-size-md);
+        text-align: left;
+    }
+}
