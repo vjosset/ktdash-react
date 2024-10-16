@@ -30,7 +30,6 @@ export default function useAuth() {
         return auth;
     }
     const logout = () => {
-        //setAuthToken('');
     }
     const isLoggedIn = () => {
         return !!document.cookie;
