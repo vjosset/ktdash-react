@@ -7,7 +7,7 @@ export function useAPI() {
         return fetch(`${API_PATH}${endpoint}`, {
             method: "GET",
             ...content
-        }).then(response => response.json());
+        }).then(response => response.json()).catch(e => console.log(e));
     }, []);
     return { request }
 }

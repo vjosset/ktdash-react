@@ -11,6 +11,7 @@ import '@mantine/notifications/styles.css';
 import './App.css';
 import { Link } from 'wouter';
 import { useRef } from 'react';
+import { CookiesProvider } from 'react-cookie';
 
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
@@ -29,36 +30,38 @@ function App() {
   }
 
   return (
-    <MantineProvider defaultColorScheme="dark" theme={theme}>
-      <Notifications />
-      <ModalsProvider>
-        <AppShell
-          header={{ height: 60 }}
-          navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-          padding={0}
-        >
-          <AppShell.Header>
-            <Group h="100%" px="md" gap={5}>
-              <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
-              <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white' }} href="/">
-                <Group gap={5}>
-                  <Image h={50}
-                    w="auto"
-                    fit="contain" src={MainLogo} />
-                  <Title fontFamily="Anton" order={1}>KTDASH</Title>
-                </Group>
-              </Link>
-            </Group>
-          </AppShell.Header>
-          <AppShell.Navbar p="md">
-            <NavbarSimple close={closeNav} />
-          </AppShell.Navbar>
-          <AppShell.Main>
-            <Root />
-          </AppShell.Main>
-        </AppShell>
-      </ModalsProvider>
-    </MantineProvider>
+    <CookiesProvider defaultSetOptions={{ path: '/' }}>
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
+        <Notifications />
+        <ModalsProvider>
+          <AppShell
+            header={{ height: 60 }}
+            navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+            padding={0}
+          >
+            <AppShell.Header>
+              <Group h="100%" px="md" gap={5}>
+                <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
+                <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white' }} href="/">
+                  <Group gap={5}>
+                    <Image h={50}
+                      w="auto"
+                      fit="contain" src={MainLogo} />
+                    <Title fontFamily="Anton" order={1}>KTDASH</Title>
+                  </Group>
+                </Link>
+              </Group>
+            </AppShell.Header>
+            <AppShell.Navbar p="md">
+              <NavbarSimple close={closeNav} />
+            </AppShell.Navbar>
+            <AppShell.Main>
+              <Root />
+            </AppShell.Main>
+          </AppShell>
+        </ModalsProvider>
+      </MantineProvider>
+    </CookiesProvider>
   );
 }
 
