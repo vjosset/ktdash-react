@@ -29,7 +29,11 @@ export default function useAuth() {
         });
         return auth;
     }
-    const logout = () => {
+    const logout = async () => {
+        const auth = await api.request('/session.php', {
+            method: "DELETE"
+        });
+        return auth;
     }
     const isLoggedIn = () => {
         return !!document.cookie;
