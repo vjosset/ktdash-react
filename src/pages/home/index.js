@@ -4,7 +4,7 @@ import { useRequest } from "../../hooks/use-api";
 
 export default function Home() {
 
-    const { data: myRosters, isFetching: isFetchingFactions } = useRequest("/roster.php");
+    const { data: myRosters } = useRequest("/roster.php");
 
     console.log(myRosters);
 

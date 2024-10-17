@@ -2,7 +2,6 @@
   "name": "ktdash_frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jaaimino.github.io/ktdash-react/",
   "dependencies": {
     "@mantine/core": "^7.13.2",
     "@mantine/hooks": "^7.13.2",
