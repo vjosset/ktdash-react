@@ -1,49 +1,67 @@
 import { PasswordInput, Container, TextInput, Stack, Button } from '@mantine/core';
-import { useInputState } from '@mantine/hooks';
 import useAuth from '../../hooks/use-auth';
 import { useLocation } from 'wouter';
+import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
 
 
-export default function Register() {
+export default function Signup() {
     const { signup } = useAuth();
     const [, navigate] = useLocation();
-    const [username, setUsername] = useInputState('');
-    const [password, setPassword] = useInputState('');
-    const [password2, setPassword2] = useInputState('');
 
-    const submit = async () => {
-        const success = await signup(username, password);
-        if (success) {
-            navigate('/');
+    const form = useForm({
+        mode: 'uncontrolled',
+        initialValues: {
+            username: '',
+            password: '',
+            confirmpassword: '',
         }
-    }
+    });
+
+    const handleSignup = form.onSubmit((values) => {
+        signup(values.username, values.password, values.confirmpassword).then((data) => {
+            form.reset();
+            if (data?.username) {
+                navigate('/');
+            }
+        }).catch((error) => {
+            notifications.show({
+                title: 'Error',
+                message: error,
+            })
+        });
+    })
 
     return (
         <Container py="md">
-            <Stack>
-                <TextInput
-                    value={username}
-                    onChange={setUsername}
-                    label="Username"
-                    placeholder="Username"
-                    required
-                />
-                <PasswordInput
-                    value={password}
-                    onChange={setPassword}
-                    placeholder="Your password"
-                    label="Password"
-                    required
-                />
-                <PasswordInput
-                    value={password2}
-                    onChange={setPassword2}
-                    placeholder="Confirm Password"
-                    label="Confirm Password"
-                    required
-                />
-                <Button onClick={() => submit(username, password)}>Sign Up</Button>
-            </Stack>
+            <form
+                onSubmit={handleSignup}
+            >
+                <Stack>
+                    <TextInput
+                        label="Username"
+                        placeholder="Username"
+                        required
+                        key={form.key('username')}
+                        {...form.getInputProps('username')}
+                    />
+                    <PasswordInput
+                        placeholder="Your password"
+                        label="Password"
+                        required
+                        key={form.key('password')}
+                        {...form.getInputProps('password')}
+                    />
+                    <PasswordInput
+                        placeholder="Confirm password"
+                        label="Confirm Password"
+                        required
+                        key={form.key('confirmpassword')}
+                        {...form.getInputProps('confirmpassword')}
+                    />
+                    <Button type="submit">Sign Up</Button>
+                </Stack>
+            </form>
         </Container>
     );
 }

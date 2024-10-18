@@ -1,7 +1,8 @@
-import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title, Tooltip } from "@mantine/core";
+import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
+import { modals } from "@mantine/modals";
 
 export default function OperativeCard(props) {
     const { operative } = props;
@@ -94,18 +95,19 @@ export default function OperativeCard(props) {
                     <Text fw={700}>Unique Actions</Text>
                     <Group>
                         {operative?.uniqueactions?.map((ability) => (
-                            <Tooltip
-                                style={{maxWidth: 400}}
-                                withArrow
-                                arrowSize={8}
-                                color="rgba(0, 0, 0, 0.9)"
-                                multiline
-                                label={<div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />}
-                                events={{ hover: true, focus: true, touch: true }}
+                            <Text
+                                style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                onClick={() => {
+                                    modals.open({
+                                        title: <Title order={2}>{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Title>,
+                                        children: (
+                                            <div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />
+                                        ),
+                                    });
+                                }}
                             >
-                                <Text td="underline">{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Text>
-                            </Tooltip>
-
+                                {ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}
+                            </Text>
                         ))}
                     </Group>
                 </Card.Section>}
@@ -113,17 +115,19 @@ export default function OperativeCard(props) {
                     <Text fw={700}>Abilities</Text>
                     <Group>
                         {operative?.abilities?.map((ability) => (
-                            <Tooltip
-                                style={{maxWidth: 400}}
-                                withArrow
-                                arrowSize={8}
-                                color="rgba(0, 0, 0, 0.9)"
-                                multiline
-                                label={<div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />}
-                                events={{ hover: true, focus: true, touch: true }}
+                            <Text
+                                style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                onClick={() => {
+                                    modals.open({
+                                        title: <Title order={2}>{ability.title}</Title>,
+                                        children: (
+                                            <div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />
+                                        ),
+                                    });
+                                }}
                             >
-                                <Text td="underline">{ability.title}</Text>
-                            </Tooltip>
+                                {ability.title}
+                            </Text>
                         ))}
                     </Group>
                 </Card.Section>}
