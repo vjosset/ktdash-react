@@ -1,7 +1,27 @@
+import React from "react";
 import { useAPI } from "../use-api";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function useAuth() {
     const api = useAPI();
+
+    const [user, setUser] = useLocalStorage({ key: 'auth' });
+
+    React.useEffect(() => {
+        if (!user?.userid) {
+            getSession().then((data) => {
+                setUser(data);
+            })
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const getSession = async () => {
+        const auth = await api.request('/session.php', {
+            method: "GET"
+        });
+        return auth;
+    }
 
     const signup = async (username, password) => {
         const auth = await api.request('/auth/register', {
@@ -33,10 +53,11 @@ export default function useAuth() {
         const auth = await api.request('/session.php', {
             method: "DELETE"
         });
+        setUser(undefined);
         return auth;
     }
     const isLoggedIn = () => {
-        return !!document.cookie;
+        return !!user?.userid;
     }
-    return { login, logout, signup, isLoggedIn };
+    return { user, login, logout, signup, isLoggedIn };
 }

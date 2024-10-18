@@ -1,6 +1,7 @@
-import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
+import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title, Tooltip } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowForward, IconCrosshair, IconDroplet, IconShield, IconSwords, IconTriangleInverted } from "@tabler/icons-react";
+import { API_PATH } from "../../hooks/use-api";
 
 export default function OperativeCard(props) {
     const { operative } = props;
@@ -56,7 +57,12 @@ export default function OperativeCard(props) {
                 </Card.Section>
                 <Card.Section withBorder inheritPadding pb="xs">
                     <SimpleGrid cols={{ base: 2 }}>
-                        <Image fit="cover" style={{ objectPosition: "top" }} h={140} radius="md" src={`/img/portraits/${operative?.factionid}/${operative?.killteamid}/${operative?.killteamid}/${operative?.opid}.jpg`} />
+                        <Image
+                            fit="cover"
+                            style={{ objectPosition: "top" }}
+                            h={140} radius="md"
+                            src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                        />
                         <SimpleGrid cols={{ base: 2 }} spacing="md">
                             <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap="xs"><IconTriangleInverted size={20} stroke={1.5} />{operative.APL}</Group></Stack>
                             <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap="xs"><IconArrowForward size={20} stroke={1.5} /><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
@@ -86,7 +92,18 @@ export default function OperativeCard(props) {
                     <Text fw={700}>Unique Actions</Text>
                     <Group>
                         {operative?.uniqueactions?.map((ability) => (
-                            <Text td="underline">{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Text>
+                            <Tooltip
+                                style={{maxWidth: 400}}
+                                withArrow
+                                arrowSize={8}
+                                color="rgba(0, 0, 0, 0.9)"
+                                multiline
+                                label={<div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />}
+                                events={{ hover: true, focus: true, touch: true }}
+                            >
+                                <Text td="underline">{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Text>
+                            </Tooltip>
+
                         ))}
                     </Group>
                 </Card.Section>}
@@ -94,7 +111,17 @@ export default function OperativeCard(props) {
                     <Text fw={700}>Abilities</Text>
                     <Group>
                         {operative?.abilities?.map((ability) => (
-                            <Text td="underline">{ability.title}</Text>
+                            <Tooltip
+                                style={{maxWidth: 400}}
+                                withArrow
+                                arrowSize={8}
+                                color="rgba(0, 0, 0, 0.9)"
+                                multiline
+                                label={<div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />}
+                                events={{ hover: true, focus: true, touch: true }}
+                            >
+                                <Text td="underline">{ability.title}</Text>
+                            </Tooltip>
                         ))}
                     </Group>
                 </Card.Section>}

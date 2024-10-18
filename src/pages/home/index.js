@@ -1,12 +1,7 @@
 import { Title, Text, Container } from "@mantine/core";
 import classes from './home.module.css';
-import { useRequest } from "../../hooks/use-api";
 
 export default function Home() {
-
-    const { data: myRosters } = useRequest("/roster.php");
-
-    console.log(myRosters);
 
     return (
         <>

@@ -12,7 +12,6 @@ export default function Faction() {
     if (!faction) {
         return;
     }
-    console.log(faction);
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Card.Section inheritPadding py="xs">

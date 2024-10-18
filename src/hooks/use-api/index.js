@@ -1,6 +1,6 @@
 import React from "react";
 
-const API_PATH = "https://ktdash.app/api";
+export const API_PATH = "https://ktdash.app/api";
 
 export function useAPI() {
     const request = React.useCallback((endpoint, content) => {

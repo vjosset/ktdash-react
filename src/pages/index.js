@@ -5,6 +5,9 @@ import Faction from "./faction";
 import Team from "./team";
 import Login from "./login";
 import Register from "./register";
+import Rosters from "./rosters";
+import Roster from "./roster";
+import Settings from "./settings";
 
 export default function Root() {
 
@@ -13,6 +16,9 @@ export default function Root() {
             <Route path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/settings" component={Settings} />
+            <Route path="/u/:userId" component={Rosters} />
+            <Route path="/r/:rosterId" component={Roster} />
             <Route path="/allfactions" component={Factions} />
             <Route path="/fa/:factionId" component={Faction} />
             <Route path="/fa/:factionId/kt/:killteamId" component={Team} />

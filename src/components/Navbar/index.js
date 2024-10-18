@@ -10,21 +10,20 @@ import classes from './navbar.module.css';
 import { Link, useLocation } from 'wouter';
 import useAuth from '../../hooks/use-auth';
 
-const data = [
-    { link: '/allfactions', label: 'Factions', icon: IconBook },
-    { link: '/dashboard', label: 'Dashboard', icon: IconDice2, loggedIn: true },
-    { link: '/rosters', label: 'My Rosters', icon: IconUsers, loggedIn: true },
-    { link: '/settings', label: 'Settings', icon: IconSettings, loggedIn: true },
-];
-
 export function NavbarSimple(props) {
     const [location] = useLocation();
-    const { logout, isLoggedIn } = useAuth();
+    const { user, logout, isLoggedIn } = useAuth();
     const loggedIn = isLoggedIn();
+    const data = [
+        { link: '/allfactions', label: 'Factions', icon: IconBook },
+        { link: '/dashboard', label: 'Dashboard', icon: IconDice2, loggedIn: true },
+        { link: `/u/${user?.username}`, label: 'My Rosters', icon: IconUsers, loggedIn: true },
+        { link: '/settings', label: 'Settings', icon: IconSettings, loggedIn: true },
+    ];
     const links = data.filter((link) => !link.loggedIn || loggedIn).map((item) => (
         <Link
             className={classes.link}
-            data-active={item.link === location || undefined}
+            data-active={location.includes(item.link)  || undefined}
             href={item.link}
             key={item.label}
             onClick={() => {
