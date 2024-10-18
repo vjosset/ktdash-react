@@ -1,6 +1,6 @@
 import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title, Tooltip } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconCrosshair, IconDroplet, IconShield, IconSwords, IconTriangleInverted } from "@tabler/icons-react";
+import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 
 export default function OperativeCard(props) {
@@ -63,11 +63,13 @@ export default function OperativeCard(props) {
                             h={140} radius="md"
                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                         />
-                        <SimpleGrid cols={{ base: 2 }} spacing="md">
-                            <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap="xs"><IconTriangleInverted size={20} stroke={1.5} />{operative.APL}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap="xs"><IconArrowForward size={20} stroke={1.5} /><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap="xs"><IconShield size={20} stroke={1.5} />{operative.SV}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>WOUNDS</Text> <Group gap="xs"><IconDroplet size={20} stroke={1.5} />{operative.W}</Group></Stack>
+                        <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 3 : 2 }} spacing="sm">
+                            <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} stroke={1.5} />{operative.APL}</Group></Stack>
+                            <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} stroke={1.5} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
+                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} stroke={1.5} />{operative.GA}</Group></Stack>}
+                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} stroke={1.5} />{operative.DF}</Group></Stack>}
+                            <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} stroke={1.5} />{operative.SV}</Group></Stack>
+                            <Stack justify="center" align="center"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} stroke={1.5} />{operative.W}</Group></Stack>
                         </SimpleGrid>
                     </SimpleGrid>
                 </Card.Section>
