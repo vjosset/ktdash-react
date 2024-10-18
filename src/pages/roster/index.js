@@ -1,6 +1,6 @@
-import { useRoute } from "wouter";
+import { Link, useRoute } from "wouter";
 import { API_PATH, useRequest } from "../../hooks/use-api";
-import { Container, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 
 export default function Roster() {
@@ -19,9 +19,11 @@ export default function Roster() {
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
                     <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
                     <Stack justify="flex-start" align="flex-start">
-                        <Title>
-                            {roster?.rostername}
-                        </Title>
+                        <Group gap="xs" align="end">
+                            <Title>
+                                {roster?.rostername}
+                            </Title>by<Link href={`/u/${roster.username}`}>{roster.username}</Link>
+                        </Group>
                         <Text>
                             {roster?.notes}
                         </Text>

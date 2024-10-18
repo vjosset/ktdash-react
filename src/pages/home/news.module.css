@@ -1,0 +1,8 @@
+.news {
+    column-count: 2;
+    column-gap: 48px;
+
+    @media (max-width: 1024px) {
+        column-count: 1;
+    }
+}

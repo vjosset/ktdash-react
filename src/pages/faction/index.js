@@ -14,18 +14,20 @@ export default function Faction() {
     }
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
-            <Card.Section inheritPadding py="xs">
+            <Stack>
+                <Image h="300" fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} (2021)</Title>
-            </Card.Section>
-            <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
+            </Stack>
         </Card>
     ));
     const cards2024 = faction.killteams?.filter((killteam) => killteam.edition === "kt24")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
-            <Card.Section inheritPadding py="xs">
+            <Stack>
+                <Image h="300" fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} (2024)</Title>
-            </Card.Section>
-            <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
+            </Stack>
         </Card>
     ));
     return (
