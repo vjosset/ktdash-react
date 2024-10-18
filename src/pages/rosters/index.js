@@ -15,7 +15,7 @@ export default function Rosters() {
             <Stack>
                 <Image radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
                 <Title className={classes.title} mt={5}>{roster.rostername}</Title>
-                <Group>{!!roster.spotlight ? <IconStarFilled stroke={1.5} /> : <IconStar stroke={1.5} />}<Group gap={5}><IconEye stroke={1.5} />{roster.viewcount}</Group><Group gap={5}><IconFileImport stroke={1.5} />{roster.importcount}</Group></Group>
+                <Group>{!!roster.spotlight ? <IconStarFilled stroke={1.5} /> : <IconStar stroke={1.5} />}<Group gap={5}><IconEye stroke={1.5} />{roster.viewcount.toString()}</Group><Group gap={5}><IconFileImport stroke={1.5} />{roster.importcount.toString()}</Group></Group>
                 <Text>
                     {roster.notes}
                 </Text>
