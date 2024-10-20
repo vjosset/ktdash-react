@@ -1,4 +1,4 @@
-import { Title, Text, Container, Card, Stack, Image, Group, Loader, Center } from "@mantine/core";
+import { Title, Text, Container, Card, Stack, Image, Group, Loader, Center, SimpleGrid } from "@mantine/core";
 import classes from './home.module.css';
 import { API_PATH, useRequest } from "../../hooks/use-api";
 import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
@@ -27,14 +27,21 @@ export default function Home() {
                     </Container>
                 </div>
             </div>
-            {!!spotlight && <Container my="md">
+            {!!spotlight && <Container size="xl">
                 <Center>
-                <Title>Roster Spotlight</Title>
+                    <Title>Roster Spotlight</Title>
                 </Center>
                 {!!isFetchingSpotlight && <Loader color="orange" />}
                 <Card key={spotlight.factionid} my="md" radius="md" component="a" className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
-                        <Image style={{ height: '300px' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
+                        <SimpleGrid cols={{ base: 1, md: 2 }}>
+                            <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
+                            <SimpleGrid visibleFrom="md" cols={{ base: 2, md: 2, lg: 3, xl: 4 }}>
+                                {spotlight.operatives.map((op) => (
+                                    <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/operativeportrait.php?roid=${op.rosteropid}`} />
+                                ))}
+                            </SimpleGrid>
+                        </SimpleGrid>
                         <Title order={2} mt={5}>{spotlight.rostername}</Title>
                         <Group>
                             <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname}</Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
@@ -53,9 +60,11 @@ export default function Home() {
                     </Stack>
                 </Card>
             </Container>}
-            <Container fluid>
-                <Title>News</Title>
-                <News />
+            <Container mb="md" size="xl">
+                <Card>
+                    <Title>News</Title>
+                    <News />
+                </Card>
             </Container>
         </Stack>
     );

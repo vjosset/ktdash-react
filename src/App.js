@@ -1,4 +1,4 @@
-import { createTheme, Image, MantineProvider, Title } from '@mantine/core';
+import { createTheme, Image, MantineProvider, Text, Title, UnstyledButton } from '@mantine/core';
 import { AppShell, Burger, Group } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { useDisclosure } from '@mantine/hooks';
@@ -11,7 +11,7 @@ import '@mantine/notifications/styles.css';
 import './App.css';
 import { Link } from 'wouter';
 import { useRef } from 'react';
-import { CookiesProvider } from 'react-cookie';
+import { IconDotsVertical, IconPlus, IconUsers } from '@tabler/icons-react';
 
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
@@ -30,38 +30,49 @@ function App() {
   }
 
   return (
-    <CookiesProvider defaultSetOptions={{ path: '/' }}>
-      <MantineProvider defaultColorScheme="dark" theme={theme}>
-        <Notifications />
-        <ModalsProvider>
-          <AppShell
-            header={{ height: 60 }}
-            navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-            padding={0}
-          >
-            <AppShell.Header>
-              <Group h="100%" px="md" gap={5}>
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
+      <Notifications />
+      <ModalsProvider>
+        <AppShell
+          header={{ height: 60 }}
+          navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+          padding={0}
+        >
+          <AppShell.Header>
+            <Group h="100%" px="md" gap={5} align="center" justify="space-between" style={{ flex: 1 }} wrap="nowrap">
+              <Group justify="center" gap={5}>
                 <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
-                <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white' }} href="/">
+                <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                   <Group gap={5}>
-                    <Image h={50}
+                    <Image h={40}
                       w="auto"
                       fit="contain" src={MainLogo} />
-                    <Title fontFamily="Anton" order={1}>KTDASH</Title>
+                    <Title fontFamily="Anton" order={2}>KTDASH</Title>
                   </Group>
                 </Link>
               </Group>
-            </AppShell.Header>
-            <AppShell.Navbar p="md">
-              <NavbarSimple close={closeNav} />
-            </AppShell.Navbar>
-            <AppShell.Main>
-              <Root />
-            </AppShell.Main>
-          </AppShell>
-        </ModalsProvider>
-      </MantineProvider>
-    </CookiesProvider>
+              <Group style={{ color: 'white' }}>
+                <UnstyledButton title="Create">
+                  <Group gap={2}><IconPlus size={20} stroke={1.5} /> <Text visibleFrom="sm">Create</Text></Group>
+                </UnstyledButton>
+                <UnstyledButton>
+                  <Group gap={2}><IconUsers size={20} stroke={1.5} /> <Text visibleFrom="sm">Pre-Built</Text></Group>
+                </UnstyledButton>
+                <UnstyledButton>
+                  <Group gap={2}><IconDotsVertical size={20} stroke={1.5} /></Group>
+                </UnstyledButton>
+              </Group>
+            </Group>
+          </AppShell.Header>
+          <AppShell.Navbar p="md">
+            <NavbarSimple close={closeNav} />
+          </AppShell.Navbar>
+          <AppShell.Main>
+            <Root />
+          </AppShell.Main>
+        </AppShell>
+      </ModalsProvider>
+    </MantineProvider>
   );
 }
 

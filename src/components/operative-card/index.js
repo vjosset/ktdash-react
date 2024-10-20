@@ -24,7 +24,7 @@ export default function OperativeCard(props) {
                     </Table.Tr>}
                     {weapon.profiles.map((profile) => (
                         <Table.Tr key={profile.profileid}>
-                            <Table.Td>- {profile.name}{profile.SR ? ` (${profile.SR})` : ''}</Table.Td>
+                            <Table.Td>- {profile.name} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{profile.SR ? ` (${profile.SR})` : ''}</span></Table.Td>
                             <Table.Td>{profile.A}</Table.Td>
                             <Table.Td>{profile.BS}</Table.Td>
                             <Table.Td>{profile.D}</Table.Td>
@@ -40,7 +40,7 @@ export default function OperativeCard(props) {
                         <Group wrap="nowrap" gap="sm">
                             {weapon.weptype === "M" ?
                                 <IconSwords size={20} stroke={1.5} /> : <IconCrosshair size={20} stroke={1.5} />}
-                            {weapon.wepname}{weapon.profiles[0].SR ? ` (${weapon.profiles[0].SR})` : ''}
+                            <span>{weapon.wepname} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{weapon.profiles[0].SR ? ` (${weapon.profiles[0].SR})` : ''}</span></span>
                         </Group>
                     </Table.Td>
                     <Table.Td>{weapon.profiles[0].A}</Table.Td>
