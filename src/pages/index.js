@@ -8,14 +8,15 @@ import Register from "./register";
 import Rosters from "./rosters";
 import Roster from "./roster";
 import Settings from "./settings";
+import Dashboard from "./dashboard";
 
 export default function Root() {
-
     return (
         <Switch>
             <Route path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/dashboard" component={Dashboard} />
             <Route path="/settings" component={Settings} />
             <Route path="/u/:userId" component={Rosters} />
             <Route path="/r/:rosterId" component={Roster} />

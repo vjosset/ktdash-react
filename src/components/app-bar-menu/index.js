@@ -6,13 +6,12 @@ import useWindowDimensions from "../../hooks/get-window-dimensions";
 export default function AppBarMenu() {
     const { appState } = useAppContext();
     const { width } = useWindowDimensions();
-    const isDesktop = width > 768;
-    const numButtonstoShow = isDesktop ? 6 : 3;
+    const numButtonstoShow = Math.floor(width / 156);
     const contextActionsButtons = appState?.contextActions?.slice(0, numButtonstoShow);
     const contextActionsMenuButtons = appState?.contextActions?.slice(numButtonstoShow);
 
     return (
-        <Group style={{ color: 'white' }} gap="xs">
+        <Group style={{ color: 'white' }} gap={5}>
             {contextActionsButtons?.map((action) => (
                 <Button style={{ padding: '5px' }} variant="subtle" color="white" title={action?.text} onClick={action?.onClick}>
                     <Group gap={5}>{action?.icon} <Text visibleFrom="sm">{action?.text}</Text></Group>
@@ -20,7 +19,7 @@ export default function AppBarMenu() {
             ))}
             {appState?.contextActions?.length > numButtonstoShow &&
                 <>
-                    <Button variant="subtle" title="More Options">
+                    <Button style={{ padding: '5px' }} color="white" variant="subtle" title="More Options">
                         <Menu shadow="md" width={200}>
                             <Menu.Target>
                                 <Group gap={5}><IconDotsVertical /></Group>

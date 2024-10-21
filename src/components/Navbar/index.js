@@ -15,9 +15,9 @@ export function NavbarSimple(props) {
     const { user, logout, isLoggedIn } = useAuth();
     const loggedIn = isLoggedIn();
     const data = [
+        { link: '/dashboard', label: 'Play', icon: IconDice2, loggedIn: true },
+        { link: `/u/${user?.username}`, label: 'Rosters', icon: IconUsers, loggedIn: true },
         { link: '/allfactions', label: 'Factions', icon: IconBook },
-        { link: '/dashboard', label: 'Dashboard', icon: IconDice2, loggedIn: true },
-        { link: `/u/${user?.username}`, label: 'My Rosters', icon: IconUsers, loggedIn: true },
         { link: '/settings', label: 'Settings', icon: IconSettings, loggedIn: true },
     ];
     const links = data.filter((link) => !link.loggedIn || loggedIn).map((item) => (

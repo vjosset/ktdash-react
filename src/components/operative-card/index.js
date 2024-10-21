@@ -1,12 +1,18 @@
-import { Card, Group, Image, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
+import { Card, Collapse, Group, Image, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
+import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
+import React from "react";
+import { DEFAULT_SETTINGS } from "../../pages/settings";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function OperativeCard(props) {
-    const { operative } = props;
+    const { operative, collapsible } = props;
+    const [opened, setOpened] = React.useState(true);
+    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
+    const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {
         return <></>;
     }
@@ -73,89 +79,102 @@ export default function OperativeCard(props) {
     return (
         <Card>
             <Stack>
-                <Card.Section withBorder inheritPadding py="xs">
-                    <Title order={3}>{operative.opname}</Title>
-                </Card.Section>
-                <Card.Section withBorder inheritPadding pb="xs">
-                    <SimpleGrid cols={{ base: 2 }}>
-                        <Image
-                            fit="cover"
-                            style={{ objectPosition: "top" }}
-                            h={140} radius="md"
-                            src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
-                        />
-                        <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 3 : 2 }} spacing="sm">
-                            <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
-                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
-                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
-                            <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
+                <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
+                    <Group justify="space-between" wrap="nowrap">
+                        <Stack gap={5}>
+                            <Title textWrap="pretty" order={3}>{operative.opname}</Title>
+                            <Text size="sm">{operative.optype}</Text>
+                        </Stack>
+                        {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
+                        {!!props?.onEdit && <IconDotsVertical style={{ cursor: 'pointer' }} />}
+                    </Group>
+                </Stack>
+                <Collapse in={opened}>
+                    <Stack>
+                        <Stack>
+                            <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }}>
+                                {settings.display === "card" && <Image
+                                    fit="cover"
+                                    style={{ objectPosition: "top" }}
+                                    h={140} radius="md"
+                                    src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                                />}
+                                <SimpleGrid cols={{ base: operativeStatGrid }} spacing="sm">
+                                    <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
+                                    <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
+                                    {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
+                                    {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
+                                    <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
+                                    <Stack justify="center" align="center"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
+                                </SimpleGrid>
+                            </SimpleGrid>
+                        </Stack>
+                        <Stack>
+                            <Table horizontalSpacing="xs">
+                                <Table.Thead>
+                                    <Table.Tr>
+                                        <Table.Th>NAME</Table.Th>
+                                        <Table.Th>ATK</Table.Th>
+                                        <Table.Th>HIT</Table.Th>
+                                        <Table.Th>DMG</Table.Th>
+                                    </Table.Tr>
+                                </Table.Thead>
+                                <Table.Tbody>
+                                    {operative.weapons.map((weapon) => (
+                                        <>{renderWeapon(weapon)}</>
+                                    ))}
+                                </Table.Tbody>
+                            </Table>
+                        </Stack>
+                        <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
+                            {!!operative?.uniqueactions?.length && <Stack>
+                                <Text fw={700}>Unique Actions</Text>
+                                <Group>
+                                    {operative?.uniqueactions?.map((ability) => (
+                                        <Text
+                                            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                            onClick={() => {
+                                                modals.open({
+                                                    size: "lg",
+                                                    title: <Title order={2}>{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Title>,
+                                                    children: (
+                                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
+                                                    ),
+                                                });
+                                            }}
+                                        >
+                                            {ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}
+                                        </Text>
+                                    ))}
+                                </Group>
+                            </Stack>}
+                            {!!operative?.abilities?.length && <Stack>
+                                <Text fw={700}>Abilities</Text>
+                                <Group>
+                                    {operative?.abilities?.map((ability) => (
+                                        <Text
+                                            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                            onClick={() => {
+                                                modals.open({
+                                                    size: "lg",
+                                                    title: <Title order={2}>{ability.title}</Title>,
+                                                    children: (
+                                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
+                                                    ),
+                                                });
+                                            }}
+                                        >
+                                            {ability.title}
+                                        </Text>
+                                    ))}
+                                </Group>
+                            </Stack>}
                         </SimpleGrid>
-                    </SimpleGrid>
-                </Card.Section>
-                <Card.Section withBorder inheritPadding pb="xs">
-                    <Table horizontalSpacing="xs">
-                        <Table.Thead>
-                            <Table.Tr>
-                                <Table.Th>NAME</Table.Th>
-                                <Table.Th>ATK</Table.Th>
-                                <Table.Th>HIT</Table.Th>
-                                <Table.Th>DMG</Table.Th>
-                            </Table.Tr>
-                        </Table.Thead>
-                        <Table.Tbody>
-                            {operative.weapons.map((weapon) => (
-                                <>{renderWeapon(weapon)}</>
-                            ))}
-                        </Table.Tbody>
-                    </Table>
-                </Card.Section>
-                {!!operative?.uniqueactions?.length && <Card.Section withBorder inheritPadding pb="xs">
-                    <Text fw={700}>Unique Actions</Text>
-                    <Group>
-                        {operative?.uniqueactions?.map((ability) => (
-                            <Text
-                                style={{ textDecoration: 'underline', cursor: 'pointer' }}
-                                onClick={() => {
-                                    modals.open({
-                                        size: "lg",
-                                        title: <Title order={2}>{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Title>,
-                                        children: (
-                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
-                                        ),
-                                    });
-                                }}
-                            >
-                                {ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}
-                            </Text>
-                        ))}
-                    </Group>
-                </Card.Section>}
-                {!!operative?.abilities?.length && <Card.Section withBorder inheritPadding pb="xs">
-                    <Text fw={700}>Abilities</Text>
-                    <Group>
-                        {operative?.abilities?.map((ability) => (
-                            <Text
-                                style={{ textDecoration: 'underline', cursor: 'pointer' }}
-                                onClick={() => {
-                                    modals.open({
-                                        size: "lg",
-                                        title: <Title order={2}>{ability.title}</Title>,
-                                        children: (
-                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
-                                        ),
-                                    });
-                                }}
-                            >
-                                {ability.title}
-                            </Text>
-                        ))}
-                    </Group>
-                </Card.Section>}
-                <Card.Section withBorder inheritPadding pb="xs">
-                    <Text size="xs">{operative.keywords}</Text>
-                </Card.Section>
+                        <Stack>
+                            <Text size="xs">{operative.keywords}</Text>
+                        </Stack>
+                    </Stack>
+                </Collapse>
             </Stack>
         </Card>
     );

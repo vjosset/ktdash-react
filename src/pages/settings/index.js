@@ -2,7 +2,7 @@ import { Center, Container, rem, SegmentedControl, SimpleGrid, Stack, Text, Titl
 import { useLocalStorage } from '@mantine/hooks';
 import { IconIdBadge, IconList } from '@tabler/icons-react';
 
-const DEFAULT_SETTINGS = {
+export const DEFAULT_SETTINGS = {
     "display": "card",
     "showopseq": "n",
     "startvp": "2",

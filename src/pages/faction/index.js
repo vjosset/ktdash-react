@@ -2,9 +2,12 @@ import { useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
 import { Card, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import classes from './faction.module.css';
+import { DEFAULT_SETTINGS } from "../settings";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function Faction() {
     const [, params] = useRoute("/fa/:factionId");
+    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const { data: faction, isFetching: isFetchingFaction } = useRequest(`/faction.php?fa=${params?.factionId}`);
     if (isFetchingFaction) {
         return (<LoadingOverlay visible={isFetchingFaction} />);
@@ -44,15 +47,15 @@ export default function Faction() {
                         </Text>
                     </Stack>
                 </SimpleGrid>
-                <Tabs defaultValue="kt24">
+                <Tabs defaultValue={settings.edition || "kt24"}>
                     <Stack>
                         <Tabs.List grow>
-                            <Tabs.Tab value="kt21">
+                            {(!settings.edition || settings.edition === "kt21") && <Tabs.Tab value="kt21">
                                 KT2021
-                            </Tabs.Tab>
-                            <Tabs.Tab value="kt24">
+                            </Tabs.Tab>}
+                            {(!settings.edition || settings.edition === "kt24") && <Tabs.Tab value="kt24">
                                 KT2024
-                            </Tabs.Tab>
+                            </Tabs.Tab>}
                         </Tabs.List>
                         <Tabs.Panel value="kt21">
                             <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }}>
