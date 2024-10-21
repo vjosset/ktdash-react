@@ -1,9 +1,9 @@
-import { createTheme, Image, MantineProvider, Text, Title, UnstyledButton } from '@mantine/core';
+import { createTheme, Image, MantineProvider, Title } from '@mantine/core';
 import { AppShell, Burger, Group } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { useDisclosure } from '@mantine/hooks';
 import { Notifications } from '@mantine/notifications';
-import { NavbarSimple } from './components/Navbar';
+import { NavbarSimple } from './components/navbar';
 import Root from './pages';
 import MainLogo from './assets/icon-96x96.png';
 import '@mantine/core/styles.css';
@@ -11,7 +11,8 @@ import '@mantine/notifications/styles.css';
 import './App.css';
 import { Link } from 'wouter';
 import { useRef } from 'react';
-import { IconDotsVertical, IconPlus, IconUsers } from '@tabler/icons-react';
+import AppContextProvider from './hooks/app-context';
+import AppBarMenu from './components/app-bar-menu';
 
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
@@ -31,47 +32,39 @@ function App() {
 
   return (
     <MantineProvider defaultColorScheme="dark" theme={theme}>
-      <Notifications />
-      <ModalsProvider>
-        <AppShell
-          header={{ height: 60 }}
-          navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-          padding={0}
-        >
-          <AppShell.Header>
-            <Group h="100%" px="md" gap={5} align="center" justify="space-between" style={{ flex: 1 }} wrap="nowrap">
-              <Group justify="center" gap={5}>
-                <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
-                <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
-                  <Group gap={5}>
-                    <Image h={40}
-                      w="auto"
-                      fit="contain" src={MainLogo} />
-                    <Title fontFamily="Anton" order={2}>KTDASH</Title>
-                  </Group>
-                </Link>
+      <AppContextProvider>
+        <Notifications />
+        <ModalsProvider>
+          <AppShell
+            header={{ height: 60 }}
+            navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+            padding={0}
+          >
+            <AppShell.Header>
+              <Group h="100%" px="md" gap={5} align="center" justify="space-between" style={{ flex: 1 }} wrap="nowrap">
+                <Group justify="center" gap={5}>
+                  <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
+                  <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
+                    <Group gap={5}>
+                      <Image h={40}
+                        w="auto"
+                        fit="contain" src={MainLogo} />
+                      <Title fontFamily="Anton" order={2}>KTDASH</Title>
+                    </Group>
+                  </Link>
+                </Group>
+                <AppBarMenu />
               </Group>
-              <Group style={{ color: 'white' }}>
-                <UnstyledButton title="Create">
-                  <Group gap={2}><IconPlus size={20} stroke={1.5} /> <Text visibleFrom="sm">Create</Text></Group>
-                </UnstyledButton>
-                <UnstyledButton>
-                  <Group gap={2}><IconUsers size={20} stroke={1.5} /> <Text visibleFrom="sm">Pre-Built</Text></Group>
-                </UnstyledButton>
-                <UnstyledButton>
-                  <Group gap={2}><IconDotsVertical size={20} stroke={1.5} /></Group>
-                </UnstyledButton>
-              </Group>
-            </Group>
-          </AppShell.Header>
-          <AppShell.Navbar p="md">
-            <NavbarSimple close={closeNav} />
-          </AppShell.Navbar>
-          <AppShell.Main>
-            <Root />
-          </AppShell.Main>
-        </AppShell>
-      </ModalsProvider>
+            </AppShell.Header>
+            <AppShell.Navbar p="md">
+              <NavbarSimple close={closeNav} />
+            </AppShell.Navbar>
+            <AppShell.Main>
+              <Root />
+            </AppShell.Main>
+          </AppShell>
+        </ModalsProvider>
+      </AppContextProvider>
     </MantineProvider>
   );
 }

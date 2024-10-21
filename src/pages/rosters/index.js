@@ -1,30 +1,54 @@
 import React from "react";
-import { Card, Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
-import classes from './rosters.module.css';
-import { API_PATH, useRequest } from "../../hooks/use-api";
-import { Link, useRoute } from "wouter";
-import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
+import { Container, LoadingOverlay, SimpleGrid, Title } from "@mantine/core";
+
+import { useRequest } from "../../hooks/use-api";
+import { useRoute } from "wouter";
+import RosterCard from "../../components/roster-card";
+import { useAppContext } from "../../hooks/app-context";
+import { IconPlus, IconUsers } from "@tabler/icons-react";
+import { modals } from "@mantine/modals";
+import { AddRosterModal } from "./modals";
 
 export default function Rosters() {
+    const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/u/:username");
     const { data: user, isFetching: isFetchingRosters } = useRequest(`/user.php?username=${params?.username}`);
     const rosters = user?.rosters ?? [];
 
+    React.useEffect(() => {
+        setAppState({
+            ...appState,
+            contextActions: [
+                {
+                    icon: <IconPlus size={20} stroke={1.5} />,
+                    text: "Create",
+                    onClick: () => {
+                        modals.open({
+                            size: "lg",
+                            title: <Title order={2}>Create Roster</Title>,
+                            children: (
+                                <AddRosterModal />
+                            ),
+                        });
+                    }
+                },
+                {
+                    icon: <IconUsers size={20} stroke={1.5} />,
+                    text: "Pre-Built Rosters"
+                }
+            ]
+        });
+        return () => {
+            setAppState({
+                ...appState,
+                contextActions: []
+            });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const cards = rosters?.map((roster) => (
-        <Card key={roster.rosterid} p="md" radius="md" component="a" className={classes.card} href={`/r/${roster.rosterid}`}>
-            <Stack>
-                <Image radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
-                <Group gap="xs" align="end">
-                    <Title>
-                        {roster?.rostername}
-                    </Title>by<Link href={`/u/${roster.username}`}>{roster.username}</Link>
-                </Group>
-                <Group>{!!roster.spotlight ? <IconStarFilled stroke={1.5} /> : <IconStar stroke={1.5} />}<Group gap={5}><IconEye stroke={1.5} />{roster.viewcount.toString()}</Group><Group gap={5}><IconFileImport stroke={1.5} />{roster.importcount.toString()}</Group></Group>
-                <Text>
-                    {roster.notes}
-                </Text>
-            </Stack>
-        </Card>
+        <RosterCard roster={roster} />
     ));
     if (isFetchingRosters) {
         return (<LoadingOverlay visible={isFetchingRosters} />);
