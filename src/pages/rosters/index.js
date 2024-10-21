@@ -53,7 +53,7 @@ export default function Rosters() {
     }, [ canEdit ]);
 
     const cards = rosters?.map((roster) => (
-        <RosterCard roster={roster} />
+        <RosterCard editable={canEdit} roster={roster} />
     ));
     if (isFetchingRosters) {
         return (<LoadingOverlay visible={isFetchingRosters} />);

@@ -1,4 +1,4 @@
-import { Group, Menu, Text, UnstyledButton } from "@mantine/core";
+import { Button, Group, Menu, Text } from "@mantine/core";
 import { useAppContext } from "../../hooks/app-context";
 import { IconDotsVertical } from "@tabler/icons-react";
 import useWindowDimensions from "../../hooks/get-window-dimensions";
@@ -12,20 +12,18 @@ export default function AppBarMenu() {
     const contextActionsMenuButtons = appState?.contextActions?.slice(numButtonstoShow);
 
     return (
-        <Group style={{ color: 'white' }}>
+        <Group style={{ color: 'white' }} gap="xs">
             {contextActionsButtons?.map((action) => (
-                <UnstyledButton title={action?.text} onClick={action?.onClick}>
-                    <Group gap={2}>{action?.icon} <Text visibleFrom="sm">{action?.text}</Text></Group>
-                </UnstyledButton>
+                <Button style={{ padding: '5px' }} variant="subtle" color="white" title={action?.text} onClick={action?.onClick}>
+                    <Group gap={5}>{action?.icon} <Text visibleFrom="sm">{action?.text}</Text></Group>
+                </Button>
             ))}
             {appState?.contextActions?.length > numButtonstoShow &&
                 <>
-                    <UnstyledButton title="More Options">
-
-
+                    <Button variant="subtle" title="More Options">
                         <Menu shadow="md" width={200}>
                             <Menu.Target>
-                                <Group gap={2}><IconDotsVertical /></Group>
+                                <Group gap={5}><IconDotsVertical /></Group>
                             </Menu.Target>
 
                             <Menu.Dropdown>
@@ -36,7 +34,7 @@ export default function AppBarMenu() {
                                 ))}
                             </Menu.Dropdown>
                         </Menu>
-                    </UnstyledButton>
+                    </Button>
                 </>
             }
         </Group>

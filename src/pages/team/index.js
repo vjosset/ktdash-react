@@ -17,6 +17,7 @@ export default function Faction() {
     }
     const showTeamComp = () =>
         modals.open({
+            size: "lg",
             title: 'Team Composition',
             children: (
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.killteamcomp}` }} />

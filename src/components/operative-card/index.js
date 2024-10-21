@@ -3,12 +3,25 @@ import { convertShapes } from "../../utils/shapes";
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
+import parseWeaponRules from "./parser";
 
 export default function OperativeCard(props) {
     const { operative } = props;
     if (!operative) {
         return <></>;
     }
+    const showSpecialRules = (weaponName, weapon, profile) => modals.open({
+        size: "lg",
+        title: <Title order={3}>{weaponName}</Title>,
+        children: (
+            <Stack>{parseWeaponRules(operative.edition, weapon, profile).map((rule) => (
+                <Stack gap="sm">
+                    <Title order={4}><span dangerouslySetInnerHTML={{ __html: convertShapes(rule.rulename) }} /></Title>
+                    <Text><span dangerouslySetInnerHTML={{ __html: convertShapes(rule.ruletext) }} /></Text>
+                </Stack>
+            ))}</Stack>
+        ),
+    });
     const renderWeapon = (weapon) => {
         if (weapon?.profiles?.length > 1) {
             return (
@@ -24,7 +37,10 @@ export default function OperativeCard(props) {
                     </Table.Tr>}
                     {weapon.profiles.map((profile) => (
                         <Table.Tr key={profile.profileid}>
-                            <Table.Td>- {profile.name} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}</span></Table.Td>
+                            <Table.Td>- {profile.name} <span onClick={() => showSpecialRules(`${weapon.wepname} - ${profile.name}`, weapon, profile)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                                {profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}
+                            </span>
+                            </Table.Td>
                             <Table.Td>{profile.A}</Table.Td>
                             <Table.Td>{profile.BS}</Table.Td>
                             <Table.Td>{profile.D}</Table.Td>
@@ -40,7 +56,11 @@ export default function OperativeCard(props) {
                         <Group wrap="nowrap" gap="sm">
                             {weapon.weptype === "M" ?
                                 <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                            <span>{weapon.wepname} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}</span></span>
+                            <span>
+                                {weapon.wepname} <span onClick={() => showSpecialRules(weapon.wepname, weapon, weapon.profiles[0])} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                                    {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
+                                </span>
+                            </span>
                         </Group>
                     </Table.Td>
                     <Table.Td>{weapon.profiles[0].A}</Table.Td>
@@ -99,6 +119,7 @@ export default function OperativeCard(props) {
                                 style={{ textDecoration: 'underline', cursor: 'pointer' }}
                                 onClick={() => {
                                     modals.open({
+                                        size: "lg",
                                         title: <Title order={2}>{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Title>,
                                         children: (
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
@@ -119,6 +140,7 @@ export default function OperativeCard(props) {
                                 style={{ textDecoration: 'underline', cursor: 'pointer' }}
                                 onClick={() => {
                                     modals.open({
+                                        size: "lg",
                                         title: <Title order={2}>{ability.title}</Title>,
                                         children: (
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
@@ -131,6 +153,9 @@ export default function OperativeCard(props) {
                         ))}
                     </Group>
                 </Card.Section>}
+                <Card.Section withBorder inheritPadding pb="xs">
+                    <Text size="xs">{operative.keywords}</Text>
+                </Card.Section>
             </Stack>
         </Card>
     );

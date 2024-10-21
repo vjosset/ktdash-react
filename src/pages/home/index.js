@@ -1,4 +1,4 @@
-import { Title, Text, Container, Card, Stack, Image, Group, Loader, Center, SimpleGrid } from "@mantine/core";
+import { Title, Text, Container, Card, Stack, Image, Group, Loader, SimpleGrid } from "@mantine/core";
 import classes from './home.module.css';
 import { API_PATH, useRequest } from "../../hooks/use-api";
 import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
@@ -33,9 +33,7 @@ export default function Home() {
                 {!!isFetchingSpotlight && <Loader color="orange" />}
                 <Card key={spotlight.factionid} radius="md" component="a" className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
-                        <Center>
-                            <Title>Roster Spotlight</Title>
-                        </Center>
+                        <Title>Roster Spotlight</Title>
                         <SimpleGrid cols={{ base: 1, md: 2 }}>
                             <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
                             <SimpleGrid visibleFrom="md" cols={{ base: 2, md: 2, lg: 3, xl: 4 }}>
@@ -45,17 +43,22 @@ export default function Home() {
                             </SimpleGrid>
                         </SimpleGrid>
                         <Title order={2} mt={5}>{spotlight.rostername}</Title>
-                        <Group>
-                            <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname}</Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
-                        </Group>
-                        <Group>
-                            {!!spotlight.spotlight ? <IconStarFilled /> : <IconStar />}
-                            <Group gap={5}><IconEye />{spotlight.viewcount.toString()}</Group>
-                            <Group gap={5}><IconFileImport />{spotlight.importcount.toString()}</Group>
-                        </Group>
+                        {!!spotlight?.notes && <Text>
+                            {spotlight.notes}
+                        </Text>}
                         <Text fs="italic">
                             {spotlight.operatives.map((operative) => operative.opname).join(', ')}
                         </Text>
+                        <Group justify="space-between">
+                            <Group>
+                                {!!spotlight.spotlight ? <IconStarFilled /> : <IconStar />}
+                                <Group gap={5}><IconEye />{spotlight.viewcount.toString()}</Group>
+                                <Group gap={5}><IconFileImport />{spotlight.importcount.toString()}</Group>
+                            </Group>
+                            <Group>
+                                <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname}</Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
+                            </Group>
+                        </Group>
                     </Stack>
                 </Card>
             </Container>}
