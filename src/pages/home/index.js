@@ -4,9 +4,11 @@ import { API_PATH, useRequest } from "../../hooks/use-api";
 import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
 import { Link } from "wouter";
 import News from "./news";
+import useAuth from "../../hooks/use-auth";
 
 export default function Home() {
     const { data: spotlight, isFetching: isFetchingSpotlight } = useRequest("/roster.php?randomspotlight=1");
+    const { user } = useAuth();
 
     return (
         <Stack>
@@ -20,20 +22,20 @@ export default function Home() {
                         <Text>KTDash is a web-based application for running your KillTeam games.</Text>
                         <ul>
                             <li>Browse the <Link href="/allfactions">Factions</Link></li>
-                            <li>Build your rosters or import a pre-built roster</li>
+                            <li>{user?.username ? <Link href={`/u/${user?.username}`}>Build a roster</Link> : <>Build a roster</>} or <Link href="/u/KTDash">import a pre-built roster</Link></li>
                             <li>Generate names for your operatives</li>
                             <li>Use the <Link href="/dashboard">Dashboard</Link> to play your games and track operative wounds, TacOps, Ploys, operative orders and activation, TP/CP/VP, and more</li>
                         </ul>
                     </Container>
                 </div>
             </div>
-            {!!spotlight && <Container size="xl">
-                <Center>
-                    <Title>Roster Spotlight</Title>
-                </Center>
+            {!!spotlight && <Container fluid>
                 {!!isFetchingSpotlight && <Loader color="orange" />}
-                <Card key={spotlight.factionid} my="md" radius="md" component="a" className={classes.card} href={`/r/${spotlight.rosterid}`}>
+                <Card key={spotlight.factionid} radius="md" component="a" className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
+                        <Center>
+                            <Title>Roster Spotlight</Title>
+                        </Center>
                         <SimpleGrid cols={{ base: 1, md: 2 }}>
                             <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
                             <SimpleGrid visibleFrom="md" cols={{ base: 2, md: 2, lg: 3, xl: 4 }}>
@@ -47,20 +49,17 @@ export default function Home() {
                             <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname}</Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
                         </Group>
                         <Group>
-                            {!!spotlight.spotlight ? <IconStarFilled stroke={1.5} /> : <IconStar stroke={1.5} />}
-                            <Group gap={5}><IconEye stroke={1.5} />{spotlight.viewcount.toString()}</Group>
-                            <Group gap={5}><IconFileImport stroke={1.5} />{spotlight.importcount.toString()}</Group>
+                            {!!spotlight.spotlight ? <IconStarFilled /> : <IconStar />}
+                            <Group gap={5}><IconEye />{spotlight.viewcount.toString()}</Group>
+                            <Group gap={5}><IconFileImport />{spotlight.importcount.toString()}</Group>
                         </Group>
-                        {!!spotlight.notes && <Text>
-                            {spotlight.notes}
-                        </Text>}
                         <Text fs="italic">
                             {spotlight.operatives.map((operative) => operative.opname).join(', ')}
                         </Text>
                     </Stack>
                 </Card>
             </Container>}
-            <Container mb="md" size="xl">
+            <Container mb="md" fluid>
                 <Card>
                     <Title>News</Title>
                     <News />

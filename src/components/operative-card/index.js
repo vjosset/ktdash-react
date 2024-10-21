@@ -17,14 +17,14 @@ export default function OperativeCard(props) {
                         <Table.Td>
                             <Group wrap="nowrap" gap="sm">
                                 {weapon.weptype === "M" ?
-                                    <IconSwords size={20} stroke={1.5} /> : <IconCrosshair size={20} stroke={1.5} />}
+                                    <IconSwords size={20} /> : <IconCrosshair size={20} />}
                                 {weapon.wepname}
                             </Group>
                         </Table.Td>
                     </Table.Tr>}
                     {weapon.profiles.map((profile) => (
                         <Table.Tr key={profile.profileid}>
-                            <Table.Td>- {profile.name} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{profile.SR ? ` (${profile.SR})` : ''}</span></Table.Td>
+                            <Table.Td>- {profile.name} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}</span></Table.Td>
                             <Table.Td>{profile.A}</Table.Td>
                             <Table.Td>{profile.BS}</Table.Td>
                             <Table.Td>{profile.D}</Table.Td>
@@ -39,8 +39,8 @@ export default function OperativeCard(props) {
                     <Table.Td>
                         <Group wrap="nowrap" gap="sm">
                             {weapon.weptype === "M" ?
-                                <IconSwords size={20} stroke={1.5} /> : <IconCrosshair size={20} stroke={1.5} />}
-                            <span>{weapon.wepname} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{weapon.profiles[0].SR ? ` (${weapon.profiles[0].SR})` : ''}</span></span>
+                                <IconSwords size={20} /> : <IconCrosshair size={20} />}
+                            <span>{weapon.wepname} <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>{weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}</span></span>
                         </Group>
                     </Table.Td>
                     <Table.Td>{weapon.profiles[0].A}</Table.Td>
@@ -65,12 +65,12 @@ export default function OperativeCard(props) {
                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                         />
                         <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 3 : 2 }} spacing="sm">
-                            <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} stroke={1.5} />{operative.APL}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} stroke={1.5} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
-                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} stroke={1.5} />{operative.GA}</Group></Stack>}
-                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} stroke={1.5} />{operative.DF}</Group></Stack>}
-                            <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} stroke={1.5} />{operative.SV}</Group></Stack>
-                            <Stack justify="center" align="center"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} stroke={1.5} />{operative.W}</Group></Stack>
+                            <Stack justify="center" align="center"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
+                            <Stack justify="center" align="center"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
+                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
+                            {operative?.edition === "kt21" && <Stack justify="center" align="center"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
+                            <Stack justify="center" align="center"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
+                            <Stack justify="center" align="center"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
                         </SimpleGrid>
                     </SimpleGrid>
                 </Card.Section>
@@ -101,7 +101,7 @@ export default function OperativeCard(props) {
                                     modals.open({
                                         title: <Title order={2}>{ability.title} {ability.AP ? `(${ability.AP} AP)` : ''}</Title>,
                                         children: (
-                                            <div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />
+                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
                                         ),
                                     });
                                 }}
@@ -121,7 +121,7 @@ export default function OperativeCard(props) {
                                     modals.open({
                                         title: <Title order={2}>{ability.title}</Title>,
                                         children: (
-                                            <div dangerouslySetInnerHTML={{ __html: `${ability.description}` }} />
+                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ability.description)}` }} />
                                         ),
                                     });
                                 }}

@@ -23,14 +23,14 @@ export function NavbarSimple(props) {
     const links = data.filter((link) => !link.loggedIn || loggedIn).map((item) => (
         <Link
             className={classes.link}
-            data-active={location.includes(item.link)  || undefined}
+            data-active={location.includes(item.link) || undefined}
             href={item.link}
             key={item.label}
             onClick={() => {
                 props?.close();
             }}
         >
-            <item.icon className={classes.linkIcon} stroke={1.5} />
+            <item.icon className={classes.linkIcon} />
             <span>{item.label}</span>
         </Link>
     ));
@@ -46,20 +46,20 @@ export function NavbarSimple(props) {
                     <Link href="/login" className={classes.link} data-active={location === "/login" || undefined} onClick={() => {
                         props?.close();
                     }}>
-                        <IconLock className={classes.linkIcon} stroke={1.5} />
+                        <IconLock className={classes.linkIcon} />
                         <span>Log In</span>
                     </Link>
                     <Link href="/register" className={classes.link} data-active={location === "/register" || undefined} onClick={() => {
                         props?.close();
                     }}>
-                        <IconUser className={classes.linkIcon} stroke={1.5} />
+                        <IconUser className={classes.linkIcon} />
                         <span>Register</span>
                     </Link>
                 </> : <Link className={classes.link} onClick={() => {
                     logout();
                     props?.close();
                 }}>
-                    <IconLock className={classes.linkIcon} stroke={1.5} />
+                    <IconLock className={classes.linkIcon} />
                     <span>Log Out</span>
                 </Link>}
 

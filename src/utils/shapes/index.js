@@ -1,3 +1,3 @@
 export function convertShapes(word) {
-    return word.replace("[PENT]", "&#11039").replace("[CIRCLE]", "&#11044").replace("[TRI]", "&#9650");
+    return word.replaceAll("[PENT]", "&#11039").replaceAll("[CIRCLE]", "&#11044").replaceAll("[TRI]", "&#9650").replaceAll("[SQUARE]", "&#9724");
 }

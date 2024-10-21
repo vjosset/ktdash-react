@@ -13,6 +13,8 @@ export default function Roster() {
         return;
     }
 
+    console.log(roster);
+
     return (
         <Container py="md" px="md" fluid>
             <Stack>
@@ -24,9 +26,10 @@ export default function Roster() {
                                 {roster?.rostername}
                             </Title>by<Link href={`/u/${roster.username}`}>{roster.username}</Link>
                         </Group>
-                        <Text>
-                            {roster?.notes}
-                        </Text>
+                        {!!roster.notes && <Text>
+                            {roster.notes}
+                        </Text>}
+                        {!roster.notes && <div dangerouslySetInnerHTML={{ __html: `${roster.killteamdescription}` }} />}
                     </Stack>
                 </SimpleGrid>
                 <SimpleGrid mt="md" cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">

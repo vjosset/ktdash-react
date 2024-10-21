@@ -2,25 +2,29 @@ import React from "react";
 import { Container, LoadingOverlay, SimpleGrid, Title } from "@mantine/core";
 
 import { useRequest } from "../../hooks/use-api";
-import { useRoute } from "wouter";
+import { useLocation, useRoute } from "wouter";
 import RosterCard from "../../components/roster-card";
 import { useAppContext } from "../../hooks/app-context";
 import { IconPlus, IconUsers } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
 import { AddRosterModal } from "./modals";
+import useAuth from "../../hooks/use-auth";
 
 export default function Rosters() {
+    const [, navigate ] = useLocation();
+    const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/u/:username");
     const { data: user, isFetching: isFetchingRosters } = useRequest(`/user.php?username=${params?.username}`);
+    const canEdit = userData?.username === params?.username;
     const rosters = user?.rosters ?? [];
 
     React.useEffect(() => {
         setAppState({
             ...appState,
             contextActions: [
-                {
-                    icon: <IconPlus size={20} stroke={1.5} />,
+                ...(canEdit ? [{
+                    icon: <IconPlus />,
                     text: "Create",
                     onClick: () => {
                         modals.open({
@@ -31,10 +35,11 @@ export default function Rosters() {
                             ),
                         });
                     }
-                },
+                }] : []),
                 {
-                    icon: <IconUsers size={20} stroke={1.5} />,
-                    text: "Pre-Built Rosters"
+                    icon: <IconUsers />,
+                    text: "Pre-Built Rosters",
+                    onClick: () => navigate('/u/KTDash')
                 }
             ]
         });
@@ -45,7 +50,7 @@ export default function Rosters() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [ canEdit ]);
 
     const cards = rosters?.map((roster) => (
         <RosterCard roster={roster} />
