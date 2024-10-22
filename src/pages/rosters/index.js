@@ -16,7 +16,7 @@ export default function Rosters() {
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/u/:username");
-    const { data: user, isFetching: isFetchingRosters } = useRequest(`/user.php?username=${params?.username}`);
+    const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${params?.username}`);
     const canEdit = userData?.username === params?.username;
     const rosters = user?.rosters ?? [];
 
@@ -34,10 +34,11 @@ export default function Rosters() {
     const handleDeleteRoster = (rosterid) => {
         api.request(`/roster.php?rid=${rosterid}`, {
             method: "DELETE"
-        }).then((data) => {
-            if (data?.rosterid) {
-
-            }
+        }).then(() => {
+            setUser({
+                ...user,
+                rosters: rosters?.filter((roster) => roster.rosterid !== rosterid)
+            })
         })
     }
 
