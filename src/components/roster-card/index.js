@@ -5,7 +5,7 @@ import { API_PATH } from "../../hooks/use-api";
 import { IconDotsVertical, IconEye, IconFileImport, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
 
 export default function RosterCard(props) {
-    const { roster, editable } = props;
+    const { roster, editable, onDelete = () => { } } = props;
     const [, navigate] = useLocation();
     return (
         <Card key={roster.rosterid} p="md" radius="md" component="a" className={classes.card} href={`/r/${roster.rosterid}`}>
@@ -23,6 +23,7 @@ export default function RosterCard(props) {
                             View
                         </Menu.Item>
                         <Menu.Item
+                            onClick={() => onDelete(roster)}
                             leftSection={<IconTrash />}
                             color="red"
                         >

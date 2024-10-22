@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LoadingOverlay, SimpleGrid, Title } from "@mantine/core";
+import { Container, LoadingOverlay, SimpleGrid, Text, Title } from "@mantine/core";
 
 import { useAPI, useRequest } from "../../hooks/use-api";
 import { useLocation, useRoute } from "wouter";
@@ -30,6 +30,29 @@ export default function Rosters() {
             }
         })
     }
+
+    const handleDeleteRoster = (rosterid) => {
+        api.request(`/roster.php?rid=${rosterid}`, {
+            method: "DELETE"
+        }).then((data) => {
+            if (data?.rosterid) {
+
+            }
+        })
+    }
+
+    const handleConfirmDeleteRoster = (roster) => {
+        modals.openConfirmModal({
+            title: 'Confirm Delete',
+            children: (
+                <Text size="sm">
+                    Are you sure you want to delete {roster.rostername}?
+                </Text>
+            ),
+            labels: { confirm: 'Confirm', cancel: 'Cancel' },
+            onConfirm: () => handleDeleteRoster(roster.rosterid),
+        });
+    };
 
     React.useEffect(() => {
         setAppState({
@@ -64,7 +87,7 @@ export default function Rosters() {
     }, [canEdit]);
 
     const cards = rosters?.map((roster) => (
-        <RosterCard editable={canEdit} roster={roster} />
+        <RosterCard editable={canEdit} roster={roster} onDelete={handleConfirmDeleteRoster} />
     ));
     if (isFetchingRosters) {
         return (<LoadingOverlay visible={isFetchingRosters} />);
