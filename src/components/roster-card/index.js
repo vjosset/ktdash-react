@@ -2,16 +2,16 @@ import { ActionIcon, Card, Group, Image, Menu, Stack, Text, Title } from "@manti
 import { Link, useLocation } from "wouter";
 import classes from './rosters.module.css';
 import { API_PATH } from "../../hooks/use-api";
-import { IconDotsVertical, IconEye, IconFileImport, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
+import { IconCards, IconDotsVertical, IconEye, IconFileImport, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
 
 export default function RosterCard(props) {
-    const { roster, editable, onDelete = () => { } } = props;
+    const { roster, editable, onDelete = () => { }, onDeploy = () => { } } = props;
     const [, navigate] = useLocation();
     return (
         <Card key={roster.rosterid} p="md" radius="md" component="a" className={classes.card} href={`/r/${roster.rosterid}`}>
             <Group justify="space-between" wrap="nowrap">
                 <Title textWrap="pretty" order={3}>{roster.rostername}</Title>
-                {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
+                <Menu withinPortal position="bottom-end" shadow="sm">
                     <Menu.Target>
                         <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
                             <IconDotsVertical />
@@ -22,15 +22,21 @@ export default function RosterCard(props) {
                         <Menu.Item leftSection={<IconEye />} onClick={() => navigate(`/r/${roster.rosterid}`)}>
                             View
                         </Menu.Item>
-                        <Menu.Item
-                            onClick={() => onDelete(roster)}
-                            leftSection={<IconTrash />}
-                            color="red"
+                        {!!editable && <><Menu.Item
+                            onClick={() => onDeploy(roster.rosterid)}
+                            leftSection={<IconCards />}
                         >
-                            Delete
+                            Deploy
                         </Menu.Item>
+                            <Menu.Item
+                                onClick={() => onDelete(roster)}
+                                leftSection={<IconTrash />}
+                                color="red"
+                            >
+                                Delete
+                            </Menu.Item></>}
                     </Menu.Dropdown>
-                </Menu>}
+                </Menu>
             </Group>
             <Stack mt="md">
                 <Image style={{ maxHeight: '250px' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />

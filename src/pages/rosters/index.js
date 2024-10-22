@@ -9,12 +9,14 @@ import { IconPlus, IconUsers } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
 import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function Rosters() {
     const api = useAPI();
     const [, navigate] = useLocation();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
+    const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, params] = useRoute("/u/:username");
     const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${params?.username}`);
     const canEdit = userData?.username === params?.username;
@@ -55,6 +57,11 @@ export default function Rosters() {
         });
     };
 
+    const handleDeployRoster = (rosterid) => {
+        setDashboardrosterId(rosterid);
+        navigate('/dashboard')
+    }
+
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -88,7 +95,7 @@ export default function Rosters() {
     }, [canEdit]);
 
     const cards = rosters?.map((roster) => (
-        <RosterCard editable={canEdit} roster={roster} onDelete={handleConfirmDeleteRoster} />
+        <RosterCard editable={canEdit} roster={roster} onDelete={handleConfirmDeleteRoster} onDeploy={handleDeployRoster} />
     ));
     if (isFetchingRosters) {
         return (<LoadingOverlay visible={isFetchingRosters} />);

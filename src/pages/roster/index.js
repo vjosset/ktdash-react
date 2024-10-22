@@ -3,7 +3,7 @@ import { API_PATH, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconEdit, IconPlayCard, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
+import { IconCards, IconEdit, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
@@ -52,7 +52,7 @@ export default function Roster() {
                         onClick: () => { }
                     },
                     {
-                        icon: <IconPlayCard />,
+                        icon: <IconCards />,
                         text: "Deploy",
                         onClick: () => {
                             setDashboardrosterId(roster?.rosterid);
