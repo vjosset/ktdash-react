@@ -90,7 +90,7 @@ export default function Roster() {
                         {!roster.notes && <div dangerouslySetInnerHTML={{ __html: `${roster.killteamdescription}` }} />}
                     </Stack>
                 </SimpleGrid>
-                <SimpleGrid mt="md" cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
+                <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                     {roster?.operatives?.map((operative) => (
                         <OperativeCard onEdit={canEdit ? handleEditOperative : undefined} operative={operative} />
                     ))}

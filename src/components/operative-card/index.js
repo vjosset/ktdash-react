@@ -43,7 +43,7 @@ export default function OperativeCard(props) {
                     </Table.Tr>}
                     {weapon.profiles.map((profile) => (
                         <Table.Tr key={profile.profileid}>
-                            <Table.Td>- {profile.name} <span onClick={() => showSpecialRules(`${weapon.wepname} - ${profile.name}`, weapon, profile)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                            <Table.Td>- {profile.name} <span role="button" onClick={() => showSpecialRules(`${weapon.wepname} - ${profile.name}`, weapon, profile)} style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}>
                                 {profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}
                             </span>
                             </Table.Td>
@@ -63,7 +63,7 @@ export default function OperativeCard(props) {
                             {weapon.weptype === "M" ?
                                 <IconSwords size={20} /> : <IconCrosshair size={20} />}
                             <span>
-                                {weapon.wepname} <span onClick={() => showSpecialRules(weapon.wepname, weapon, weapon.profiles[0])} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                                {weapon.wepname} <span role="button" onClick={() => showSpecialRules(weapon.wepname, weapon, weapon.profiles[0])} style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}>
                                     {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
                                 </span>
                             </span>
@@ -132,7 +132,7 @@ export default function OperativeCard(props) {
                                 <Group>
                                     {operative?.uniqueactions?.map((ability) => (
                                         <Text
-                                            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                            style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
                                             onClick={() => {
                                                 modals.open({
                                                     size: "lg",
@@ -153,7 +153,8 @@ export default function OperativeCard(props) {
                                 <Group>
                                     {operative?.abilities?.map((ability) => (
                                         <Text
-                                            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                                            role="button"
+                                            style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
                                             onClick={() => {
                                                 modals.open({
                                                     size: "lg",
