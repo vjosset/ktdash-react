@@ -1,6 +1,7 @@
 import {
     IconBook,
     IconDice2,
+    IconDownload,
     IconLock,
     IconSettings,
     IconUser,
@@ -9,6 +10,7 @@ import {
 import classes from './navbar.module.css';
 import { Link, useLocation } from 'wouter';
 import useAuth from '../../hooks/use-auth';
+import PWAInstallerPrompt from '../install-prompt';
 
 export function NavbarSimple(props) {
     const [location] = useLocation();
@@ -39,6 +41,15 @@ export function NavbarSimple(props) {
         <nav className={classes.navbar}>
             <div className={classes.navbarMain}>
                 {links}
+                <PWAInstallerPrompt
+                    render={({ onClick }) => (
+                        <Link className={classes.link} onClick={onClick}>
+                            <IconDownload className={classes.linkIcon} />
+                            <span>Install</span>
+                        </Link>
+                    )}
+                    callback={(data) => console.log(data)}
+                />
             </div>
 
             <div className={classes.footer}>
@@ -62,7 +73,6 @@ export function NavbarSimple(props) {
                     <IconLock className={classes.linkIcon} />
                     <span>Log Out</span>
                 </Link>}
-
             </div>
         </nav>
     );
