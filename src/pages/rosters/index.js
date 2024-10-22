@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, LoadingOverlay, SimpleGrid, Title } from "@mantine/core";
 
-import { useRequest } from "../../hooks/use-api";
+import { useAPI, useRequest } from "../../hooks/use-api";
 import { useLocation, useRoute } from "wouter";
 import RosterCard from "../../components/roster-card";
 import { useAppContext } from "../../hooks/app-context";
@@ -11,13 +11,25 @@ import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
 
 export default function Rosters() {
-    const [, navigate ] = useLocation();
+    const api = useAPI();
+    const [, navigate] = useLocation();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/u/:username");
     const { data: user, isFetching: isFetchingRosters } = useRequest(`/user.php?username=${params?.username}`);
     const canEdit = userData?.username === params?.username;
     const rosters = user?.rosters ?? [];
+
+    const handleCreateRoster = (roster) => {
+        api.request("/roster.php", {
+            method: "POST",
+            body: JSON.stringify(roster)
+        }).then((data) => {
+            if (data?.rosterid) {
+                navigate(`/r/${data?.rosterid}`)
+            }
+        })
+    }
 
     React.useEffect(() => {
         setAppState({
@@ -28,11 +40,10 @@ export default function Rosters() {
                     text: "Create",
                     onClick: () => {
                         modals.open({
+                            modalId: "create-roster",
                             size: "lg",
                             title: <Title order={2}>Create Roster</Title>,
-                            children: (
-                                <AddRosterModal />
-                            ),
+                            children: <AddRosterModal onClose={handleCreateRoster} />
                         });
                     }
                 }] : []),
@@ -50,7 +61,7 @@ export default function Rosters() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ canEdit ]);
+    }, [canEdit]);
 
     const cards = rosters?.map((roster) => (
         <RosterCard editable={canEdit} roster={roster} />

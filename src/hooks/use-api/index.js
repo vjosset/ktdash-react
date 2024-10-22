@@ -33,5 +33,5 @@ export function useRequest(endpoint, content, fetchCondition) {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ endpoint ]);
-    return { data, error, isFetching }
+    return { data, error, isFetching, setData }
 }

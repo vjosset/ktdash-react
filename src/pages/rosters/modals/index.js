@@ -3,8 +3,11 @@ import { useForm } from '@mantine/form';
 import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
+import useAuth from '../../../hooks/use-auth';
 
-export function AddRosterModal() {
+export function AddRosterModal(props) {
+    const { onClose } = props;
+    const { user } = useAuth();
     const form = useForm({
         mode: 'controlled',
         initialValues: {
@@ -18,27 +21,38 @@ export function AddRosterModal() {
             team: (value) => (!value ? 'Must select a team' : null),
         },
     });
-    const { data: factions } = useRequest("/faction.php");
-    const { data: faction } = useRequest(`/faction.php?fa=${form?.getValues()?.faction}`, {}, !!form?.getValues()?.faction);
+    const { data: factions } = useRequest("/faction.php?loadkts=1");
 
     React.useEffect(() => {
         form.setFieldValue('team', null);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form?.getValues()?.faction]);
 
-    const factionOptions = factions?.map((faction) => ({
+    const factionOptions = factions?.map((faction, index) => ({
         label: faction.factionname,
-        value: faction.factionid
+        value: index.toString()
     }));
 
-    const teamOptions = faction?.killteams?.map((team) => ({
+    const teamOptions = factions?.[form?.getValues()?.faction]?.killteams?.map((team, index) => ({
         label: team.killteamname,
-        value: team.killteamid
+        value: index.toString()
     }));
 
     const handleCreateRoster = form.onSubmit((values) => {
-        console.log(values);
         form.reset();
+        var roster = {
+            "rosterid": null,
+            "factionid": factions[values.faction].factionid,
+            "killteamid": factions[values.faction].killteams[values.team].killteamid,
+            "rostername": values.rostername,
+            "portraitcopyok": 0,
+            "keyword": "",
+            "userid": user.userid,
+            "CP": 0,
+            "VP": 0
+        };
+        onClose(roster);
+        modals.close("create-roster");
     });
 
     return (
