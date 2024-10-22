@@ -7,6 +7,8 @@ import { IconEdit, IconPlayCard, IconPlus, IconPrinter, IconTrash } from "@table
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
+import { AddOperativeModal } from "./modals";
+import { modals } from "@mantine/modals";
 
 export default function Roster() {
     const { user: userData } = useAuth();
@@ -16,6 +18,17 @@ export default function Roster() {
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, navigate] = useLocation();
     const canEdit = userData?.username === roster?.username;
+    const handleAddOperative = (operative) => {
+        console.log(operative);
+        // api.request("/roster.php", {
+        //     method: "POST",
+        //     body: JSON.stringify(roster)
+        // }).then((data) => {
+        //     if (data?.rosterid) {
+        //         navigate(`/r/${data?.rosterid}`)
+        //     }
+        // })
+    }
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -24,12 +37,19 @@ export default function Roster() {
                     {
                         icon: <IconPlus />,
                         text: "Add Operative",
-                        onClick: () => { }
+                        onClick: () => {
+                            modals.open({
+                                modalId: "add-operative",
+                                size: "lg",
+                                title: <Title order={2}>Add Operative</Title>,
+                                children: <AddOperativeModal roster={roster} onClose={handleAddOperative} />
+                            });
+                        }
                     },
                     {
                         icon: <IconEdit />,
                         text: "Edit Details",
-                        onClick: () => {}
+                        onClick: () => { }
                     },
                     {
                         icon: <IconPlayCard />,
@@ -42,12 +62,12 @@ export default function Roster() {
                     {
                         icon: <IconPrinter />,
                         text: "Print",
-                        onClick: () => {}
+                        onClick: () => { }
                     },
                     {
                         icon: <IconTrash />,
                         text: "Delete",
-                        onClick: () => {}
+                        onClick: () => { }
                     },
                 ] : [])
             ]

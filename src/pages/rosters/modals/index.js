@@ -83,7 +83,7 @@ export function AddRosterModal(props) {
                         {...form.getInputProps('team')}
                     />
                     <Group justify="flex-end">
-                        <Button variant="default" onClick={() => modals.closeAll()}>Cancel</Button>
+                        <Button variant="default" onClick={() => modals.close("create-roster")}>Cancel</Button>
                         <Button type="submit">Create</Button>
                     </Group>
                 </Stack>
