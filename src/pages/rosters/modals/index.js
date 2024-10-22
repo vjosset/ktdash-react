@@ -34,7 +34,7 @@ export function AddRosterModal(props) {
     }));
 
     const teamOptions = factions?.[form?.getValues()?.faction]?.killteams?.map((team, index) => ({
-        label: team.killteamname,
+        label: `${team.killteamname} (${team.edition})`,
         value: index.toString()
     }));
 
