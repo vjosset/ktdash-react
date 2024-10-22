@@ -43,7 +43,7 @@ function App() {
             <AppShell.Header>
               <Group h="100%" px="md" gap={5} align="center" justify="space-between" style={{ flex: 1 }} wrap="nowrap">
                 <Group justify="center" gap={5}>
-                  <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="md" />
+                  <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
                   <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                     <Group gap={5}>
                       <Image h={40}
