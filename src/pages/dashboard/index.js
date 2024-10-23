@@ -104,7 +104,7 @@ export default function Dashboard() {
                     <Tabs.Panel value="operatives">
                         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
                             {roster?.operatives?.map((operative) => (
-                                <OperativeCard operative={operative} />
+                                <OperativeCard woundTracker operative={operative} />
                             ))}
                         </SimpleGrid>
                     </Tabs.Panel>

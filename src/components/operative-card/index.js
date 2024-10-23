@@ -1,4 +1,4 @@
-import { ActionIcon, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
+import { ActionIcon, Button, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
@@ -7,15 +7,26 @@ import parseWeaponRules from "./parser";
 import React from "react";
 import { DEFAULT_SETTINGS } from "../../pages/settings";
 import { useLocalStorage } from "@mantine/hooks";
+import { UpdateWoundsModal } from "./modals";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible, editable, onDelete = () => { } } = props;
+    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {
         return <></>;
     }
+    const showUpdateWounds = () => modals.open({
+        size: "auto",
+        withCloseButton: false,
+        centered: true,
+        modalId: 'update-wounds',
+        title: <Title px="md" order={3}>Update Wounds</Title>,
+        children: (
+            <UpdateWoundsModal operative={operative} onClose={(wounds) => onUpdateWounds(wounds)} />
+        ),
+    });
     const showSpecialRules = (weaponName, weapon, profile) => modals.open({
         size: "lg",
         title: <Title order={3}>{weaponName}</Title>,
@@ -121,7 +132,12 @@ export default function OperativeCard(props) {
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
                                     <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
-                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
+                                    <Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>WOUND</Text>
+                                        {woundTracker ? <Button color="white" variant="subtle" p={5} onClick={showUpdateWounds}>
+                                            <Group gap={2}><IconDroplet size={20} />{woundTracker ? `${operative.curW}/${operative.W}` : operative.W}</Group>
+                                        </Button> : <Group gap={2}><IconDroplet size={20} />{operative.W}</Group>}
+                                    </Stack>
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
