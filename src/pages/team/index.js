@@ -1,10 +1,11 @@
 import { useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
-import { Box, Button, Card, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
-import { convertShapes } from "../../utils/shapes";
+import { Box, Button, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import { modals } from '@mantine/modals';
 import { groupBy } from "lodash";
+import PloyCards from "../../components/ploy-cards";
+import EquipmentCards from "../../components/equipment-cards";
 
 export default function Faction() {
     const [, params] = useRoute("/fa/:factionId/kt/:killteamId");
@@ -56,7 +57,6 @@ export default function Faction() {
                             Narrative
                         </Tabs.Tab>
                     </Tabs.List>
-
                     <Tabs.Panel value="operatives">
                         <Box my="md">
                             {killteam?.fireteams?.map((fireteam) => (
@@ -71,73 +71,14 @@ export default function Faction() {
                             ))}
                         </Box>
                     </Tabs.Panel>
-
                     <Tabs.Panel value="ploys">
-                        <Stack my="md">
-                            <Title order={2}>Strategic Ploys</Title>
-                            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                                {killteam?.ploys?.strat?.map((ploy) => (
-                                    <Card>
-                                        <Title order={3}>{ploy.ployname}</Title>
-                                        <div dangerouslySetInnerHTML={{ __html: `${ploy.description}` }} />
-                                    </Card>
-                                ))}
-                            </SimpleGrid>
-
-                            <Title order={2}>Firefight Ploys</Title>
-                            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                                {killteam?.ploys?.tac?.map((ploy) => (
-                                    <Card>
-                                        <Title order={3}>{ploy.ployname}</Title>
-                                        <div dangerouslySetInnerHTML={{ __html: `${ploy.description}` }} />
-                                    </Card>
-                                ))}
-                            </SimpleGrid>
-                        </Stack>
+                        <PloyCards killteam={killteam} />
                     </Tabs.Panel>
                     <Tabs.Panel value="equipment">
-                        <Stack my="md">
-                            {Object.keys(groupedEquipment)?.map((key) => {
-                                const equipment = groupedEquipment[key];
-                                return (
-                                    <>
-                                        <Title order={2}>{key}</Title>
-                                        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                                            {equipment.map((equip) => (
-                                                <Card>
-                                                    <Stack>
-                                                        <Title order={3}>{equip.eqname}</Title>
-                                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
-                                                    </Stack>
-                                                </Card>
-                                            ))}
-                                        </SimpleGrid>
-                                    </>
-                                )
-                            })}
-                        </Stack>
+                        <EquipmentCards equipment={groupedEquipment} />
                     </Tabs.Panel>
                     <Tabs.Panel value="campaign">
-                        <Stack my="md">
-                            {Object.keys(narrativeEquipment)?.map((key) => {
-                                const equipment = narrativeEquipment[key];
-                                return (
-                                    <>
-                                        <Title order={2}>{key}</Title>
-                                        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                                            {equipment.map((equip) => (
-                                                <Card>
-                                                    <Stack>
-                                                        <Title order={3}>{equip.eqname}</Title>
-                                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
-                                                    </Stack>
-                                                </Card>
-                                            ))}
-                                        </SimpleGrid>
-                                    </>
-                                )
-                            })}
-                        </Stack>
+                        <EquipmentCards equipment={narrativeEquipment} />
                     </Tabs.Panel>
                 </Tabs>
             </Stack>

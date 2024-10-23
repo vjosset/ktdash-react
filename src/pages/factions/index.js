@@ -8,8 +8,8 @@ export default function Factions() {
     const cards = factions?.map((faction) => (
         <Card key={faction.factionid} p="md" radius="md" component="a" className={classes.card} href={`/fa/${faction.factionid}`}>
             <Stack>
+                <Title order={2} className={classes.title}>{faction.factionname}</Title>
                 <Image radius="md" src={`/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
-                <Title className={classes.title} mt={5}>{faction.factionname}</Title>
                 <Text>
                     <div dangerouslySetInnerHTML={{ __html: `${faction.description}` }} />
                 </Text>
