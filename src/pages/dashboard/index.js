@@ -74,15 +74,15 @@ export default function Dashboard() {
                     <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>CP</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.CP}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.CP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
                         </Stack>
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>TURN</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.TP}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.TP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
                         </Stack>
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>VP</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.VP}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.VP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
                         </Stack>
                     </SimpleGrid>
                 </Card>

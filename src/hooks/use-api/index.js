@@ -4,13 +4,13 @@ import React from "react";
 export const API_PATH = "https://ktdash.app/api";
 
 export function useAPI() {
-    const request = React.useCallback((endpoint, content) => {
+    const request = (endpoint, content) => {
         return fetch(`${API_PATH}${endpoint}`, {
             credentials: "include",
             method: "GET",
             ...content
         }).then(response => response.json()).catch(e => console.log(e));
-    }, []);
+    }
     return { request }
 }
 
@@ -32,6 +32,6 @@ export function useRequest(endpoint, content, fetchCondition) {
             setIsFetching(false);
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ endpoint ]);
+    }, [endpoint]);
     return { data, error, isFetching, setData }
 }

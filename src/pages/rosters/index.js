@@ -36,11 +36,13 @@ export default function Rosters() {
     const handleDeleteRoster = (rosterid) => {
         api.request(`/roster.php?rid=${rosterid}`, {
             method: "DELETE"
-        }).then(() => {
-            setUser({
-                ...user,
-                rosters: rosters?.filter((roster) => roster.rosterid !== rosterid)
-            })
+        }).then((data) => {
+            if (data?.success) {
+                setUser({
+                    ...user,
+                    rosters: rosters?.filter((roster) => roster.rosterid !== rosterid)
+                })
+            }
         })
     }
 

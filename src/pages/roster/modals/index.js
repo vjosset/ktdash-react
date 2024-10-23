@@ -1,10 +1,82 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox } from '@mantine/core';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea } from '@mantine/core';
 import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { flatten } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import useAuth from '../../../hooks/use-auth';
+import { useForm } from '@mantine/form';
+
+export function UpdateRosterModal(props) {
+    const { onClose, roster } = props;
+    const { user } = useAuth();
+    const form = useForm({
+        mode: 'controlled',
+        initialValues: {
+            rostername: roster.rostername,
+            notes: roster.notes,
+            portraitcopyok: roster.portraitcopyok ? true : false,
+        },
+        validate: {
+            rostername: (value) => (!value ? 'Roster must have a name' : null)
+        },
+    });
+
+    const handleUpdateRoster = form.onSubmit((values) => {
+        const newRoster = {
+            "userid": user.userid,
+            "rosterid": roster.rosterid,
+            "rostername": values.rostername,
+            "factionid": roster.factionid,
+            "killteamid": roster.killteamid,
+            "seq": 1,
+            "notes": values.notes,
+            "CP": roster.CP,
+            "TP": roster.TP,
+            "VP": roster.VP,
+            "RP": roster.RP,
+            "ployids": roster.ployids,
+            "portraitcopyok": values.portraitcopyok ? 1 : 0,
+            "keyword": roster.keyword
+        };
+        onClose(newRoster);
+        modals.close("update-details");
+    });
+
+    return (
+        <>
+            <form
+                onSubmit={handleUpdateRoster}
+            >
+                <Stack>
+                    <TextInput
+                        label="Roster Name"
+                        placeholder="Roster Name"
+                        key={form.key('rostername')}
+                        {...form.getInputProps('rostername')}
+                    />
+                    <Textarea
+                        label="Notes"
+                        placeholder="Notes"
+                        key={form.key('notes')}
+                        {...form.getInputProps('notes')}
+                    />
+                    <Checkbox
+                        clearable
+                        label="Copy portraits when imported by other users"
+                        key={form.key('portraitcopyok')}
+                        {...form.getInputProps('portraitcopyok', { type: 'checkbox' })}
+                    />
+                    <Group justify="flex-end">
+                        <Button variant="default" onClick={() => modals.close("update-details")}>Cancel</Button>
+                        <Button type="submit">Save</Button>
+                    </Group>
+                </Stack>
+            </form>
+        </>
+    );
+}
 
 const Weapon = (props) => {
     const { weapon, checked, onCheck = () => { } } = props;

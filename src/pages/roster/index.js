@@ -7,7 +7,7 @@ import { IconCards, IconEdit, IconPlus, IconPrinter, IconTrash } from "@tabler/i
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
-import { AddOperativeModal } from "./modals";
+import { AddOperativeModal, UpdateRosterModal } from "./modals";
 import { modals } from "@mantine/modals";
 
 export default function Roster() {
@@ -19,7 +19,17 @@ export default function Roster() {
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, navigate] = useLocation();
     const canEdit = userData?.username === roster?.username;
-    const handleAddOperative = (operative) => {
+    const handleUpdateRoster = (roster) => {
+        api.request("/roster.php", {
+            method: "POST",
+            body: JSON.stringify(roster)
+        }).then((data) => {
+            if (data?.rosterid) {
+                setRoster(data);
+            }
+        })
+    }
+    const handleAddOperative = React.useCallback((operative) => {
         const newOperative = {
             "userid": userData.userid,
             "rosterid": roster.rosterid,
@@ -43,15 +53,18 @@ export default function Roster() {
                 });
             }
         })
-    }
-    const handleDeleteRoster = (rosteropid) => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleDeleteOperative = (rosteropid) => {
         api.request(`/rosteroperative.php?roid=${rosteropid}`, {
             method: "DELETE"
-        }).then(() => {
-            setRoster({
-                ...roster,
-                operatives: roster?.operatives?.filter((op) => op.rosteropid !== rosteropid)
-            });
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: [...roster?.operatives?.filter((op) => op.rosteropid !== rosteropid)]
+                });
+            }
         })
     }
     const handleConfirmDeleteOperative = (operative) => {
@@ -63,7 +76,29 @@ export default function Roster() {
                 </Text>
             ),
             labels: { confirm: 'Confirm', cancel: 'Cancel' },
-            onConfirm: () => handleDeleteRoster(operative.rosteropid),
+            onConfirm: () => handleDeleteOperative(operative.rosteropid),
+        });
+    };
+    const handleDeleteRoster = () => {
+        api.request(`/roster.php?rid=${roster.rosterid}`, {
+            method: "DELETE"
+        }).then((data) => {
+            if (data?.success) {
+                navigate(`/u/${userData.username}`)
+            }
+        })
+    }
+
+    const handleConfirmDeleteRoster = () => {
+        modals.openConfirmModal({
+            title: 'Confirm Delete',
+            children: (
+                <Text size="sm">
+                    Are you sure you want to delete {roster.rostername}?
+                </Text>
+            ),
+            labels: { confirm: 'Confirm', cancel: 'Cancel' },
+            onConfirm: () => handleDeleteRoster(),
         });
     };
     React.useEffect(() => {
@@ -86,7 +121,14 @@ export default function Roster() {
                     {
                         icon: <IconEdit />,
                         text: "Edit Details",
-                        onClick: () => { }
+                        onClick: () => {
+                            modals.open({
+                                modalId: "update-details",
+                                size: "lg",
+                                title: <Title order={2}>Update Details</Title>,
+                                children: <UpdateRosterModal roster={roster} onClose={handleUpdateRoster} />
+                            });
+                        }
                     },
                     {
                         icon: <IconCards />,
@@ -104,7 +146,7 @@ export default function Roster() {
                     {
                         icon: <IconTrash />,
                         text: "Delete",
-                        onClick: () => { }
+                        onClick: () => handleConfirmDeleteRoster()
                     },
                 ] : [])
             ]
@@ -116,7 +158,7 @@ export default function Roster() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit]);
+    }, [canEdit, handleAddOperative]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }

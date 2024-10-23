@@ -48,7 +48,7 @@ export function NavbarSimple(props) {
                             <span>Install</span>
                         </Link>
                     )}
-                    callback={(data) => console.log(data)}
+                    callback={() => {}}
                 />
             </div>
 
