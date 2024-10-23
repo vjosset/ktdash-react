@@ -1,6 +1,6 @@
-import { Card, Collapse, Group, Image, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
+import { ActionIcon, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from "@tabler/icons-react";
+import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
@@ -9,7 +9,7 @@ import { DEFAULT_SETTINGS } from "../../pages/settings";
 import { useLocalStorage } from "@mantine/hooks";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible } = props;
+    const { operative, collapsible, editable, onDelete = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
@@ -82,11 +82,27 @@ export default function OperativeCard(props) {
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
                     <Group justify="space-between" wrap="nowrap">
                         <Stack gap={5}>
-                            <Title textWrap="pretty" order={3}>{operative.opname}</Title>
-                            <Text size="sm">{operative.optype}</Text>
+                            <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype}</Title>
+                            <Text size="sm">{settings.opnamefirst === "y" ? operative.optype : operative.opname}</Text>
                         </Stack>
                         {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
-                        {!!props?.onEdit && <IconDotsVertical style={{ cursor: 'pointer' }} />}
+                        <Menu withinPortal position="bottom-end" shadow="sm">
+                            <Menu.Target>
+                                <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
+                                    <IconDotsVertical />
+                                </ActionIcon>
+                            </Menu.Target>
+                            <Menu.Dropdown>
+                                {!!editable && <>
+                                    <Menu.Item
+                                        onClick={() => onDelete(operative)}
+                                        leftSection={<IconTrash />}
+                                        color="red"
+                                    >
+                                        Delete
+                                    </Menu.Item></>}
+                            </Menu.Dropdown>
+                        </Menu>
                     </Group>
                 </Stack>
                 <Collapse in={opened}>

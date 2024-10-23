@@ -1,5 +1,5 @@
 import { Link, useLocation, useRoute } from "wouter";
-import { API_PATH, useRequest } from "../../hooks/use-api";
+import { API_PATH, useAPI, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
@@ -12,23 +12,60 @@ import { modals } from "@mantine/modals";
 
 export default function Roster() {
     const { user: userData } = useAuth();
+    const api = useAPI();
     const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/r/:rosterId");
-    const { data: roster, isFetching: isFetchinigTeam } = useRequest(`/roster.php?rid=${params?.rosterId}&loadrosterdetail=1`);
+    const { data: roster, setData: setRoster, isFetching: isFetchinigTeam } = useRequest(`/roster.php?rid=${params?.rosterId}&loadrosterdetail=1`);
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, navigate] = useLocation();
     const canEdit = userData?.username === roster?.username;
     const handleAddOperative = (operative) => {
-        console.log(operative);
-        // api.request("/roster.php", {
-        //     method: "POST",
-        //     body: JSON.stringify(roster)
-        // }).then((data) => {
-        //     if (data?.rosterid) {
-        //         navigate(`/r/${data?.rosterid}`)
-        //     }
-        // })
+        const newOperative = {
+            "userid": userData.userid,
+            "rosterid": roster.rosterid,
+            "factionid": operative.factionid,
+            "killteamid": operative.killteamid,
+            "fireteamid": operative.fireteamid,
+            "opid": operative.opid,
+            "opname": operative.opname,
+            "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
+            "eqids": "",
+            "notes": ""
+        }
+        api.request("/rosteroperative.php", {
+            method: "POST",
+            body: JSON.stringify(newOperative)
+        }).then((data) => {
+            if (data?.rosteropid) {
+                setRoster({
+                    ...roster,
+                    operatives: [...roster?.operatives, data]
+                });
+            }
+        })
     }
+    const handleDeleteRoster = (rosteropid) => {
+        api.request(`/rosteroperative.php?roid=${rosteropid}`, {
+            method: "DELETE"
+        }).then(() => {
+            setRoster({
+                ...roster,
+                operatives: roster?.operatives?.filter((op) => op.rosteropid !== rosteropid)
+            });
+        })
+    }
+    const handleConfirmDeleteOperative = (operative) => {
+        modals.openConfirmModal({
+            title: 'Confirm Delete',
+            children: (
+                <Text size="sm">
+                    Are you sure you want to delete {operative.opname}?
+                </Text>
+            ),
+            labels: { confirm: 'Confirm', cancel: 'Cancel' },
+            onConfirm: () => handleDeleteRoster(operative.rosteropid),
+        });
+    };
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -80,9 +117,6 @@ export default function Roster() {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [canEdit]);
-    const handleEditOperative = () => {
-        console.log("Editing operative");
-    };
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
@@ -112,7 +146,7 @@ export default function Roster() {
                 </SimpleGrid>
                 <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                     {roster?.operatives?.map((operative) => (
-                        <OperativeCard onEdit={canEdit ? handleEditOperative : undefined} operative={operative} />
+                        <OperativeCard editable={canEdit} operative={operative} onDelete={handleConfirmDeleteOperative} />
                     ))}
                 </SimpleGrid>
             </Stack>

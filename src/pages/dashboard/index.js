@@ -71,7 +71,7 @@ export default function Dashboard() {
         <Container py="md" px="md" fluid>
             <Stack>
                 <Card>
-                    <SimpleGrid cols={{ base: 3 }} spacing="sm">
+                    <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>CP</Title>
                             <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.CP}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>

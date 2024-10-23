@@ -11,7 +11,7 @@ export default function Factions() {
                 <Title order={2} className={classes.title}>{faction.factionname}</Title>
                 <Image radius="md" src={`/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
                 <Text>
-                    <div dangerouslySetInnerHTML={{ __html: `${faction.description}` }} />
+                    <div dangerouslySetInnerHTML={{ __html: `${faction.description.split('<br/>')[0]}` }} />
                 </Text>
             </Stack>
         </Card>

@@ -14,8 +14,8 @@ export default function Home() {
         <Stack>
             <div className={classes.wrapper}>
                 <div className={classes.inner}>
-                    <Title className={classes.title}>
-                        KTDash
+                    <Title mb="md" className={classes.title}>
+                        KTDASH
                     </Title>
 
                     <Container className={classes.description} size={640}>
