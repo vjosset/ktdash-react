@@ -86,7 +86,7 @@ export default function OperativeCard(props) {
                             <Text size="sm">{settings.opnamefirst === "y" ? operative.optype : operative.opname}</Text>
                         </Stack>
                         {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
-                        <Menu withinPortal position="bottom-end" shadow="sm">
+                        {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
                             <Menu.Target>
                                 <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
                                     <IconDotsVertical />
@@ -102,7 +102,7 @@ export default function OperativeCard(props) {
                                         Delete
                                     </Menu.Item></>}
                             </Menu.Dropdown>
-                        </Menu>
+                        </Menu>}
                     </Group>
                 </Stack>
                 <Collapse in={opened}>
