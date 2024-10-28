@@ -2,7 +2,7 @@ import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Check
 import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
-import { flatten } from 'lodash';
+import { flatten, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
@@ -91,11 +91,11 @@ const Weapon = (props) => {
                         />
                     </Table.Td>
                     <Table.Td>
-                        <Group wrap="nowrap" gap="sm">
+                        <span>
                             {weapon.weptype === "M" ?
                                 <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                            {weapon.wepname}
-                        </Group>
+                            <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
+                        </span>
                     </Table.Td>
                 </Table.Tr>}
                 {weapon.profiles.map((profile) => (
@@ -123,15 +123,15 @@ const Weapon = (props) => {
                     />
                 </Table.Td>
                 <Table.Td>
-                    <Group wrap="nowrap" gap="sm">
+                    <span>
                         {weapon.weptype === "M" ?
                             <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                        <span>
+                        <span style={{ marginLeft: '5px'}}>
                             {weapon.wepname} <span role="button" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                 {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
                             </span>
                         </span>
-                    </Group>
+                    </span>
                 </Table.Td>
                 <Table.Td>{weapon.profiles[0].A}</Table.Td>
                 <Table.Td>{weapon.profiles[0].BS}</Table.Td>
@@ -141,15 +141,16 @@ const Weapon = (props) => {
     )
 }
 
-export function AddOperativeModal(props) {
-    const { onClose, roster } = props;
-    const [operativeData, setOperativeData] = React.useState(null);
-    const [operativeId, setOperativeId] = React.useState(null);
+export function OperativeModal(props) {
+    const { onClose, roster, operative: existingOperative } = props;
+    const modalId = existingOperative ? 'edit-operative' : 'add-operative';
+    const [operativeData, setOperativeData] = React.useState(existingOperative);
+    const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
     const { data: killteam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
-    const operatives = flatten(killteam?.fireteams.map((fireteam) => fireteam.operatives));
-    const operativeOptions = operatives?.map((operative, index) => ({
+    const operatives = keyBy(flatten(killteam?.fireteams.map((fireteam) => fireteam.operatives)), 'opid');
+    const operativeOptions = Object.values(operatives || {})?.map((operative, index) => ({
         label: operative.opname,
-        value: index.toString()
+        value: operative.opid
     }));
 
     // Unmodified original operative data
@@ -159,20 +160,20 @@ export function AddOperativeModal(props) {
         return !!operativeData && !!operativeData?.opname;
     }
 
-    const handleAddOperative = ((e) => {
+    const handleConfirmOperative = ((e) => {
         e.preventDefault();
         onClose(operativeData);
-        modals.close("add-operative")
+        modals.close(modalId)
     });
 
     return (
         <>
             <form
                 style={{ overflow: 'auto' }}
-                onSubmit={handleAddOperative}
+                onSubmit={handleConfirmOperative}
             >
                 <Stack>
-                    <Select
+                    {!existingOperative && <Select
                         label="Select Operative"
                         placeholder="Select Operative"
                         data={operativeOptions}
@@ -184,7 +185,7 @@ export function AddOperativeModal(props) {
                                 weapons: []
                             });
                         }}
-                    />
+                    />}
                     <TextInput
                         label="Operative Name"
                         placeholder="Operative Name"
@@ -204,7 +205,7 @@ export function AddOperativeModal(props) {
                         <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
                         <Stack justify="center" align="center" gap="xs"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
                     </SimpleGrid>}
-                    {!!operative && <Table horizontalSpacing="xs">
+                    {!!operative && <Table horizontalSpacing="xs" style={{ fontSize: '14px' }}>
                         <Table.Thead>
                             <Table.Tr>
                                 <Table.Th />
@@ -237,8 +238,8 @@ export function AddOperativeModal(props) {
                         </Table.Tbody>
                     </Table>}
                     <Group justify="flex-end">
-                        <Button variant="default" onClick={() => modals.close("add-operative")}>Cancel</Button>
-                        <Button type="submit" disabled={!validateSelection()}>Add</Button>
+                        <Button variant="default" onClick={() => modals.close(modalId)}>Cancel</Button>
+                        <Button type="submit" disabled={!validateSelection()}>{existingOperative ? 'Update' : 'Add'}</Button>
                     </Group>
                 </Stack>
             </form>

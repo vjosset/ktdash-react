@@ -7,7 +7,7 @@ import { IconCards, IconEdit, IconPlus, IconPrinter, IconTrash } from "@tabler/i
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
-import { AddOperativeModal, UpdateRosterModal } from "./modals";
+import { OperativeModal, UpdateRosterModal } from "./modals";
 import { modals } from "@mantine/modals";
 
 export default function Roster() {
@@ -55,6 +55,41 @@ export default function Roster() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleEditOperative = React.useCallback((operative) => {
+        const updatedOperative = {
+            "rosteropid": operative.rosteropid,
+            "userid": userData.userid,
+            "rosterid": roster.rosterid,
+            "factionid": operative.factionid,
+            "killteamid": operative.killteamid,
+            "fireteamid": operative.fireteamid,
+            "opid": operative.opid,
+            "opname": operative.opname,
+            "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
+            "eqids": "",
+            "notes": ""
+        }
+        api.request("/rosteroperative.php", {
+            method: "POST",
+            body: JSON.stringify(updatedOperative)
+        }).then((data) => {
+            if (data?.rosteropid) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === data.rosteropid ? data : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleShowEditOperative = (operative) => {
+        modals.open({
+            modalId: "edit-operative",
+            size: "lg",
+            title: <Title order={2}>Add Operative</Title>,
+            children: <OperativeModal roster={roster} operative={operative} onClose={handleEditOperative} />
+        });
+    };
     const handleDeleteOperative = (rosteropid) => {
         api.request(`/rosteroperative.php?roid=${rosteropid}`, {
             method: "DELETE"
@@ -114,7 +149,7 @@ export default function Roster() {
                                 modalId: "add-operative",
                                 size: "lg",
                                 title: <Title order={2}>Add Operative</Title>,
-                                children: <AddOperativeModal roster={roster} onClose={handleAddOperative} />
+                                children: <OperativeModal roster={roster} onClose={handleAddOperative} />
                             });
                         }
                     },
@@ -188,7 +223,7 @@ export default function Roster() {
                 </SimpleGrid>
                 <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                     {roster?.operatives?.map((operative) => (
-                        <OperativeCard editable={canEdit} operative={operative} onDelete={handleConfirmDeleteOperative} />
+                        <OperativeCard editable={canEdit} operative={operative} onEdit={handleShowEditOperative} onDelete={handleConfirmDeleteOperative} />
                     ))}
                 </SimpleGrid>
             </Stack>

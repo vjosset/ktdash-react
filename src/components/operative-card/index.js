@@ -1,6 +1,6 @@
 import { ActionIcon, Button, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
+import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
@@ -10,7 +10,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import { UpdateWoundsModal } from "./modals";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { } } = props;
+    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => {} } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
@@ -45,11 +45,11 @@ export default function OperativeCard(props) {
                 <>
                     {weapon.profiles.length > 1 && <Table.Tr key={weapon.wepid}>
                         <Table.Td>
-                            <Group wrap="nowrap" gap="sm">
+                            <span>
                                 {weapon.weptype === "M" ?
                                     <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                                {weapon.wepname}
-                            </Group>
+                                <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
+                            </span>
                         </Table.Td>
                     </Table.Tr>}
                     {weapon.profiles.map((profile) => (
@@ -70,15 +70,15 @@ export default function OperativeCard(props) {
             <>
                 <Table.Tr key={weapon.wepid}>
                     <Table.Td>
-                        <Group wrap="nowrap" gap="sm">
+                        <span>
                             {weapon.weptype === "M" ?
                                 <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                            <span>
+                            <span style={{ marginLeft: '5px' }}>
                                 {weapon.wepname} <span role="button" onClick={() => showSpecialRules(weapon.wepname, weapon, weapon.profiles[0])} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                     {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
                                 </span>
                             </span>
-                        </Group>
+                        </span>
                     </Table.Td>
                     <Table.Td>{weapon.profiles[0].A}</Table.Td>
                     <Table.Td>{weapon.profiles[0].BS}</Table.Td>
@@ -106,12 +106,19 @@ export default function OperativeCard(props) {
                             <Menu.Dropdown>
                                 {!!editable && <>
                                     <Menu.Item
+                                        onClick={() => onEdit(operative)}
+                                        leftSection={<IconEdit />}
+                                    >
+                                        Edit
+                                    </Menu.Item>
+                                    <Menu.Item
                                         onClick={() => onDelete(operative)}
                                         leftSection={<IconTrash />}
                                         color="red"
                                     >
                                         Delete
-                                    </Menu.Item></>}
+                                    </Menu.Item>
+                                </>}
                             </Menu.Dropdown>
                         </Menu>}
                     </Group>
@@ -142,7 +149,7 @@ export default function OperativeCard(props) {
                             </SimpleGrid>
                         </Stack>
                         <Stack>
-                            <Table horizontalSpacing="xs">
+                            <Table horizontalSpacing="xs" style={{ fontSize: '14px' }}>
                                 <Table.Thead>
                                     <Table.Tr>
                                         <Table.Th>NAME</Table.Th>
