@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useAPI, useRequest } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
@@ -10,6 +10,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import { groupBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
+import TacOpCards from "../../components/tacop-cards";
 
 export default function Dashboard() {
     const { user: userData } = useAuth();
@@ -86,6 +87,12 @@ export default function Dashboard() {
     return (
         <Container py="md" px="md" fluid>
             <Stack>
+                <Group gap={5} align="end">
+                    <Title>
+                        {roster?.rostername}
+                    </Title>
+                    <Link href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname}</Link>
+                </Group>
                 <Card>
                     <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
                         <Stack justify="center" align="center" gap="xs">
@@ -113,6 +120,9 @@ export default function Dashboard() {
                         {killteam.edition === "kt24" && <Tabs.Tab value="equipment">
                             Equipment
                         </Tabs.Tab>}
+                        <Tabs.Tab value="tacops">
+                            TacOps
+                        </Tabs.Tab>
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
                         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
@@ -127,6 +137,9 @@ export default function Dashboard() {
                     {killteam.edition === "kt24" && <Tabs.Panel value="equipment">
                         <EquipmentCards equipment={groupedEquipment} />
                     </Tabs.Panel>}
+                    <Tabs.Panel value="tacops">
+                        <TacOpCards tacops={roster.tacops} />
+                    </Tabs.Panel>
                 </Tabs>
             </Stack>
         </Container>

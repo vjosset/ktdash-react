@@ -6,6 +6,7 @@ import { modals } from '@mantine/modals';
 import { groupBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
+import TacOpCards from "../../components/tacop-cards";
 
 export default function Faction() {
     const [, params] = useRoute("/fa/:factionId/kt/:killteamId");
@@ -52,6 +53,9 @@ export default function Faction() {
                         <Tabs.Tab value="equipment">
                             Equipment
                         </Tabs.Tab>
+                        <Tabs.Tab value="tacops">
+                            TacOps
+                        </Tabs.Tab>
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
                         <Box my="md">
@@ -72,6 +76,9 @@ export default function Faction() {
                     </Tabs.Panel>
                     <Tabs.Panel value="equipment">
                         <EquipmentCards equipment={groupedEquipment} />
+                    </Tabs.Panel>
+                    <Tabs.Panel value="tacops">
+                        <TacOpCards tacops={killteam.tacops} />
                     </Tabs.Panel>
                 </Tabs>
             </Stack>
