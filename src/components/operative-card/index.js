@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title } from "@mantine/core";
+import { ActionIcon, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
@@ -10,7 +10,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import { UpdateWoundsModal } from "./modals";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => {} } = props;
+    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
@@ -126,7 +126,7 @@ export default function OperativeCard(props) {
                 <Collapse in={opened}>
                     <Stack>
                         <Stack>
-                            <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }}>
+                            <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }} spacing="xs">
                                 {settings.display === "card" && <Image
                                     fit="cover"
                                     style={{ objectPosition: "top" }}
@@ -139,12 +139,10 @@ export default function OperativeCard(props) {
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
                                     <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
-                                    <Stack justify="center" align="center" gap="xs">
+                                    <UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
-                                        {woundTracker ? <Button color="white" variant="subtle" p={5} onClick={showUpdateWounds}>
-                                            <Group gap={2}><IconDroplet size={20} />{woundTracker ? `${operative.curW}/${operative.W}` : operative.W}</Group>
-                                        </Button> : <Group gap={2}><IconDroplet size={20} />{operative.W}</Group>}
-                                    </Stack>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{woundTracker ? `${operative.curW}/${operative.W}` : operative.W}</Group>
+                                    </Stack></UnstyledButton>
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>

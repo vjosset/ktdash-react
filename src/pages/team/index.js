@@ -24,9 +24,8 @@ export default function Faction() {
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.killteamcomp}` }} />
             ),
         });
-    const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-') || equip.eqid.includes('RE-');
+    const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(killteam.equipments.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
-    const narrativeEquipment = groupBy(killteam.equipments.filter(isNarrativeEquipment), 'eqcategory');
     return (
         <Container py="md" px="md" fluid>
             <Stack>
@@ -53,9 +52,6 @@ export default function Faction() {
                         <Tabs.Tab value="equipment">
                             Equipment
                         </Tabs.Tab>
-                        <Tabs.Tab value="campaign">
-                            Narrative
-                        </Tabs.Tab>
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
                         <Box my="md">
@@ -76,9 +72,6 @@ export default function Faction() {
                     </Tabs.Panel>
                     <Tabs.Panel value="equipment">
                         <EquipmentCards equipment={groupedEquipment} />
-                    </Tabs.Panel>
-                    <Tabs.Panel value="campaign">
-                        <EquipmentCards equipment={narrativeEquipment} />
                     </Tabs.Panel>
                 </Tabs>
             </Stack>
