@@ -9,7 +9,6 @@ import useAuth from "../../hooks/use-auth";
 export default function Home() {
     const { data: spotlight, isFetching: isFetchingSpotlight } = useRequest("/roster.php?randomspotlight=1");
     const { user } = useAuth();
-
     return (
         <Stack>
             <div className={classes.wrapper}>

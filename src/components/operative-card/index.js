@@ -139,10 +139,13 @@ export default function OperativeCard(props) {
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
                                     {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
                                     <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
-                                    <UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
+                                    {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{woundTracker ? `${operative.curW}/${operative.W}` : operative.W}</Group>
-                                    </Stack></UnstyledButton>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{`${operative.curW}/${operative.W}`}</Group>
+                                    </Stack></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>WOUND</Text>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{operative.W}</Group>
+                                    </Stack>)}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>

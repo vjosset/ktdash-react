@@ -1,5 +1,6 @@
 import { Card, SimpleGrid, Stack, Title } from "@mantine/core";
 import { groupBy } from "lodash";
+import { convertShapes } from "../../utils/shapes";
 
 export default function TacOpCards(props) {
     const { tacops: tacOpData } = props;
@@ -16,7 +17,7 @@ export default function TacOpCards(props) {
                                 <Card>
                                     <Stack>
                                         <Title order={3}>{ploy.title}</Title>
-                                        <div dangerouslySetInnerHTML={{ __html: `${ploy.description}` }} />
+                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ploy.description)}` }} />
                                     </Stack>
                                 </Card>
                             ))}

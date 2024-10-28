@@ -1,6 +1,6 @@
 import { useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
-import { Box, Button, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
+import { Button, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import { modals } from '@mantine/modals';
 import { groupBy } from "lodash";
@@ -58,18 +58,18 @@ export default function Faction() {
                         </Tabs.Tab>
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
-                        <Box my="md">
+                        <Stack my="md">
                             {killteam?.fireteams?.map((fireteam) => (
                                 <>
-                                    {!!(killteam?.fireteams?.length > 1) && <Title order={3}>{fireteam.fireteamname}</Title>}
-                                    <SimpleGrid mt="md" cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
+                                    {!!(killteam?.fireteams?.length > 1) && <Title order={2}>{fireteam.fireteamname}</Title>}
+                                    <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                                         {fireteam?.operatives?.map((operative) => (
                                             <OperativeCard operative={operative} />
                                         ))}
                                     </SimpleGrid>
                                 </>
                             ))}
-                        </Box>
+                        </Stack>
                     </Tabs.Panel>
                     <Tabs.Panel value="ploys">
                         <PloyCards killteam={killteam} />

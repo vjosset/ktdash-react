@@ -1,4 +1,5 @@
 import { Card, SimpleGrid, Stack, Title } from "@mantine/core";
+import { convertShapes } from "../../utils/shapes";
 
 export default function PloyCards(props) {
     const { killteam } = props;
@@ -10,7 +11,7 @@ export default function PloyCards(props) {
                     <Card>
                         <Stack>
                             <Title order={3}>{ploy.ployname}</Title>
-                            <div dangerouslySetInnerHTML={{ __html: `${ploy.description}` }} />
+                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ploy.description)}` }} />
                         </Stack>
                     </Card>
                 ))}
@@ -21,7 +22,7 @@ export default function PloyCards(props) {
                     <Card>
                         <Stack>
                             <Title order={3}>{ploy.ployname}</Title>
-                            <div dangerouslySetInnerHTML={{ __html: `${ploy.description}` }} />
+                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ploy.description)}` }} />
                         </Stack>
                     </Card>
                 ))}
