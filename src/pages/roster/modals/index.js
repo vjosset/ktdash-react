@@ -84,7 +84,7 @@ const Weapon = (props) => {
         return (
             <>
                 {weapon.profiles.length > 1 && <Table.Tr key={weapon.wepid}>
-                    <Table.Td>
+                    <Table.Td style={{ width: '30px' }}>
                         <Checkbox
                             checked={checked}
                             onChange={(event) => onCheck(weapon.wepid, event.currentTarget.checked)}
@@ -105,9 +105,9 @@ const Weapon = (props) => {
                             {profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}
                         </span>
                         </Table.Td>
-                        <Table.Td>{profile.A}</Table.Td>
-                        <Table.Td>{profile.BS}</Table.Td>
-                        <Table.Td>{profile.D}</Table.Td>
+                        <Table.Td style={{ textAlign: 'center' }}>{profile.A}</Table.Td>
+                        <Table.Td style={{ textAlign: 'center' }}>{profile.BS}</Table.Td>
+                        <Table.Td style={{ textAlign: 'center' }}>{profile.D}</Table.Td>
                     </Table.Tr>
                 ))}
             </>
@@ -116,7 +116,7 @@ const Weapon = (props) => {
     return (
         <>
             <Table.Tr key={weapon.wepid}>
-                <Table.Td>
+                <Table.Td style={{ width: '30px'}}>
                     <Checkbox
                         checked={checked}
                         onChange={(event) => onCheck(weapon.wepid, event.currentTarget.checked)}
@@ -133,9 +133,9 @@ const Weapon = (props) => {
                         </span>
                     </span>
                 </Table.Td>
-                <Table.Td>{weapon.profiles[0].A}</Table.Td>
-                <Table.Td>{weapon.profiles[0].BS}</Table.Td>
-                <Table.Td>{weapon.profiles[0].D}</Table.Td>
+                <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].A}</Table.Td>
+                <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].BS}</Table.Td>
+                <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].D}</Table.Td>
             </Table.Tr>
         </>
     )
@@ -223,14 +223,14 @@ export function OperativeModal(props) {
                         <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
                         <Stack justify="center" align="center" gap="xs"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
                     </SimpleGrid>}
-                    {!!operative && <Table horizontalSpacing="xs" style={{ fontSize: '14px' }}>
+                    {!!operative && <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                         <Table.Thead>
                             <Table.Tr>
                                 <Table.Th />
                                 <Table.Th>NAME</Table.Th>
-                                <Table.Th>ATK</Table.Th>
-                                <Table.Th>HIT</Table.Th>
-                                <Table.Th>DMG</Table.Th>
+                                <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
+                                <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
+                                <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
                             </Table.Tr>
                         </Table.Thead>
                         <Table.Tbody>

@@ -58,9 +58,9 @@ export default function OperativeCard(props) {
                                 {profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}
                             </span>
                             </Table.Td>
-                            <Table.Td align="center">{profile.A}</Table.Td>
-                            <Table.Td align="center">{profile.BS}</Table.Td>
-                            <Table.Td align="center">{profile.D}</Table.Td>
+                            <Table.Td style={{ textAlign: 'center' }}>{profile.A}</Table.Td>
+                            <Table.Td style={{ textAlign: 'center' }}>{profile.BS}</Table.Td>
+                            <Table.Td style={{ textAlign: 'center' }}>{profile.D}</Table.Td>
                         </Table.Tr>
                     ))}
                 </>
@@ -80,9 +80,9 @@ export default function OperativeCard(props) {
                             </span>
                         </span>
                     </Table.Td>
-                    <Table.Td align="center">{weapon.profiles[0].A}</Table.Td>
-                    <Table.Td align="center">{weapon.profiles[0].BS}</Table.Td>
-                    <Table.Td align="center">{weapon.profiles[0].D}</Table.Td>
+                    <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].A}</Table.Td>
+                    <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].BS}</Table.Td>
+                    <Table.Td style={{ textAlign: 'center' }}>{weapon.profiles[0].D}</Table.Td>
                 </Table.Tr>
             </>
         )
@@ -150,13 +150,13 @@ export default function OperativeCard(props) {
                             </SimpleGrid>
                         </Stack>
                         <Stack>
-                            <Table horizontalSpacing={2} style={{ fontSize: '14px' }}>
+                            <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                                 <Table.Thead>
                                     <Table.Tr>
                                         <Table.Th>NAME</Table.Th>
-                                        <Table.Th>ATK</Table.Th>
-                                        <Table.Th>HIT</Table.Th>
-                                        <Table.Th>DMG</Table.Th>
+                                        <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
+                                        <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
+                                        <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
                                     </Table.Tr>
                                 </Table.Thead>
                                 <Table.Tbody>
