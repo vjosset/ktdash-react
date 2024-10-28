@@ -93,8 +93,8 @@ export default function OperativeCard(props) {
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
                     <Group justify="space-between" wrap="nowrap">
                         <Stack gap={5}>
-                            <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype}</Title>
-                            <Text size="sm">{settings.opnamefirst === "y" ? operative.optype : operative.opname}</Text>
+                            <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                            <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                         </Stack>
                         {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
