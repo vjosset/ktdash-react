@@ -39,7 +39,7 @@ export default function Roster() {
             "opid": operative.opid,
             "opname": operative.opname,
             "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
-            "eqids": "",
+            "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
             "notes": ""
         }
         api.request("/rosteroperative.php", {
@@ -66,7 +66,7 @@ export default function Roster() {
             "opid": operative.opid,
             "opname": operative.opname,
             "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
-            "eqids": "",
+            "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
             "notes": ""
         }
         api.request("/rosteroperative.php", {
@@ -85,8 +85,8 @@ export default function Roster() {
     const handleShowEditOperative = (operative) => {
         modals.open({
             modalId: "edit-operative",
-            size: "lg",
-            title: <Title order={2}>Add Operative</Title>,
+            size: "xl",
+            title: <Title order={2}>Edit Operative</Title>,
             children: <OperativeModal roster={roster} operative={operative} onClose={handleEditOperative} />
         });
     };
@@ -147,7 +147,7 @@ export default function Roster() {
                         onClick: () => {
                             modals.open({
                                 modalId: "add-operative",
-                                size: "lg",
+                                size: "xl",
                                 title: <Title order={2}>Add Operative</Title>,
                                 children: <OperativeModal roster={roster} onClose={handleAddOperative} />
                             });

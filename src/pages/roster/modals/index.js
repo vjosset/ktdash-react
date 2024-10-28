@@ -1,8 +1,8 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea } from '@mantine/core';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box } from '@mantine/core';
 import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
-import { flatten, keyBy } from 'lodash';
+import { flatten, groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
@@ -126,7 +126,7 @@ const Weapon = (props) => {
                     <span>
                         {weapon.weptype === "M" ?
                             <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                        <span style={{ marginLeft: '5px'}}>
+                        <span style={{ marginLeft: '5px' }}>
                             {weapon.wepname} <span role="button" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                 {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
                             </span>
@@ -146,12 +146,23 @@ export function OperativeModal(props) {
     const modalId = existingOperative ? 'edit-operative' : 'add-operative';
     const [operativeData, setOperativeData] = React.useState(existingOperative);
     const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
-    const { data: killteam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
+    const { data: killteam, isFetching: isFetchingTeam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
     const operatives = keyBy(flatten(killteam?.fireteams.map((fireteam) => fireteam.operatives)), 'opid');
-    const operativeOptions = Object.values(operatives || {})?.map((operative, index) => ({
+    const operativeOptions = Object.values(operatives || {})?.map((operative) => ({
         label: operative.opname,
         value: operative.opid
     }));
+    const hiddenKT24Equipment = new Set(['Equipment', 'Universal Equipment']);
+
+    const filterEquipment = (equipCategory) => {
+        if (killteam?.edition === "kt24") {
+            return !hiddenKT24Equipment.has(equipCategory)
+        } else {
+            return true;
+        }
+    }
+
+    const equipment = groupBy(roster?.killteam?.equipments, 'eqcategory');
 
     // Unmodified original operative data
     const operative = operatives[operativeId];
@@ -166,10 +177,17 @@ export function OperativeModal(props) {
         modals.close(modalId)
     });
 
+    if (isFetchingTeam) {
+        return (<Box h={300}><LoadingOverlay zIndex={1000} visible={isFetchingTeam} /></Box>);
+    }
+
+    if (!killteam) {
+        return;
+    }
+
     return (
         <>
             <form
-                style={{ overflow: 'auto' }}
                 onSubmit={handleConfirmOperative}
             >
                 <Stack>
@@ -237,6 +255,41 @@ export function OperativeModal(props) {
                             ))}
                         </Table.Tbody>
                     </Table>}
+                    {!!equipment && <>
+                        {Object.keys(equipment).filter(filterEquipment).map((eqCategory) => {
+                            const equips = equipment[eqCategory];
+                            return (
+                                <>
+                                    <Text>{eqCategory}</Text>
+                                    <SimpleGrid cols={{ base: 2, sm: 4 }}>
+                                        {
+                                            equips?.map((eq) => (
+                                                <>
+                                                    <Checkbox
+                                                        checked={!!operativeData?.equipments?.filter((equip) => equip.eqid === eq.eqid)?.length}
+                                                        onChange={(event) => {
+                                                            if (event.target.checked) {
+                                                                setOperativeData({
+                                                                    ...operativeData,
+                                                                    equipments: [...(operativeData?.equipments || []), eq]
+                                                                })
+                                                            } else {
+                                                                setOperativeData({
+                                                                    ...operativeData,
+                                                                    equipments: [...operativeData?.equipments?.filter((operativeeq) => operativeeq.eqid !== eq.eqid)]
+                                                                })
+                                                            }
+                                                        }}
+                                                        label={eq.eqname}
+                                                    />
+                                                </>
+                                            ))
+                                        }
+                                    </SimpleGrid>
+                                </>
+                            )
+                        })}
+                    </>}
                     <Group justify="flex-end">
                         <Button variant="default" onClick={() => modals.close(modalId)}>Cancel</Button>
                         <Button type="submit" disabled={!validateSelection()}>{existingOperative ? 'Update' : 'Add'}</Button>

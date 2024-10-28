@@ -58,9 +58,9 @@ export default function OperativeCard(props) {
                                 {profile.SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(profile.SR)})` }} /> : ''}
                             </span>
                             </Table.Td>
-                            <Table.Td>{profile.A}</Table.Td>
-                            <Table.Td>{profile.BS}</Table.Td>
-                            <Table.Td>{profile.D}</Table.Td>
+                            <Table.Td align="center">{profile.A}</Table.Td>
+                            <Table.Td align="center">{profile.BS}</Table.Td>
+                            <Table.Td align="center">{profile.D}</Table.Td>
                         </Table.Tr>
                     ))}
                 </>
@@ -80,9 +80,9 @@ export default function OperativeCard(props) {
                             </span>
                         </span>
                     </Table.Td>
-                    <Table.Td>{weapon.profiles[0].A}</Table.Td>
-                    <Table.Td>{weapon.profiles[0].BS}</Table.Td>
-                    <Table.Td>{weapon.profiles[0].D}</Table.Td>
+                    <Table.Td align="center">{weapon.profiles[0].A}</Table.Td>
+                    <Table.Td align="center">{weapon.profiles[0].BS}</Table.Td>
+                    <Table.Td align="center">{weapon.profiles[0].D}</Table.Td>
                 </Table.Tr>
             </>
         )
@@ -150,7 +150,7 @@ export default function OperativeCard(props) {
                             </SimpleGrid>
                         </Stack>
                         <Stack>
-                            <Table horizontalSpacing="xs" style={{ fontSize: '14px' }}>
+                            <Table horizontalSpacing={2} style={{ fontSize: '14px' }}>
                                 <Table.Thead>
                                     <Table.Tr>
                                         <Table.Th>NAME</Table.Th>
@@ -167,7 +167,7 @@ export default function OperativeCard(props) {
                             </Table>
                         </Stack>
                         <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
-                            {!!operative?.uniqueactions?.length && <Stack>
+                            {!!operative?.uniqueactions?.length && <Stack gap="xs">
                                 <Text fw={700}>Unique Actions</Text>
                                 <Group>
                                     {operative?.uniqueactions?.map((ability) => (
@@ -188,7 +188,7 @@ export default function OperativeCard(props) {
                                     ))}
                                 </Group>
                             </Stack>}
-                            {!!operative?.abilities?.length && <Stack>
+                            {!!operative?.abilities?.length && <Stack gap="xs">
                                 <Text fw={700}>Abilities</Text>
                                 <Group>
                                     {operative?.abilities?.map((ability) => (
@@ -211,6 +211,28 @@ export default function OperativeCard(props) {
                                 </Group>
                             </Stack>}
                         </SimpleGrid>
+                        {!!operative?.equipments?.length && <Stack gap="xs">
+                            <Text fw={700}>Equipment</Text>
+                            <Group>
+                                {operative?.equipments?.map((equip) => (
+                                    <Text
+                                        role="button"
+                                        style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
+                                        onClick={() => {
+                                            modals.open({
+                                                size: "lg",
+                                                title: <Title order={2}>{equip.eqname}</Title>,
+                                                children: (
+                                                    <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
+                                                ),
+                                            });
+                                        }}
+                                    >
+                                        {equip.eqname}
+                                    </Text>
+                                ))}
+                            </Group>
+                        </Stack>}
                         <Stack>
                             <Text size="xs">{operative.keywords}</Text>
                         </Stack>

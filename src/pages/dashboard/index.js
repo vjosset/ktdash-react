@@ -126,7 +126,7 @@ export default function Dashboard() {
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
                         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
-                            {roster?.operatives?.map((operative) => (
+                            {roster?.operatives?.filter((op) => !op.hidden)?.map((operative) => (
                                 <OperativeCard woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
                             ))}
                         </SimpleGrid>
