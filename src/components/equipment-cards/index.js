@@ -15,7 +15,7 @@ export default function EquipmentCards(props) {
                         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
                             {equipment.map((equip) => (
                                 <>
-                                    {selectable ? <Card className={classes.root} p="sm" onClick={() => onSelect(equip, !equip.selected)}>
+                                    {selectable ? <Card className={classes.root} onClick={() => onSelect(equip, !equip.selected)}>
                                         <Stack align="flex-start">
                                             <Group>
                                                 <Checkbox.Indicator checked={!!equip.selected} />
@@ -23,7 +23,7 @@ export default function EquipmentCards(props) {
                                             </Group>
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
                                         </Stack>
-                                    </Card> : <Card className={classes.root} p="sm" onClick={() => onSelect(equip, !equip.selected)} checked={!!equip.selected}>
+                                    </Card> : <Card>
                                         <Stack align="flex-start">
                                             <Title order={3}>{equip.eqname}</Title>
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />

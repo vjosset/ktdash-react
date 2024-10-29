@@ -91,6 +91,25 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleUpdateTacOp = React.useCallback((tacop) => {
+        const newTacOp = {
+            "userid": userData.userid,
+            "rosterid": roster.rosterid,
+            "tacopid": tacop.tacopid,
+            "revealed": tacop.revealed,
+            "VP1": tacop.VP1,
+            "VP2": tacop.VP2
+        };
+        setRoster({
+            ...roster,
+            tacops: [...roster.tacops.map((op) => op.tacopid === tacop.tacopid ? tacop : op)]
+        });
+        api.request(`/rostertacop.php`, {
+            method: !!tacop.active ? "POST" : "DELETE",
+            body: JSON.stringify(newTacOp)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleSelectEquipment = React.useCallback((equipment, checked) => {
         const newEq = {
             "userid": userData.userid,
@@ -247,7 +266,7 @@ export default function Dashboard() {
                         <EquipmentCards selectable onSelect={handleSelectEquipment} equipment={groupedEquipment} />
                     </Tabs.Panel>}
                     <Tabs.Panel value="tacops">
-                        <TacOpCards tacops={roster.tacops} />
+                        <TacOpCards selectable tacops={roster.tacops} onUpdate={handleUpdateTacOp} />
                     </Tabs.Panel>
                 </Tabs>
             </Stack>

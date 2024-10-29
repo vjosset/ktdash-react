@@ -42,10 +42,10 @@
     &[data-active] {
       &,
       &:hover {
-        color: var(--mantine-color-anchor);
+        color: var(--mantine-primary-color-6);
   
         .linkIcon {
-          color: var(--mantine-color-anchor);
+          color: var(--mantine-primary-color-6);
         }
       }
     }

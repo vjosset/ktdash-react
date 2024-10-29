@@ -1,9 +1,9 @@
-import { Card, SimpleGrid, Stack, Title } from "@mantine/core";
+import { Card, Checkbox, Group, SimpleGrid, Stack, Title } from "@mantine/core";
 import { groupBy } from "lodash";
 import { convertShapes } from "../../utils/shapes";
 
 export default function TacOpCards(props) {
-    const { tacops: tacOpData } = props;
+    const { tacops: tacOpData, selectable = false, onUpdate = () => { } } = props;
     const tacops = groupBy(tacOpData, 'archetype');
     return (
         <Stack my="md">
@@ -13,13 +13,26 @@ export default function TacOpCards(props) {
                     <>
                         <Title order={2}>{tacopCategory}</Title>
                         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                            {ops?.map((ploy) => (
-                                <Card>
-                                    <Stack>
-                                        <Title order={3}>{ploy.title}</Title>
-                                        <div dangerouslySetInnerHTML={{ __html: `${convertShapes(ploy.description)}` }} />
-                                    </Stack>
-                                </Card>
+                            {ops?.map((tacop) => (
+                                <>
+                                    {selectable ? <Card style={{ cursor: 'pointer' }} onClick={() => onUpdate({
+                                        ...tacop,
+                                        active: !tacop.active
+                                    })}>
+                                        <Stack align="flex-start">
+                                            <Group>
+                                                <Checkbox.Indicator checked={!!tacop.active} />
+                                                <Title order={4}>{tacop.title}</Title>
+                                            </Group>
+                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(tacop.description)}` }} />
+                                        </Stack>
+                                    </Card> : <Card>
+                                        <Stack align="flex-start">
+                                            <Title order={3}>{tacop.title}</Title>
+                                            <div dangerouslySetInnerHTML={{ __html: `${convertShapes(tacop.description)}` }} />
+                                        </Stack>
+                                    </Card>}
+                                </>
                             ))}
                         </SimpleGrid>
                     </>
