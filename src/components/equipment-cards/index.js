@@ -15,14 +15,15 @@ export default function EquipmentCards(props) {
                         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
                             {equipment.map((equip) => (
                                 <>
-                                    {selectable ? <Checkbox.Card className={classes.root} p="sm" onClick={() => onSelect(equip, !equip.selected)} checked={!!equip.selected}>
+                                    {selectable ? <Card className={classes.root} p="sm" onClick={() => onSelect(equip, !equip.selected)}>
                                         <Stack align="flex-start">
                                             <Group>
-                                                <Checkbox.Indicator /><Title className={classes.label} order={3}>{equip.eqname}</Title>
+                                                <Checkbox.Indicator checked={!!equip.selected} />
+                                                <Title className={classes.label} order={4}>{equip.eqname}</Title>
                                             </Group>
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
                                         </Stack>
-                                    </Checkbox.Card> : <Card>
+                                    </Card> : <Card className={classes.root} p="sm" onClick={() => onSelect(equip, !equip.selected)} checked={!!equip.selected}>
                                         <Stack align="flex-start">
                                             <Title order={3}>{equip.eqname}</Title>
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />

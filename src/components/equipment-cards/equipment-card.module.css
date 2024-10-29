@@ -1,21 +1,22 @@
 .root {
-    position: relative;
-    padding: var(--mantine-spacing-md);
-    transition: border-color 150ms ease;
+  position: relative;
+  padding: var(--mantine-spacing-md);
+  transition: border-color 150ms ease;
+  cursor: pointer;
+  display: flex !important;
+  user-select: none;
 
-    display: flex !important;
-  
-    &[data-checked] {
-      border-color: var(--mantine-primary-color-filled);
+  &[data-checked] {
+    border-color: var(--mantine-primary-color-filled);
+  }
+
+  @mixin hover {
+    @mixin light {
+      background-color: var(--mantine-color-gray-0);
     }
-  
-    @mixin hover {
-      @mixin light {
-        background-color: var(--mantine-color-gray-0);
-      }
-  
-      @mixin dark {
-        background-color: var(--mantine-color-dark-6);
-      }
+
+    @mixin dark {
+      background-color: var(--mantine-color-dark-6);
     }
   }
+}
