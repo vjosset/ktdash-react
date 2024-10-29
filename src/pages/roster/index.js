@@ -9,6 +9,7 @@ import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
 import { OperativeModal, UpdateRosterModal } from "./modals";
 import { modals } from "@mantine/modals";
+import { notifications } from "@mantine/notifications";
 
 export default function Roster() {
     const { user: userData } = useAuth();
@@ -47,6 +48,10 @@ export default function Roster() {
             body: JSON.stringify(newOperative)
         }).then((data) => {
             if (data?.rosteropid) {
+                notifications.show({
+                    title: 'Added',
+                    message: `Successfully added ${operative.opname}.`,
+                  })
                 setRoster({
                     ...roster,
                     operatives: [...roster?.operatives, data]
@@ -74,6 +79,10 @@ export default function Roster() {
             body: JSON.stringify(updatedOperative)
         }).then((data) => {
             if (data?.rosteropid) {
+                notifications.show({
+                    title: 'Updated',
+                    message: `Successfully updated ${operative.opname}.`,
+                  })
                 setRoster({
                     ...roster,
                     operatives: roster.operatives?.map((op) => op.rosteropid === data.rosteropid ? data : op)
@@ -90,14 +99,18 @@ export default function Roster() {
             children: <OperativeModal roster={roster} operative={operative} onClose={handleEditOperative} />
         });
     };
-    const handleDeleteOperative = (rosteropid) => {
-        api.request(`/rosteroperative.php?roid=${rosteropid}`, {
+    const handleDeleteOperative = (operative) => {
+        api.request(`/rosteroperative.php?roid=${operative.rosteropid}`, {
             method: "DELETE"
         }).then((data) => {
             if (data?.success) {
+                notifications.show({
+                    title: 'Deleted',
+                    message: `Successfully deleted ${operative.opname}.`,
+                  })
                 setRoster({
                     ...roster,
-                    operatives: [...roster?.operatives?.filter((op) => op.rosteropid !== rosteropid)]
+                    operatives: [...roster?.operatives?.filter((op) => op.rosteropid !== operative.rosteropid)]
                 });
             }
         })
@@ -111,7 +124,7 @@ export default function Roster() {
                 </Text>
             ),
             labels: { confirm: 'Confirm', cancel: 'Cancel' },
-            onConfirm: () => handleDeleteOperative(operative.rosteropid),
+            onConfirm: () => handleDeleteOperative(operative),
         });
     };
     const handleDeleteRoster = () => {

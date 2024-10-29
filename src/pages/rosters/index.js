@@ -10,6 +10,7 @@ import { modals } from "@mantine/modals";
 import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
 import { useLocalStorage } from "@mantine/hooks";
+import { notifications } from "@mantine/notifications";
 
 export default function Rosters() {
     const api = useAPI();
@@ -29,18 +30,26 @@ export default function Rosters() {
         }).then((data) => {
             if (data?.rosterid) {
                 navigate(`/r/${data?.rosterid}`)
+                notifications.show({
+                    title: 'Created',
+                    message: `Successfully create ${roster.rostername}.`,
+                  })
             }
         })
     }
 
-    const handleDeleteRoster = (rosterid) => {
-        api.request(`/roster.php?rid=${rosterid}`, {
+    const handleDeleteRoster = (roster) => {
+        api.request(`/roster.php?rid=${roster.rosterid}`, {
             method: "DELETE"
         }).then((data) => {
             if (data?.success) {
+                notifications.show({
+                    title: 'Deleted',
+                    message: `Successfully deleted ${roster.rostername}.`,
+                  })
                 setUser({
                     ...user,
-                    rosters: rosters?.filter((roster) => roster.rosterid !== rosterid)
+                    rosters: rosters?.filter((ros) => ros.rosterid !== roster.rosterid)
                 })
             }
         })
@@ -55,7 +64,7 @@ export default function Rosters() {
                 </Text>
             ),
             labels: { confirm: 'Confirm', cancel: 'Cancel' },
-            onConfirm: () => handleDeleteRoster(roster.rosterid),
+            onConfirm: () => handleDeleteRoster(roster),
         });
     };
 
