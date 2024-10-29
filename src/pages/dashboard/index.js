@@ -1,4 +1,4 @@
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { useAPI, useRequest } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
@@ -203,12 +203,6 @@ export default function Dashboard() {
     return (
         <Container py="md" px="md" fluid>
             <Stack>
-                <Group gap={5} align="end">
-                    <Title>
-                        {roster?.rostername}
-                    </Title>
-                    <Link href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname}</Link>
-                </Group>
                 <Card>
                     <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
                         <Stack justify="center" align="center" gap="xs">
