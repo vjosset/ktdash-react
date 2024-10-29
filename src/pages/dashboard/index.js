@@ -22,7 +22,42 @@ export default function Dashboard() {
     const canEdit = userData?.username === roster?.username;
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
-    const groupedEquipment = groupBy(killteam?.equipments?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
+    const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
+    const handleSelectEquipment = React.useCallback((equipment, checked) => {
+        const newEq = {
+            "userid": userData.userid,
+            "rosterid": roster.rosterid,
+            "eqfactionid": equipment.factionid,
+            "eqkillteamid": equipment.killteamid,
+            "eqid": equipment.eqid
+        };
+        if (checked) {
+            api.request(`/rostereq.php`, {
+                method: "POST",
+                body: JSON.stringify(newEq)
+            }).then((data) => {
+                if (data?.eqid) {
+                    setRoster({
+                        ...roster,
+                        rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 1 }) : eq)]
+                    });
+                }
+            })
+        } else {
+            api.request(`/rostereq.php`, {
+                method: "DELETE",
+                body: JSON.stringify(newEq)
+            }).then((data) => {
+                if (data?.success) {
+                    setRoster({
+                        ...roster,
+                        rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 0 }) : eq)]
+                    });
+                }
+            })
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleUpdateOperativeWounds = React.useCallback((operative, wounds) => {
         api.request(`/rosteropw.php?roid=${operative.rosteropid}&curW=${wounds}`, {
             method: "POST"
@@ -135,7 +170,7 @@ export default function Dashboard() {
                         <PloyCards killteam={killteam} />
                     </Tabs.Panel>
                     {killteam.edition === "kt24" && <Tabs.Panel value="equipment">
-                        <EquipmentCards equipment={groupedEquipment} />
+                        <EquipmentCards selectable onSelect={handleSelectEquipment} equipment={groupedEquipment} />
                     </Tabs.Panel>}
                     <Tabs.Panel value="tacops">
                         <TacOpCards tacops={roster.tacops} />
