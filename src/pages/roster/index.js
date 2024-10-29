@@ -10,6 +10,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import { OperativeModal, UpdateRosterModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
+import useWindowDimensions from "../../hooks/get-window-dimensions";
 
 export default function Roster() {
     const { user: userData } = useAuth();
@@ -20,6 +21,8 @@ export default function Roster() {
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, navigate] = useLocation();
     const canEdit = userData?.username === roster?.username;
+    const { width } = useWindowDimensions();
+    const isSmallScreen = width <= 600;
     const showTeamComp = () =>
         modals.open({
             size: "lg",
@@ -49,7 +52,7 @@ export default function Roster() {
             "opname": operative.opname,
             "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
             "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
-            "notes": ""
+            "notes": operative.notes
         }
         api.request("/rosteroperative.php", {
             method: "POST",
@@ -80,7 +83,7 @@ export default function Roster() {
             "opname": operative.opname,
             "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
             "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
-            "notes": ""
+            "notes": operative.notes
         }
         api.request("/rosteroperative.php", {
             method: "POST",
@@ -101,6 +104,7 @@ export default function Roster() {
     }, [roster]);
     const handleShowEditOperative = (operative) => {
         modals.open({
+            fullScreen: isSmallScreen,
             modalId: "edit-operative",
             size: "xl",
             title: <Title order={2}>Edit Operative</Title>,
@@ -167,6 +171,7 @@ export default function Roster() {
                         text: "Add Operative",
                         onClick: () => {
                             modals.open({
+                                fullScreen: isSmallScreen,
                                 modalId: "add-operative",
                                 size: "xl",
                                 title: <Title order={2}>Add Operative</Title>,
@@ -230,7 +235,7 @@ export default function Roster() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleAddOperative]);
+    }, [canEdit, isSmallScreen, handleAddOperative]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }

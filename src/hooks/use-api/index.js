@@ -4,13 +4,13 @@ import React from "react";
 export const API_PATH = "https://ktdash.app/api";
 
 export function useAPI() {
-    const request = (endpoint, content) => {
+    const request = React.useCallback((endpoint, content) => {
         return fetch(`${API_PATH}${endpoint}`, {
             credentials: "include",
             method: "GET",
             ...content
         }).then(response => response.json()).catch(e => console.log(e));
-    }
+    }, [])
     return { request }
 }
 

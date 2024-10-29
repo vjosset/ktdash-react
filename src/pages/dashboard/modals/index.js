@@ -41,9 +41,9 @@ function MiniOperativeCard(props) {
 }
 
 export function SelectOperativesModal(props) {
-    const { onClose = () => {}, roster } = props;
+    const { onClose = () => { }, roster } = props;
 
-    const [ operatives, setOperatives ] = React.useState(roster.operatives || []);
+    const [operatives, setOperatives] = React.useState(roster.operatives || []);
 
     const handleUpdateRoster = () => {
         onClose(operatives);
@@ -66,19 +66,18 @@ export function SelectOperativesModal(props) {
                     </Tabs.Tab>
                 </Tabs.List>
                 <Tabs.Panel value="operatives">
-                    <form
-                        onSubmit={handleUpdateRoster}
-                    >
-                        <Stack pt="md">
+                    <Stack pt="md">
+                        <SimpleGrid cols={{ base: 1, sm: 2 }}>
                             {operatives.map((operative) => (
                                 <MiniOperativeCard operative={operative} onChange={handleUpdateOperative} />
+
                             ))}
-                            <Group justify="flex-end">
-                                <Button variant="default" onClick={() => modals.close("select-operatives")}>Cancel</Button>
-                                <Button type="submit">Save</Button>
-                            </Group>
-                        </Stack>
-                    </form>
+                        </SimpleGrid>
+                        <Group justify="flex-end">
+                            <Button variant="default" onClick={() => modals.close("select-operatives")}>Cancel</Button>
+                            <Button type="submit" onClick={() => handleUpdateRoster()}>Save</Button>
+                        </Group>
+                    </Stack>
                 </Tabs.Panel>
                 <Tabs.Panel value="composition">
                     <Box pt="md">

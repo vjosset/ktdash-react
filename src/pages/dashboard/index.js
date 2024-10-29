@@ -7,12 +7,14 @@ import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh } from "@tabl
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
-import { debounce, groupBy } from "lodash";
+import { debounce, groupBy, keyBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
 import TacOpCards from "../../components/tacop-cards";
 import { SelectOperativesModal } from "./modals";
 import { modals } from "@mantine/modals";
+import { notifications } from "@mantine/notifications";
+import useWindowDimensions from "../../hooks/get-window-dimensions";
 
 export default function Dashboard() {
     const { user: userData } = useAuth();
@@ -21,35 +23,45 @@ export default function Dashboard() {
     const [dashboardRosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
     const [, navigate] = useLocation();
+    const { width } = useWindowDimensions();
+    const isSmallScreen = width <= 600;
     const canEdit = userData?.username === roster?.username;
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
     const handleUpdateOperatives = React.useCallback((operatives) => {
-        console.log(operatives);
-        // const updatedOperative = {
-        //     ...operative,
-        //     hidden: checked ? 0 : 1
-        // }
-        // setRoster({
-        //     ...roster,
-        //     operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? updatedOperative : op)
-        // });
-        // api.request(`/rosteroperative.php`, {
-        //     method: "POST",
-        //     body: JSON.stringify(updatedOperative)
-        // })
+        const oldOperatives = keyBy(roster.operatives, 'rosteropid');
+        setRoster({
+            ...roster,
+            operatives
+        });
+        let opCount = 0;
+        operatives.forEach((op) => {
+            // Only send requests for operatives we actually toggled
+            if (oldOperatives[op.rosteropid].hidden !== op.hidden) {
+                opCount += 1;
+                api.request(`/rosteroperative.php`, {
+                    method: "POST",
+                    body: JSON.stringify(op)
+                })
+            }
+        })
+        notifications.show({
+            title: 'Updated Operatives',
+            message: `Successfully updated ${opCount} operatives.`,
+        })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleShowSelectOperatives = React.useCallback(() => {
         modals.open({
+            fullScreen: isSmallScreen,
             modalId: "select-operatives",
             size: "xl",
             title: <Title order={2}>Select Operatives</Title>,
             children: <SelectOperativesModal roster={roster} onClose={handleUpdateOperatives} />
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [roster]);
+    }, [roster, isSmallScreen]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleSaveUpdateRoster = React.useCallback(debounce((newRoster) => {
         api.request(`/roster.php`, {
@@ -214,7 +226,7 @@ export default function Dashboard() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleShowSelectOperatives, handleUpdateOperatives]);
+    }, [canEdit, handleShowSelectOperatives]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
@@ -226,7 +238,7 @@ export default function Dashboard() {
         <Container py="md" px="md" fluid>
             <Stack>
                 <Card>
-                    <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
+                    <SimpleGrid cols={{ base: 3 }} spacing={0} py="sm">
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>CP</Title>
                             <Group gap="xs">
@@ -271,7 +283,7 @@ export default function Dashboard() {
                     <Tabs.Panel value="operatives">
                         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
                             {roster?.operatives?.filter((op) => !op.hidden)?.map((operative) => (
-                                <OperativeCard woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
+                                <OperativeCard collapsible woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
                             ))}
                         </SimpleGrid>
                     </Tabs.Panel>
