@@ -59,6 +59,38 @@ export default function Dashboard() {
         handleSaveUpdateRoster(newRoster);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleSelectPloy = React.useCallback((ploy, checked) => {
+        const newPloys = (checked ? [...(roster.ployids.split(',').filter((id) => !!id)), ploy.ployid] : [...(roster.ployids.split(',').filter((id) => !!id).filter((pl) => pl !== ploy.ployid))]);
+        const newRoster = {
+            "userid": userData.userId,
+            "rosterid": roster.rosterid,
+            "rostername": roster.rostername,
+            "factionid": roster.factionid,
+            "killteamid": roster.killteamid,
+            "seq": roster.seq,
+            "notes": roster.notes,
+            "CP": roster.CP,
+            "TP": roster.TP,
+            "VP": roster.VP,
+            "RP": roster.RP,
+            "ployids": newPloys.join(','),
+            "portraitcopyok": roster.portraitcopyok,
+            "keyword": roster.keyword,
+            "reqpts": roster.reqpts,
+            "stratnotes": roster.stratnotes,
+            "eqnotes": roster.eqnotes,
+            "specopnotes": roster.specopnotes
+        };
+        setRoster({
+            ...roster,
+            ...newRoster
+        });
+        api.request(`/roster.php`, {
+            method: "POST",
+            body: JSON.stringify(newRoster)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleSelectEquipment = React.useCallback((equipment, checked) => {
         const newEq = {
             "userid": userData.userid,
@@ -68,28 +100,22 @@ export default function Dashboard() {
             "eqid": equipment.eqid
         };
         if (checked) {
+            setRoster({
+                ...roster,
+                rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 1 }) : eq)]
+            });
             api.request(`/rostereq.php`, {
                 method: "POST",
                 body: JSON.stringify(newEq)
-            }).then((data) => {
-                if (data?.eqid) {
-                    setRoster({
-                        ...roster,
-                        rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 1 }) : eq)]
-                    });
-                }
             })
         } else {
+            setRoster({
+                ...roster,
+                rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 0 }) : eq)]
+            });
             api.request(`/rostereq.php`, {
                 method: "DELETE",
                 body: JSON.stringify(newEq)
-            }).then((data) => {
-                if (data?.success) {
-                    setRoster({
-                        ...roster,
-                        rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 0 }) : eq)]
-                    });
-                }
             })
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -147,7 +173,7 @@ export default function Dashboard() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleUpdateOperativeWounds, handleSelectEquipment, handleQuickUpdateRoster]);
+    }, [canEdit]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
@@ -215,7 +241,7 @@ export default function Dashboard() {
                         </SimpleGrid>
                     </Tabs.Panel>
                     <Tabs.Panel value="ploys">
-                        <PloyCards killteam={killteam} />
+                        <PloyCards selectable selectedPloys={roster.ployids} onSelect={handleSelectPloy} killteam={killteam} />
                     </Tabs.Panel>
                     {killteam.edition === "kt24" && <Tabs.Panel value="equipment">
                         <EquipmentCards selectable onSelect={handleSelectEquipment} equipment={groupedEquipment} />
