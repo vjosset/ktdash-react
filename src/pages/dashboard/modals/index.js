@@ -10,7 +10,7 @@ function MiniOperativeCard(props) {
     const { operative, onChange = () => { } } = props;
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     return (
-        <Paper withBorder p="sm" style={{ cursor: 'pointer' }} onClick={() => onChange(operative, !!operative.hidden)}>
+        <Paper withBorder p="sm" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={() => onChange(operative, !!operative.hidden)}>
             <Stack gap={5}>
                 <Group>
                     <Checkbox.Indicator checked={!operative.hidden} />

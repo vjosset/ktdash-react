@@ -29,6 +29,55 @@ export default function Dashboard() {
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
+    const handleResetDashboard = React.useCallback(() => {
+        const updatedRoster = {
+            "userid": userData.userid,
+            "rosterid": roster.rosterid,
+            "rostername": roster.rostername,
+            "factionid": roster.factionid,
+            "killteamid": roster.killteamid,
+            "seq": roster.seq,
+            "notes": roster.notes,
+            "CP": 2,
+            "TP": 1,
+            "VP": 2,
+            "RP": 0,
+            "ployids": "",
+            "portraitcopyok": roster.portraitcopyok,
+            "keyword": roster.keyword,
+            "reqpts": roster.reqpts,
+            "stratnotes": roster.stratnotes,
+            "eqnotes": roster.eqnotes,
+            "specopnotes": roster.specopnotes
+        };
+        setRoster({
+            ...roster,
+            ...updatedRoster,
+            operatives: roster.operatives.map((operative) => ({
+                ...operative,
+                curW: operative.W
+            })),
+            ployids: ""
+        });
+        roster.operatives.forEach((op) => {
+            api.request(`/rosteroperative.php`, {
+                method: "POST",
+                body: JSON.stringify({
+                    ...op,
+                    curW: op.W
+                })
+            })
+        })
+        api.request(`/roster.php`, {
+            method: "POST",
+            body: JSON.stringify(updatedRoster)
+        })
+        notifications.show({
+            title: 'Reset Dashboard',
+            message: `Dashboard successfully reset.`,
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleUpdateOperatives = React.useCallback((operatives) => {
         const oldOperatives = keyBy(roster.operatives, 'rosteropid');
         setRoster({
@@ -214,7 +263,7 @@ export default function Dashboard() {
                     {
                         icon: <IconRefresh />,
                         text: "Reset",
-                        onClick: () => { }
+                        onClick: () => handleResetDashboard()
                     }
                 ] : [])
             ]
@@ -226,7 +275,7 @@ export default function Dashboard() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleShowSelectOperatives]);
+    }, [canEdit, handleShowSelectOperatives, handleResetDashboard]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
