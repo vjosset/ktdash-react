@@ -7,7 +7,7 @@ import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh, IconUserShar
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
-import { groupBy } from "lodash";
+import { debounce, groupBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
 import TacOpCards from "../../components/tacop-cards";
@@ -23,6 +23,42 @@ export default function Dashboard() {
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleSaveUpdateRoster = React.useCallback(debounce((newRoster) => {
+        api.request(`/roster.php`, {
+            method: "POST",
+            body: JSON.stringify(newRoster)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, 1000), []);
+    const handleQuickUpdateRoster = React.useCallback((updates) => {
+        const newRoster = {
+            "userid": userData.userId,
+            "rosterid": roster.rosterid,
+            "rostername": roster.rostername,
+            "factionid": roster.factionid,
+            "killteamid": roster.killteamid,
+            "seq": roster.seq,
+            "notes": roster.notes,
+            "CP": updates.CP ?? roster.CP,
+            "TP": updates.TP ?? roster.TP,
+            "VP": updates.VP ?? roster.VP,
+            "RP": updates.RP ?? roster.RP,
+            "ployids": roster.ployids,
+            "portraitcopyok": roster.portraitcopyok,
+            "keyword": roster.keyword,
+            "reqpts": roster.reqpts,
+            "stratnotes": roster.stratnotes,
+            "eqnotes": roster.eqnotes,
+            "specopnotes": roster.specopnotes
+        };
+        setRoster({
+            ...roster,
+            ...updates
+        });
+        handleSaveUpdateRoster(newRoster);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleSelectEquipment = React.useCallback((equipment, checked) => {
         const newEq = {
             "userid": userData.userid,
@@ -111,7 +147,7 @@ export default function Dashboard() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleUpdateOperativeWounds]);
+    }, [canEdit, handleUpdateOperativeWounds, handleSelectEquipment, handleQuickUpdateRoster]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
@@ -132,15 +168,27 @@ export default function Dashboard() {
                     <SimpleGrid cols={{ base: 3 }} spacing="sm" py="sm">
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>CP</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.CP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs">
+                                <ActionIcon onClick={() => roster.CP !== 0 ? handleQuickUpdateRoster({ CP: roster.CP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
+                                {roster.CP.toString()}
+                                <ActionIcon onClick={() => handleQuickUpdateRoster({ CP: roster.CP + 1 })} variant="default"><IconPlus /></ActionIcon>
+                            </Group>
                         </Stack>
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>TURN</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.TP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs">
+                                <ActionIcon onClick={() => roster.TP !== 0 ? handleQuickUpdateRoster({ TP: roster.TP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
+                                {roster.TP.toString()}
+                                <ActionIcon onClick={() => handleQuickUpdateRoster({ TP: roster.TP + 1 })} variant="default"><IconPlus /></ActionIcon>
+                            </Group>
                         </Stack>
                         <Stack justify="center" align="center" gap="xs">
                             <Title order={3}>VP</Title>
-                            <Group gap="xs"><ActionIcon variant="default"><IconMinus /></ActionIcon>{roster.VP.toString()}<ActionIcon variant="default"><IconPlus /></ActionIcon></Group>
+                            <Group gap="xs">
+                                <ActionIcon onClick={() => roster.VP !== 0 ? handleQuickUpdateRoster({ VP: roster.VP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
+                                {roster.VP.toString()}
+                                <ActionIcon onClick={() => handleQuickUpdateRoster({ VP: roster.VP + 1 })} variant="default"><IconPlus /></ActionIcon>
+                            </Group>
                         </Stack>
                     </SimpleGrid>
                 </Card>

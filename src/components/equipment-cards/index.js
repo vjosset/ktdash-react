@@ -5,7 +5,6 @@ import React from "react";
 
 export default function EquipmentCards(props) {
     const { equipment: groupedEquipment, selectable = false, onSelect = () => { } } = props;
-    console.log(groupedEquipment);
     return (
         <Stack my="md">
             {Object.keys(groupedEquipment)?.map((key) => {
