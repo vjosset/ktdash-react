@@ -19,7 +19,7 @@ export default function Faction() {
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
-                <Title order={3}>{killteam.killteamname} (2021)</Title>
+                <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>
         </Card>
@@ -28,7 +28,7 @@ export default function Faction() {
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
-                <Title order={3}>{killteam.killteamname} (2024)</Title>
+                <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>
         </Card>

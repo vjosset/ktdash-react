@@ -55,7 +55,7 @@ export default function Home() {
                                 <Group gap={5}><IconFileImport />{spotlight.importcount.toString()}</Group>
                             </Group>
                             <Group>
-                                <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname}</Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
+                                <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname} <sup>{spotlight.edition}</sup></Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
                             </Group>
                         </Group>
                     </Stack>

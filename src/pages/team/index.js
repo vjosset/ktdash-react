@@ -34,7 +34,7 @@ export default function Faction() {
                     <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Title>
-                            {killteam?.killteamname}
+                            {killteam?.killteamname} <sup>{killteam.edition}</sup>
                         </Title>
                         <Text>
                             <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
