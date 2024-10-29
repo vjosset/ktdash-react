@@ -1,30 +1,53 @@
 import { useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
-import { Button, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
+import { Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import { modals } from '@mantine/modals';
 import { groupBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
 import TacOpCards from "../../components/tacop-cards";
+import { IconListCheck } from "@tabler/icons-react";
+import React from "react";
+import { useAppContext } from "../../hooks/app-context";
 
 export default function Faction() {
+    const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/fa/:factionId/kt/:killteamId");
     const { data: killteam, isFetching: isFetchinigTeam } = useRequest(`/killteam.php?fa=${params?.factionId}&kt=${params?.killteamId}`);
+    const showTeamComp = () =>
+        modals.open({
+            size: "lg",
+            title: 'Team Composition',
+            children: (
+                <div dangerouslySetInnerHTML={{ __html: `${killteam?.killteamcomp}` }} />
+            ),
+        });
+    React.useEffect(() => {
+        setAppState({
+            ...appState,
+            contextActions: [
+                {
+                    icon: <IconListCheck />,
+                    text: "Team Composition",
+                    onClick: () => showTeamComp()
+                }
+            ]
+        });
+        return () => {
+            setAppState({
+                ...appState,
+                contextActions: []
+            });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [killteam]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
     if (!killteam) {
         return;
     }
-    const showTeamComp = () =>
-        modals.open({
-            size: "lg",
-            title: 'Team Composition',
-            children: (
-                <div dangerouslySetInnerHTML={{ __html: `${killteam.killteamcomp}` }} />
-            ),
-        });
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(killteam.equipments.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
     return (
@@ -39,7 +62,6 @@ export default function Faction() {
                         <Text>
                             <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
                         </Text>
-                        <Button onClick={showTeamComp}>Team Composition</Button>
                     </Stack>
                 </SimpleGrid>
                 <Tabs defaultValue="operatives">

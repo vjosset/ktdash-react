@@ -3,7 +3,7 @@ import { API_PATH, useAPI, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconCards, IconCopy, IconEdit, IconPhoto, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
+import { IconCards, IconCopy, IconEdit, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
@@ -20,6 +20,14 @@ export default function Roster() {
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const [, navigate] = useLocation();
     const canEdit = userData?.username === roster?.username;
+    const showTeamComp = () =>
+        modals.open({
+            size: "lg",
+            title: 'Team Composition',
+            children: (
+                <div dangerouslySetInnerHTML={{ __html: `${roster?.killteam?.killteamcomp}` }} />
+            ),
+        });
     const handleUpdateRoster = (roster) => {
         api.request("/roster.php", {
             method: "POST",
@@ -51,7 +59,7 @@ export default function Roster() {
                 notifications.show({
                     title: 'Added',
                     message: `Successfully added ${operative.opname}.`,
-                  })
+                })
                 setRoster({
                     ...roster,
                     operatives: [...roster?.operatives, data]
@@ -82,7 +90,7 @@ export default function Roster() {
                 notifications.show({
                     title: 'Updated',
                     message: `Successfully updated ${operative.opname}.`,
-                  })
+                })
                 setRoster({
                     ...roster,
                     operatives: roster.operatives?.map((op) => op.rosteropid === data.rosteropid ? data : op)
@@ -107,7 +115,7 @@ export default function Roster() {
                 notifications.show({
                     title: 'Deleted',
                     message: `Successfully deleted ${operative.opname}.`,
-                  })
+                })
                 setRoster({
                     ...roster,
                     operatives: [...roster?.operatives?.filter((op) => op.rosteropid !== operative.rosteropid)]
@@ -185,18 +193,23 @@ export default function Roster() {
                             setDashboardrosterId(roster?.rosterid);
                             navigate('/dashboard')
                         }
+                    },
+                    {
+                        icon: <IconListCheck />,
+                        text: "Team Composition",
+                        onClick: () => showTeamComp()
                     }] : []),
-                    {
-                        icon: <IconPhoto />,
-                        text: "Photo Gallery",
-                        onClick: () => {}
-                    },
-                    {
-                        icon: <IconCopy />,
-                        text: "Duplicate",
-                        onClick: () => {}
-                    },
-                    ...(canEdit ? [
+                {
+                    icon: <IconPhoto />,
+                    text: "Photo Gallery",
+                    onClick: () => { }
+                },
+                {
+                    icon: <IconCopy />,
+                    text: "Duplicate",
+                    onClick: () => { }
+                },
+                ...(canEdit ? [
                     {
                         icon: <IconPrinter />,
                         text: "Print",

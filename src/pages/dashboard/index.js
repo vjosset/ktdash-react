@@ -3,7 +3,7 @@ import { useAPI, useRequest } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh, IconUserShare } from "@tabler/icons-react";
+import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
@@ -11,6 +11,8 @@ import { debounce, groupBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
 import TacOpCards from "../../components/tacop-cards";
+import { SelectOperativesModal } from "./modals";
+import { modals } from "@mantine/modals";
 
 export default function Dashboard() {
     const { user: userData } = useAuth();
@@ -23,6 +25,31 @@ export default function Dashboard() {
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
+    const handleUpdateOperatives = React.useCallback((operatives) => {
+        console.log(operatives);
+        // const updatedOperative = {
+        //     ...operative,
+        //     hidden: checked ? 0 : 1
+        // }
+        // setRoster({
+        //     ...roster,
+        //     operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? updatedOperative : op)
+        // });
+        // api.request(`/rosteroperative.php`, {
+        //     method: "POST",
+        //     body: JSON.stringify(updatedOperative)
+        // })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleShowSelectOperatives = React.useCallback(() => {
+        modals.open({
+            modalId: "select-operatives",
+            size: "xl",
+            title: <Title order={2}>Select Operatives</Title>,
+            children: <SelectOperativesModal roster={roster} onClose={handleUpdateOperatives} />
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleSaveUpdateRoster = React.useCallback(debounce((newRoster) => {
         api.request(`/roster.php`, {
@@ -163,12 +190,7 @@ export default function Dashboard() {
                     {
                         icon: <IconListCheck />,
                         text: "Select Operatives",
-                        onClick: () => { }
-                    },
-                    {
-                        icon: <IconUserShare />,
-                        text: "Add Opponent",
-                        onClick: () => { }
+                        onClick: () => handleShowSelectOperatives()
                     },
                     {
                         icon: <IconEdit />,
@@ -192,7 +214,7 @@ export default function Dashboard() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit]);
+    }, [canEdit, handleShowSelectOperatives, handleUpdateOperatives]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
