@@ -237,7 +237,7 @@ export default function Roster() {
                             </Title>
                         </Group>
                         <Group>
-                            <Text><Link href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname}</Link> by <Link href={`/u/${roster.username}`}>{roster.username}</Link></Text>
+                            <Text><Link href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname} <sup>{roster.edition}</sup></Link> by <Link href={`/u/${roster.username}`}>{roster.username}</Link></Text>
                         </Group>
                         {!!roster.notes && <Text>
                             {roster.notes}
