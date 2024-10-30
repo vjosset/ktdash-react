@@ -35,16 +35,14 @@ function OperativeGalleryCard(props) {
                         size: "xl",
                         title: <Title order={2}>{operative.opname}</Title>,
                         children: <Image
-                            h="100%"
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="md"
                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                         />
                     })}
-                    h="100%"
                     fit="cover"
-                    style={{ objectPosition: "top", cursor: 'pointer    ' }}
+                    style={{ objectPosition: "top", cursor: 'pointer' }}
                     radius="md"
                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                 />
@@ -123,7 +121,6 @@ export default function Gallery() {
                             size: "xl",
                             title: <Title order={2}>{roster.rostername}</Title>,
                             children: <Image
-                                h="100%"
                                 fit="cover"
                                 style={{ objectPosition: "top" }}
                                 radius="md"

@@ -265,7 +265,6 @@ export default function Roster() {
                         size: "xl",
                         title: <Title order={2}>{roster.rostername}</Title>,
                         children: <Image
-                            h="100%"
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="md"

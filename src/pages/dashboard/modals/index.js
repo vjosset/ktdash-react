@@ -3,11 +3,11 @@ import { modals } from '@mantine/modals';
 import React from 'react';
 import { API_PATH } from '../../../hooks/use-api';
 import { IconCrosshair, IconSwords } from '@tabler/icons-react';
-import { readLocalStorageValue } from '@mantine/hooks';
+import { useSettings } from '../../../hooks/use-settings';
 
 function MiniOperativeCard(props) {
     const { operative, onChange = () => { } } = props;
-    const settings = readLocalStorageValue({ key: 'settings' });
+    const [ settings ] = useSettings();
     return (
         <Paper withBorder p="sm" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={() => onChange(operative, !!operative.hidden)}>
             <Stack gap={5}>
@@ -17,7 +17,6 @@ function MiniOperativeCard(props) {
                 </Group>
                 <SimpleGrid cols={{ base: 2 }} spacing="xs">
                     {settings.display === "card" && <Image
-                        h="100%"
                         fit="cover"
                         style={{ objectPosition: "top" }}
                         radius="md"

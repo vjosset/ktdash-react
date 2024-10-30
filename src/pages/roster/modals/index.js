@@ -7,8 +7,8 @@ import { convertShapes } from '../../../utils/shapes';
 import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
-import { readLocalStorageValue } from '@mantine/hooks';
 import { notifications } from '@mantine/notifications';
+import { useSettings } from '../../../hooks/use-settings';
 
 export function UpdateRosterPotraitModal(props) {
     const { onClose, roster } = props;
@@ -225,7 +225,7 @@ const Weapon = (props) => {
 export function OperativeModal(props) {
     const { onClose, roster, operative: existingOperative } = props;
     const modalId = existingOperative ? 'edit-operative' : 'add-operative';
-    const settings = readLocalStorageValue({ key: 'settings' });
+    const [ settings ] = useSettings();
     const [operativeData, setOperativeData] = React.useState(existingOperative);
     const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
     const { data: killteam, isFetching: isFetchingTeam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);

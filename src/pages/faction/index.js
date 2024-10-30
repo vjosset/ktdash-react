@@ -2,11 +2,11 @@ import { useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
 import { Card, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import classes from './faction.module.css';
-import { readLocalStorageValue } from "@mantine/hooks";
+import { useSettings } from "../../hooks/use-settings";
 
 export default function Faction() {
     const [, params] = useRoute("/fa/:factionId");
-    const settings = readLocalStorageValue({ key: 'settings' });
+    const [ settings ] = useSettings();
     const { data: faction, isFetching: isFetchingFaction } = useRequest(`/faction.php?fa=${params?.factionId}`);
     if (isFetchingFaction) {
         return (<LoadingOverlay visible={isFetchingFaction} />);

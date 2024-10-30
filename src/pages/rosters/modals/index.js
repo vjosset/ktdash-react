@@ -4,12 +4,12 @@ import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import useAuth from '../../../hooks/use-auth';
-import { readLocalStorageValue } from '@mantine/hooks';
 import { isNil } from 'lodash';
+import { useSettings } from '../../../hooks/use-settings';
 
 export function AddRosterModal(props) {
     const { onClose } = props;
-    const settings = readLocalStorageValue({ key: 'settings' });
+    const [ settings ] = useSettings();
     const { user } = useAuth();
     const form = useForm({
         mode: 'controlled',

@@ -5,13 +5,13 @@ import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
 import React from "react";
-import { readLocalStorageValue } from "@mantine/hooks";
 import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
+import { useSettings } from "../../hooks/use-settings";
 
 export default function OperativeCard(props) {
     const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
-    const settings = readLocalStorageValue({ key: 'settings' });
+    const [ settings ] = useSettings();
     const [imageExpire, setImageExpire] = React.useState(true);
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {
@@ -146,7 +146,6 @@ export default function OperativeCard(props) {
                                         size: "xl",
                                         title: <Title order={2}>{operative.opname}</Title>,
                                         children: <Image
-                                            h="100%"
                                             fit="cover"
                                             style={{ objectPosition: "top" }}
                                             radius="md"
