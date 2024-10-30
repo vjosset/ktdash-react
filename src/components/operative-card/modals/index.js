@@ -1,8 +1,72 @@
-import { ActionIcon, Button, Group, Stack, TextInput } from "@mantine/core";
+import { ActionIcon, Button, FileInput, Group, Image, Stack, Text, TextInput } from "@mantine/core";
 import { modals } from "@mantine/modals";
-import { IconMinus, IconPlus } from "@tabler/icons-react";
+import { IconMinus, IconPhoto, IconPlus } from "@tabler/icons-react";
 import { clamp } from "lodash";
 import React from "react";
+import { API_PATH, request } from "../../../hooks/use-api";
+import { notifications } from "@mantine/notifications";
+
+export function UpdateOperativePotraitModal(props) {
+    const { onClose, operative } = props;
+
+    const [portrait, setPortrait] = React.useState();
+
+    const setFileUpload = (file) => {
+        setPortrait({
+            picturePreview: URL.createObjectURL(file),
+            pictureAsFile: file
+        })
+    }
+
+    const handleUpdateOperative = () => {
+        const formData = new FormData();
+        formData.append(
+            "file",
+            portrait.pictureAsFile
+        );
+        request(`/operativeportrait.php?roid=${operative.rosteropid}`, {
+            method: "POST",
+            body: formData
+        }).then((data) => {
+            console.log(data);
+            if (data?.success) {
+                notifications.show({
+                    title: 'Upload Succeeded',
+                    message: `Successfully uploaded operative portrait.`,
+                })
+                modals.close("update-operative-portrait");
+                onClose(Date.now())
+            } else {
+                notifications.show({
+                    title: 'Upload Failed',
+                    message: `${data}`,
+                })
+            }
+        })
+    };
+
+    return (
+        <>
+            <Stack>
+                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={portrait?.picturePreview || `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}`} />
+                <FileInput
+                    leftSection={<IconPhoto />}
+                    label="Operative Portrait"
+                    placeholder="Upload Image"
+                    value={portrait?.pictureAsFile}
+                    onChange={setFileUpload}
+                />
+                <Text>Image will be resized to 900 x 600 px - Max upload file size: 5 MB
+                    Rosters that have a photo of a painted mini for each operative and a group photo as a roster portrait will be added to the Roster Spotlight.
+                    Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.</Text>
+                <Group justify="flex-end">
+                    <Button variant="default" onClick={() => modals.close("update-operative-portrait")}>Cancel</Button>
+                    <Button type="submit" onClick={handleUpdateOperative}>Save</Button>
+                </Group>
+            </Stack>
+        </>
+    );
+}
 
 export function UpdateWoundsModal(props) {
     const { onClose = () => { }, operative } = props;

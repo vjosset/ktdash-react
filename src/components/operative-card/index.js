@@ -1,21 +1,30 @@
 import { ActionIcon, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
+import { IconArrowForward, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
 import React from "react";
 import { DEFAULT_SETTINGS } from "../../pages/settings";
 import { useLocalStorage } from "@mantine/hooks";
-import { UpdateWoundsModal } from "./modals";
+import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
 
 export default function OperativeCard(props) {
     const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
+    const [imageExpire, setImageExpire] = React.useState(true);
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {
         return <></>;
+    }
+    const handleShowUpdateOperativePortrait = () => {
+        modals.open({
+            modalId: "update-operative-portrait",
+            size: "xl",
+            title: <Title order={2}>{operative.opname}</Title>,
+            children: <UpdateOperativePotraitModal operative={operative} onClose={(expire) => setImageExpire(expire)} />
+        });
     }
     const showUpdateWounds = () => modals.open({
         size: "auto",
@@ -112,6 +121,12 @@ export default function OperativeCard(props) {
                                         Edit
                                     </Menu.Item>
                                     <Menu.Item
+                                        onClick={() => handleShowUpdateOperativePortrait()}
+                                        leftSection={<IconCamera />}
+                                    >
+                                        Edit Portrait
+                                    </Menu.Item>
+                                    <Menu.Item
                                         onClick={() => onDelete(operative)}
                                         leftSection={<IconTrash />}
                                         color="red"
@@ -131,7 +146,7 @@ export default function OperativeCard(props) {
                                     fit="cover"
                                     style={{ objectPosition: "top" }}
                                     h={140} radius="md"
-                                    src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                                    src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing="sm">
                                     <Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
