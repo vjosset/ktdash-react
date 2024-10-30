@@ -221,7 +221,7 @@ export default function Roster() {
                 {
                     icon: <IconPhoto />,
                     text: "Photo Gallery",
-                    onClick: () => { }
+                    onClick: () => navigate(`/r/${roster.rosterid}/g`)
                 },
                 {
                     icon: <IconCopy />,
@@ -261,7 +261,17 @@ export default function Roster() {
         <Container py="md" px="md" fluid>
             <Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
+                    <Image onClick={() => modals.open({
+                        size: "xl",
+                        title: <Title order={2}>{roster.rostername}</Title>,
+                        children: <Image
+                            h="100%"
+                            fit="cover"
+                            style={{ objectPosition: "top" }}
+                            radius="md"
+                            src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`}
+                        />
+                    })} fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Group gap="xs" align="end">
                             <Title>
