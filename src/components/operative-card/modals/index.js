@@ -18,7 +18,7 @@ export function UpdateOperativePotraitModal(props) {
         })
     }
 
-    const handleUpdateOperative = () => {
+    const handleUploadOperativePortrait = () => {
         const formData = new FormData();
         formData.append(
             "file",
@@ -28,7 +28,6 @@ export function UpdateOperativePotraitModal(props) {
             method: "POST",
             body: formData
         }).then((data) => {
-            console.log(data);
             if (data?.success) {
                 notifications.show({
                     title: 'Upload Succeeded',
@@ -39,6 +38,26 @@ export function UpdateOperativePotraitModal(props) {
             } else {
                 notifications.show({
                     title: 'Upload Failed',
+                    message: `${data}`,
+                })
+            }
+        })
+    };
+
+    const handleDeleteOperativePortrait = () => {
+        request(`/operativeportrait.php?roid=${operative.rosteropid}`, {
+            method: "DELETE",
+        }).then((data) => {
+            if (data?.success) {
+                notifications.show({
+                    title: 'Delete Succeeded',
+                    message: `Successfully deleted operative portrait.`,
+                })
+                modals.close("update-operative-portrait");
+                onClose(Date.now())
+            } else {
+                notifications.show({
+                    title: 'Delete Failed',
                     message: `${data}`,
                 })
             }
@@ -61,7 +80,8 @@ export function UpdateOperativePotraitModal(props) {
                     Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.</Text>
                 <Group justify="flex-end">
                     <Button variant="default" onClick={() => modals.close("update-operative-portrait")}>Cancel</Button>
-                    <Button type="submit" onClick={handleUpdateOperative}>Save</Button>
+                    <Button color="red" onClick={handleDeleteOperativePortrait}>Delete Portrait</Button>
+                    <Button type="submit" onClick={handleUploadOperativePortrait}>Save</Button>
                 </Group>
             </Stack>
         </>

@@ -23,7 +23,7 @@ export function UpdateRosterPotraitModal(props) {
         })
     }
 
-    const handleUpdateRoster = () => {
+    const handleUploadRosterPortrait = () => {
         const formData = new FormData();
         formData.append(
             "file",
@@ -33,7 +33,6 @@ export function UpdateRosterPotraitModal(props) {
             method: "POST",
             body: formData
         }).then((data) => {
-            console.log(data);
             if (data?.success) {
                 notifications.show({
                     title: 'Upload Succeeded',
@@ -44,6 +43,26 @@ export function UpdateRosterPotraitModal(props) {
             } else {
                 notifications.show({
                     title: 'Upload Failed',
+                    message: `${data}`,
+                })
+            }
+        })
+    };
+
+    const handleDeleteRosterPortrait = () => {
+        request(`/rosterportrait.php?rid=${roster.rosterid}`, {
+            method: "DELETE"
+        }).then((data) => {
+            if (data?.success) {
+                notifications.show({
+                    title: 'Delete Succeeded',
+                    message: `Successfully deleted roster portrait.`,
+                })
+                modals.close("update-portrait");
+                onClose(Date.now())
+            } else {
+                notifications.show({
+                    title: 'Delete Failed',
                     message: `${data}`,
                 })
             }
@@ -63,7 +82,8 @@ export function UpdateRosterPotraitModal(props) {
                 />
                 <Group justify="flex-end">
                     <Button variant="default" onClick={() => modals.close("update-portrait")}>Cancel</Button>
-                    <Button type="submit" onClick={handleUpdateRoster}>Save</Button>
+                    <Button color="red" onClick={handleDeleteRosterPortrait}>Delete Portrait</Button>
+                    <Button type="submit" onClick={handleUploadRosterPortrait}>Save</Button>
                 </Group>
             </Stack>
         </>
