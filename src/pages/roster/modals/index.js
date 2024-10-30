@@ -9,6 +9,7 @@ import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { useLocalStorage } from '@mantine/hooks';
 import { DEFAULT_SETTINGS } from '../../settings';
+import { notifications } from '@mantine/notifications';
 
 export function UpdateRosterPotraitModal(props) {
     const { onClose, roster } = props;
@@ -32,9 +33,19 @@ export function UpdateRosterPotraitModal(props) {
             method: "POST",
             body: formData
         }).then((data) => {
+            console.log(data);
             if (data?.success) {
+                notifications.show({
+                    title: 'Upload Succeeded',
+                    message: `Successfully uploaded roster portrait.`,
+                })
                 modals.close("update-portrait");
                 onClose(Date.now())
+            } else {
+                notifications.show({
+                    title: 'Upload Failed',
+                    message: `${data}`,
+                })
             }
         })
     };
