@@ -48,7 +48,7 @@ export default function Home() {
                         <Text fs="italic">
                             {spotlight.operatives.map((operative) => operative.opname).join(', ')}
                         </Text>
-                        <Group justify="space-between">
+                        <Group justify="space-between" gap={5}>
                             <Group>
                                 {!!spotlight.spotlight ? <IconStarFilled /> : <IconStar />}
                                 <Group gap={5}><IconEye />{spotlight.viewcount.toString()}</Group>

@@ -43,8 +43,8 @@ export default function RosterCard(props) {
                 </Menu>
             </Group>
             <Stack mt="md">
-                <Image style={{ maxHeight: '250px' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
-                <Group justify="space-between">
+                <Image style={{ maxHeight: '200px' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                <Group justify="space-between" gap={5}>
                     <Group>
                         {!!roster.spotlight ? <IconStarFilled /> : <IconStar />}
                         <Group gap={5}><IconEye />{roster.viewcount.toString()}</Group>
