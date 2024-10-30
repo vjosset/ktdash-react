@@ -1,14 +1,63 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon } from '@mantine/core';
-import { requestText, useRequest } from '../../../hooks/use-api';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image } from '@mantine/core';
+import { API_PATH, request, requestText, useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { flatten, groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { useLocalStorage } from '@mantine/hooks';
 import { DEFAULT_SETTINGS } from '../../settings';
+
+export function UpdateRosterPotraitModal(props) {
+    const { onClose, roster } = props;
+
+    const [portrait, setPortrait] = React.useState();
+
+    const setFileUpload = (file) => {
+        setPortrait({
+            picturePreview: URL.createObjectURL(file),
+            pictureAsFile: file
+        })
+    }
+
+    const handleUpdateRoster = () => {
+        const formData = new FormData();
+        formData.append(
+            "file",
+            portrait.pictureAsFile
+        );
+        request(`/rosterportrait.php?rid=${roster.rosterid}`, {
+            method: "POST",
+            body: formData
+        }).then((data) => {
+            if (data?.success) {
+                modals.close("update-portrait");
+                onClose(Date.now())
+            }
+        })
+    };
+
+    return (
+        <>
+            <Stack>
+                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={portrait?.picturePreview || `${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                <FileInput
+                    leftSection={<IconPhoto />}
+                    label="Roster Portrait"
+                    placeholder="Upload Image"
+                    value={portrait?.pictureAsFile}
+                    onChange={setFileUpload}
+                />
+                <Group justify="flex-end">
+                    <Button variant="default" onClick={() => modals.close("update-portrait")}>Cancel</Button>
+                    <Button type="submit" onClick={handleUpdateRoster}>Save</Button>
+                </Group>
+            </Stack>
+        </>
+    );
+}
 
 export function UpdateRosterModal(props) {
     const { onClose, roster } = props;

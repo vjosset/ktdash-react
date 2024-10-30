@@ -3,11 +3,11 @@ import { API_PATH, request, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconCards, IconCopy, IconEdit, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
+import { IconCamera, IconCards, IconCopy, IconEdit, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
-import { OperativeModal, UpdateRosterModal } from "./modals";
+import { OperativeModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import useWindowDimensions from "../../hooks/get-window-dimensions";
@@ -22,6 +22,7 @@ export default function Roster() {
     const canEdit = userData?.username === roster?.username;
     const { width } = useWindowDimensions();
     const isSmallScreen = width <= 600;
+    const [imageExpire, setImageExpire] = React.useState('');
     const showTeamComp = () =>
         modals.open({
             size: "lg",
@@ -30,6 +31,15 @@ export default function Roster() {
                 <div dangerouslySetInnerHTML={{ __html: `${roster?.killteam?.killteamcomp}` }} />
             ),
         });
+    const handleShowUpdateRosterPortrait = React.useCallback(() => {
+        modals.open({
+            modalId: "update-portrait",
+            size: "xl",
+            title: <Title order={2}>Edit Portrait</Title>,
+            children: <UpdateRosterPotraitModal roster={roster} onClose={(expire) => setImageExpire(expire)} />
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster])
     const handleUpdateRoster = (roster) => {
         request("/roster.php", {
             method: "POST",
@@ -202,6 +212,11 @@ export default function Roster() {
                         icon: <IconListCheck />,
                         text: "Team Composition",
                         onClick: () => showTeamComp()
+                    },
+                    {
+                        icon: <IconCamera />,
+                        text: "Edit Portrait",
+                        onClick: () => handleShowUpdateRosterPortrait()
                     }] : []),
                 {
                     icon: <IconPhoto />,
@@ -234,7 +249,7 @@ export default function Roster() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, isSmallScreen, handleAddOperative]);
+    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }
@@ -246,7 +261,7 @@ export default function Roster() {
         <Container py="md" px="md" fluid>
             <Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Group gap="xs" align="end">
                             <Title>
