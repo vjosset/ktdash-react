@@ -4,9 +4,12 @@ import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import useAuth from '../../../hooks/use-auth';
+import { useLocalStorage } from '@mantine/hooks';
+import { DEFAULT_SETTINGS } from '../../settings';
 
 export function AddRosterModal(props) {
     const { onClose } = props;
+    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const { user } = useAuth();
     const form = useForm({
         mode: 'controlled',
@@ -21,7 +24,11 @@ export function AddRosterModal(props) {
             team: (value) => (!value ? 'Must select a team' : null),
         },
     });
-    const { data: factions } = useRequest("/faction.php?loadkts=1");
+    const teamParams = new URLSearchParams({
+        loadkts: 1,
+        edition: settings.edition
+      }).toString();
+    const { data: factions } = useRequest(`/faction.php?${teamParams}`, {}, !!settings);
 
     React.useEffect(() => {
         form.setFieldValue('team', null);

@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import { useAPI, useRequest } from "../../hooks/use-api";
+import { request, useRequest } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
@@ -18,7 +18,6 @@ import useWindowDimensions from "../../hooks/get-window-dimensions";
 
 export default function Dashboard() {
     const { user: userData } = useAuth();
-    const api = useAPI();
     const { appState, setAppState } = useAppContext();
     const [dashboardRosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
@@ -60,7 +59,7 @@ export default function Dashboard() {
             ployids: ""
         });
         roster.operatives.forEach((op) => {
-            api.request(`/rosteroperative.php`, {
+            request(`/rosteroperative.php`, {
                 method: "POST",
                 body: JSON.stringify({
                     ...op,
@@ -68,7 +67,7 @@ export default function Dashboard() {
                 })
             })
         })
-        api.request(`/roster.php`, {
+        request(`/roster.php`, {
             method: "POST",
             body: JSON.stringify(updatedRoster)
         })
@@ -89,7 +88,7 @@ export default function Dashboard() {
             // Only send requests for operatives we actually toggled
             if (oldOperatives[op.rosteropid].hidden !== op.hidden) {
                 opCount += 1;
-                api.request(`/rosteroperative.php`, {
+                request(`/rosteroperative.php`, {
                     method: "POST",
                     body: JSON.stringify(op)
                 })
@@ -113,7 +112,7 @@ export default function Dashboard() {
     }, [roster, isSmallScreen]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleSaveUpdateRoster = React.useCallback(debounce((newRoster) => {
-        api.request(`/roster.php`, {
+        request(`/roster.php`, {
             method: "POST",
             body: JSON.stringify(newRoster)
         })
@@ -173,7 +172,7 @@ export default function Dashboard() {
             ...roster,
             ...newRoster
         });
-        api.request(`/roster.php`, {
+        request(`/roster.php`, {
             method: "POST",
             body: JSON.stringify(newRoster)
         })
@@ -192,7 +191,7 @@ export default function Dashboard() {
             ...roster,
             tacops: [...roster.tacops.map((op) => op.tacopid === tacop.tacopid ? tacop : op)]
         });
-        api.request(`/rostertacop.php`, {
+        request(`/rostertacop.php`, {
             method: !!tacop.active ? "POST" : "DELETE",
             body: JSON.stringify(newTacOp)
         })
@@ -211,7 +210,7 @@ export default function Dashboard() {
                 ...roster,
                 rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 1 }) : eq)]
             });
-            api.request(`/rostereq.php`, {
+            request(`/rostereq.php`, {
                 method: "POST",
                 body: JSON.stringify(newEq)
             })
@@ -220,7 +219,7 @@ export default function Dashboard() {
                 ...roster,
                 rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 0 }) : eq)]
             });
-            api.request(`/rostereq.php`, {
+            request(`/rostereq.php`, {
                 method: "DELETE",
                 body: JSON.stringify(newEq)
             })
@@ -228,7 +227,7 @@ export default function Dashboard() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleUpdateOperativeWounds = React.useCallback((operative, wounds) => {
-        api.request(`/rosteropw.php?roid=${operative.rosteropid}&curW=${wounds}`, {
+        request(`/rosteropw.php?roid=${operative.rosteropid}&curW=${wounds}`, {
             method: "POST"
         }).then((data) => {
             if (data?.success) {

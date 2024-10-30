@@ -1,12 +1,14 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box } from '@mantine/core';
-import { useRequest } from '../../../hooks/use-api';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon } from '@mantine/core';
+import { requestText, useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { flatten, groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
+import { useLocalStorage } from '@mantine/hooks';
+import { DEFAULT_SETTINGS } from '../../settings';
 
 export function UpdateRosterModal(props) {
     const { onClose, roster } = props;
@@ -116,7 +118,7 @@ const Weapon = (props) => {
     return (
         <>
             <Table.Tr key={weapon.wepid}>
-                <Table.Td style={{ width: '30px'}}>
+                <Table.Td style={{ width: '30px' }}>
                     <Checkbox
                         checked={checked}
                         onChange={(event) => onCheck(weapon.wepid, event.currentTarget.checked)}
@@ -144,6 +146,7 @@ const Weapon = (props) => {
 export function OperativeModal(props) {
     const { onClose, roster, operative: existingOperative } = props;
     const modalId = existingOperative ? 'edit-operative' : 'add-operative';
+    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
     const [operativeData, setOperativeData] = React.useState(existingOperative);
     const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
     const { data: killteam, isFetching: isFetchingTeam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
@@ -153,6 +156,20 @@ export function OperativeModal(props) {
         value: operative.opid
     }));
     const hiddenKT24Equipment = new Set(['Equipment', 'Universal Equipment']);
+
+    const setRandomOperativeName = async (opData) => {
+        if (!opData) {
+            return;
+        }
+        const randomName = await requestText(`/name.php?factionid=${opData.factionid}&killteamid=${opData.killteamid}&fireteamid=${opData.fireteamid}&opid=${opData.opid}`);
+        console.log(randomName);
+        if (randomName) {
+            setOperativeData({
+                ...opData,
+                opname: randomName
+            })
+        }
+    }
 
     const filterEquipment = (equipCategory) => {
         if (killteam?.edition === "kt24") {
@@ -202,11 +219,15 @@ export function OperativeModal(props) {
                                 ...operatives[operativeId],
                                 weapons: []
                             });
+                            if (settings.useoptypeasname !== "y") {
+                                setRandomOperativeName(operatives[operativeId]);
+                            }
                         }}
                     />}
                     <TextInput
                         label="Operative Name"
                         placeholder="Operative Name"
+                        rightSection={settings.useoptypeasname === "y" ? <></> : <ActionIcon onClick={() => setRandomOperativeName(operativeData)}><IconRefresh /></ActionIcon>}
                         value={operativeData?.opname}
                         onChange={(e) => {
                             setOperativeData({

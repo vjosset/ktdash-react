@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, LoadingOverlay, SimpleGrid, Text, Title } from "@mantine/core";
 
-import { useAPI, useRequest } from "../../hooks/use-api";
+import { request, useRequest } from "../../hooks/use-api";
 import { useLocation, useRoute } from "wouter";
 import RosterCard from "../../components/roster-card";
 import { useAppContext } from "../../hooks/app-context";
@@ -13,7 +13,6 @@ import { useLocalStorage } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 
 export default function Rosters() {
-    const api = useAPI();
     const [, navigate] = useLocation();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
@@ -24,7 +23,7 @@ export default function Rosters() {
     const rosters = user?.rosters ?? [];
 
     const handleCreateRoster = (roster) => {
-        api.request("/roster.php", {
+        request("/roster.php", {
             method: "POST",
             body: JSON.stringify(roster)
         }).then((data) => {
@@ -39,7 +38,7 @@ export default function Rosters() {
     }
 
     const handleDeleteRoster = (roster) => {
-        api.request(`/roster.php?rid=${roster.rosterid}`, {
+        request(`/roster.php?rid=${roster.rosterid}`, {
             method: "DELETE"
         }).then((data) => {
             if (data?.success) {

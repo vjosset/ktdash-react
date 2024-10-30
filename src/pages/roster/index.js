@@ -1,5 +1,5 @@
 import { Link, useLocation, useRoute } from "wouter";
-import { API_PATH, useAPI, useRequest } from "../../hooks/use-api";
+import { API_PATH, request, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
@@ -14,7 +14,6 @@ import useWindowDimensions from "../../hooks/get-window-dimensions";
 
 export default function Roster() {
     const { user: userData } = useAuth();
-    const api = useAPI();
     const { appState, setAppState } = useAppContext();
     const [, params] = useRoute("/r/:rosterId");
     const { data: roster, setData: setRoster, isFetching: isFetchinigTeam } = useRequest(`/roster.php?rid=${params?.rosterId}&loadrosterdetail=1`);
@@ -32,7 +31,7 @@ export default function Roster() {
             ),
         });
     const handleUpdateRoster = (roster) => {
-        api.request("/roster.php", {
+        request("/roster.php", {
             method: "POST",
             body: JSON.stringify(roster)
         }).then((data) => {
@@ -54,7 +53,7 @@ export default function Roster() {
             "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
             "notes": operative.notes
         }
-        api.request("/rosteroperative.php", {
+        request("/rosteroperative.php", {
             method: "POST",
             body: JSON.stringify(newOperative)
         }).then((data) => {
@@ -85,7 +84,7 @@ export default function Roster() {
             "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
             "notes": operative.notes
         }
-        api.request("/rosteroperative.php", {
+        request("/rosteroperative.php", {
             method: "POST",
             body: JSON.stringify(updatedOperative)
         }).then((data) => {
@@ -112,7 +111,7 @@ export default function Roster() {
         });
     };
     const handleDeleteOperative = (operative) => {
-        api.request(`/rosteroperative.php?roid=${operative.rosteropid}`, {
+        request(`/rosteroperative.php?roid=${operative.rosteropid}`, {
             method: "DELETE"
         }).then((data) => {
             if (data?.success) {
@@ -140,7 +139,7 @@ export default function Roster() {
         });
     };
     const handleDeleteRoster = () => {
-        api.request(`/roster.php?rid=${roster.rosterid}`, {
+        request(`/roster.php?rid=${roster.rosterid}`, {
             method: "DELETE"
         }).then((data) => {
             if (data?.success) {

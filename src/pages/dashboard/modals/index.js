@@ -70,7 +70,6 @@ export function SelectOperativesModal(props) {
                         <SimpleGrid cols={{ base: 1, sm: 2 }}>
                             {operatives.map((operative) => (
                                 <MiniOperativeCard operative={operative} onChange={handleUpdateOperative} />
-
                             ))}
                         </SimpleGrid>
                         <Group justify="flex-end">
