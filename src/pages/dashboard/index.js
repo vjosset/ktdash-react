@@ -1,12 +1,12 @@
 import { useLocation } from "wouter";
 import { request, useRequest } from "../../hooks/use-api";
-import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
+import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
 import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
-import { readLocalStorageValue } from "@mantine/hooks";
+import { useLocalStorage } from "@mantine/hooks";
 import { debounce, groupBy, keyBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
@@ -19,7 +19,7 @@ import useWindowDimensions from "../../hooks/get-window-dimensions";
 export default function Dashboard() {
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const dashboardRosterId = readLocalStorageValue({ key: 'dashboardrosterid' });
+    const [ dashboardRosterId ] = useLocalStorage({ key: 'dashboardrosterid', defaultValue: '' });
     const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
     const [, navigate] = useLocation();
     const { width } = useWindowDimensions();
@@ -280,6 +280,9 @@ export default function Dashboard() {
     }
     if (!roster) {
         return;
+    }
+    if (!roster?.rosterid) {
+        return <Text>{roster}</Text>;
     }
 
     return (
