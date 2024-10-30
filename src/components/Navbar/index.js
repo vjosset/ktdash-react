@@ -20,7 +20,7 @@ export function NavbarSimple(props) {
         { link: '/dashboard', label: 'Play', icon: IconDice2, loggedIn: true },
         { link: `/u/${user?.username}`, label: 'Rosters', icon: IconUsers, loggedIn: true },
         { link: '/allfactions', label: 'Factions', icon: IconBook },
-        { link: '/settings', label: 'Settings', icon: IconSettings, loggedIn: true },
+        { link: '/settings', label: 'Settings', icon: IconSettings },
     ];
     const links = data.filter((link) => !link.loggedIn || loggedIn).map((item) => (
         <Link

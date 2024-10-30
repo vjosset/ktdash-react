@@ -1,26 +1,9 @@
 import { Center, Container, rem, SegmentedControl, SimpleGrid, Stack, Text, Title } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 import { IconIdBadge, IconList } from '@tabler/icons-react';
-
-export const DEFAULT_SETTINGS = {
-    "display": "card",
-    "showopseq": "n",
-    "startvp": "2",
-    "startcp": "2",
-    "applyeqmods": "n",
-    "hideappliedeqmods": "n",
-    "shownarrative": "n",
-    "autoinccp": "n",
-    "defaultoporder": "engage",
-    "showopid": "n",
-    "useoptypeasname": "n",
-    "closequarters": "n",
-    "opnamefirst": "y",
-    "edition": ""
-};
+import { useSettings } from '../../hooks/use-settings';
 
 export default function Settings() {
-    const [settings, setSettings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
+    const [settings, setSettings] = useSettings();
 
     const updateSettings = (key, value) => {
         setSettings({

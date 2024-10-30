@@ -9,7 +9,7 @@ export default function useAuth() {
         const auth = await request('/session.php', {
             method: "GET"
         });
-        if (auth) {
+        if (auth?.userId) {
             setUser(auth);
         }
     }, [setUser]);
