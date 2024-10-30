@@ -1,14 +1,13 @@
 import { Stack, Button, Group, Checkbox, Title, Text, Image, SimpleGrid, Paper, Tabs, Box } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
 import React from 'react';
-import { DEFAULT_SETTINGS } from '../../settings';
 import { API_PATH } from '../../../hooks/use-api';
 import { IconCrosshair, IconSwords } from '@tabler/icons-react';
+import { readLocalStorageValue } from '@mantine/hooks';
 
 function MiniOperativeCard(props) {
     const { operative, onChange = () => { } } = props;
-    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
+    const settings = readLocalStorageValue({ key: 'settings' });
     return (
         <Paper withBorder p="sm" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={() => onChange(operative, !!operative.hidden)}>
             <Stack gap={5}>

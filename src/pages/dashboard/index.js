@@ -6,7 +6,7 @@ import React from "react";
 import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
-import { useLocalStorage } from "@mantine/hooks";
+import { readLocalStorageValue } from "@mantine/hooks";
 import { debounce, groupBy, keyBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
@@ -19,7 +19,7 @@ import useWindowDimensions from "../../hooks/get-window-dimensions";
 export default function Dashboard() {
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const [dashboardRosterId] = useLocalStorage({ key: 'dashboardrosterid' });
+    const dashboardRosterId = readLocalStorageValue({ key: 'dashboardrosterid' });
     const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
     const [, navigate] = useLocation();
     const { width } = useWindowDimensions();

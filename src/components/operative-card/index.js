@@ -5,14 +5,13 @@ import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
 import React from "react";
-import { DEFAULT_SETTINGS } from "../../pages/settings";
-import { useLocalStorage } from "@mantine/hooks";
+import { readLocalStorageValue } from "@mantine/hooks";
 import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
 
 export default function OperativeCard(props) {
     const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
     const [opened, setOpened] = React.useState(true);
-    const [settings] = useLocalStorage({ key: 'settings', defaultValue: DEFAULT_SETTINGS });
+    const settings = readLocalStorageValue({ key: 'settings' });
     const [imageExpire, setImageExpire] = React.useState(true);
     const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {

@@ -5,23 +5,16 @@ import { useLocalStorage } from "@mantine/hooks";
 export default function useAuth() {
     const [user, setUser] = useLocalStorage({ key: 'auth' });
 
-    React.useEffect(() => {
-        if (!user?.userid) {
-            getSession().then((data) => {
-                setUser(data);
-            })
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    const getSession = async () => {
+    const setupSession = React.useCallback(async () => {
         const auth = await request('/session.php', {
             method: "GET"
         });
-        return auth;
-    }
+        if (auth) {
+            setUser(auth);
+        }
+    }, [setUser]);
 
-    const signup = async (username, password, confirmpassword) => {
+    const signup = React.useCallback(async (username, password, confirmpassword) => {
         const auth = await request('/user.php', {
             method: "POST",
             headers: {
@@ -35,9 +28,9 @@ export default function useAuth() {
         });
         setUser(auth);
         return auth;
-    }
+    }, [setUser]);
 
-    const login = async (username, password) => {
+    const login = React.useCallback(async (username, password) => {
         const auth = await request('/session.php', {
             method: "POST",
             headers: {
@@ -50,19 +43,19 @@ export default function useAuth() {
         });
         setUser(auth);
         return auth;
-    }
+    }, [setUser])
 
-    const logout = async () => {
+    const logout = React.useCallback(async () => {
         const auth = await request('/session.php', {
             method: "DELETE"
         });
         setUser(undefined);
         return auth;
-    }
+    }, [setUser])
 
-    const isLoggedIn = () => {
+    const isLoggedIn = React.useCallback(() => {
         return !!user?.userid;
-    }
+    }, [user]);
 
-    return { user, login, logout, signup, isLoggedIn };
+    return { user, login, logout, signup, isLoggedIn, setupSession };
 }

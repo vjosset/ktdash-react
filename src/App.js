@@ -10,9 +10,10 @@ import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 import './App.css';
 import { Link } from 'wouter';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import AppContextProvider from './hooks/app-context';
 import AppBarMenu from './components/app-bar-menu';
+import useAuth from './hooks/use-auth';
 
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
@@ -22,6 +23,13 @@ const theme = createTheme({
 function App() {
   const [opened, { toggle }] = useDisclosure();
   const button = useRef(null);
+  const auth = useAuth();
+
+  // Establish user session if possible
+  React.useEffect(() => {
+    auth.setupSession();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Stupid ref hack because you can't manually close the nav :|
   const closeNav = () => {
