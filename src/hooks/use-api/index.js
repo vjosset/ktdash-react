@@ -4,7 +4,6 @@ import React from "react";
 export const API_PATH = "https://ktdash.app/api";
 
 export const request = (endpoint, content) => {
-    console.log('requesting', endpoint);
     return fetch(`${API_PATH}${endpoint}`, {
         credentials: "include",
         method: "GET",

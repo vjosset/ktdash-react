@@ -157,15 +157,30 @@ export function OperativeModal(props) {
     }));
     const hiddenKT24Equipment = new Set(['Equipment', 'Universal Equipment']);
 
-    const setRandomOperativeName = async (opData) => {
-        if (!opData) {
+    const getRandomOperativeName = (opData) => requestText(`/name.php?factionid=${opData.factionid}&killteamid=${opData.killteamid}&fireteamid=${opData.fireteamid}&opid=${opData.opid}`);
+
+    const setInitialOperativeData = async (opId) => {
+        setOperativeId(opId);
+        let newOpData = {
+            ...operatives[opId],
+            weapons: [...operatives[opId].weapons.filter((weapon) => !!weapon.isdefault)]
+        };
+        if (settings.useoptypeasname !== "y") {
+            newOpData.opname = await getRandomOperativeName(newOpData);
+        }
+        setOperativeData(newOpData);
+    }
+
+    const randomizeOperativeName = async () => {
+        if (!operativeData) {
             return;
         }
-        const randomName = await requestText(`/name.php?factionid=${opData.factionid}&killteamid=${opData.killteamid}&fireteamid=${opData.fireteamid}&opid=${opData.opid}`);
-        console.log(randomName);
+
+        const randomName = await getRandomOperativeName(operativeData);
+
         if (randomName) {
             setOperativeData({
-                ...opData,
+                ...operativeData,
                 opname: randomName
             })
         }
@@ -214,20 +229,13 @@ export function OperativeModal(props) {
                         data={operativeOptions}
                         value={operativeId}
                         onChange={(operativeId) => {
-                            setOperativeId(operativeId)
-                            setOperativeData({
-                                ...operatives[operativeId],
-                                weapons: []
-                            });
-                            if (settings.useoptypeasname !== "y") {
-                                setRandomOperativeName(operatives[operativeId]);
-                            }
+                            setInitialOperativeData(operativeId);
                         }}
                     />}
                     <TextInput
                         label="Operative Name"
                         placeholder="Operative Name"
-                        rightSection={settings.useoptypeasname === "y" ? <></> : <ActionIcon onClick={() => setRandomOperativeName(operativeData)}><IconRefresh /></ActionIcon>}
+                        rightSection={settings.useoptypeasname === "y" ? <></> : <ActionIcon onClick={() => randomizeOperativeName()}><IconRefresh /></ActionIcon>}
                         value={operativeData?.opname}
                         onChange={(e) => {
                             setOperativeData({
