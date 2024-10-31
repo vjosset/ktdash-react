@@ -1,13 +1,14 @@
-import { PasswordInput, Container, TextInput, Stack, Button } from '@mantine/core';
+import { PasswordInput, Container, TextInput, Stack, Button, Alert } from '@mantine/core';
 import useAuth from '../../hooks/use-auth';
 import { useLocation } from 'wouter';
 import { useForm } from '@mantine/form';
-import { notifications } from '@mantine/notifications';
+import React from 'react';
 
 
 export default function Signup() {
     const { signup } = useAuth();
     const [, navigate] = useLocation();
+    const [errors, setErrors] = React.useState();
 
     const form = useForm({
         mode: 'uncontrolled',
@@ -19,17 +20,14 @@ export default function Signup() {
     });
 
     const handleSignup = form.onSubmit((values) => {
-        signup(values.username, values.password, values.confirmpassword).then((data) => {
+        signup(values.username.trim(), values.password, values.confirmpassword).then((data) => {
             form.reset();
-            if (data?.username) {
+            if (data?.userid) {
                 navigate('/');
+            } else {
+                setErrors(data);
             }
-        }).catch((error) => {
-            notifications.show({
-                title: 'Error',
-                message: error,
-            })
-        });
+        })
     })
 
     return (
@@ -59,6 +57,7 @@ export default function Signup() {
                         key={form.key('confirmpassword')}
                         {...form.getInputProps('confirmpassword')}
                     />
+                    {!!errors && <Alert color="red" variant="light">{errors}</Alert>}
                     <Button type="submit">Sign Up</Button>
                 </Stack>
             </form>

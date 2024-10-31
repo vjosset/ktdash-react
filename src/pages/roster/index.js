@@ -68,6 +68,7 @@ export default function Roster() {
             body: JSON.stringify(newOperative)
         }).then((data) => {
             if (data?.rosteropid) {
+                console.log(data);
                 notifications.show({
                     title: 'Added',
                     message: `Successfully added ${operative.opname}.`,
@@ -82,17 +83,9 @@ export default function Roster() {
     }, [roster]);
     const handleEditOperative = React.useCallback((operative) => {
         const updatedOperative = {
-            "rosteropid": operative.rosteropid,
-            "userid": userData.userid,
-            "rosterid": roster.rosterid,
-            "factionid": operative.factionid,
-            "killteamid": operative.killteamid,
-            "fireteamid": operative.fireteamid,
-            "opid": operative.opid,
-            "opname": operative.opname,
+            ...operative,
             "wepids": operative?.weapons?.map((weapon) => weapon.wepid).join(","),
-            "eqids": operative?.equipments?.map((equip) => equip.eqid).join(","),
-            "notes": operative.notes
+            "eqids": operative?.equipments?.map((equip) => equip.eqid).join(",")
         }
         request("/rosteroperative.php", {
             method: "POST",

@@ -9,7 +9,7 @@ export default function useAuth() {
         const auth = await request('/session.php', {
             method: "GET"
         });
-        if (auth?.userId) {
+        if (auth?.userid) {
             setUser(auth);
         }
     }, [setUser]);
@@ -26,8 +26,12 @@ export default function useAuth() {
                 confirmpassword
             }).toString()
         });
-        setUser(auth);
-        return auth;
+        if (auth?.userid) {
+            setUser(auth);
+            return auth;
+        } else {
+            return auth;
+        }
     }, [setUser]);
 
     const login = React.useCallback(async (username, password) => {
@@ -41,8 +45,12 @@ export default function useAuth() {
                 password
             }).toString()
         });
-        setUser(auth);
-        return auth;
+        if (auth?.userid) {
+            setUser(auth);
+            return auth;
+        } else {
+            return auth;
+        }
     }, [setUser])
 
     const logout = React.useCallback(async () => {

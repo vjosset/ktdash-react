@@ -1,12 +1,14 @@
-import { PasswordInput, Container, TextInput, Stack, Button } from '@mantine/core';
+import { PasswordInput, Container, TextInput, Stack, Button, Alert } from '@mantine/core';
 import useAuth from '../../hooks/use-auth';
 import { useLocation } from 'wouter';
 import { useForm } from '@mantine/form';
+import React from 'react';
 
 
 export default function Login() {
     const { login } = useAuth();
     const [, navigate] = useLocation();
+    const [errors, setErrors] = React.useState();
 
     const form = useForm({
         mode: 'uncontrolled',
@@ -17,10 +19,12 @@ export default function Login() {
     });
 
     const handleLogin = form.onSubmit((values) => {
-        login(values.username, values.password).then((data) => {
+        login(values.username.trim(), values.password).then((data) => {
             form.reset();
-            if (data.username) {
+            if (data?.username) {
                 navigate('/');
+            } else {
+                setErrors(data);
             }
         });
     })
@@ -45,6 +49,7 @@ export default function Login() {
                         key={form.key('password')}
                         {...form.getInputProps('password')}
                     />
+                    {!!errors && <Alert color="red" variant="light">{errors}</Alert>}
                     <Button type="submit">Log In</Button>
                 </Stack>
             </form>
