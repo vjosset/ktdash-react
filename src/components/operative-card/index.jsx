@@ -165,7 +165,7 @@ export default function OperativeCard(props) {
                                     <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color="darkorange" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack>
                                     {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color="darkorange" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
                                     </Stack></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color="darkorange" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
