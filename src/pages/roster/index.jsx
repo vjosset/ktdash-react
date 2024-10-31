@@ -3,7 +3,7 @@ import { API_PATH, request, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconCamera, IconCards, IconCopy, IconEdit, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash } from "@tabler/icons-react";
+import { IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash, IconUserEdit } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { useLocalStorage } from "@mantine/hooks";
@@ -194,7 +194,7 @@ export default function Roster() {
                         }
                     },
                     {
-                        icon: <IconEdit />,
+                        icon: <IconUserEdit />,
                         text: "Edit Details",
                         onClick: () => {
                             modals.open({

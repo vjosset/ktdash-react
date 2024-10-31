@@ -2,7 +2,7 @@ import { Link, useLocation, useRoute } from "wouter";
 import { API_PATH, useRequest } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import React from "react";
-import { IconCamera, IconUser } from "@tabler/icons-react";
+import { IconCamera, IconUserDown } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
 import { modals } from "@mantine/modals";
@@ -81,7 +81,7 @@ export default function Gallery() {
                         onClick: () => handleShowUpdateRosterPortrait()
                     }] : []),
                 {
-                    icon: <IconUser />,
+                    icon: <IconUserDown />,
                     text: "Back To Roster",
                     onClick: () => {
                         navigate(`/r/${roster.rosterid}`)
