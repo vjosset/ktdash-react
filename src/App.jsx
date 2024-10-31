@@ -46,13 +46,13 @@ function App() {
         <ModalsProvider>
           <AppShell
             header={{ height: 60 }}
-            navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+            navbar={{ width: 300, breakpoint: 'md', collapsed: { mobile: !opened } }}
             padding={0}
           >
             <AppShell.Header>
               <Group h="100%" px="md" gap={5} align="center" justify="space-between" style={{ flex: 1 }} wrap="nowrap">
                 <Group justify="center" gap={5}>
-                  <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="sm" size="sm" />
+                  <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="md" size="sm" />
                   <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                     <Group gap={5}>
                       <Image h={40}
