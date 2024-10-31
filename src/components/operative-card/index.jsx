@@ -1,6 +1,6 @@
 import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt, IconUserHeart, IconUserUp } from "@tabler/icons-react";
+import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
@@ -160,52 +160,54 @@ export default function OperativeCard(props) {
                                         children: <Image
                                             fit="cover"
                                             style={{ objectPosition: "top" }}
-                                            radius="md"
+                                            radius="sm"
                                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                         />
                                     })}
                                     fit="cover"
                                     style={{ objectPosition: "top", cursor: 'pointer' }}
-                                    h={140} radius="md"
+                                    h={140} radius="sm"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
-                                <SimpleGrid cols={{ base: operativeStatGrid }} spacing="sm">
+                                <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>
                                     <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
-                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
+                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>{operative?.edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
                                     {operative?.edition === "kt21" && <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
                                     {operative?.edition === "kt21" && <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
-                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
-                                    {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Paper><Stack justify="center" align="center" gap="xs">
-                                        <Text fw={700}>WOUND</Text>
+                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>{operative?.edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
+                                    {woundTracker ? (<Paper style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}><UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
-                                    </Stack></Paper></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
-                                        <Text fw={700}>WOUND</Text>
+                                    </Stack></UnstyledButton></Paper>) : (<Paper><Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                                     </Stack>)}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
-                        <Stack>
-                            <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
-                                <Table.Thead>
-                                    <Table.Tr>
-                                        <Table.Th>NAME</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
-                                    </Table.Tr>
-                                </Table.Thead>
-                                <Table.Tbody>
-                                    {operative.weapons.map((weapon) => (
-                                        <>{renderWeapon(weapon)}</>
-                                    ))}
-                                </Table.Tbody>
-                            </Table>
-                        </Stack>
-                        <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
+                        <Paper px="xs">
+                            <Stack>
+                                <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
+                                    <Table.Thead>
+                                        <Table.Tr>
+                                            <Table.Th>NAME</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
+                                        </Table.Tr>
+                                    </Table.Thead>
+                                    <Table.Tbody>
+                                        {operative.weapons.map((weapon) => (
+                                            <>{renderWeapon(weapon)}</>
+                                        ))}
+                                    </Table.Tbody>
+                                </Table>
+                            </Stack>
+                        </Paper>
+                        {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <Paper p="xs"><SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
-                                <Text fw={700}>Unique Actions</Text>
-                                <Group>
+                                <Text size="sm" fw={700}>ACTIONS</Text>
+                                <Group gap="xs">
                                     {operative?.uniqueactions?.map((ability) => (
                                         <Text
                                             style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
@@ -225,8 +227,8 @@ export default function OperativeCard(props) {
                                 </Group>
                             </Stack>}
                             {!!operative?.abilities?.length && <Stack gap="xs">
-                                <Text fw={700}>Abilities</Text>
-                                <Group>
+                                <Text size="sm" fw={700}>ABILITIES</Text>
+                                <Group gap="xs">
                                     {operative?.abilities?.map((ability) => (
                                         <Text
                                             role="button"
@@ -246,10 +248,10 @@ export default function OperativeCard(props) {
                                     ))}
                                 </Group>
                             </Stack>}
-                        </SimpleGrid>
-                        {!!operative?.equipments?.length && <Stack gap="xs">
-                            <Text fw={700}>Equipment</Text>
-                            <Group>
+                        </SimpleGrid></Paper>}
+                        {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
+                            <Text size="sm"  fw={700}>EQUIPMENT</Text>
+                            <Group gap="xs">
                                 {operative?.equipments?.map((equip) => (
                                     <Text
                                         role="button"
@@ -268,10 +270,8 @@ export default function OperativeCard(props) {
                                     </Text>
                                 ))}
                             </Group>
-                        </Stack>}
-                        <Stack>
-                            <Text size="xs">{operative.keywords}</Text>
-                        </Stack>
+                        </Stack></Paper>}
+                        <Text px={2} size="xs">{operative.keywords}</Text>
                     </Stack>
                 </Collapse>
             </Stack>

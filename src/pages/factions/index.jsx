@@ -7,10 +7,10 @@ import { Link } from "wouter";
 export default function Factions() {
     const { data: factions, isFetching: isFetchingFactions } = useRequest("/faction.php");
     const cards = factions?.map((faction) => (
-        <Card key={faction.factionid} p="md" radius="md" component={Link} className={classes.card} href={`/fa/${faction.factionid}`}>
+        <Card key={faction.factionid} p="md" radius="sm" component={Link} className={classes.card} href={`/fa/${faction.factionid}`}>
             <Stack>
                 <Title order={2} className={classes.title}>{faction.factionname}</Title>
-                <Image radius="md" src={`https://ktdash.app/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
+                <Image radius="sm" src={`/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
                 <Text>
                     <div dangerouslySetInnerHTML={{ __html: `${faction.description.split('<br/>')[0]}` }} />
                 </Text>

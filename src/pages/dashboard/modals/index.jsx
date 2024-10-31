@@ -19,7 +19,7 @@ function MiniOperativeCard(props) {
                     {settings.display === "card" && <Image
                         fit="cover"
                         style={{ objectPosition: "top" }}
-                        radius="md"
+                        radius="sm"
                         src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                     />}
                     <Stack gap={5}>
