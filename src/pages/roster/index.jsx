@@ -31,6 +31,19 @@ export default function Roster() {
                 <div dangerouslySetInnerHTML={{ __html: `${roster?.killteam?.killteamcomp}` }} />
             ),
         });
+    const handleCopyRoster = React.useCallback(() => {
+        request(`/roster.php?rid=${roster.rosterid}&clone=1`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.rosterid) {
+                navigate(`/r/${data?.rosterid}`)
+                notifications.show({
+                    title: 'Created',
+                    message: `Successfully copied ${roster.rostername}.`,
+                })
+            }
+        })
+    }, [roster])
     const handleShowUpdateRosterPortrait = React.useCallback(() => {
         modals.open({
             modalId: "update-portrait",
@@ -108,7 +121,7 @@ export default function Roster() {
             fullScreen: isSmallScreen,
             modalId: "edit-operative",
             size: "xl",
-            title: <Title order={2}>Edit Operative</Title>,
+            title: <Title order={2}>{operative.opname}</Title>,
             children: <OperativeModal roster={roster} operative={operative} onClose={handleEditOperative} />
         });
     };
@@ -218,7 +231,18 @@ export default function Roster() {
                 {
                     icon: <IconCopy />,
                     text: "Duplicate",
-                    onClick: () => { }
+                    onClick: () => {
+                        modals.openConfirmModal({
+                            title: 'Confirm Copy',
+                            children: (
+                                <Text size="sm">
+                                    Are you sure you want make a copy of {roster.rostername}?
+                                </Text>
+                            ),
+                            labels: { confirm: 'Confirm', cancel: 'Cancel' },
+                            onConfirm: () => handleCopyRoster(),
+                        });
+                    } 
                 },
                 ...(canEdit ? [
                     {
@@ -241,7 +265,7 @@ export default function Roster() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait]);
+    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster]);
     if (isFetchinigTeam) {
         return (<LoadingOverlay visible={isFetchinigTeam} />);
     }

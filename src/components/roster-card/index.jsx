@@ -2,10 +2,10 @@ import { ActionIcon, Card, Group, Image, Menu, Stack, Text, Title } from "@manti
 import { Link, useLocation } from "wouter";
 import classes from './rosters.module.css';
 import { API_PATH } from "../../hooks/use-api";
-import { IconCards, IconDotsVertical, IconEye, IconFileImport, IconPhoto, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
+import { IconCards, IconCopy, IconDotsVertical, IconEye, IconFileImport, IconPhoto, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
 
 export default function RosterCard(props) {
-    const { roster, editable, onDelete = () => { }, onDeploy = () => { } } = props;
+    const { roster, editable, onDelete = () => { }, onDeploy = () => { }, onCopy = () => {} } = props;
     const [, navigate] = useLocation();
     return (
         <Card key={roster.rosterid} p="md" radius="md" component={Link} className={classes.card} href={`/r/${roster.rosterid}`}>
@@ -31,6 +31,9 @@ export default function RosterCard(props) {
                         </Menu.Item>}
                         <Menu.Item leftSection={<IconPhoto />} onClick={() => navigate(`/r/${roster.rosterid}/g`)}>
                             Photo Gallery
+                        </Menu.Item>
+                        <Menu.Item leftSection={<IconCopy />} onClick={() => onCopy(roster)}>
+                            Duplicate Roster
                         </Menu.Item>
                         {!!editable && <Menu.Item
                             onClick={() => onDelete(roster)}

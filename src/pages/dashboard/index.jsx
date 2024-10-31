@@ -274,7 +274,7 @@ export default function Dashboard() {
                     <Card>
                         <SimpleGrid cols={{ base: 3 }} spacing={0} py="sm">
                             <Stack justify="center" align="center" gap="xs">
-                                <Title order={3}>CP</Title>
+                                <Title style={{ borderBottom: '2px solid var(--mantine-color-orange-8)'}} order={3}>CP</Title>
                                 <Group gap="xs">
                                     <ActionIcon onClick={() => roster.CP !== 0 ? handleQuickUpdateRoster({ CP: roster.CP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
                                     {roster.CP.toString()}
@@ -282,7 +282,7 @@ export default function Dashboard() {
                                 </Group>
                             </Stack>
                             <Stack justify="center" align="center" gap="xs">
-                                <Title order={3}>TURN</Title>
+                                <Title style={{ borderBottom: '2px solid var(--mantine-color-orange-8)'}} order={3}>TURN</Title>
                                 <Group gap="xs">
                                     <ActionIcon onClick={() => roster.TP !== 0 ? handleQuickUpdateRoster({ TP: roster.TP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
                                     {roster.TP.toString()}
@@ -290,7 +290,7 @@ export default function Dashboard() {
                                 </Group>
                             </Stack>
                             <Stack justify="center" align="center" gap="xs">
-                                <Title order={3}>VP</Title>
+                                <Title style={{ borderBottom: '2px solid var(--mantine-color-orange-8)'}} order={3}>VP</Title>
                                 <Group gap="xs">
                                     <ActionIcon onClick={() => roster.VP !== 0 ? handleQuickUpdateRoster({ VP: roster.VP - 1 }) : () => { }} variant="default"><IconMinus /></ActionIcon>
                                     {roster.VP.toString()}
