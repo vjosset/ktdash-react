@@ -24,7 +24,7 @@ const theme = createTheme({
     sm: '48em',
     md: '64em',
     lg: '90em',
-    xl: '106em',
+    xl: '122em',
   }
 });
 
