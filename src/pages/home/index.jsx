@@ -30,7 +30,7 @@ export default function Home() {
             </div>
             {!!spotlight && <Container fluid>
                 {!!isFetchingSpotlight && <Loader color="orange" />}
-                <Card key={spotlight.factionid} radius="md" component="a" className={classes.card} href={`/r/${spotlight.rosterid}`}>
+                <Card key={spotlight.factionid} radius="md" component={Link} className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
                         <Title>Roster Spotlight</Title>
                         <SimpleGrid cols={{ base: 1, md: 2 }}>

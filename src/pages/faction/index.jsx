@@ -1,4 +1,4 @@
-import { useRoute } from "wouter";
+import { Link, useRoute } from "wouter";
 import { useRequest } from "../../hooks/use-api";
 import { Card, Container, Image, LoadingOverlay, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import classes from './faction.module.css';
@@ -15,7 +15,7 @@ export default function Faction() {
         return;
     }
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
-        <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
+        <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
@@ -24,7 +24,7 @@ export default function Faction() {
         </Card>
     ));
     const cards2024 = faction.killteams?.filter((killteam) => killteam.edition === "kt24")?.map((killteam) => (
-        <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component="a" href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
+        <Card key={killteam.killteamid} className={classes.card} p="md" radius="md" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image fit="cover" style={{ objectPosition: "top" }} radius="md" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>

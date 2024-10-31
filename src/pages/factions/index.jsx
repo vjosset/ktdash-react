@@ -2,11 +2,12 @@ import React from "react";
 import { Card, Container, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import classes from './factions.module.css';
 import { useRequest } from "../../hooks/use-api";
+import { Link } from "wouter";
 
 export default function Factions() {
     const { data: factions, isFetching: isFetchingFactions } = useRequest("/faction.php");
     const cards = factions?.map((faction) => (
-        <Card key={faction.factionid} p="md" radius="md" component="a" className={classes.card} href={`/fa/${faction.factionid}`}>
+        <Card key={faction.factionid} p="md" radius="md" component={Link} className={classes.card} href={`/fa/${faction.factionid}`}>
             <Stack>
                 <Title order={2} className={classes.title}>{faction.factionname}</Title>
                 <Image radius="md" src={`/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
