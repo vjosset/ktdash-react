@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const PWAInstallerPrompt = ({
     render: InstallButton,
-    callback,
+    callback = undefined,
 }) => {
     const createStatus = (object) => {
         return {
@@ -79,10 +79,6 @@ const PWAInstallerPrompt = ({
 PWAInstallerPrompt.propTypes = {
     render: PropTypes.func.isRequired,
     callback: PropTypes.func,
-};
-
-PWAInstallerPrompt.defaultProps = {
-    callback: undefined
 };
 
 export default PWAInstallerPrompt;
