@@ -185,24 +185,26 @@ export default function OperativeCard(props) {
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
-                        <Stack>
-                            <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
-                                <Table.Thead>
-                                    <Table.Tr>
-                                        <Table.Th>NAME</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
-                                        <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
-                                    </Table.Tr>
-                                </Table.Thead>
-                                <Table.Tbody>
-                                    {operative.weapons.map((weapon) => (
-                                        <>{renderWeapon(weapon)}</>
-                                    ))}
-                                </Table.Tbody>
-                            </Table>
-                        </Stack>
-                        <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
+                        <Paper px="xs">
+                            <Stack>
+                                <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
+                                    <Table.Thead>
+                                        <Table.Tr>
+                                            <Table.Th>NAME</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
+                                            <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
+                                        </Table.Tr>
+                                    </Table.Thead>
+                                    <Table.Tbody>
+                                        {operative.weapons.map((weapon) => (
+                                            <>{renderWeapon(weapon)}</>
+                                        ))}
+                                    </Table.Tbody>
+                                </Table>
+                            </Stack>
+                        </Paper>
+                        {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
                                 <Text fw={700}>Unique Actions</Text>
                                 <Group>
@@ -246,7 +248,7 @@ export default function OperativeCard(props) {
                                     ))}
                                 </Group>
                             </Stack>}
-                        </SimpleGrid>
+                        </SimpleGrid>}
                         {!!operative?.equipments?.length && <Stack gap="xs">
                             <Text fw={700}>Equipment</Text>
                             <Group>
@@ -269,9 +271,7 @@ export default function OperativeCard(props) {
                                 ))}
                             </Group>
                         </Stack>}
-                        <Stack>
-                            <Text size="xs">{operative.keywords}</Text>
-                        </Stack>
+                        <Text px={2} size="xs">{operative.keywords}</Text>
                     </Stack>
                 </Collapse>
             </Stack>
