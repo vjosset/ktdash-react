@@ -181,7 +181,7 @@ export default function OperativeCard(props) {
                                     </Stack></UnstyledButton></Paper>) : (<Paper><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
-                                    </Stack>)}
+                                    </Stack></Paper>)}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
