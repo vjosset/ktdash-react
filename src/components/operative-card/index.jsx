@@ -181,7 +181,8 @@ export default function OperativeCard(props) {
                                     </Stack></UnstyledButton></Paper>) : (<Paper><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
-                                    </Stack></Paper>)}
+                                    </Stack></Paper>
+                                )}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
@@ -190,7 +191,7 @@ export default function OperativeCard(props) {
                                 <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                                     <Table.Thead>
                                         <Table.Tr>
-                                            <Table.Th>NAME</Table.Th>
+                                            <Table.Th>WEAPONS</Table.Th>
                                             <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
                                             <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
                                             <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
@@ -250,7 +251,7 @@ export default function OperativeCard(props) {
                             </Stack>}
                         </SimpleGrid></Paper>}
                         {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
-                            <Text size="sm"  fw={700}>EQUIPMENT</Text>
+                            <Text size="sm" fw={700}>EQUIPMENT</Text>
                             <Group gap="xs">
                                 {operative?.equipments?.map((equip) => (
                                     <Text

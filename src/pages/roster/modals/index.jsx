@@ -175,7 +175,7 @@ const Weapon = (props) => {
                     <Table.Td>
                         <span>
                             {weapon.weptype === "M" ?
-                                <IconSwords color=" var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color=" var(--mantine-color-orange-8)" size={20} />}
+                                <IconSwords color="var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color="var(--mantine-color-orange-8)" size={20} />}
                             <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
                         </span>
                     </Table.Td>
@@ -207,7 +207,7 @@ const Weapon = (props) => {
                 <Table.Td>
                     <span>
                         {weapon.weptype === "M" ?
-                            <IconSwords color=" var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color=" var(--mantine-color-orange-8)" size={20} />}
+                            <IconSwords color="var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color="var(--mantine-color-orange-8)" size={20} />}
                         <span style={{ marginLeft: '5px' }}>
                             {weapon.wepname} <span role="button" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                 {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
@@ -352,21 +352,21 @@ export function OperativeModal(props) {
                         }}
                     />
                     {!!operative && <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 6 : 4 }} spacing="xs">
-                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
-                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
-                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
-                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
-                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color="var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color="var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
+                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color="var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
+                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color="var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color="var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
                         <Paper withBorder><Stack justify="center" align="center" gap="xs">
                             <Text fw={700}>WOUND</Text>
-                            <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
+                            <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color="var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                         </Stack></Paper>
                     </SimpleGrid>}
                     {!!operative && <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                         <Table.Thead>
                             <Table.Tr>
                                 <Table.Th />
-                                <Table.Th>NAME</Table.Th>
+                                <Table.Th>WEAPONS</Table.Th>
                                 <Table.Th style={{ textAlign: 'center' }}>ATK</Table.Th>
                                 <Table.Th style={{ textAlign: 'center' }}>HIT</Table.Th>
                                 <Table.Th style={{ textAlign: 'center' }}>DMG</Table.Th>
