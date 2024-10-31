@@ -67,7 +67,7 @@ export function UpdateOperativePotraitModal(props) {
     return (
         <>
             <Stack>
-                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={portrait?.picturePreview || `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}`} />
+                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={portrait?.picturePreview || `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}`} />
                 <FileInput
                     leftSection={<IconPhoto />}
                     label="Operative Portrait"

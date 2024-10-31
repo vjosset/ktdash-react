@@ -8,7 +8,7 @@ export default function RosterCard(props) {
     const { roster, editable, onDelete = () => { }, onDeploy = () => { }, onCopy = () => {} } = props;
     const [, navigate] = useLocation();
     return (
-        <Card key={roster.rosterid} p="md" radius="md" component={Link} className={classes.card} href={`/r/${roster.rosterid}`}>
+        <Card key={roster.rosterid} p="md" radius="sm" component={Link} className={classes.card} href={`/r/${roster.rosterid}`}>
             <Group justify="space-between" wrap="nowrap">
                 <Title textWrap="pretty" order={3}>{roster.rostername}</Title>
                 <Menu withinPortal position="bottom-end" shadow="sm">
@@ -46,7 +46,7 @@ export default function RosterCard(props) {
                 </Menu>
             </Group>
             <Stack mt="md">
-                <Image radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                <Image radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
                 <Group justify="space-between" gap={5}>
                     <Group>
                         {!!roster.spotlight ? <IconStarFilled /> : <IconStar />}

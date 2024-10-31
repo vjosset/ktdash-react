@@ -30,14 +30,14 @@ export default function Home() {
             </div>
             {!!spotlight && <Container fluid>
                 {!!isFetchingSpotlight && <Loader color="orange" />}
-                <Card key={spotlight.factionid} radius="md" component={Link} className={classes.card} href={`/r/${spotlight.rosterid}`}>
+                <Card key={spotlight.factionid} radius="sm" component={Link} className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
                         <Title>Roster Spotlight</Title>
                         <SimpleGrid cols={{ base: 1, md: 2 }}>
-                            <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
+                            <Image style={{ height: '100%' }} radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
                             <SimpleGrid visibleFrom="md" cols={{ base: 2, md: 2, lg: 3, xl: 4 }}>
                                 {spotlight.operatives.map((op) => (
-                                    <Image style={{ height: '100%' }} radius="md" src={`${API_PATH}/operativeportrait.php?roid=${op.rosteropid}`} />
+                                    <Image style={{ height: '100%' }} radius="sm" src={`${API_PATH}/operativeportrait.php?roid=${op.rosteropid}`} />
                                 ))}
                             </SimpleGrid>
                         </SimpleGrid>

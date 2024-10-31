@@ -160,13 +160,13 @@ export default function OperativeCard(props) {
                                         children: <Image
                                             fit="cover"
                                             style={{ objectPosition: "top" }}
-                                            radius="md"
+                                            radius="sm"
                                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                         />
                                     })}
                                     fit="cover"
                                     style={{ objectPosition: "top", cursor: 'pointer' }}
-                                    h={140} radius="md"
+                                    h={140} radius="sm"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>

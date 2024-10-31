@@ -283,10 +283,10 @@ export default function Roster() {
                         children: <Image
                             fit="cover"
                             style={{ objectPosition: "top" }}
-                            radius="md"
+                            radius="sm"
                             src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`}
                         />
-                    })} fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={300} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
+                    })} fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={300} radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Group gap="xs" align="end">
                             <Title>

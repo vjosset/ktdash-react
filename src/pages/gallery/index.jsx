@@ -37,13 +37,13 @@ function OperativeGalleryCard(props) {
                         children: <Image
                             fit="cover"
                             style={{ objectPosition: "top" }}
-                            radius="md"
+                            radius="sm"
                             src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                         />
                     })}
                     fit="cover"
                     style={{ objectPosition: "top", cursor: 'pointer' }}
-                    radius="md"
+                    radius="sm"
                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                 />
             </Stack>
@@ -123,11 +123,11 @@ export default function Gallery() {
                             children: <Image
                                 fit="cover"
                                 style={{ objectPosition: "top" }}
-                                radius="md"
+                                radius="sm"
                                 src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`}
                             />
                         })}
-                        fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={'100%'} radius="md" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
+                        fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={'100%'} radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
                     {roster?.operatives?.map((operative) => (
                         <OperativeGalleryCard canEdit={canEdit} operative={operative} />
                     ))}
