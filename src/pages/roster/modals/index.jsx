@@ -175,7 +175,7 @@ const Weapon = (props) => {
                     <Table.Td>
                         <span>
                             {weapon.weptype === "M" ?
-                                <IconSwords color="darkorange" size={20} /> : <IconCrosshair color="darkorange" size={20} />}
+                                <IconSwords color=" var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color=" var(--mantine-color-orange-8)" size={20} />}
                             <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
                         </span>
                     </Table.Td>
@@ -207,7 +207,7 @@ const Weapon = (props) => {
                 <Table.Td>
                     <span>
                         {weapon.weptype === "M" ?
-                            <IconSwords color="darkorange" size={20} /> : <IconCrosshair color="darkorange" size={20} />}
+                            <IconSwords color=" var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color=" var(--mantine-color-orange-8)" size={20} />}
                         <span style={{ marginLeft: '5px' }}>
                             {weapon.wepname} <span role="button" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                 {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
