@@ -1,6 +1,6 @@
 import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt, IconUserHeart, IconUserUp } from "@tabler/icons-react";
+import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
@@ -169,17 +169,17 @@ export default function OperativeCard(props) {
                                     h={140} radius="md"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
-                                <SimpleGrid cols={{ base: operativeStatGrid }} spacing="sm">
+                                <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>
                                     <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
-                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
+                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>{operative?.edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
                                     {operative?.edition === "kt21" && <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
                                     {operative?.edition === "kt21" && <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
-                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
-                                    {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Paper><Stack justify="center" align="center" gap="xs">
-                                        <Text fw={700}>WOUND</Text>
+                                    <Paper><Stack justify="center" align="center" gap="xs"><Text fw={700}>{operative?.edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
+                                    {woundTracker ? (<Paper style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}><UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
-                                    </Stack></Paper></UnstyledButton>) : (<Paper><Stack justify="center" align="center" gap="xs">
-                                        <Text fw={700}>WOUND</Text>
+                                    </Stack></UnstyledButton></Paper>) : (<Paper><Stack justify="center" align="center" gap="xs">
+                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                                     </Stack></Paper>)}
                                 </SimpleGrid>
