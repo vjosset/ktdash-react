@@ -178,10 +178,10 @@ export default function OperativeCard(props) {
                                     {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Paper><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color="darkorange" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
-                                    </Stack></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
+                                    </Stack></Paper></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
                                         <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
-                                    </Stack></Paper>)}
+                                    </Stack>)}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
