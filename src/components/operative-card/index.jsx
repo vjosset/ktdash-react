@@ -206,8 +206,8 @@ export default function OperativeCard(props) {
                         </Paper>
                         {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <Paper p="xs"><SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
-                                <Text fw={700}>Unique Actions</Text>
-                                <Group>
+                                <Text size="sm" fw={700}>ACTIONS</Text>
+                                <Group gap="xs">
                                     {operative?.uniqueactions?.map((ability) => (
                                         <Text
                                             style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
@@ -227,8 +227,8 @@ export default function OperativeCard(props) {
                                 </Group>
                             </Stack>}
                             {!!operative?.abilities?.length && <Stack gap="xs">
-                                <Text fw={700}>Abilities</Text>
-                                <Group>
+                                <Text size="sm" fw={700}>ABILITIES</Text>
+                                <Group gap="xs">
                                     {operative?.abilities?.map((ability) => (
                                         <Text
                                             role="button"
@@ -250,8 +250,8 @@ export default function OperativeCard(props) {
                             </Stack>}
                         </SimpleGrid></Paper>}
                         {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
-                            <Text fw={700}>Equipment</Text>
-                            <Group>
+                            <Text size="sm"  fw={700}>EQUIPMENT</Text>
+                            <Group gap="xs">
                                 {operative?.equipments?.map((equip) => (
                                     <Text
                                         role="button"
