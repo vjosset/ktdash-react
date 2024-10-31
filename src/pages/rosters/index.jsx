@@ -22,6 +22,20 @@ export default function Rosters() {
     const canEdit = userData?.username === params?.username;
     const rosters = user?.rosters ?? [];
 
+    const handleCopyRoster = (roster) => {
+        request(`/roster.php?rid=${roster.rosterid}&clone=1`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.rosterid) {
+                navigate(`/r/${data?.rosterid}`)
+                notifications.show({
+                    title: 'Created',
+                    message: `Successfully copied ${roster.rostername}.`,
+                  })
+            }
+        })
+    }
+
     const handleCreateRoster = (roster) => {
         request("/roster.php", {
             method: "POST",
@@ -105,7 +119,18 @@ export default function Rosters() {
     }, [canEdit]);
 
     const cards = rosters?.map((roster) => (
-        <RosterCard editable={canEdit} roster={roster} onDelete={handleConfirmDeleteRoster} onDeploy={handleDeployRoster} />
+        <RosterCard editable={canEdit} onCopy={(roster) => {
+            modals.openConfirmModal({
+                title: 'Confirm Copy',
+                children: (
+                    <Text size="sm">
+                        Are you sure you want make a copy of {roster.rostername}?
+                    </Text>
+                ),
+                labels: { confirm: 'Confirm', cancel: 'Cancel' },
+                onConfirm: () => handleCopyRoster(roster),
+            });
+        }} roster={roster} onDelete={handleConfirmDeleteRoster} onDeploy={handleDeployRoster} />
     ));
     if (isFetchingRosters) {
         return (<LoadingOverlay visible={isFetchingRosters} />);

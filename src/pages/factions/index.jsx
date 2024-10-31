@@ -23,7 +23,7 @@ export default function Factions() {
 
     return (
         <Container py="md" px="md" fluid>
-            <SimpleGrid cols={{ base: 1, md: 2, lg: 3, xl: 4 }}>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }}>
                 {cards}
             </SimpleGrid>
         </Container>

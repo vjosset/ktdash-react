@@ -1,10 +1,10 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image } from '@mantine/core';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image, Paper } from '@mantine/core';
 import { API_PATH, request, requestText, useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { flatten, groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowBigRight, IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
@@ -175,7 +175,7 @@ const Weapon = (props) => {
                     <Table.Td>
                         <span>
                             {weapon.weptype === "M" ?
-                                <IconSwords size={20} /> : <IconCrosshair size={20} />}
+                                <IconSwords color="darkorange" size={20} /> : <IconCrosshair color="darkorange" size={20} />}
                             <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
                         </span>
                     </Table.Td>
@@ -207,7 +207,7 @@ const Weapon = (props) => {
                 <Table.Td>
                     <span>
                         {weapon.weptype === "M" ?
-                            <IconSwords size={20} /> : <IconCrosshair size={20} />}
+                            <IconSwords color="darkorange" size={20} /> : <IconCrosshair color="darkorange" size={20} />}
                         <span style={{ marginLeft: '5px' }}>
                             {weapon.wepname} <span role="button" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                 {weapon.profiles[0].SR ? <span dangerouslySetInnerHTML={{ __html: `(${convertShapes(weapon.profiles[0].SR)})` }} /> : ''}
@@ -226,12 +226,23 @@ const Weapon = (props) => {
 export function OperativeModal(props) {
     const { onClose, roster, operative: existingOperative } = props;
     const modalId = existingOperative ? 'edit-operative' : 'add-operative';
-    const [ settings ] = useSettings();
+    const [settings] = useSettings();
     const [operativeData, setOperativeData] = React.useState(existingOperative);
     const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
+    const [fireteamId, setFireteamId] = React.useState(existingOperative?.fireteamid);
     const { data: killteam, isFetching: isFetchingTeam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
-    const operatives = keyBy(flatten(killteam?.fireteams.map((fireteam) => fireteam.operatives)), 'opid');
-    const operativeOptions = Object.values(operatives || {})?.map((operative) => ({
+    const fireteams = keyBy(killteam?.fireteams.map((fireteam) => ({ ...fireteam, operatives: keyBy(fireteam?.operatives, 'opid') })), 'fireteamid');
+    const fireteamOptions = killteam?.fireteams?.map((fireteam) => ({
+        label: fireteam.fireteamname,
+        value: fireteam.fireteamid
+    }));
+    const getOperative = (fireteamId, operativeId) => {
+        if (!fireteamId) {
+            fireteamId = Object.keys(fireteams)?.[0];
+        }
+        return fireteams?.[fireteamId]?.operatives?.[operativeId]
+    }
+    const operativeOptions = Object.values((fireteams[fireteamId] ?? Object.values(fireteams)?.[0])?.operatives ?? {})?.map((operative) => ({
         label: operative.opname,
         value: operative.opid
     }));
@@ -242,8 +253,8 @@ export function OperativeModal(props) {
     const setInitialOperativeData = async (opId) => {
         setOperativeId(opId);
         let newOpData = {
-            ...operatives[opId],
-            weapons: [...operatives[opId].weapons.filter((weapon) => !!weapon.isdefault)]
+            ...getOperative(fireteamId, opId),
+            weapons: [...getOperative(fireteamId, opId)?.weapons?.filter((weapon) => !!weapon.isdefault)]
         };
         if (settings.useoptypeasname !== "y") {
             newOpData.opname = await getRandomOperativeName(newOpData);
@@ -277,7 +288,7 @@ export function OperativeModal(props) {
     const equipment = groupBy(roster?.killteam?.equipments, 'eqcategory');
 
     // Unmodified original operative data
-    const operative = operatives[operativeId];
+    const operative = getOperative(fireteamId, operativeId);
 
     const validateSelection = () => {
         return !!operativeData && !!operativeData?.opname;
@@ -303,7 +314,22 @@ export function OperativeModal(props) {
                 onSubmit={handleConfirmOperative}
             >
                 <Stack>
+                    {(!existingOperative && Object.keys(fireteams)?.length > 1) && <Select
+                        disabled={!killteam?.killteamid}
+                        allowDeselect={false}
+                        label="Select Fireteam"
+                        placeholder="Select Fireteam"
+                        data={fireteamOptions}
+                        value={fireteamId}
+                        onChange={(fireteamId) => {
+                            setFireteamId(fireteamId);
+                            setOperativeId(null);
+                            setOperativeData(null);
+                        }}
+                    />}
                     {!existingOperative && <Select
+                        disabled={!killteam?.killteamid}
+                        allowDeselect={false}
                         label="Select Operative"
                         placeholder="Select Operative"
                         data={operativeOptions}
@@ -313,10 +339,11 @@ export function OperativeModal(props) {
                         }}
                     />}
                     <TextInput
+                        disabled={!operativeId}
                         label="Operative Name"
                         placeholder="Operative Name"
                         rightSection={settings.useoptypeasname === "y" ? <></> : <ActionIcon onClick={() => randomizeOperativeName()}><IconRefresh /></ActionIcon>}
-                        value={operativeData?.opname}
+                        value={operativeData?.opname || ''}
                         onChange={(e) => {
                             setOperativeData({
                                 ...operativeData,
@@ -324,13 +351,16 @@ export function OperativeModal(props) {
                             })
                         }}
                     />
-                    {!!operative && <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 6 : 4 }} spacing={0}>
-                        <Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
-                        <Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
-                        {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
-                        {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
-                        <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
-                        <Stack justify="center" align="center" gap="xs"><Text fw={700}>WOUND</Text> <Group gap={2}><IconDroplet size={20} />{operative.W}</Group></Stack>
+                    {!!operative && <SimpleGrid cols={{ base: operative?.edition === "kt21" ? 6 : 4 }} spacing="xs">
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
+                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
+                        {operative?.edition === "kt21" && <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
+                        <Paper withBorder><Stack justify="center" align="center" gap="xs">
+                            <Text fw={700}>WOUND</Text>
+                            <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
+                        </Stack></Paper>
                     </SimpleGrid>}
                     {!!operative && <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                         <Table.Thead>
