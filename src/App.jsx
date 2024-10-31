@@ -19,6 +19,13 @@ import "./assets/Oswald-VariableFont_wght.ttf";
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
   primaryColor: 'orange',
+  breakpoints: {
+    xs: '30em',
+    sm: '48em',
+    md: '64em',
+    lg: '90em',
+    xl: '106em',
+  }
 });
 
 function App() {
