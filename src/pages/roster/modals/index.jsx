@@ -138,6 +138,7 @@ export function UpdateRosterModal(props) {
                         {...form.getInputProps('rostername')}
                     />
                     <Textarea
+                        rows={8}
                         label="Notes"
                         placeholder="Notes"
                         key={form.key('notes')}

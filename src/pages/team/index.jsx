@@ -54,7 +54,16 @@ export default function Faction() {
         <Container py="md" px="md" fluid>
             <Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="md" src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`} />
+                    <Image onClick={() => modals.open({
+                        size: "xl",
+                        title: <Title order={2}>{killteam.killteamname}</Title>,
+                        children: <Image
+                            fit="cover"
+                            style={{ objectPosition: "top" }}
+                            radius="md"
+                            src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`}
+                        />
+                    })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="md" src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Title>
                             {killteam?.killteamname} <sup>{killteam.edition}</sup>

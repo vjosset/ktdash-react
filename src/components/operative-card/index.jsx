@@ -1,6 +1,6 @@
 import { ActionIcon, Card, Collapse, Group, Image, Menu, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
-import { IconArrowForward, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
+import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
@@ -158,17 +158,17 @@ export default function OperativeCard(props) {
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing="sm">
-                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted size={20} />{operative.APL}</Group></Stack>
-                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowForward size={20} />}<span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Group></Stack>
-                                    {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser size={20} />{operative.GA}</Group></Stack>}
-                                    {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice size={20} />{operative.DF}</Group></Stack>}
-                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield size={20} />{operative.SV}</Group></Stack>
+                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color="darkorange" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack>
+                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>MOVE</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color="darkorange" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack>
+                                    {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>GA</Text> <Group gap={2}><IconUser color="darkorange" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack>}
+                                    {operative?.edition === "kt21" && <Stack justify="center" align="center" gap="xs"><Text fw={700}>DF</Text> <Group gap={2}><IconDice color="darkorange" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack>}
+                                    <Stack justify="center" align="center" gap="xs"><Text fw={700}>SAVE</Text> <Group gap={2}><IconShield color="darkorange" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack>
                                     {woundTracker ? (<UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{`${operative.curW}/${operative.W}`}</Group>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
                                     </Stack></UnstyledButton>) : (<Stack justify="center" align="center" gap="xs">
                                         <Text fw={700}>WOUND</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet size={20} />}{operative.W}</Group>
+                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color="darkorange" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                                     </Stack>)}
                                 </SimpleGrid>
                             </SimpleGrid>

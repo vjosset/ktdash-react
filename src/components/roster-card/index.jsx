@@ -13,12 +13,12 @@ export default function RosterCard(props) {
                 <Title textWrap="pretty" order={3}>{roster.rostername}</Title>
                 <Menu withinPortal position="bottom-end" shadow="sm">
                     <Menu.Target>
-                        <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
+                        <ActionIcon variant="subtle" color="gray" onClick={(event) => { event.preventDefault(); event.stopPropagation() }}>
                             <IconDotsVertical />
                         </ActionIcon>
                     </Menu.Target>
 
-                    <Menu.Dropdown>
+                    <Menu.Dropdown onClick={(event) => { event.preventDefault(); event.stopPropagation() }}>
                         <Menu.Item leftSection={<IconEye />} onClick={() => navigate(`/r/${roster.rosterid}`)}>
                             View
                         </Menu.Item>
