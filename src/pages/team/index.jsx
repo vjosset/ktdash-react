@@ -61,9 +61,9 @@ export default function Faction() {
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="md"
-                            src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`}
+                            src={`https://ktdash.app/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`}
                         />
-                    })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="md" src={`/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`} />
+                    })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="md" src={`https://ktdash.app/img/portraits/${params?.factionId}/${params?.killteamId}/${params?.killteamId}.jpg`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Title>
                             {killteam?.killteamname} <sup>{killteam.edition}</sup>
