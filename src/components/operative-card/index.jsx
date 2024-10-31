@@ -204,7 +204,7 @@ export default function OperativeCard(props) {
                                 </Table>
                             </Stack>
                         </Paper>
-                        {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
+                        {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <Paper p="xs"><SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
                                 <Text fw={700}>Unique Actions</Text>
                                 <Group>
@@ -248,8 +248,8 @@ export default function OperativeCard(props) {
                                     ))}
                                 </Group>
                             </Stack>}
-                        </SimpleGrid>}
-                        {!!operative?.equipments?.length && <Stack gap="xs">
+                        </SimpleGrid></Paper>}
+                        {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
                             <Text fw={700}>Equipment</Text>
                             <Group>
                                 {operative?.equipments?.map((equip) => (
@@ -270,7 +270,7 @@ export default function OperativeCard(props) {
                                     </Text>
                                 ))}
                             </Group>
-                        </Stack>}
+                        </Stack></Paper>}
                         <Text px={2} size="xs">{operative.keywords}</Text>
                     </Stack>
                 </Collapse>
