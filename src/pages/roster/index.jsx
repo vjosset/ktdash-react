@@ -68,7 +68,6 @@ export default function Roster() {
             body: JSON.stringify(newOperative)
         }).then((data) => {
             if (data?.rosteropid) {
-                console.log(data);
                 notifications.show({
                     title: 'Added',
                     message: `Successfully added ${operative.opname}.`,

@@ -46,7 +46,7 @@ export default function Home() {
                             {spotlight.notes}
                         </Text>}
                         <Text fs="italic">
-                            {spotlight.operatives.map((operative) => operative.opname).join(', ')}
+                            {spotlight?.operatives?.map((operative) => operative.opname).join(', ')}
                         </Text>
                         <Group justify="space-between" gap={5}>
                             <Group>

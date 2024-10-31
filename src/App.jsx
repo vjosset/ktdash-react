@@ -14,6 +14,7 @@ import React, { useRef } from 'react';
 import AppContextProvider from './hooks/app-context';
 import AppBarMenu from './components/app-bar-menu';
 import useAuth from './hooks/use-auth';
+import "./assets/Oswald-VariableFont_wght.ttf";
 
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
