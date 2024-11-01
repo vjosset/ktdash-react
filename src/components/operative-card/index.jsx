@@ -109,9 +109,9 @@ export default function OperativeCard(props) {
             <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
                     <Group justify="space-between" wrap="nowrap">
-                        <Group gap={5}>
+                        <Group gap={5} wrap="nowrap">
                             <IconUserBolt size={50} color={getStatusColor()} />
-                            <Stack gap={5}>
+                            <Stack gap={5} flex={1}>
                                 <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
