@@ -11,7 +11,7 @@ import classes from './navbar.module.css';
 import { Link, useLocation } from 'wouter';
 import useAuth from '../../hooks/use-auth';
 import PWAInstallerPrompt from '../install-prompt';
-import { NavLink } from '@mantine/core';
+import { NavLink, Stack } from '@mantine/core';
 
 export function NavbarSimple(props) {
     const [location] = useLocation();
@@ -37,10 +37,9 @@ export function NavbarSimple(props) {
             leftSection={<item.icon />}
         />
     ));
-
     return (
         <nav>
-            <div>
+            <Stack gap={0}>
                 {links}
                 <PWAInstallerPrompt
                     render={({ onClick }) => (
@@ -49,9 +48,8 @@ export function NavbarSimple(props) {
                     )}
                     callback={() => { }}
                 />
-            </div>
-
-            <div className={classes.footer}>
+            </Stack>
+            <Stack gap={0} className={classes.footer}>
                 {!loggedIn ? <>
                     <NavLink
                         component={Link}
@@ -82,7 +80,7 @@ export function NavbarSimple(props) {
                     label="Log Out"
                     leftSection={<IconLock component={Link} />}
                 />}
-            </div>
+            </Stack>
         </nav>
     );
 }
