@@ -242,7 +242,7 @@ export default function Roster() {
                             labels: { confirm: 'Confirm', cancel: 'Cancel' },
                             onConfirm: () => handleCopyRoster(),
                         });
-                    } 
+                    }
                 },
                 ...(canEdit ? [
                     {

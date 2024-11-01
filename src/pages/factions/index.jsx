@@ -6,6 +6,15 @@ import { Link } from "wouter";
 
 export default function Factions() {
     const { data: factions, isFetching: isFetchingFactions } = useRequest("/faction.php");
+
+    if (isFetchingFactions) {
+        return (<LoadingOverlay visible={isFetchingFactions} />);
+    }
+
+    if (!factions?.length) {
+        return;
+    }
+
     const cards = factions?.map((faction) => (
         <Card key={faction.factionid} p="md" radius="sm" component={Link} className={classes.card} href={`/fa/${faction.factionid}`}>
             <Stack>
@@ -17,9 +26,6 @@ export default function Factions() {
             </Stack>
         </Card>
     ));
-    if (isFetchingFactions) {
-        return (<LoadingOverlay visible={isFetchingFactions} />);
-    }
 
     return (
         <Container py="md" px="md" fluid>

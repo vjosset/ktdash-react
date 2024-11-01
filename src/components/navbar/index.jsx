@@ -11,6 +11,7 @@ import classes from './navbar.module.css';
 import { Link, useLocation } from 'wouter';
 import useAuth from '../../hooks/use-auth';
 import PWAInstallerPrompt from '../install-prompt';
+import { NavLink } from '@mantine/core';
 
 export function NavbarSimple(props) {
     const [location] = useLocation();
@@ -23,56 +24,64 @@ export function NavbarSimple(props) {
         { link: '/settings', label: 'Settings', icon: IconSettings },
     ];
     const links = data.filter((link) => !link.loggedIn || loggedIn).map((item) => (
-        <Link
-            className={classes.link}
+        <NavLink
+            component={Link}
+            description={item.description}
             data-active={location.includes(item.link) || undefined}
             href={item.link}
             key={item.label}
+            label={item.label}
             onClick={() => {
                 props?.close();
             }}
-        >
-            <item.icon className={classes.linkIcon} />
-            <span>{item.label}</span>
-        </Link>
+            leftSection={<item.icon />}
+        />
     ));
 
     return (
-        <nav className={classes.navbar}>
-            <div className={classes.navbarMain}>
+        <nav>
+            <div>
                 {links}
                 <PWAInstallerPrompt
                     render={({ onClick }) => (
-                        <Link className={classes.link} onClick={onClick}>
-                            <IconDownload className={classes.linkIcon} />
-                            <span>Install</span>
-                        </Link>
+                        <NavLink leftSection={<IconDownload />} onClick={onClick} label="Install">
+                        </NavLink>
                     )}
-                    callback={() => {}}
+                    callback={() => { }}
                 />
             </div>
 
             <div className={classes.footer}>
                 {!loggedIn ? <>
-                    <Link href="/login" className={classes.link} data-active={location === "/login" || undefined} onClick={() => {
+                    <NavLink
+                        component={Link}
+                        href="/login"
+                        data-active={location === "/login" || undefined}
+                        leftSection={<IconLock />}
+                        label="Log In"
+                        onClick={() => {
+                            props?.close();
+                        }}
+                    />
+                    <NavLink
+                        component={Link}
+                        href="/register"
+                        data-active={location === "/register" || undefined}
+                        label="Register"
+                        leftSection={<IconUser />}
+                        onClick={() => {
+                            props?.close();
+                        }}
+                    />
+                </> : <NavLink
+                    component={Link}
+                    onClick={() => {
+                        logout();
                         props?.close();
-                    }}>
-                        <IconLock className={classes.linkIcon} />
-                        <span>Log In</span>
-                    </Link>
-                    <Link href="/register" className={classes.link} data-active={location === "/register" || undefined} onClick={() => {
-                        props?.close();
-                    }}>
-                        <IconUser className={classes.linkIcon} />
-                        <span>Register</span>
-                    </Link>
-                </> : <Link className={classes.link} onClick={() => {
-                    logout();
-                    props?.close();
-                }}>
-                    <IconLock className={classes.linkIcon} />
-                    <span>Log Out</span>
-                </Link>}
+                    }}
+                    label="Log Out"
+                    leftSection={<IconLock component={Link} />}
+                />}
             </div>
         </nav>
     );
