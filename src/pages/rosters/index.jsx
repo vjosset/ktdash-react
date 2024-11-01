@@ -11,9 +11,11 @@ import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
 import { useLocalStorage } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
+import { useSettings } from "../../hooks/use-settings";
 
 export default function Rosters() {
     const [, navigate] = useLocation();
+    const [settings] = useSettings();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
@@ -37,9 +39,14 @@ export default function Rosters() {
     }
 
     const handleCreateRoster = (roster) => {
+        const newRoster = {
+            ...roster,
+            CP: settings.startcp,
+            VP: settings.startvp
+        }
         request("/roster.php", {
             method: "POST",
-            body: JSON.stringify(roster)
+            body: JSON.stringify(newRoster)
         }).then((data) => {
             if (data?.rosterid) {
                 navigate(`/r/${data?.rosterid}`)

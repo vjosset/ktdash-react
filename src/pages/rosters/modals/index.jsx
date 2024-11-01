@@ -9,7 +9,7 @@ import { useSettings } from '../../../hooks/use-settings';
 
 export function AddRosterModal(props) {
     const { onClose } = props;
-    const [ settings ] = useSettings();
+    const [settings] = useSettings();
     const { user } = useAuth();
     const form = useForm({
         mode: 'controlled',

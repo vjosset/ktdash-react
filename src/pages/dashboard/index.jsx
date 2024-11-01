@@ -16,9 +16,11 @@ import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import useWindowDimensions from "../../hooks/get-window-dimensions";
 import { PrivateRoute } from "../../components/private-route";
+import { useSettings } from "../../hooks/use-settings";
 
 export default function Dashboard() {
     const { user: userData } = useAuth();
+    const [settings] = useSettings();
     const { appState, setAppState } = useAppContext();
     const dashboardRosterId = readLocalStorageValue({ key: 'dashboardrosterid' });
     const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
@@ -30,7 +32,7 @@ export default function Dashboard() {
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
     const groupedEquipment = groupBy(roster?.rostereqs?.filter(equip => !isNarrativeEquipment(equip)), 'eqcategory');
     const handleResetDashboard = React.useCallback(() => {
-        request(`/rosterreset.php?rid=${roster?.rosterid}&VP=${0}&CP=${2}`, {
+        request(`/rosterreset.php?rid=${roster?.rosterid}&VP=${settings?.startvp}&CP=${settings?.startcp}`, {
             method: "POST"
         }).then((data) => {
             if (data?.rosterid) {

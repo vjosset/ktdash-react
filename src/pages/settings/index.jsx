@@ -1,4 +1,4 @@
-import { Center, Container, rem, SegmentedControl, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import { Center, Container, rem, SegmentedControl, Select, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import { IconIdBadge, IconList } from '@tabler/icons-react';
 import { useSettings } from '../../hooks/use-settings';
 
@@ -120,6 +120,26 @@ export default function Settings() {
                                     value: 'n',
                                     label: 'Hide'
                                 }]}
+                            />
+                        </Stack>
+                        <Stack>
+                            <Title order={3}>Starting VP</Title>
+                            <Text>How many Victory Points your roster should start with when deployed or reset</Text>
+                            <Select
+                                value={settings?.startvp}
+                                onChange={(value) => updateSettings('startvp', value)}
+                                color="orange"
+                                data={['0','1','2']}
+                            />
+                        </Stack>
+                        <Stack>
+                            <Title order={3}>Starting CP</Title>
+                            <Text>How many Command Points your roster should start with when deployed or reset</Text>
+                            <Select
+                                value={settings?.startcp}
+                                onChange={(value) => updateSettings('startcp', value)}
+                                color="orange"
+                                data={['0','1','2','3','4']}
                             />
                         </Stack>
                     </SimpleGrid>
