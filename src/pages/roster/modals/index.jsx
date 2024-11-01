@@ -1,14 +1,15 @@
-import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image, Paper } from '@mantine/core';
+import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image, Paper, Title, Popover, ScrollArea, Flex } from '@mantine/core';
 import { API_PATH, request, requestText, useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { flatten, groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowBigRight, IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowBigRight, IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconHelp, IconMessageCircleQuestion, IconPhoto, IconQuestionMark, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { useSettings } from '../../../hooks/use-settings';
+import useWindowDimensions from '../../../hooks/get-window-dimensions';
 
 export function UpdateRosterPotraitModal(props) {
     const { onClose, roster } = props;
@@ -225,6 +226,7 @@ const Weapon = (props) => {
 
 export function OperativeModal(props) {
     const { onClose, roster, operative: existingOperative } = props;
+    const { width } = useWindowDimensions();
     const modalId = existingOperative ? 'edit-operative' : 'add-operative';
     const [settings] = useSettings();
     const [operativeData, setOperativeData] = React.useState(existingOperative);
@@ -247,6 +249,7 @@ export function OperativeModal(props) {
         value: operative.opid
     }));
     const hiddenKT24Equipment = new Set(['Equipment', 'Universal Equipment']);
+    const hiddenNarrativeEquipment = new Set(['Battle Honour', 'Battle Scar', 'Rare Equipment']);
 
     const getRandomOperativeName = (opData) => requestText(`/name.php?factionid=${opData.factionid}&killteamid=${opData.killteamid}&fireteamid=${opData.fireteamid}&opid=${opData.opid}`);
 
@@ -280,6 +283,8 @@ export function OperativeModal(props) {
     const filterEquipment = (equipCategory) => {
         if (killteam?.edition === "kt24") {
             return !hiddenKT24Equipment.has(equipCategory)
+        } else if (settings.shownarrative !== "y") {
+            return !hiddenNarrativeEquipment.has(equipCategory)
         } else {
             return true;
         }
@@ -403,8 +408,9 @@ export function OperativeModal(props) {
                                     <SimpleGrid cols={{ base: 2, sm: 4 }}>
                                         {
                                             equips?.map((eq) => (
-                                                <>
+                                                <Flex justify="space-between" align="center">
                                                     <Checkbox
+                                                        display="inline-block"
                                                         checked={!!operativeData?.equipments?.filter((equip) => equip.eqid === eq.eqid)?.length}
                                                         onChange={(event) => {
                                                             if (event.target.checked) {
@@ -420,8 +426,22 @@ export function OperativeModal(props) {
                                                             }
                                                         }}
                                                         label={eq.eqname}
+
                                                     />
-                                                </>
+                                                    <Popover withArrow position="top">
+                                                        <Popover.Target>
+                                                            <ActionIcon display="inline" variant="subtle" color="white"><IconHelp /></ActionIcon>
+                                                        </Popover.Target>
+                                                        <Popover.Dropdown p="xs">
+                                                            <ScrollArea.Autosize mah={200} maw={Math.min(width - 30, 500)}>
+                                                                <Title order={5}>{eq.eqname}</Title>
+                                                                <Text size="sm">
+                                                                    <div dangerouslySetInnerHTML={{ __html: `${convertShapes(eq.eqdescription)}` }} />
+                                                                </Text>
+                                                            </ScrollArea.Autosize>
+                                                        </Popover.Dropdown>
+                                                    </Popover>
+                                                </Flex>
                                             ))
                                         }
                                     </SimpleGrid>
