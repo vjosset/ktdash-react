@@ -17,7 +17,7 @@ export default function Faction() {
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
-                <Image fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <Image fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`https://ktdash.app/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>
@@ -26,7 +26,7 @@ export default function Faction() {
     const cards2024 = faction.killteams?.filter((killteam) => killteam.edition === "kt24")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
-                <Image fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <Image fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`https://ktdash.app/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <div dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>
@@ -36,7 +36,7 @@ export default function Faction() {
         <Container px="md" pb="md" fluid>
             <Stack>
                 <SimpleGrid my="md" cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={`/img/portraits/${params?.factionId}/${params?.factionId}.jpg`} />
+                    <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={`https://ktdash.app/img/portraits/${params?.factionId}/${params?.factionId}.jpg`} />
                     <Stack justify="flex-start" align="flex-start" grow={1}>
                         <Title>
                             {faction?.factionname}
