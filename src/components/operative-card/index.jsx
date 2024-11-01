@@ -105,8 +105,8 @@ export default function OperativeCard(props) {
         )
     }
     return (
-        <Card>
-            <Stack>
+        <Card padding="xs">
+            <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
                     <Group justify="space-between" wrap="nowrap">
                         <Group gap={5}>
@@ -149,7 +149,7 @@ export default function OperativeCard(props) {
                         </Menu>}
                     </Group>
                 </Stack>
-                <Collapse in={opened}>
+                <Collapse in={opened} spacing="xs">
                     <Stack>
                         <Stack>
                             <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }} spacing="xs">
