@@ -19,6 +19,20 @@ import "./assets/Oswald-VariableFont_wght.ttf";
 const theme = createTheme({
   fontFamily: 'Oswald, "Arial Narrow", Roboto, sans-serif',
   primaryColor: 'orange',
+  breakpoints: {
+    xs: '30em',
+    sm: '48em',
+    md: '64em',
+    lg: '90em',
+    xl: '114em',
+  },
+  spacing: {
+    xs: '0.31rem',  // Mantine Default: 0.625rem
+    sm: '0.35rem',  // Mantine Default: 0.75rem
+    md: '0.5rem',   // Mantine Default: 1rem
+    lg: '0.6rem',   // Mantine Default: 1.25rem
+    xl: '1rem',     // Mantine Default: 2rem
+  }
 });
 
 function App() {

@@ -10,7 +10,7 @@ export default function Factions() {
         <Card key={faction.factionid} p="md" radius="sm" component={Link} className={classes.card} href={`/fa/${faction.factionid}`}>
             <Stack>
                 <Title order={2} className={classes.title}>{faction.factionname}</Title>
-                <Image radius="sm" src={`/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
+                <Image radius="sm" src={`https://ktdash.app/img/portraits/${faction.factionid}/${faction.factionid}.jpg`} />
                 <Text>
                     <div dangerouslySetInnerHTML={{ __html: `${faction.description.split('<br/>')[0]}` }} />
                 </Text>
