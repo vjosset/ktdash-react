@@ -27,15 +27,11 @@ const theme = createTheme({
     xl: '114em',
   },
   spacing: {
-    "3xs": '0.5em',
-    "2xs": '0.5em',
-    xs: '0.5em',
-    sm: '0.5em',
-    md: '0.5em',
-    lg: '0.5em',
-    xl: '0.5em',
-    "2xl": '0.5em',
-    "3xl": '0.5em',
+    xs: '0.31rem',  // Mantine Default: 0.625rem
+    sm: '0.35rem',  // Mantine Default: 0.75rem
+    md: '0.5rem',   // Mantine Default: 1rem
+    lg: '0.6rem',   // Mantine Default: 1.25rem
+    xl: '1rem',     // Mantine Default: 2rem
   }
 });
 
