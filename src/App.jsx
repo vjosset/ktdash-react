@@ -25,6 +25,17 @@ const theme = createTheme({
     md: '64em',
     lg: '90em',
     xl: '114em',
+  },
+  spacing: {
+    "3xs": '0.5em',
+    "2xs": '0.5em',
+    xs: '0.5em',
+    sm: '0.5em',
+    md: '0.5em',
+    lg: '0.5em',
+    xl: '0.5em',
+    "2xl": '0.5em',
+    "3xl": '0.5em',
   }
 });
 
