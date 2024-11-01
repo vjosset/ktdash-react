@@ -5,6 +5,7 @@ import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons
 import { Link } from "wouter";
 import News from "./news";
 import useAuth from "../../hooks/use-auth";
+import MainLogo from '../../assets/icon-96x96.png';
 
 export default function Home() {
     const { data: spotlight, isFetching: isFetchingSpotlight } = useRequest("/roster.php?randomspotlight=1");
@@ -13,10 +14,14 @@ export default function Home() {
         <Stack>
             <div className={classes.wrapper}>
                 <div className={classes.inner}>
-                    <Title mb="md" className={classes.title}>
-                        KTDASH
-                    </Title>
-
+                    <Group gap={0} justify="center">
+                        <Image h={80}
+                            w="auto"
+                            fit="contain" src={MainLogo} />
+                        <Title mb="md" className={classes.title}>
+                            KTDASH
+                        </Title>
+                    </Group>
                     <Container className={classes.description} size={640}>
                         <Text>KTDash is a web-based application for running your KillTeam games.</Text>
                         <ul>
@@ -28,7 +33,7 @@ export default function Home() {
                     </Container>
                 </div>
             </div>
-            {!!spotlight && <Container fluid>
+            {!!spotlight?.rosterid && <Container fluid>
                 {!!isFetchingSpotlight && <Loader color="orange" />}
                 <Card key={spotlight.factionid} radius="sm" component={Link} className={classes.card} href={`/r/${spotlight.rosterid}`}>
                     <Stack>
