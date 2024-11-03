@@ -213,6 +213,43 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleUpdateOperativeOrder = React.useCallback((operative) => {
+        let oporder = "engage";
+        console.log("Operative order: " + operative.oporder);
+        if (operative.oporder === "engage") {
+            oporder = "conceal";
+        }
+        request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${oporder}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        oporder: oporder
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleUpdateOperativeActivation = React.useCallback((operative, isactivated) => {
+        request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${isactivated}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        activated: isactivated
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -319,7 +356,12 @@ export default function Dashboard() {
                         <Tabs.Panel value="operatives">
                             <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
                                 {roster?.operatives?.filter((op) => !op.hidden)?.map((operative) => (
-                                    <OperativeCard collapsible woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
+                                    <OperativeCard
+                                        operative={operative}
+                                        collapsible
+                                        woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)}
+                                        orderTracker onUpdateOrder={(order) => handleUpdateOperativeOrder(operative, order)}
+                                    />
                                 ))}
                             </SimpleGrid>
                         </Tabs.Panel>

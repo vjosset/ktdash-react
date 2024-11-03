@@ -9,7 +9,15 @@ import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
 import { useSettings } from "../../hooks/use-settings";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
+    const {
+        operative,
+        collapsible,
+        editable, onEdit = () => { },
+        onDelete = () => { },
+        woundTracker, onUpdateWounds = () => { },
+        orderTracker, onUpdateOrder = () => { },
+        activationTracker, onUpdateActivation = () => { }
+    } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useSettings();
     const [imageExpire, setImageExpire] = React.useState(true);
@@ -56,6 +64,9 @@ export default function OperativeCard(props) {
             ))}</Stack>
         ),
     });
+    const getOrderIconPath = (operative) => {
+        return "/img/icons/" + (operative.oporder === 'engage' ? "Engage" : "Conceal") + (operative.activated === 1 ? "White" : "Orange") + ".png";
+    }
     const renderWeapon = (weapon) => {
         if (weapon?.profiles?.length > 1) {
             return (
@@ -107,19 +118,23 @@ export default function OperativeCard(props) {
     return (
         <Card padding="xs">
             <Stack gap="xs">
-                <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
+                <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding>
                     {/* Card Title */}
                     <Group justify="space-between" wrap="nowrap">
                         <Group gap={5} wrap="nowrap">
-                            {/* Op Status */}
-                            <IconUserBolt size={50} color={getStatusColor()} />
+                            {/* Op Order */}
+                            <Stack>
+                                {orderTracker ?
+                                    (<Image src={getOrderIconPath(operative)} h={50} onClick={onUpdateOrder} />)
+                                    :""}
+                            </Stack>
                             {/* Op Name/Type */}
-                            <Stack gap={5} flex={1}>
+                            <Stack gap={5} flex={1} onClick={() => collapsible ? setOpened(!opened) : null}>
                                 <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
                         </Group>
-                        {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
+                        {!!collapsible && <>{opened ? <IconChevronDown onClick={() => collapsible ? setOpened(!opened) : null} /> : <IconChevronUp onClick={() => collapsible ? setOpened(!opened) : null} />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
                             {/* Op Actions Menu */}
                             <Menu.Target>
@@ -189,15 +204,15 @@ export default function OperativeCard(props) {
                                                     <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color={getStatusColor()} size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
                                                 </Stack>
                                             </UnstyledButton>
-                                    </Paper>)
-                                    :
+                                        </Paper>)
+                                        :
                                         (<Paper>
                                             <Stack h="100%" justify="center" align="center" gap={5}>
                                                 <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
                                                 <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                                             </Stack>
                                         </Paper>
-                                )}
+                                    )}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
