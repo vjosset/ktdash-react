@@ -108,9 +108,12 @@ export default function OperativeCard(props) {
         <Card padding="xs">
             <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
+                    {/* Card Title */}
                     <Group justify="space-between" wrap="nowrap">
                         <Group gap={5} wrap="nowrap">
+                            {/* Op Status */}
                             <IconUserBolt size={50} color={getStatusColor()} />
+                            {/* Op Name/Type */}
                             <Stack gap={5} flex={1}>
                                 <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
@@ -118,6 +121,7 @@ export default function OperativeCard(props) {
                         </Group>
                         {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
+                            {/* Op Actions Menu */}
                             <Menu.Target>
                                 <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
                                     <IconDotsVertical />
@@ -153,6 +157,7 @@ export default function OperativeCard(props) {
                     <Stack>
                         <Stack>
                             <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }} spacing="xs">
+                                {/* Op Portrait */}
                                 {settings.display === "card" && <Image
                                     onClick={() => modals.open({
                                         size: "xl",
@@ -169,24 +174,35 @@ export default function OperativeCard(props) {
                                     h={140} radius="sm"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
+                                {/* Op Stats */}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
                                     {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
                                     {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
-                                    {woundTracker ? (<Paper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap={5}>
-                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
-                                    </Stack></UnstyledButton></Paper>) : (<Paper><Stack h="100%" justify="center" align="center" gap={5}>
-                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
-                                    </Stack></Paper>
+                                    {woundTracker ?
+                                        (<Paper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                            <UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}>
+                                                <Stack justify="center" align="center" gap={5}>
+                                                    <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                    <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color={getStatusColor()} size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
+                                                </Stack>
+                                            </UnstyledButton>
+                                    </Paper>)
+                                    :
+                                        (<Paper>
+                                            <Stack h="100%" justify="center" align="center" gap={5}>
+                                                <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
+                                            </Stack>
+                                        </Paper>
                                 )}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
                         <Paper px="xs">
+                            {/* Weapons */}
                             <Stack>
                                 <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                                     <Table.Thead>
@@ -207,6 +223,7 @@ export default function OperativeCard(props) {
                         </Paper>
                         {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <Paper p="xs"><SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
+                                {/* Unique Actions */}
                                 <Text size="sm" fw={700}>ACTIONS</Text>
                                 <Group gap="xs">
                                     {operative?.uniqueactions?.map((ability) => (
@@ -228,6 +245,7 @@ export default function OperativeCard(props) {
                                 </Group>
                             </Stack>}
                             {!!operative?.abilities?.length && <Stack gap="xs">
+                                {/* Abilities */}
                                 <Text size="sm" fw={700}>ABILITIES</Text>
                                 <Group gap="xs">
                                     {operative?.abilities?.map((ability) => (
@@ -251,6 +269,7 @@ export default function OperativeCard(props) {
                             </Stack>}
                         </SimpleGrid></Paper>}
                         {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
+                            {/* Equipment/Options */}
                             <Text size="sm" fw={700}>EQUIPMENT</Text>
                             <Group gap="xs">
                                 {operative?.equipments?.map((equip) => (
@@ -272,6 +291,7 @@ export default function OperativeCard(props) {
                                 ))}
                             </Group>
                         </Stack></Paper>}
+                        {/* Op Keywords */}
                         <Text px={2} size="xs">{operative.keywords}</Text>
                     </Stack>
                 </Collapse>
