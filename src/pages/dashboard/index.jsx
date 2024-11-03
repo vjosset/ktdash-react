@@ -232,7 +232,7 @@ export default function Dashboard() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleUpdateOperativeActivation = React.useCallback((operative) => {
-        // Togle from activated to not activated or not activated to activated
+        // Toggle from activated to not activated or not activated to activated
         let newactivated = operative.activated === 1 ? 0 : 1;
         request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${newactivated}`, {
             method: "POST"
