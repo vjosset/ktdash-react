@@ -121,20 +121,15 @@ export default function OperativeCard(props) {
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding>
                     {/* Card Title */}
                     <Group justify="space-between" wrap="nowrap">
-                        <Group gap={5} wrap="nowrap">
-                            {/* Op Order */}
-                            <Stack>
-                                {orderTracker ?
-                                    (<Image src={getOrderIconPath(operative)} h={50} onClick={onUpdateOrder} />)
-                                    :""}
-                            </Stack>
-                            {/* Op Activation */}
+                        <Group gap={5} flex={1} wrap="nowrap">
+                            {/* Op Order and Activation */}
                             <Stack>
                                 {activationTracker ? (<Checkbox checked={operative.activated === 1} onChange={onUpdateActivation} />) :""}
+                                {orderTracker ? (<Image src={getOrderIconPath(operative)} h={25} onClick={onUpdateOrder} />) :""}
                             </Stack>
                             {/* Op Name/Type */}
-                            <Stack gap={5} flex={1} onClick={() => collapsible ? setOpened(!opened) : null}>
-                                <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                            <Stack gap={5} flex={1}>
+                                <Title onClick={() => collapsible ? setOpened(!opened) : null} textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
                         </Group>
