@@ -214,12 +214,11 @@ export default function Dashboard() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleUpdateOperativeOrder = React.useCallback((operative) => {
-        let oporder = "engage";
-        console.log("Operative order: " + operative.oporder);
+        let newoporder = "engage";
         if (operative.oporder === "engage") {
-            oporder = "conceal";
+            newoporder = "conceal";
         }
-        request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${oporder}`, {
+        request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
             method: "POST"
         }).then((data) => {
             if (data?.success) {
@@ -227,7 +226,7 @@ export default function Dashboard() {
                     ...roster,
                     operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
                         ...op,
-                        oporder: oporder
+                        oporder: newoporder
                     } : op)
                 });
             }
