@@ -1,4 +1,4 @@
-import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
+import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton, Checkbox } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
@@ -127,6 +127,10 @@ export default function OperativeCard(props) {
                                 {orderTracker ?
                                     (<Image src={getOrderIconPath(operative)} h={50} onClick={onUpdateOrder} />)
                                     :""}
+                            </Stack>
+                            {/* Op Activation */}
+                            <Stack>
+                                {activationTracker ? (<Checkbox checked={operative.activated === 1} onChange={onUpdateActivation} />) :""}
                             </Stack>
                             {/* Op Name/Type */}
                             <Stack gap={5} flex={1} onClick={() => collapsible ? setOpened(!opened) : null}>
