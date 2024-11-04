@@ -213,6 +213,38 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleUpdateOperativeOrder = React.useCallback((operative, newoporder) => {
+        request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        oporder: newoporder
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleUpdateOperativeActivation = React.useCallback((operative, newactivated) => {
+        request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${newactivated}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        activated: newactivated
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -319,7 +351,13 @@ export default function Dashboard() {
                         <Tabs.Panel value="operatives">
                             <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
                                 {roster?.operatives?.filter((op) => !op.hidden)?.map((operative) => (
-                                    <OperativeCard collapsible woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
+                                    <OperativeCard
+                                        operative={operative}
+                                        collapsible
+                                        woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)}
+                                        orderTracker onUpdateOrder={(newoporder) => handleUpdateOperativeOrder(operative, newoporder)}
+                                        activationTracker onUpdateActivation={(newactivated) => handleUpdateOperativeActivation(operative, newactivated)}
+                                    />
                                 ))}
                             </SimpleGrid>
                         </Tabs.Panel>
