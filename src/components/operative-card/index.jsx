@@ -39,11 +39,11 @@ function OrderPicker(props) {
         }
     ];
     return (
-        <Popover opened={opened} onChange={setOpened} position="bottom" withArrow shadow="md">
+        <Popover onClick={(event) => {  setOpened(!opened); event.preventDefault(); event.stopPropagation(); }} opened={opened} position="bottom" withArrow shadow="md">
             <Popover.Target onClick={setOpened}>
                 {props.children}
             </Popover.Target>
-            <Popover.Dropdown bg="var(--mantine-color-body)">
+            <Popover.Dropdown onClick={(event) => { event.preventDefault(); event.stopPropagation(); }} bg="var(--mantine-color-body)">
                 <Group>
                     {orders.map((order, index) => (
                         <UnstyledButton key={index} onClick={() => handleSelectOrder(order)}>
@@ -170,21 +170,19 @@ export default function OperativeCard(props) {
             <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }}>
                     {/* Card Title */}
-                    <Group justify="space-between" wrap="nowrap">
-                        <Group gap={5} flex={1} wrap="nowrap">
+                    <Group justify="space-between" wrap="nowrap" onClick={() => collapsible ? setOpened(!opened) : null}>
+                        <Group gap={10} flex={1} wrap="nowrap">
                             {/* Op Order and Activation */}
-                            <Stack>
-                                {!!orderTracker && <OrderPicker onChange={handleUpdateOrder}>
-                                    <Image alt="Operative Order" src={getOrderIconPath(operative)} h={40} />
-                                </OrderPicker>}
-                            </Stack>
+                            {!!orderTracker && <OrderPicker onChange={handleUpdateOrder}>
+                                <Image zIndex={1000} alt="Operative Order" src={getOrderIconPath(operative)} h={40} />
+                            </OrderPicker>}
                             {/* Op Name/Type */}
                             <Stack gap={5} flex={1}>
-                                <Title onClick={() => collapsible ? setOpened(!opened) : null} textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                                <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
                         </Group>
-                        {!!collapsible && <>{opened ? <IconChevronDown onClick={() => collapsible ? setOpened(!opened) : null} /> : <IconChevronUp onClick={() => collapsible ? setOpened(!opened) : null} />}</>}
+                        {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
                             {/* Op Actions Menu */}
                             <Menu.Target>
