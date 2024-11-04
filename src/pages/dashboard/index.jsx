@@ -213,9 +213,7 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
-    const handleUpdateOperativeOrder = React.useCallback((operative) => {
-        // Toggle from engage to conceal or conceal to engage
-        let newoporder = operative.oporder === 'engage' ? 'conceal' : 'engage';
+    const handleUpdateOperativeOrder = React.useCallback((operative, newoporder) => {
         request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
             method: "POST"
         }).then((data) => {
@@ -231,9 +229,7 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
-    const handleUpdateOperativeActivation = React.useCallback((operative) => {
-        // Toggle from activated to not activated or not activated to activated
-        let newactivated = operative.activated === 1 ? 0 : 1;
+    const handleUpdateOperativeActivation = React.useCallback((operative, newactivated) => {
         request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${newactivated}`, {
             method: "POST"
         }).then((data) => {
@@ -359,8 +355,8 @@ export default function Dashboard() {
                                         operative={operative}
                                         collapsible
                                         woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)}
-                                        orderTracker onUpdateOrder={() => handleUpdateOperativeOrder(operative)}
-                                        activationTracker onUpdateActivation={() => handleUpdateOperativeActivation(operative)}
+                                        orderTracker onUpdateOrder={(newoporder) => handleUpdateOperativeOrder(operative, newoporder)}
+                                        activationTracker onUpdateActivation={(newactivated) => handleUpdateOperativeActivation(operative, newactivated)}
                                     />
                                 ))}
                             </SimpleGrid>
