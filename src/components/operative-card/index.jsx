@@ -105,7 +105,7 @@ export default function OperativeCard(props) {
         )
     }
     return (
-        <Card padding="xs">
+        <Card key={operative.opid} padding="xs">
             <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
                     <Group justify="space-between" wrap="nowrap">

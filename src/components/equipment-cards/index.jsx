@@ -1,20 +1,20 @@
 import { Card, Checkbox, Group, SimpleGrid, Stack, Title } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import classes from './equipment-card.module.css';
-import React from "react";
+import React, { Fragment } from "react";
 
 export default function EquipmentCards(props) {
     const { equipment: groupedEquipment, selectable = false, onSelect = () => { } } = props;
     return (
         <Stack my="md">
-            {Object.keys(groupedEquipment)?.map((key) => {
+            {Object.keys(groupedEquipment)?.map((key, index) => {
                 const equipment = groupedEquipment[key];
                 return (
-                    <>
+                    <Fragment key={index}>
                         <Title order={2}>{key}</Title>
                         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                            {equipment.map((equip) => (
-                                <>
+                            {equipment.map((equip, equipIndex) => (
+                                <Fragment key={equipIndex}>
                                     {selectable ? <Card className={classes.root} onClick={() => onSelect(equip, !equip.selected)}>
                                         <Stack align="flex-start">
                                             <Group>
@@ -29,10 +29,10 @@ export default function EquipmentCards(props) {
                                             <div dangerouslySetInnerHTML={{ __html: `${convertShapes(equip.eqdescription)}` }} />
                                         </Stack>
                                     </Card>}
-                                </>
+                                </Fragment>
                             ))}
                         </SimpleGrid>
-                    </>
+                    </Fragment>
                 )
             })}
         </Stack>

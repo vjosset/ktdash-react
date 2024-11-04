@@ -4,7 +4,7 @@ import { ModalsProvider } from '@mantine/modals';
 import { useDisclosure } from '@mantine/hooks';
 import { Notifications } from '@mantine/notifications';
 import { NavbarSimple } from './components/navbar';
-import Root from './pages';
+import Root from './page';
 import MainLogo from './assets/icon-96x96.png';
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';

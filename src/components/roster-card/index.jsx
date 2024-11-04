@@ -1,12 +1,14 @@
+'use client'
 import { ActionIcon, Card, Group, Image, Menu, Stack, Text, Title } from "@mantine/core";
-import { Link, useLocation } from "wouter";
 import classes from './rosters.module.css';
 import { API_PATH } from "../../hooks/use-api";
 import { IconCards, IconCopy, IconDotsVertical, IconEye, IconFileImport, IconPhoto, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function RosterCard(props) {
     const { roster, editable, onDelete = () => { }, onDeploy = () => { }, onCopy = () => {} } = props;
-    const [, navigate] = useLocation();
+    const router = useRouter();
     return (
         <Card key={roster.rosterid} p="md" radius="sm" component={Link} className={classes.card} href={`/r/${roster.rosterid}`}>
             <Group justify="space-between" wrap="nowrap">
