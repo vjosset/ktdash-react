@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import MainLogo from '../../assets/icon-96x96.png';
 import NextImage from 'next/image';
+import useWindowDimensions from "@/hooks/get-window-dimensions";
 
 export default function AppBarMenu(props) {
     const { opened, toggle } = props;
@@ -13,13 +14,15 @@ export default function AppBarMenu(props) {
     
     const button = useRef(null);
 
+    const { width } = useWindowDimensions();
+
     // Stupid ref hack because you can't manually close the nav :|
     const closeNav = () => {
         if (opened) {
             button?.current?.click();
         }
     }
-    const numButtonstoShow = 3;
+    const numButtonstoShow = width >= 700 ? (width / 170) : (width / 125);
     const contextActionsButtons = appState?.contextActions?.slice(0, numButtonstoShow);
     const contextActionsMenuButtons = appState?.contextActions?.slice(numButtonstoShow);
 

@@ -209,36 +209,21 @@ export default function Dashboard(props) {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
-    const handleUpdateOperativeOrder = React.useCallback((operative, newoporder) => {
+    const handleUpdateOperativeOrder = React.useCallback((operative, newoporder, newactivated) => {
+        setRoster({
+            ...roster,
+            operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                ...op,
+                activated: newactivated,
+                oporder: newoporder
+            } : op)
+        });
         request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
             method: "POST"
-        }).then((data) => {
-            if (data?.success) {
-                setRoster({
-                    ...roster,
-                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
-                        ...op,
-                        oporder: newoporder
-                    } : op)
-                });
-            }
-        })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [roster]);
-    const handleUpdateOperativeActivation = React.useCallback((operative, newactivated) => {
+        });
         request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${newactivated}`, {
             method: "POST"
-        }).then((data) => {
-            if (data?.success) {
-                setRoster({
-                    ...roster,
-                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
-                        ...op,
-                        activated: newactivated
-                    } : op)
-                });
-            }
-        })
+        });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     React.useEffect(() => {
@@ -344,8 +329,7 @@ export default function Dashboard(props) {
                                     operative={operative}
                                     collapsible
                                     woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)}
-                                    orderTracker onUpdateOrder={(newoporder) => handleUpdateOperativeOrder(operative, newoporder)}
-                                    activationTracker onUpdateActivation={(newactivated) => handleUpdateOperativeActivation(operative, newactivated)}
+                                    orderTracker onUpdateOrder={(newoporder, newactivated) => handleUpdateOperativeOrder(operative, newoporder, newactivated)}
                                 />
                             ))}
                         </SimpleGrid>

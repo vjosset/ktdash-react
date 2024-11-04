@@ -1,12 +1,60 @@
-import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton, Checkbox } from "@mantine/core";
+'use client'
+import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton, Checkbox, Popover, Button } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
 import { useSettings } from "../../hooks/use-settings";
+
+function OrderPicker(props) {
+    const { onChange } = props;
+    const [opened, setOpened] = useState(false);
+    const handleSelectOrder = (order) => {
+        setOpened(false);
+        onChange(order);
+    }
+    const orders = [
+        {
+            img: "/img/icons/EngageOrange.png",
+            order: 'engage',
+            activated: 0
+        },
+        {
+            img: "/img/icons/ConcealOrange.png",
+            order: 'conceal',
+            activated: 0
+        },
+        {
+            img: "/img/icons/EngageWhite.png",
+            order: 'engage',
+            activated: 1
+        },
+        {
+            img: "/img/icons/ConcealWhite.png",
+            order: 'conceal',
+            activated: 1
+        }
+    ];
+    return (
+        <Popover onClick={(event) => {  setOpened(!opened); event.preventDefault(); event.stopPropagation(); }} opened={opened} position="bottom" withArrow shadow="md">
+            <Popover.Target onClick={setOpened}>
+                {props.children}
+            </Popover.Target>
+            <Popover.Dropdown onClick={(event) => { event.preventDefault(); event.stopPropagation(); }} bg="var(--mantine-color-body)">
+                <Group>
+                    {orders.map((order, index) => (
+                        <UnstyledButton key={index} onClick={() => handleSelectOrder(order)}>
+                            <Image alt="Operative Order" h={40} src={order.img} />
+                        </UnstyledButton>
+                    ))}
+                </Group>
+            </Popover.Dropdown>
+        </Popover>
+    )
+}
 
 export default function OperativeCard(props) {
     const {
@@ -16,7 +64,6 @@ export default function OperativeCard(props) {
         onDelete = () => { },
         woundTracker, onUpdateWounds = () => { },
         orderTracker, onUpdateOrder = () => { },
-        activationTracker, onUpdateActivation = () => { }
     } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useSettings();
@@ -64,6 +111,9 @@ export default function OperativeCard(props) {
             ))}</Stack>
         ),
     });
+    const handleUpdateOrder = (order) => {
+        onUpdateOrder(order.order, order.activated);
+    }
     const getOrderIconPath = (operative) => {
         return "/img/icons/" + (operative.oporder === 'engage' ? "Engage" : "Conceal") + (operative.activated === 1 ? "White" : "Orange") + ".png";
     }
@@ -120,20 +170,19 @@ export default function OperativeCard(props) {
             <Stack gap="xs">
                 <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }}>
                     {/* Card Title */}
-                    <Group justify="space-between" wrap="nowrap">
-                        <Group gap={5} flex={1} wrap="nowrap">
+                    <Group justify="space-between" wrap="nowrap" onClick={() => collapsible ? setOpened(!opened) : null}>
+                        <Group gap={10} flex={1} wrap="nowrap">
                             {/* Op Order and Activation */}
-                            <Stack>
-                                {activationTracker ? (<Checkbox checked={operative.activated === 1} onChange={(event) => onUpdateActivation(event.target.checked ? 1 : 0)} />) : ""}
-                                {orderTracker ? (<Image alt="Operative Order" src={getOrderIconPath(operative)} h={25} onClick={() => onUpdateOrder(operative.oporder === 'engage' ? 'conceal' : 'engage')} />) : ""}
-                            </Stack>
+                            {!!orderTracker && <OrderPicker onChange={handleUpdateOrder}>
+                                <Image zIndex={1000} alt="Operative Order" src={getOrderIconPath(operative)} h={40} />
+                            </OrderPicker>}
                             {/* Op Name/Type */}
                             <Stack gap={5} flex={1}>
-                                <Title onClick={() => collapsible ? setOpened(!opened) : null} textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                                <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
                         </Group>
-                        {!!collapsible && <>{opened ? <IconChevronDown onClick={() => collapsible ? setOpened(!opened) : null} /> : <IconChevronUp onClick={() => collapsible ? setOpened(!opened) : null} />}</>}
+                        {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
                             {/* Op Actions Menu */}
                             <Menu.Target>
