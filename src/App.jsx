@@ -4,7 +4,7 @@ import { ModalsProvider } from '@mantine/modals';
 import { useDisclosure } from '@mantine/hooks';
 import { Notifications } from '@mantine/notifications';
 import { NavbarSimple } from './components/navbar';
-import Root from './pages';
+import Root from './page';
 import MainLogo from './assets/icon-96x96.png';
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
@@ -62,7 +62,7 @@ function App() {
                   <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="md" size="sm" />
                   <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                     <Group gap={5}>
-                      <Image h={40}
+                      <Image alt="App Logo" h={40}
                         w="auto"
                         fit="contain" src={MainLogo} />
                       <Title fontFamily="Anton" order={2}>KTDASH</Title>

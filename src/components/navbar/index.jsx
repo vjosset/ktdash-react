@@ -3,8 +3,8 @@ import {
     IconBrandDiscord,
     IconBrandGithub,
     IconCode,
-    IconDice2,
     IconDownload,
+    IconHelp,
     IconLock,
     IconSettings,
     IconTools,
@@ -12,17 +12,18 @@ import {
     IconUsers,
 } from '@tabler/icons-react';
 import classes from './navbar.module.css';
-import { Link, useLocation } from 'wouter';
 import useAuth from '../../hooks/use-auth';
 import PWAInstallerPrompt from '../install-prompt';
 import { NavLink, Stack } from '@mantine/core';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'
+import { Fragment } from 'react';
 
 export function NavbarSimple(props) {
-    const [location] = useLocation();
+    const location = usePathname()
     const { user, logout, isLoggedIn } = useAuth();
     const loggedIn = isLoggedIn();
     const data = [
-        { link: '/dashboard', label: 'Play', icon: IconDice2, loggedIn: true },
         { link: `/u/${user?.username}`, label: 'Rosters', icon: IconUsers, loggedIn: true },
         { link: '/allfactions', label: 'Factions', icon: IconBook },
         {
@@ -31,20 +32,21 @@ export function NavbarSimple(props) {
             ]
         },
         { link: '/settings', label: 'Settings', icon: IconSettings },
+        { link: '/help', label: 'Help', icon: IconHelp },
     ];
-    const renderLink = (item) => {
+    const renderLink = (item, index) => {
         return (
-            <>
+            <Fragment key={index}>
                 {!!item.children ? <NavLink
-                    component={Link}
                     description={item.description}
                     data-active={location.includes(item.link) || undefined}
                     key={item.label}
                     label={item.label}
                     leftSection={<item.icon />}
                 >
-                    {item.children.map((child) => renderLink(child))}
-                </NavLink> : <NavLink
+                    {item.children.map((child, childIndex) => (<Fragment key={childIndex}>{renderLink(child)}</Fragment>))}
+                </NavLink> : 
+                <NavLink
                     component={Link}
                     description={item.description}
                     data-active={location.includes(item.link) || undefined}
@@ -56,7 +58,7 @@ export function NavbarSimple(props) {
                     }}
                     leftSection={<item.icon />}
                 />}
-            </>
+            </Fragment>
         )
     }
     const links = data.filter((link) => !link.loggedIn || loggedIn).map(renderLink);
@@ -100,16 +102,15 @@ export function NavbarSimple(props) {
                     />
                     <NavLink
                         component={Link}
-                        href="/register"
-                        data-active={location === "/register" || undefined}
-                        label="Register"
+                        href="/signup"
+                        data-active={location === "/signup" || undefined}
+                        label="Sign Up"
                         leftSection={<IconUser />}
                         onClick={() => {
                             props?.close();
                         }}
                     />
                 </> : <NavLink
-                    component={Link}
                     onClick={() => {
                         logout();
                         props?.close();

@@ -67,7 +67,7 @@ export function UpdateOperativePotraitModal(props) {
     return (
         <>
             <Stack>
-                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={portrait?.picturePreview || `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}`} />
+                <Image alt="Operative Portrait" fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={portrait?.picturePreview || `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}`} />
                 <FileInput
                     leftSection={<IconPhoto />}
                     label="Operative Portrait"
@@ -77,7 +77,7 @@ export function UpdateOperativePotraitModal(props) {
                 />
                 <Text>Image will be resized to 900 x 600 px - Max upload file size: 5 MB
                     Rosters that have a photo of a painted mini for each operative and a group photo as a roster portrait will be added to the Roster Spotlight.
-                    Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.</Text>
+                    Please don&apos;t upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.</Text>
                 <Group justify="flex-end">
                     <Button variant="default" onClick={() => modals.close("update-operative-portrait")}>Cancel</Button>
                     <Button color="red" onClick={handleDeleteOperativePortrait}>Delete Portrait</Button>
