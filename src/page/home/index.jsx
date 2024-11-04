@@ -8,16 +8,18 @@ import useAuth from "../../hooks/use-auth";
 import MainLogo from '../../assets/icon-96x96.png';
 import Link from "next/link";
 import NextImage from 'next/image';
+import { useRouter } from "next/navigation";
 
 export default function Home(props) {
     const { spotlight } = props;
     const { user } = useAuth();
+    const router = useRouter();
     return (
         <Stack>
             <div className={classes.wrapper}>
                 <div className={classes.inner}>
                     <Group gap={0} justify="center">
-                        <Image h={80}
+                        <Image alt="App Logo" h={80}
                             component={NextImage}
                             w="auto"
                             fit="contain" src={MainLogo} />
@@ -30,21 +32,21 @@ export default function Home(props) {
                         <ul>
                             <li>Browse the <Link href="/allfactions">Factions</Link></li>
                             <li>{user?.username ? <Link href={`/u/${user?.username}`}>Build a roster</Link> : <>Build a roster</>} or <Link href="/u/KTDash">import a pre-built roster</Link></li>
-                            <li>Generate names for your operatives</li>
-                            <li>Use the <Link href="/dashboard">Dashboard</Link> to play your games and track operative wounds, TacOps, Ploys, operative orders and activation, TP/CP/VP, and more</li>
+                            <li><Link href="/name">Generate names</Link> for your operatives</li>
+                            <li>Use the Dashboard view to play your games and track operative wounds, TacOps, Ploys, operative orders and activation, TP/CP/VP, and more</li>
                         </ul>
                     </Container>
                 </div>
             </div>
             {!!spotlight?.rosterid && <Container fluid>
-                <Card key={spotlight.factionid} radius="sm" component={Link} className={classes.card} href={`/r/${spotlight.rosterid}`}>
+                <Card key={spotlight.factionid} radius="sm" style={{ cursor: 'pointer' }} onClick={() => router.push(`/r/${spotlight.rosterid}`)} className={classes.card}>
                     <Stack>
                         <Title>Roster Spotlight</Title>
                         <SimpleGrid cols={{ base: 1, md: 2 }}>
-                            <Image alt={spotlight.rosterid} h="100%" radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
+                            <Image alt="Roster portrait" h="100%" radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${spotlight.rosterid}`} />
                             <SimpleGrid visibleFrom="md" cols={{ base: 2, md: 2, lg: 3, xl: 4 }}>
-                                {spotlight.operatives.map((op) => (
-                                    <Image alt={op.rosteropid} h="100%" radius="sm" src={`${API_PATH}/operativeportrait.php?roid=${op.rosteropid}`} />
+                                {spotlight.operatives.map((op, index) => (
+                                    <Image key={index} alt={op.rosteropid} h="100%" radius="sm" src={`${API_PATH}/operativeportrait.php?roid=${op.rosteropid}`} />
                                 ))}
                             </SimpleGrid>
                         </SimpleGrid>

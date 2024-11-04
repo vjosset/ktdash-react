@@ -1,5 +1,5 @@
 import React from "react";
-import Roster from "@/page/roster";
+import Dashboard from "@/page/dashboard";
 import { request } from "@/hooks/use-api";
 
 export default async function RosterRoute({
@@ -8,6 +8,6 @@ export default async function RosterRoute({
     const rosterId = (await params).roster;
     const roster = await request(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
     return (
-        <Roster roster={roster} rosterId={rosterId} />
+        <Dashboard roster={roster} rosterId={rosterId} />
     );
 }

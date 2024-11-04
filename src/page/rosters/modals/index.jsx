@@ -28,7 +28,7 @@ export function AddRosterModal(props) {
         loadkts: 1,
         edition: settings.edition
     }).toString();
-    const { data: factions } = useRequest(`/faction.php?${teamParams}`, {}, !isNil(settings.edition));
+    const { data: factions } = useRequest(`/faction.php?${teamParams}`, { condition: !isNil(settings.edition) });
 
     React.useEffect(() => {
         form.setFieldValue('team', null);

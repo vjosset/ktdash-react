@@ -49,10 +49,11 @@ export default function Team(props) {
         <Container py="md" px="md" fluid>
             <Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image onClick={() => modals.open({
+                    <Image alt="Roster portrait" onClick={() => modals.open({
                         size: "xl",
                         title: <Title order={2}>{killteam.killteamname}</Title>,
                         children: <Image
+                            alt="Roster portrait"
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="sm"
@@ -89,8 +90,8 @@ export default function Team(props) {
                                 <>
                                     {!!(killteam?.fireteams?.length > 1) && <Title order={2}>{fireteam.fireteamname}</Title>}
                                     <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
-                                        {fireteam?.operatives?.map((operative) => (
-                                            <OperativeCard operative={operative} />
+                                        {fireteam?.operatives?.map((operative, index) => (
+                                            <OperativeCard key={index} operative={operative} />
                                         ))}
                                     </SimpleGrid>
                                 </>

@@ -1,0 +1,18 @@
+.columns {
+  column-count: 2;
+  column-gap: 50px;
+}
+
+@media (max-width: 1250px) {
+  .columns {
+    column-count: 1;
+    column-gap: 50px;
+  }
+}
+
+.faqblock {
+  break-inside: avoid;
+  border-top: 1px solid var(--app-shell-border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}

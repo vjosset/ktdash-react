@@ -62,7 +62,7 @@ function App() {
                   <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="md" size="sm" />
                   <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                     <Group gap={5}>
-                      <Image h={40}
+                      <Image alt="App Logo" h={40}
                         w="auto"
                         fit="contain" src={MainLogo} />
                       <Title fontFamily="Anton" order={2}>KTDASH</Title>

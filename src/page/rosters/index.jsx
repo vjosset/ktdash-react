@@ -19,8 +19,8 @@ export default function Rosters(props) {
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
-    const { username } = props;
-    const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${username}`);
+    const { username, user: initialData } = props;
+    const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${username}`, { initialData });
     const canEdit = userData?.username === username;
     const rosters = user?.rosters ?? [];
 
@@ -33,7 +33,7 @@ export default function Rosters(props) {
                 notifications.show({
                     title: 'Created',
                     message: `Successfully copied ${roster.rostername}.`,
-                  })
+                })
             }
         })
     }
@@ -53,7 +53,7 @@ export default function Rosters(props) {
                 notifications.show({
                     title: 'Created',
                     message: `Successfully create ${roster.rostername}.`,
-                  })
+                })
             }
         })
     }
@@ -66,7 +66,7 @@ export default function Rosters(props) {
                 notifications.show({
                     title: 'Deleted',
                     message: `Successfully deleted ${roster.rostername}.`,
-                  })
+                })
                 setUser({
                     ...user,
                     rosters: rosters?.filter((ros) => ros.rosterid !== roster.rosterid)
@@ -89,8 +89,7 @@ export default function Rosters(props) {
     };
 
     const handleDeployRoster = (rosterid) => {
-        setDashboardrosterId(rosterid);
-        router.push('/dashboard')
+        router.push(`/r/${rosterid}/dashboard`)
     }
 
     React.useEffect(() => {
@@ -125,8 +124,8 @@ export default function Rosters(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [canEdit]);
 
-    const cards = rosters?.map((roster) => (
-        <RosterCard editable={canEdit} onCopy={(roster) => {
+    const cards = rosters?.map((roster, index) => (
+        <RosterCard key={index} editable={canEdit} onCopy={(roster) => {
             modals.openConfirmModal({
                 title: 'Confirm Copy',
                 children: (

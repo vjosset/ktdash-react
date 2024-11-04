@@ -1,6 +1,6 @@
 'use client'
 import { API_PATH, request, useRequest } from "../../hooks/use-api";
-import { Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Container, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
 import { IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash, IconUserEdit } from "@tabler/icons-react";
@@ -10,20 +10,17 @@ import { useLocalStorage } from "@mantine/hooks";
 import { OperativeModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
-import useWindowDimensions from "../../hooks/get-window-dimensions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Roster(props) {
-    const { rosterId } = props;
+    const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const { data: roster, setData: setRoster, isFetching: isFetchinigTeam } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
+    const { data: roster, setData: setRoster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
     const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
-    const { width } = useWindowDimensions();
-    const isSmallScreen = width <= 600;
     const [imageExpire, setImageExpire] = React.useState('');
     const showTeamComp = () =>
         modals.open({
@@ -45,7 +42,7 @@ export default function Roster(props) {
                 })
             }
         })
-    }, [roster])
+    }, [roster, router])
     const handleShowUpdateRosterPortrait = React.useCallback(() => {
         modals.open({
             modalId: "update-portrait",
@@ -94,7 +91,7 @@ export default function Roster(props) {
             }
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [roster]);
+    }, [roster, userData]);
     const handleEditOperative = React.useCallback((operative) => {
         const updatedOperative = {
             ...operative,
@@ -120,7 +117,6 @@ export default function Roster(props) {
     }, [roster]);
     const handleShowEditOperative = (operative) => {
         modals.open({
-            fullScreen: isSmallScreen,
             modalId: "edit-operative",
             size: "xl",
             title: <Title order={2}>{operative.opname}</Title>,
@@ -187,7 +183,6 @@ export default function Roster(props) {
                         text: "Add Operative",
                         onClick: () => {
                             modals.open({
-                                fullScreen: isSmallScreen,
                                 modalId: "add-operative",
                                 size: "xl",
                                 title: <Title order={2}>Add Operative</Title>,
@@ -211,8 +206,7 @@ export default function Roster(props) {
                         icon: <IconCards />,
                         text: "Deploy",
                         onClick: () => {
-                            setDashboardrosterId(roster?.rosterid);
-                            router.push('/dashboard')
+                            router.push(`/r/${roster?.rosterid}/dashboard`)
                         }
                     },
                     {
@@ -267,22 +261,17 @@ export default function Roster(props) {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster]);
-    if (isFetchinigTeam) {
-        return (<LoadingOverlay visible={isFetchinigTeam} />);
-    }
-    if (!roster) {
-        return;
-    }
+    }, [canEdit, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster]);
 
     return (
         <Container py="md" px="md" fluid>
             <Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-                    <Image onClick={() => modals.open({
+                    <Image alt="Roster portrait" onClick={() => modals.open({
                         size: "xl",
                         title: <Title order={2}>{roster.rostername}</Title>,
                         children: <Image
+                            alt="Roster portrait"
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="sm"
@@ -305,8 +294,8 @@ export default function Roster(props) {
                     </Stack>
                 </SimpleGrid>
                 <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
-                    {roster?.operatives?.map((operative) => (
-                        <OperativeCard editable={canEdit} operative={operative} onEdit={handleShowEditOperative} onDelete={handleConfirmDeleteOperative} />
+                    {roster?.operatives?.map((operative, index) => (
+                        <OperativeCard key={index} editable={canEdit} operative={operative} onEdit={handleShowEditOperative} onDelete={handleConfirmDeleteOperative} />
                     ))}
                 </SimpleGrid>
             </Stack>

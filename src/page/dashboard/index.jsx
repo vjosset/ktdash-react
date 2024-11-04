@@ -1,12 +1,11 @@
 'use client'
 import { request, useRequest } from "../../hooks/use-api";
-import { ActionIcon, Card, Container, Group, LoadingOverlay, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
+import { ActionIcon, Card, Container, Group, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
 import { IconEdit, IconListCheck, IconMinus, IconPlus, IconRefresh } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
-import { readLocalStorageValue } from "@mantine/hooks";
 import { debounce, groupBy, keyBy } from "lodash";
 import PloyCards from "../../components/ploy-cards";
 import EquipmentCards from "../../components/equipment-cards";
@@ -14,20 +13,17 @@ import TacOpCards from "../../components/tacop-cards";
 import { SelectOperativesModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
-import useWindowDimensions from "../../hooks/get-window-dimensions";
 import { useSettings } from "../../hooks/use-settings";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+    const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
     const [settings] = useSettings();
     const { appState, setAppState } = useAppContext();
-    const dashboardRosterId = readLocalStorageValue({ key: 'dashboardrosterid' });
+    const { data: roster, setData: setRoster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
     const router = useRouter();
-    const { data: roster, isFetching: isFetchinigTeam, setData: setRoster } = useRequest(`/roster.php?rid=${dashboardRosterId}&loadrosterdetail=1`, {}, !!dashboardRosterId);
-    const { width } = useWindowDimensions();
-    const isSmallScreen = width <= 600;
     const canEdit = userData?.username === roster?.username;
     const killteam = roster?.killteam;
     const isNarrativeEquipment = (equip) => equip.eqid.includes('BS-') || equip.eqid.includes('BH-');
@@ -74,14 +70,13 @@ export default function Dashboard() {
     }, [roster]);
     const handleShowSelectOperatives = React.useCallback(() => {
         modals.open({
-            fullScreen: isSmallScreen,
             modalId: "select-operatives",
             size: "xl",
             title: <Title order={2}>Select Operatives</Title>,
             children: <SelectOperativesModal roster={roster} onClose={handleUpdateOperatives} />
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [roster, isSmallScreen]);
+    }, [roster]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleSaveUpdateRoster = React.useCallback(debounce((newRoster) => {
         request(`/roster.php`, {
@@ -92,7 +87,7 @@ export default function Dashboard() {
     }, 500), []);
     const handleQuickUpdateRoster = React.useCallback((updates) => {
         const newRoster = {
-            "userid": userData.userId,
+            "userid": roster.userid,
             "rosterid": roster.rosterid,
             "rostername": roster.rostername,
             "factionid": roster.factionid,
@@ -121,7 +116,7 @@ export default function Dashboard() {
     const handleSelectPloy = React.useCallback((ploy, checked) => {
         const newPloys = (checked ? [...(roster.ployids.split(',').filter((id) => !!id)), ploy.ployid] : [...(roster.ployids.split(',').filter((id) => !!id).filter((pl) => pl !== ploy.ployid))]);
         const newRoster = {
-            "userid": userData.userId,
+            "userid": roster.userid,
             "rosterid": roster.rosterid,
             "rostername": roster.rostername,
             "factionid": roster.factionid,
@@ -152,7 +147,7 @@ export default function Dashboard() {
     }, [roster]);
     const handleUpdateTacOp = React.useCallback((tacop) => {
         const newTacOp = {
-            "userid": userData.userid,
+            "userid": roster.userid,
             "rosterid": roster.rosterid,
             "tacopid": tacop.tacopid,
             "revealed": tacop.revealed,
@@ -171,7 +166,7 @@ export default function Dashboard() {
     }, [roster]);
     const handleSelectEquipment = React.useCallback((equipment, checked) => {
         const newEq = {
-            "userid": userData.userid,
+            "userid": roster.userid,
             "rosterid": roster.rosterid,
             "eqfactionid": equipment.factionid,
             "eqkillteamid": equipment.killteamid,
@@ -214,6 +209,38 @@ export default function Dashboard() {
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
+    const handleUpdateOperativeOrder = React.useCallback((operative, newoporder) => {
+        request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        oporder: newoporder
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
+    const handleUpdateOperativeActivation = React.useCallback((operative, newactivated) => {
+        request(`/rosteropactivated.php?roid=${operative.rosteropid}&activated=${newactivated}`, {
+            method: "POST"
+        }).then((data) => {
+            if (data?.success) {
+                setRoster({
+                    ...roster,
+                    operatives: roster.operatives?.map((op) => op.rosteropid === operative.rosteropid ? {
+                        ...op,
+                        activated: newactivated
+                    } : op)
+                });
+            }
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     React.useEffect(() => {
         setAppState({
             ...appState,
@@ -228,7 +255,7 @@ export default function Dashboard() {
                         icon: <IconEdit />,
                         text: "Edit",
                         onClick: () => {
-                            router.push(`/r/${dashboardRosterId}`)
+                            router.push(`/r/${rosterId}`)
                         }
                     },
                     {
@@ -247,10 +274,7 @@ export default function Dashboard() {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [canEdit, handleShowSelectOperatives, handleResetDashboard]);
-    if (isFetchinigTeam) {
-        return (<LoadingOverlay visible={isFetchinigTeam} />);
-    }
-    if (!dashboardRosterId) {
+    if (!rosterId) {
         return (
             <Container py="md" px="md" fluid>
                 <>No roster selected. Go to <Link href={`/u/${userData?.username}`}>your rosters</Link> and deploy one.</>
@@ -263,7 +287,7 @@ export default function Dashboard() {
     if (!roster?.rosterid) {
         return (
             <Container py="md" px="md" fluid>
-                <>Failed to load roster {dashboardRosterId}. Go to <Link href={`/u/${userData?.username}`}>your rosters</Link> and deploy a different one.</>
+                <>Failed to load roster {rosterId}. Go to <Link href={`/u/${userData?.username}`}>your rosters</Link> and deploy a different one.</>
             </Container>);
     }
     return (
@@ -314,8 +338,15 @@ export default function Dashboard() {
                     </Tabs.List>
                     <Tabs.Panel value="operatives">
                         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt="md" spacing="md">
-                            {roster?.operatives?.filter((op) => !op.hidden)?.map((operative) => (
-                                <OperativeCard collapsible woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)} operative={operative} />
+                            {roster?.operatives?.filter((op) => !op.hidden)?.map((operative, index) => (
+                                <OperativeCard
+                                    key={index}
+                                    operative={operative}
+                                    collapsible
+                                    woundTracker onUpdateWounds={(wounds) => handleUpdateOperativeWounds(operative, wounds)}
+                                    orderTracker onUpdateOrder={(newoporder) => handleUpdateOperativeOrder(operative, newoporder)}
+                                    activationTracker onUpdateActivation={(newactivated) => handleUpdateOperativeActivation(operative, newactivated)}
+                                />
                             ))}
                         </SimpleGrid>
                     </Tabs.Panel>

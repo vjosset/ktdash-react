@@ -1,15 +1,23 @@
-import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton } from "@mantine/core";
+import { ActionIcon, Card, Collapse, Group, Image, Menu, Paper, SimpleGrid, Stack, Table, Text, Title, UnstyledButton, Checkbox } from "@mantine/core";
 import { convertShapes } from "../../utils/shapes";
 import { IconArrowBigRight, IconCamera, IconChevronDown, IconChevronUp, IconCrosshair, IconDice, IconDotsVertical, IconDroplet, IconEdit, IconShield, IconSwords, IconTrash, IconTriangleInverted, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { API_PATH } from "../../hooks/use-api";
 import { modals } from "@mantine/modals";
 import parseWeaponRules from "./parser";
-import React from "react";
+import React, { Fragment } from "react";
 import { UpdateOperativePotraitModal, UpdateWoundsModal } from "./modals";
 import { useSettings } from "../../hooks/use-settings";
 
 export default function OperativeCard(props) {
-    const { operative, collapsible, editable, onDelete = () => { }, woundTracker, onUpdateWounds = () => { }, onEdit = () => { } } = props;
+    const {
+        operative,
+        collapsible,
+        editable, onEdit = () => { },
+        onDelete = () => { },
+        woundTracker, onUpdateWounds = () => { },
+        orderTracker, onUpdateOrder = () => { },
+        activationTracker, onUpdateActivation = () => { }
+    } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useSettings();
     const [imageExpire, setImageExpire] = React.useState(true);
@@ -48,14 +56,17 @@ export default function OperativeCard(props) {
         size: "lg",
         title: <Title order={3}>{weaponName}</Title>,
         children: (
-            <Stack>{parseWeaponRules(operative.edition, weapon, profile).map((rule) => (
-                <Stack gap="sm">
+            <Stack>{parseWeaponRules(operative.edition, weapon, profile).map((rule, index) => (
+                <Stack key={index} gap="sm">
                     <Title order={4}><span dangerouslySetInnerHTML={{ __html: convertShapes(rule.rulename) }} /></Title>
                     <Text><span dangerouslySetInnerHTML={{ __html: convertShapes(rule.ruletext) }} /></Text>
                 </Stack>
             ))}</Stack>
         ),
     });
+    const getOrderIconPath = (operative) => {
+        return "/img/icons/" + (operative.oporder === 'engage' ? "Engage" : "Conceal") + (operative.activated === 1 ? "White" : "Orange") + ".png";
+    }
     const renderWeapon = (weapon) => {
         if (weapon?.profiles?.length > 1) {
             return (
@@ -64,7 +75,7 @@ export default function OperativeCard(props) {
                         <Table.Td>
                             <span>
                                 {weapon.weptype === "M" ?
-                                    <IconSwords color=" var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color=" var(--mantine-color-orange-8)" size={20} />}
+                                    <IconSwords color="var(--mantine-color-orange-8)" size={20} /> : <IconCrosshair color="var(--mantine-color-orange-8)" size={20} />}
                                 <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
                             </span>
                         </Table.Td>
@@ -105,19 +116,26 @@ export default function OperativeCard(props) {
         )
     }
     return (
-        <Card key={operative.opid} padding="xs">
+        <Card padding="xs">
             <Stack gap="xs">
-                <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }} withBorder={opened} inheritPadding onClick={() => collapsible ? setOpened(!opened) : null}>
+                <Stack style={{ cursor: collapsible ? 'pointer' : 'inherit' }}>
+                    {/* Card Title */}
                     <Group justify="space-between" wrap="nowrap">
-                        <Group gap={5} wrap="nowrap">
-                            <IconUserBolt size={50} color={getStatusColor()} />
+                        <Group gap={5} flex={1} wrap="nowrap">
+                            {/* Op Order and Activation */}
+                            <Stack>
+                                {activationTracker ? (<Checkbox checked={operative.activated === 1} onChange={(event) => onUpdateActivation(event.target.checked ? 1 : 0)} />) : ""}
+                                {orderTracker ? (<Image alt="Operative Order" src={getOrderIconPath(operative)} h={25} onClick={() => onUpdateOrder(operative.oporder === 'engage' ? 'conceal' : 'engage')} />) : ""}
+                            </Stack>
+                            {/* Op Name/Type */}
                             <Stack gap={5} flex={1}>
-                                <Title textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                                <Title onClick={() => collapsible ? setOpened(!opened) : null} textWrap="pretty" order={3}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                 <Text size="sm">{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
                             </Stack>
                         </Group>
-                        {!!collapsible && <>{opened ? <IconChevronDown /> : <IconChevronUp />}</>}
+                        {!!collapsible && <>{opened ? <IconChevronDown onClick={() => collapsible ? setOpened(!opened) : null} /> : <IconChevronUp onClick={() => collapsible ? setOpened(!opened) : null} />}</>}
                         {!!editable && <Menu withinPortal position="bottom-end" shadow="sm">
+                            {/* Op Actions Menu */}
                             <Menu.Target>
                                 <ActionIcon variant="subtle" color="gray" onClick={(event) => event.preventDefault()}>
                                     <IconDotsVertical />
@@ -153,11 +171,13 @@ export default function OperativeCard(props) {
                     <Stack>
                         <Stack>
                             <SimpleGrid cols={{ base: settings.display === "card" ? 2 : 1 }} spacing="xs">
-                                {settings.display === "card" && <Image
+                                {/* Op Portrait */}
+                                {settings.display === "card" && <Image alt="Op Portrait"
                                     onClick={() => modals.open({
                                         size: "xl",
                                         title: <Title order={2}>{operative.opname}</Title>,
                                         children: <Image
+                                            alt="Op Portrait"
                                             fit="cover"
                                             style={{ objectPosition: "top" }}
                                             radius="sm"
@@ -169,24 +189,35 @@ export default function OperativeCard(props) {
                                     h={140} radius="sm"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
+                                {/* Op Stats */}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
                                     {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
                                     {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
-                                    {woundTracker ? (<Paper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}><Stack justify="center" align="center" gap={5}>
-                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
-                                    </Stack></UnstyledButton></Paper>) : (<Paper><Stack h="100%" justify="center" align="center" gap={5}>
-                                        <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                        <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
-                                    </Stack></Paper>
-                                )}
+                                    {woundTracker ?
+                                        (<Paper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                            <UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}>
+                                                <Stack justify="center" align="center" gap={5}>
+                                                    <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                    <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color={getStatusColor()} size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
+                                                </Stack>
+                                            </UnstyledButton>
+                                        </Paper>)
+                                        :
+                                        (<Paper>
+                                            <Stack h="100%" justify="center" align="center" gap={5}>
+                                                <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
+                                            </Stack>
+                                        </Paper>
+                                        )}
                                 </SimpleGrid>
                             </SimpleGrid>
                         </Stack>
                         <Paper px="xs">
+                            {/* Weapons */}
                             <Stack>
                                 <Table horizontalSpacing={2} style={{ fontSize: '14px', marginLeft: '-2px' }}>
                                     <Table.Thead>
@@ -198,8 +229,8 @@ export default function OperativeCard(props) {
                                         </Table.Tr>
                                     </Table.Thead>
                                     <Table.Tbody>
-                                        {operative.weapons.map((weapon) => (
-                                            <>{renderWeapon(weapon)}</>
+                                        {operative.weapons.map((weapon, index) => (
+                                            <Fragment key={index}>{renderWeapon(weapon)}</Fragment>
                                         ))}
                                     </Table.Tbody>
                                 </Table>
@@ -207,10 +238,12 @@ export default function OperativeCard(props) {
                         </Paper>
                         {(!!operative?.uniqueactions?.length || !!operative?.abilities?.length) && <Paper p="xs"><SimpleGrid cols={{ base: (operative?.uniqueactions?.length && operative?.abilities?.length) ? 2 : 1 }}>
                             {!!operative?.uniqueactions?.length && <Stack gap="xs">
+                                {/* Unique Actions */}
                                 <Text size="sm" fw={700}>ACTIONS</Text>
                                 <Group gap="xs">
-                                    {operative?.uniqueactions?.map((ability) => (
+                                    {operative?.uniqueactions?.map((ability, index) => (
                                         <Text
+                                            key={index}
                                             style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
                                             onClick={() => {
                                                 modals.open({
@@ -228,10 +261,12 @@ export default function OperativeCard(props) {
                                 </Group>
                             </Stack>}
                             {!!operative?.abilities?.length && <Stack gap="xs">
+                                {/* Abilities */}
                                 <Text size="sm" fw={700}>ABILITIES</Text>
                                 <Group gap="xs">
-                                    {operative?.abilities?.map((ability) => (
+                                    {operative?.abilities?.map((ability, index) => (
                                         <Text
+                                            key={index}
                                             role="button"
                                             style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
                                             onClick={() => {
@@ -251,10 +286,12 @@ export default function OperativeCard(props) {
                             </Stack>}
                         </SimpleGrid></Paper>}
                         {!!operative?.equipments?.length && <Paper p="xs"><Stack gap="xs">
+                            {/* Equipment/Options */}
                             <Text size="sm" fw={700}>EQUIPMENT</Text>
                             <Group gap="xs">
-                                {operative?.equipments?.map((equip) => (
+                                {operative?.equipments?.map((equip, index) => (
                                     <Text
+                                        key={index}
                                         role="button"
                                         style={{ textDecoration: 'underline', cursor: 'pointer', userSelect: 'none' }}
                                         onClick={() => {
@@ -272,6 +309,7 @@ export default function OperativeCard(props) {
                                 ))}
                             </Group>
                         </Stack></Paper>}
+                        {/* Op Keywords */}
                         <Text px={2} size="xs">{operative.keywords}</Text>
                     </Stack>
                 </Collapse>

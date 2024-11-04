@@ -72,7 +72,7 @@ export function UpdateRosterPotraitModal(props) {
     return (
         <>
             <Stack>
-                <Image fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={portrait?.picturePreview || `${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                <Image alt="Roster portrait" fit="cover" style={{ objectPosition: "top" }} h={300} radius="sm" src={portrait?.picturePreview || `${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
                 <FileInput
                     leftSection={<IconPhoto />}
                     label="Roster Portrait"
@@ -378,8 +378,9 @@ export function OperativeModal(props) {
                             </Table.Tr>
                         </Table.Thead>
                         <Table.Tbody>
-                            {operative?.weapons?.map((weapon) => (
+                            {operative?.weapons?.map((weapon, index) => (
                                 <Weapon
+                                    key={index}
                                     weapon={weapon}
                                     checked={!!operativeData?.weapons?.filter((wep) => wep.wepid === weapon.wepid)?.length}
                                     onCheck={(weaponid, active) => {
@@ -406,44 +407,42 @@ export function OperativeModal(props) {
                                 <>
                                     <Text>{eqCategory}</Text>
                                     <SimpleGrid cols={{ base: 2, sm: 4 }}>
-                                        {
-                                            equips?.map((eq) => (
-                                                <Flex justify="space-between" align="center">
-                                                    <Checkbox
-                                                        display="inline-block"
-                                                        checked={!!operativeData?.equipments?.filter((equip) => equip.eqid === eq.eqid)?.length}
-                                                        onChange={(event) => {
-                                                            if (event.target.checked) {
-                                                                setOperativeData({
-                                                                    ...operativeData,
-                                                                    equipments: [...(operativeData?.equipments || []), eq]
-                                                                })
-                                                            } else {
-                                                                setOperativeData({
-                                                                    ...operativeData,
-                                                                    equipments: [...operativeData?.equipments?.filter((operativeeq) => operativeeq.eqid !== eq.eqid)]
-                                                                })
-                                                            }
-                                                        }}
-                                                        label={eq.eqname}
+                                        {equips?.map((eq, index) => (
+                                            <Flex key={index} justify="space-between" align="center">
+                                                <Checkbox
+                                                    display="inline-block"
+                                                    checked={!!operativeData?.equipments?.filter((equip) => equip.eqid === eq.eqid)?.length}
+                                                    onChange={(event) => {
+                                                        if (event.target.checked) {
+                                                            setOperativeData({
+                                                                ...operativeData,
+                                                                equipments: [...(operativeData?.equipments || []), eq]
+                                                            })
+                                                        } else {
+                                                            setOperativeData({
+                                                                ...operativeData,
+                                                                equipments: [...operativeData?.equipments?.filter((operativeeq) => operativeeq.eqid !== eq.eqid)]
+                                                            })
+                                                        }
+                                                    }}
+                                                    label={eq.eqname}
 
-                                                    />
-                                                    <Popover withArrow position="top">
-                                                        <Popover.Target>
-                                                            <ActionIcon display="inline" variant="subtle" color="white"><IconHelp /></ActionIcon>
-                                                        </Popover.Target>
-                                                        <Popover.Dropdown p="xs">
-                                                            <ScrollArea.Autosize mah={200} maw={Math.min(width - 30, 500)}>
-                                                                <Title order={5}>{eq.eqname}</Title>
-                                                                <Text size="sm">
-                                                                    <div dangerouslySetInnerHTML={{ __html: `${convertShapes(eq.eqdescription)}` }} />
-                                                                </Text>
-                                                            </ScrollArea.Autosize>
-                                                        </Popover.Dropdown>
-                                                    </Popover>
-                                                </Flex>
-                                            ))
-                                        }
+                                                />
+                                                <Popover withArrow position="top">
+                                                    <Popover.Target>
+                                                        <ActionIcon display="inline" variant="subtle" color="white"><IconHelp /></ActionIcon>
+                                                    </Popover.Target>
+                                                    <Popover.Dropdown p="xs">
+                                                        <ScrollArea.Autosize mah={200} maw={Math.min(width - 30, 500)}>
+                                                            <Title order={5}>{eq.eqname}</Title>
+                                                            <Text size="sm">
+                                                                <div dangerouslySetInnerHTML={{ __html: `${convertShapes(eq.eqdescription)}` }} />
+                                                            </Text>
+                                                        </ScrollArea.Autosize>
+                                                    </Popover.Dropdown>
+                                                </Popover>
+                                            </Flex>
+                                        ))}
                                     </SimpleGrid>
                                 </>
                             )

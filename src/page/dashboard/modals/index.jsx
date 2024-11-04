@@ -17,6 +17,7 @@ function MiniOperativeCard(props) {
                 </Group>
                 <SimpleGrid cols={{ base: 2 }} spacing="xs">
                     {settings.display === "card" && <Image
+                        alt="Operative Portrait"
                         fit="cover"
                         style={{ objectPosition: "top" }}
                         radius="sm"
@@ -24,8 +25,8 @@ function MiniOperativeCard(props) {
                     />}
                     <Stack gap={5}>
                         <Text>{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
-                        {operative.weapons.map((weapon) => (
-                            <span>
+                        {operative.weapons.map((weapon, index) => (
+                            <span key={index}>
                                 {weapon.weptype === "M" ?
                                     <IconSwords size={20} /> : <IconCrosshair size={20} />}
                                 <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
@@ -66,8 +67,8 @@ export function SelectOperativesModal(props) {
                 <Tabs.Panel value="operatives">
                     <Stack pt="md">
                         <SimpleGrid cols={{ base: 1, sm: 2 }}>
-                            {operatives.map((operative) => (
-                                <MiniOperativeCard operative={operative} onChange={handleUpdateOperative} />
+                            {operatives.map((operative, index) => (
+                                <MiniOperativeCard key={index} operative={operative} onChange={handleUpdateOperative} />
                             ))}
                         </SimpleGrid>
                         <Group justify="flex-end">

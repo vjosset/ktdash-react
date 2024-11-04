@@ -1,5 +1,5 @@
+'use client'
 /* eslint-disable */
-// LOL just ignore the warnings this is old code
 
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -47,12 +47,14 @@ const PWAInstallerPrompt = ({
     }
 
     useEffect(() => {
-        window.addEventListener('beforeinstallprompt', beforeAppInstallpromptHandler);
-        window.addEventListener('appinstalled', appInstalledHandler);
-        return () => {
-            window.removeEventListener('beforeinstallprompt', beforeAppInstallpromptHandler);
-            window.removeEventListener('appinstalled', appInstalledHandler);
-        };
+        if (typeof window !== "undefined") {
+            window.addEventListener('beforeinstallprompt', beforeAppInstallpromptHandler);
+            window.addEventListener('appinstalled', appInstalledHandler);
+            return () => {
+                window.removeEventListener('beforeinstallprompt', beforeAppInstallpromptHandler);
+                window.removeEventListener('appinstalled', appInstalledHandler);
+            };
+        }
     }, []
     );
 

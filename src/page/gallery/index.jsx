@@ -33,10 +33,12 @@ function OperativeGalleryCard(props) {
                     {!!canEdit && <ActionIcon color="white" variant="subtle" onClick={handleShowUpdateOperativePortrait}><IconCamera /></ActionIcon>}
                 </Group>
                 <Image
+                    alt="Operative Image"
                     onClick={() => modals.open({
                         size: "xl",
                         title: <Title order={2}>{operative.opname}</Title>,
                         children: <Image
+                            alt="Operative Image"
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="sm"
@@ -54,10 +56,10 @@ function OperativeGalleryCard(props) {
 }
 
 export default function Gallery(props) {
-    const { rosterId } = props;
+    const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const { data: roster, isFetching: isFetchinigTeam } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
+    const { data: roster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
     const { width } = useWindowDimensions();
@@ -99,9 +101,6 @@ export default function Gallery(props) {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [canEdit, isSmallScreen, handleShowUpdateRosterPortrait]);
-    if (isFetchinigTeam) {
-        return (<LoadingOverlay visible={isFetchinigTeam} />);
-    }
     if (!roster) {
         return;
     }
@@ -119,10 +118,12 @@ export default function Gallery(props) {
                 </Stack>
                 <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                     <Image
+                        alt="Roster Image"
                         onClick={() => modals.open({
                             size: "xl",
                             title: <Title order={2}>{roster.rostername}</Title>,
                             children: <Image
+                                alt="Roster Image"
                                 fit="cover"
                                 style={{ objectPosition: "top" }}
                                 radius="sm"
@@ -130,8 +131,8 @@ export default function Gallery(props) {
                             />
                         })}
                         fit="cover" style={{ objectPosition: "top", cursor: 'pointer' }} h={'100%'} radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}&expire=${imageExpire}`} />
-                    {roster?.operatives?.map((operative) => (
-                        <OperativeGalleryCard canEdit={canEdit} operative={operative} />
+                    {roster?.operatives?.map((operative, index) => (
+                        <OperativeGalleryCard key={index} canEdit={canEdit} operative={operative} />
                     ))}
                 </SimpleGrid>
             </Stack>

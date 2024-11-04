@@ -29,7 +29,7 @@ export default function AppBarMenu(props) {
                 <Burger opened={opened} onClick={toggle} ref={button} hiddenFrom="md" size="sm" />
                 <Link onClick={() => closeNav()} style={{ display: 'flex', textDecoration: 'none', color: 'white', alignItems: 'center' }} href="/">
                     <Group gap={5}>
-                        <Image h={40}
+                        <Image alt="App Logo" h={40}
                             component={NextImage}
                             w="auto"
                             fit="contain" src={MainLogo} />
@@ -38,8 +38,8 @@ export default function AppBarMenu(props) {
                 </Link>
             </Group>
             <Group style={{ color: 'white' }} gap={5}>
-                {contextActionsButtons?.map((action) => (
-                    <Button style={{ padding: '5px' }} variant="subtle" color="white" title={action?.text} onClick={action?.onClick}>
+                {contextActionsButtons?.map((action, index) => (
+                    <Button key={index} style={{ padding: '5px' }} variant="subtle" color="white" title={action?.text} onClick={action?.onClick}>
                         <Group gap={5}>{action?.icon} <Text visibleFrom="sm">{action?.text}</Text></Group>
                     </Button>
                 ))}
@@ -52,8 +52,8 @@ export default function AppBarMenu(props) {
                                 </Menu.Target>
 
                                 <Menu.Dropdown>
-                                    {contextActionsMenuButtons?.map((action) => (
-                                        <Menu.Item leftSection={action?.icon} onClick={action?.onClick}>
+                                    {contextActionsMenuButtons?.map((action, index) => (
+                                        <Menu.Item key={index} leftSection={action?.icon} onClick={action?.onClick}>
                                             {action.text}
                                         </Menu.Item>
                                     ))}

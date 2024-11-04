@@ -1,13 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'ktdash.app'
-          },
-        ],
-      }
+  eslint: {
+    // Optionally disable lint during build
+    ignoreDuringBuilds: false,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ktdash.app'
+      },
+    ],
+  }
 };
 
 export default nextConfig;

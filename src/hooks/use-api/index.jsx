@@ -57,12 +57,16 @@ export const requestText = async (endpoint, content) => {
     return response;
 }
 
-export function useRequest(endpoint, content, fetchCondition) {
-    const [data, setData] = React.useState(null);
+export function useRequest(endpoint, options = {}) {
+    const { content, condition, initialData } = options;
+    const [data, setData] = React.useState(initialData);
     const [error, setError] = React.useState(null);
     const [isFetching, setIsFetching] = React.useState(false);
     React.useEffect(() => {
-        if (!isNil(fetchCondition) && !fetchCondition) {
+        if (!isNil(initialData)) {
+            return;
+        }
+        if ((!isNil(condition) && !condition)) {
             return;
         }
         setIsFetching(true);
