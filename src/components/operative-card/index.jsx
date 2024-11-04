@@ -124,7 +124,7 @@ export default function OperativeCard(props) {
                         <Group gap={5} flex={1} wrap="nowrap">
                             {/* Op Order and Activation */}
                             <Stack>
-                                {activationTracker ? (<Checkbox checked={operative.activated === 1} onClick={() => onUpdateActivation(operative.activated === 0 ? 1 : 0)} />) :""}
+                                {activationTracker ? (<Checkbox checked={operative.activated === 1} onClick={(event) => onUpdateActivation(event.target.checked ? 1 : 0)} />) :""}
                                 {orderTracker ? (<Image src={getOrderIconPath(operative)} h={25} onClick={() => onUpdateOrder(operative.oporder === 'engage' ? 'conceal' : 'engage')} />) :""}
                             </Stack>
                             {/* Op Name/Type */}
