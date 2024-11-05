@@ -5,30 +5,29 @@ import { noop } from 'lodash';
 import React, { useState } from 'react';
 
 const NAME_OPTIONS = [
-    { value: "AELDARI-M", label: "Aeldari - Male" },
+    { value: "ADMECH", label: "Adeptus Mechanicus" },
     { value: "AELDARI-F", label: "Aeldari - Female" },
+    { value: "AELDARI-M", label: "Aeldari - Male" },
     { value: "BEASTMEN", label: "Beastmen" },
-    { value: "DARKAELDARI-M", label: "Dark Aeldari - Male" },
+    { value: "DAEMON", label: "Chaos Daemon" },
+    { value: "DAEMONETTE", label: "Chaos Daemonette" },
+    { value: "CHAOSMARINES", label: "Chaos Space Marines" },
     { value: "DARKAELDARI-F", label: "Dark Aeldari - Female" },
+    { value: "DARKAELDARI-M", label: "Dark Aeldari - Male" },
     { value: "HEARTHKYN", label: "Hearthkyn" },
-    { value: "HUMAN-M", label: "Human - Male" },
     { value: "HUMAN-F", label: "Human - Female" },
-    { value: "TYRANID", label: "Tyranid" },
-    { value: "SISTERSOFBATTLE", "label": "Sisters of Battle" },
-    { value: "SPACEMARINES", label: "Space Marines" },
-    { value: "KROOT", label: "Kroot" },
-    { value: "TAU", label: "Tau" },
-    { value: "TAU-FIRE", label: "Tau - Fire Warrior" },
+    { value: "HUMAN-M", label: "Human - Male" },
     { value: "KASRKIN", label: "Kasrkin" },
+    { value: "KROOT", label: "Kroot" },
     { value: "HIEROTEK", label: "Necron - Hierotek Circle" },
     { value: "NECRON", label: "Necron" },
     { value: "ORK", label: "Ork" },
-    { value: "ADMECH", label: "Adeptus Mechanicus" },
-    { value: "CHAOSMARINES", label: "Chaos Space Marines" },
-    { value: "DAEMONETTE", label: "Chaos Daemonette" },
-    { value: "DAEMON", label: "Chaos Daemon" }
+    { value: "SISTERSOFBATTLE", "label": "Sisters of Battle" },
+    { value: "SPACEMARINES", label: "Space Marines" },
+    { value: "TAU", label: "Tau" },
+    { value: "TAU-FIRE", label: "Tau - Fire Warrior" },
+    { value: "TYRANID", label: "Tyranid" }
 ];
-
 
 export default function NameGenerator() {
     const [name, setName] = useState('');
