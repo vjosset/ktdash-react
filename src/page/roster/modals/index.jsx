@@ -12,6 +12,24 @@ import { useSettings } from '../../../hooks/use-settings';
 import useWindowDimensions from '../../../hooks/get-window-dimensions';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import { useListState } from '@mantine/hooks';
+import Link from 'next/link';
+
+export function ShareModal(props) {
+    const { roster } = props;
+    const baseUrl = window.location.origin;
+    const rosterUrl = `${baseUrl}/r/${roster.rosterid}`;
+    return (
+        <>
+            <Stack>
+                <Stack gap={5}>
+                    <Text>Roster Link: <Link href={rosterUrl}>{roster.rostername}</Link></Text>
+                    <Text>{rosterUrl}</Text>
+                </Stack>
+                <Image src={`https://image-charts.com/chart?cht=qr&chs=150x150&chl=${rosterUrl}`} />
+            </Stack>
+        </>
+    );
+}
 
 function MiniOperativeCard(props) {
     const { operative, index } = props;
@@ -60,8 +78,6 @@ export function OrderOperativesModal(props) {
     const { onClose = () => { }, roster } = props;
     const [state, handlers] = useListState(roster.operatives || []);
 
-    console.log(state);
-
     const handleUpdateRoster = () => {
         const newOps = state.map((op, index) => ({
             ...op,
@@ -76,7 +92,7 @@ export function OrderOperativesModal(props) {
     ))
     return (
         <>
-            <Stack pt="md">
+            <Stack>
                 <DragDropContext
                     onDragEnd={({ destination, source }) =>
                         handlers.reorder({ from: source.index, to: destination?.index || 0 })

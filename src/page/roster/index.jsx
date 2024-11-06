@@ -3,10 +3,10 @@ import { API_PATH, request, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconArrowsSort, IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash, IconUserEdit } from "@tabler/icons-react";
+import { IconArrowsSort, IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconShare, IconTrash, IconUserEdit } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
-import { OperativeModal, OrderOperativesModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
+import { OperativeModal, OrderOperativesModal, ShareModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import Link from "next/link";
@@ -37,7 +37,6 @@ export default function Roster(props) {
         modals.open({
             fullScreen: isSmallScreen,
             modalId: "order-operatives",
-            padding: "sm",
             size: "xl",
             title: <Title order={2}>Re-Order Operatives</Title>,
             children: <OrderOperativesModal roster={roster} onClose={handleUpdateOperatives} />
@@ -268,6 +267,20 @@ export default function Roster(props) {
                     text: "Photo Gallery",
                     onClick: () => router.push(`/r/${roster.rosterid}/g`)
                 },
+                ...(canEdit ? [
+                    {
+                        icon: <IconShare />,
+                        text: "Share",
+                        onClick: () => {
+                            modals.open({
+                                modalId: "share-roster",
+                                size: "xl",
+                                title: <Title order={2}>Share Roster</Title>,
+                                children: <ShareModal roster={roster} />
+                            });
+                        }
+                    },
+                ] : []),
                 {
                     icon: <IconCopy />,
                     text: "Duplicate",
