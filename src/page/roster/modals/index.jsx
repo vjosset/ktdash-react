@@ -25,7 +25,7 @@ export function ShareModal(props) {
                     <Text>Roster Link: <Link href={rosterUrl}>{roster.rostername}</Link></Text>
                     <Text>{rosterUrl}</Text>
                 </Stack>
-                <Image src={`https://image-charts.com/chart?cht=qr&chs=150x150&chl=${rosterUrl}`} />
+                <Image alt={`https://image-charts.com/chart?cht=qr&chs=150x150&chl=${rosterUrl}`} src={`https://image-charts.com/chart?cht=qr&chs=150x150&chl=${rosterUrl}`} />
             </Stack>
         </>
     );
@@ -48,21 +48,22 @@ function MiniOperativeCard(props) {
                                 {settings.display === "card" && <Image
                                     alt="Operative Portrait"
                                     fit="cover"
-                                    style={{ objectPosition: "top", maxHeight: 125 }}
+                                    style={{ objectPosition: "top", height: '100%', maxHeight: '200px' }}
                                     radius="sm"
                                     src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                                 />}
                                 <Stack gap={5}>
-
                                     <Title textWrap="pretty" order={4}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
                                     <Text>{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
-                                    {/* {operative.weapons.map((weapon, index) => (
-                                        <span key={index}>
-                                            {weapon.weptype === "M" ?
-                                                <IconSwords size={15} /> : <IconCrosshair size={15} />}
-                                            <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
-                                        </span>
-                                    ))} */}
+                                    <Group gap={5}>
+                                        {operative.weapons.map((weapon, index) => (
+                                            <Text key={index} size="sm">
+                                                {weapon.weptype === "M" ?
+                                                    <IconSwords size={15} /> : <IconCrosshair size={15} />}
+                                                <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
+                                            </Text>
+                                        ))}
+                                    </Group>
                                 </Stack>
                             </SimpleGrid>
                         </Stack>
