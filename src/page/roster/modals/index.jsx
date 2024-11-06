@@ -2,14 +2,104 @@ import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Check
 import { API_PATH, request, requestText, useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
-import { flatten, groupBy, keyBy } from 'lodash';
+import { groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowBigRight, IconArrowForward, IconCrosshair, IconDice, IconDroplet, IconHelp, IconMessageCircleQuestion, IconPhoto, IconQuestionMark, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowBigRight, IconCrosshair, IconDice, IconDroplet, IconGripVertical, IconHelp, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { useSettings } from '../../../hooks/use-settings';
 import useWindowDimensions from '../../../hooks/get-window-dimensions';
+import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
+import { useListState } from '@mantine/hooks';
+
+function MiniOperativeCard(props) {
+    const { operative, index } = props;
+    const [settings] = useSettings();
+    return (
+        <Draggable key={operative.rosteropid} index={index} draggableId={operative.rosteropid}>
+            {(provided) => (
+                <div
+                    {...provided.dragHandleProps}
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                >
+                    <Paper withBorder mb="sm" p="xs" style={{ cursor: 'pointer' }}>
+                        <Stack gap={5}>
+                            <SimpleGrid cols={{ base: 2 }}>
+                                {settings.display === "card" && <Image
+                                    alt="Operative Portrait"
+                                    fit="cover"
+                                    style={{ objectPosition: "top", maxHeight: 125 }}
+                                    radius="sm"
+                                    src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                                />}
+                                <Stack gap={5}>
+
+                                    <Title textWrap="pretty" order={4}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                                    <Text>{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
+                                    {/* {operative.weapons.map((weapon, index) => (
+                                        <span key={index}>
+                                            {weapon.weptype === "M" ?
+                                                <IconSwords size={15} /> : <IconCrosshair size={15} />}
+                                            <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
+                                        </span>
+                                    ))} */}
+                                </Stack>
+                            </SimpleGrid>
+                        </Stack>
+                    </Paper>
+                </div>
+            )}
+        </Draggable>
+
+    );
+}
+
+export function OrderOperativesModal(props) {
+    const { onClose = () => { }, roster } = props;
+    const [state, handlers] = useListState(roster.operatives || []);
+
+    console.log(state);
+
+    const handleUpdateRoster = () => {
+        const newOps = state.map((op, index) => ({
+            ...op,
+            seq: index
+        }));
+        onClose(newOps);
+        modals.close("order-operatives");
+    };
+
+    const items = state.map((operative, index) => (
+        <MiniOperativeCard key={index} index={index} operative={operative} draggableId={operative.rosteropid} />
+    ))
+    return (
+        <>
+            <Stack pt="md">
+                <DragDropContext
+                    onDragEnd={({ destination, source }) =>
+                        handlers.reorder({ from: source.index, to: destination?.index || 0 })
+                    }
+                >
+                    <Droppable droppableId="dnd-list" direction="vertical">
+                        {(provided) => (
+                            <div {...provided.droppableProps} ref={provided.innerRef}>
+                                {items}
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
+                </DragDropContext>
+                <Group justify="flex-end">
+                    <Button variant="default" onClick={() => modals.close("order-operatives")}>Cancel</Button>
+                    <Button type="submit" onClick={() => handleUpdateRoster()}>Save</Button>
+                </Group>
+            </Stack>
+        </>
+    );
+}
+
 
 export function UpdateRosterPotraitModal(props) {
     const { onClose, roster } = props;

@@ -3,25 +3,27 @@ import { API_PATH, request, useRequest } from "../../hooks/use-api";
 import { Container, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
-import { IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash, IconUserEdit } from "@tabler/icons-react";
+import { IconArrowsSort, IconCamera, IconCards, IconCopy, IconListCheck, IconPhoto, IconPlus, IconPrinter, IconTrash, IconUserEdit } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
 import { useAppContext } from "../../hooks/app-context";
-import { useLocalStorage } from "@mantine/hooks";
-import { OperativeModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
+import { OperativeModal, OrderOperativesModal, UpdateRosterModal, UpdateRosterPotraitModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { keyBy } from "lodash";
+import useWindowDimensions from "@/hooks/get-window-dimensions";
 
 export default function Roster(props) {
     const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
     const { data: roster, setData: setRoster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
-    const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
     const [imageExpire, setImageExpire] = React.useState('');
+    const { width } = useWindowDimensions();
+    const isSmallScreen = width <= 600;
     const showTeamComp = () =>
         modals.open({
             size: "lg",
@@ -30,6 +32,41 @@ export default function Roster(props) {
                 <div dangerouslySetInnerHTML={{ __html: `${roster?.killteam?.killteamcomp}` }} />
             ),
         });
+
+    const handleShowReOrderOperatives = React.useCallback(() => {
+        modals.open({
+            fullScreen: isSmallScreen,
+            modalId: "order-operatives",
+            padding: "sm",
+            size: "xl",
+            title: <Title order={2}>Re-Order Operatives</Title>,
+            children: <OrderOperativesModal roster={roster} onClose={handleUpdateOperatives} />
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster, isSmallScreen]);
+    const handleUpdateOperatives = React.useCallback((operatives) => {
+        const oldOperatives = keyBy(roster.operatives, 'rosteropid');
+        setRoster({
+            ...roster,
+            operatives
+        });
+        let opCount = 0;
+        operatives.forEach((op) => {
+            // Only send requests for operatives we actually toggled
+            if (oldOperatives[op.rosteropid].seq !== op.seq) {
+                opCount += 1;
+                request(`/rosteroperative.php`, {
+                    method: "POST",
+                    body: JSON.stringify(op)
+                })
+            }
+        })
+        notifications.show({
+            title: 'Updated Operatives',
+            message: `Successfully updated ${opCount} operatives.`,
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [roster]);
     const handleCopyRoster = React.useCallback(() => {
         request(`/roster.php?rid=${roster.rosterid}&clone=1`, {
             method: "POST"
@@ -117,6 +154,7 @@ export default function Roster(props) {
     }, [roster]);
     const handleShowEditOperative = (operative) => {
         modals.open({
+            fullScreen: isSmallScreen,
             modalId: "edit-operative",
             size: "xl",
             title: <Title order={2}>{operative.opname}</Title>,
@@ -183,6 +221,7 @@ export default function Roster(props) {
                         text: "Add Operative",
                         onClick: () => {
                             modals.open({
+                                fullScreen: isSmallScreen,
                                 modalId: "add-operative",
                                 size: "xl",
                                 title: <Title order={2}>Add Operative</Title>,
@@ -213,6 +252,11 @@ export default function Roster(props) {
                         icon: <IconListCheck />,
                         text: "Team Composition",
                         onClick: () => showTeamComp()
+                    },
+                    {
+                        icon: <IconArrowsSort />,
+                        text: "Re-Order",
+                        onClick: () => handleShowReOrderOperatives()
                     },
                     {
                         icon: <IconCamera />,
@@ -261,7 +305,7 @@ export default function Roster(props) {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster]);
+    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster, handleShowReOrderOperatives]);
 
     return (
         <Container py="md" px="md" fluid>
