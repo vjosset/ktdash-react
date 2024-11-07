@@ -176,7 +176,7 @@ export default function OperativeCard(props) {
                         <Group gap={10} flex={1} wrap="nowrap">
                             {/* Op Order and Activation */}
                             {!!orderTracker && <OrderPicker onChange={handleUpdateOrder}>
-                                <Image zIndex={1000} alt="Operative Order" src={getOrderIconPath(operative)} h={40} />
+                                <Image zindex={1000} alt="Operative Order" src={getOrderIconPath(operative)} h={40} w={40} />
                             </OrderPicker>}
                             {/* Op Name/Type */}
                             <Stack gap={5} flex={1}>
