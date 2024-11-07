@@ -4,34 +4,36 @@ import React from 'react';
 import { API_PATH } from '../../../hooks/use-api';
 import { IconCrosshair, IconSwords } from '@tabler/icons-react';
 import { useSettings } from '../../../hooks/use-settings';
+import classes from './check-card.module.css';
 
 function MiniOperativeCard(props) {
     const { operative, onChange = () => { } } = props;
-    const [ settings ] = useSettings();
+    const [settings] = useSettings();
     return (
-        <Paper withBorder p="sm" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={() => onChange(operative, !!operative.hidden)}>
+        <Paper className={classes.root} data-checked={!operative.hidden || undefined} withBorder p="sm" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={() => onChange(operative, !!operative.hidden)}>
             <Stack gap={5}>
-                <Group>
-                    <Checkbox.Indicator checked={!operative.hidden} />
-                    <Title textWrap="pretty" order={4}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
-                </Group>
                 <SimpleGrid cols={{ base: 2 }} spacing="xs">
                     {settings.display === "card" && <Image
                         alt="Operative Portrait"
                         fit="cover"
-                        style={{ objectPosition: "top" }}
+                        style={{ objectPosition: "top", height: '100%' }}
                         radius="sm"
                         src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
                     />}
                     <Stack gap={5}>
+                        <Group gap={5}>
+                            <Title textWrap="pretty" order={4}>{settings.opnamefirst === "y" ? operative.opname : operative.optype || operative.opname}</Title>
+                        </Group>
                         <Text>{(settings.opnamefirst === "y" || !operative.optype) ? operative.optype : operative.opname}</Text>
-                        {operative.weapons.map((weapon, index) => (
-                            <span key={index}>
-                                {weapon.weptype === "M" ?
-                                    <IconSwords size={20} /> : <IconCrosshair size={20} />}
-                                <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
-                            </span>
-                        ))}
+                        <Group gap={5}>
+                            {operative.weapons.map((weapon, index) => (
+                                <Text key={index} size="sm">
+                                    {weapon.weptype === "M" ?
+                                        <IconSwords size={15} /> : <IconCrosshair size={15} />}
+                                    <span style={{ marginLeft: '5px' }}>{weapon.wepname}</span>
+                                </Text>
+                            ))}
+                        </Group>
                     </Stack>
                 </SimpleGrid>
             </Stack>

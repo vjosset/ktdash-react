@@ -39,30 +39,30 @@ export default function Roster(props) {
             modalId: "order-operatives",
             size: "xl",
             title: <Title order={2}>Re-Order Operatives</Title>,
-            children: <OrderOperativesModal roster={roster} onClose={handleUpdateOperatives} />
+            children: <OrderOperativesModal roster={roster} onClose={handleReOrderOperatives} />
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster, isSmallScreen]);
-    const handleUpdateOperatives = React.useCallback((operatives) => {
-        const oldOperatives = keyBy(roster.operatives, 'rosteropid');
+    const handleReOrderOperatives = React.useCallback((operatives) => {
+        const updatedOperatives = {
+            rosterid: roster.rosterid,
+            operatives: operatives.map((op, index) => ({
+                rosteropid: op.rosteropid,
+                seq: index
+            }))
+        }
         setRoster({
             ...roster,
             operatives
         });
-        let opCount = 0;
-        operatives.forEach((op) => {
-            // Only send requests for operatives we actually toggled
-            if (oldOperatives[op.rosteropid].seq !== op.seq) {
-                opCount += 1;
-                request(`/rosteroperative.php`, {
-                    method: "POST",
-                    body: JSON.stringify(op)
-                })
-            }
-        })
-        notifications.show({
-            title: 'Updated Operatives',
-            message: `Successfully updated ${opCount} operatives.`,
+        request(`/rosteropseq.php`, {
+            method: "POST",
+            body: JSON.stringify(updatedOperatives)
+        }).then(() => {
+            notifications.show({
+                title: 'Re-Order Operatives',
+                message: `Successfully re-ordered operatives.`,
+            })
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
@@ -318,7 +318,7 @@ export default function Roster(props) {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster, handleShowReOrderOperatives]);
+    }, [canEdit, isSmallScreen, handleAddOperative, handleShowUpdateRosterPortrait, handleCopyRoster, handleShowReOrderOperatives, handleReOrderOperatives]);
 
     return (
         <Container py="md" px="md" fluid>
