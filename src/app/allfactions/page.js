@@ -15,8 +15,7 @@ export async function generateMetadata() {
 }
 
 export default async function FactionsRoute() {
-    const factions = await request('/faction.php')
-
+    const factions = await request('/faction.php');
     return (
         <Factions factions={factions} />
     );

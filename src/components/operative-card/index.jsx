@@ -64,10 +64,12 @@ export default function OperativeCard(props) {
         onDelete = () => { },
         woundTracker, onUpdateWounds = () => { },
         orderTracker, onUpdateOrder = () => { },
+        isCustom = false
     } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useSettings();
     const [imageExpire, setImageExpire] = React.useState(true);
+    const opImageUrl = operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`;
     const getStatusColor = () => {
         if (operative.curW <= 0) {
             return "var(--mantine-color-gray-6)";
@@ -230,13 +232,13 @@ export default function OperativeCard(props) {
                                             fit="cover"
                                             style={{ objectPosition: "top" }}
                                             radius="sm"
-                                            src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                                            src={opImageUrl}
                                         />
                                     })}
                                     fit="cover"
                                     style={{ objectPosition: "top", cursor: 'pointer' }}
                                     h={140} radius="sm"
-                                    src={operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `https://ktdash.app/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`}
+                                    src={opImageUrl}
                                 />}
                                 {/* Op Stats */}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>

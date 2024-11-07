@@ -10,7 +10,7 @@ export default function Faction(props) {
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
-                <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`https://ktdash.app/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <span dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>
@@ -19,7 +19,7 @@ export default function Faction(props) {
     const cards2024 = faction.killteams?.filter((killteam) => killteam.edition === "kt24")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
-                <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`https://ktdash.app/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
+                <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <span dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
             </Stack>

@@ -13,6 +13,7 @@ import { useAppContext } from "../../hooks/app-context";
 export default function Team(props) {
     const { appState, setAppState } = useAppContext();
     const { killteam } = props;
+    const isCustom = !!killteam.isCustom;
     const showTeamComp = () =>
         modals.open({
             size: "lg",
@@ -57,9 +58,9 @@ export default function Team(props) {
                             fit="cover"
                             style={{ objectPosition: "top" }}
                             radius="sm"
-                            src={`https://ktdash.app/img/portraits/${killteam?.factionid}/${killteam?.killteamid}/${killteam?.killteamid}.jpg`}
+                            src={`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${killteam?.factionid}/${killteam?.killteamid}/${killteam?.killteamid}.jpg`}
                         />
-                    })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="sm" src={`https://ktdash.app/img/portraits/${killteam?.factionid}/${killteam?.killteamid}/${killteam?.killteamid}.jpg`} />
+                    })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="sm" src={`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${killteam?.factionid}/${killteam?.killteamid}/${killteam?.killteamid}.jpg`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Title>
                             {killteam?.killteamname} <sup>{killteam.edition}</sup>
@@ -91,7 +92,7 @@ export default function Team(props) {
                                     {!!(killteam?.fireteams?.length > 1) && <Title order={2}>{fireteam.fireteamname}</Title>}
                                     <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                                         {fireteam?.operatives?.map((operative, index) => (
-                                            <OperativeCard key={index} operative={operative} />
+                                            <OperativeCard key={index} operative={operative} isCustom={isCustom} />
                                         ))}
                                     </SimpleGrid>
                                 </>
