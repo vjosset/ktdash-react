@@ -12,7 +12,7 @@ export default function Faction(props) {
             <Stack>
                 <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
-                <span dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
+                <span dangerouslySetInnerHTML={{ __html: `${killteam.description.split('<br/>')[0]}` }} />
             </Stack>
         </Card>
     ));
@@ -21,7 +21,7 @@ export default function Faction(props) {
             <Stack>
                 <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
-                <span dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
+                <span dangerouslySetInnerHTML={{ __html: `${killteam.description.split('<br/>')[0]}` }} />
             </Stack>
         </Card>
     ));
