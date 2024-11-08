@@ -13,13 +13,15 @@ export async function generateMetadata({ params }) {
   const isCustom = !!customTeam;
   const team = customTeam || killteam;
   return {
-      openGraph: {
-          title: `${team.killteamname} Kill Team (${team.edition}) | KTDash.app`,
-          url: `https://ktdash.app/fa/${factionId}/kt/${team.killteamid}`,
-          description: team.description,
-          images: [`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${factionId}/${killteamId}/${killteamId}.jpg`],
-          type: 'website'
-      }
+    title: `${team.killteamname} Kill Team (${team.edition}) | KTDash.app`,
+    description: team.description,
+    openGraph: {
+        title: `${team.killteamname} Kill Team (${team.edition}) | KTDash.app`,
+        url: `https://ktdash.app/fa/${factionId}/kt/${team.killteamid}`,
+        description: team.description,
+        images: [`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${factionId}/${killteamId}/${killteamId}.jpg`],
+        type: 'website'
+    }
   }
 }
 

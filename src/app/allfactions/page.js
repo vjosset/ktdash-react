@@ -4,13 +4,15 @@ import Factions from "@/page/factions";
 
 export async function generateMetadata() {
     return {
-        openGraph: {
-            title: 'Factions | KTDash.app',
-            url: 'https://ktdash.app/allfactions',
-            description: 'All KillTeam factions',
-            images: ['https://ktdash.app/img/og/Compendium.png'],
-            type: 'website'
-        }
+    title: 'Factions | KTDash.app',
+    description: 'All KillTeam factions',
+    openGraph: {
+        title: 'Factions | KTDash.app',
+        url: 'https://ktdash.app/allfactions',
+        description: 'All KillTeam factions',
+        images: ['https://ktdash.app/img/og/Compendium.png'],
+        type: 'website'
+    }
     }
 }
 
