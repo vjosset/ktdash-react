@@ -63,7 +63,7 @@ export default function Team(props) {
                     })} fit="cover" style={{ objectPosition: "top", cursor: "pointer" }} h={300} radius="sm" src={`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${killteam?.factionid}/${killteam?.killteamid}/${killteam?.killteamid}.jpg`} />
                     <Stack justify="flex-start" align="flex-start">
                         <Title>
-                            {killteam?.killteamname} <sup>{killteam.edition}</sup>
+                            {killteam?.killteamname} <sup><small>{killteam.edition}</small></sup>
                         </Title>
                         <Text>
                             <span dangerouslySetInnerHTML={{ __html: `${killteam.description}` }} />
