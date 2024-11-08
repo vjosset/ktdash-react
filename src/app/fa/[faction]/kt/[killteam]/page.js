@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
         title: `${team.killteamname} Kill Team (${team.edition}) | KTDash.app`,
         url: `https://ktdash.app/fa/${factionId}/kt/${team.killteamid}`,
         description: team.description,
-        images: [`${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${factionId}/${killteamId}/${killteamId}.jpg`],
+        images: [`${!isCustom ? 'https://ktdash.app' : 'https://beta.ktdash.app'}/img/portraits/${factionId}/${killteamId}/${killteamId}.jpg`],
         type: 'website'
     }
   }
