@@ -1,7 +1,7 @@
 import React from "react";
 import { request } from "@/hooks/use-api";
 import Faction from "@/page/faction";
-import { keyBy } from "lodash";
+import { keyBy, sortBy } from "lodash";
 import customFactions from '@/data/compendium2024.json';
 
 export async function generateMetadata({ params }) {
@@ -28,7 +28,7 @@ export default async function FactionRoute({
     const customTeamsByFaction = keyBy(customFactions, 'factionid');
     const mergedFaction = {
       ...faction,
-      killteams: [ ...faction.killteams, ...(customTeamsByFaction?.[faction?.factionid]?.killteams || [])?.map((team) => ({ ...team, isCustom: true })) ]
+      killteams: sortBy([ ...faction.killteams, ...(customTeamsByFaction?.[faction?.factionid]?.killteams || [])?.map((team) => ({ ...team, isCustom: true })) ], 'killteamname')
     }
     return (
         <Faction faction={mergedFaction} />
