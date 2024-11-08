@@ -2120,7 +2120,7 @@
         "factionid": "IMP",
         "killteamid": "GK24",
         "edition": "kt24",
-        "killteamname": "Grey Knights (Unofficial)",
+        "killteamname": "Grey Knights",
         "description": "The Grey Knights are a secret and mysterious Chapter of Space Marines specifically tasked with combating the dangerous Daemonic entities of the Warp and all those mortals who wield the corrupt power of the Chaos Gods. They were created by the Emperor with the aid of Malcador the Sigillite at the time of the Horus Heresy to serve as Humanity's greatest weapon against the threat posed by the existence of Chaos. They have the honour of being implanted with gene-seed engineered directly from the genome of the Emperor Himself. <br/><br/>Unlike other Astartes, every Grey Knight is a potent psyker. Yet, in the 10,000 standard years of Imperial history, no Grey Knight has ever been corrupted by the Ruinous Powers of Chaos. Additionally, the Grey Knights do not follow the tenets of the Codex Astartes in the matter of force organisation.",
         "customkeyword": "",
         "ploys": {
@@ -3588,7 +3588,7 @@
         "factionid": "IMP",
         "killteamid": "DW24",
         "edition": "kt24",
-        "killteamname": "Long Vigil (Unofficial)",
+        "killteamname": "Long Vigil",
         "description": "The Deathwatch, known also as the \"Long Vigil,\" and the \"Long Watch,\" is a unique Chapter of the Adeptus Astartes comprised solely of Veteran Space Marines that serves the Ordo Xenos of the Imperial Inquisition as its Chamber Militant. They are the warriors of last resort when the Inquisition needs access to firepower greater than that which the Astra Militarum or a team of its own Acolytes or Throne Agents can provide.<br/><br/>It is the sacred task of the Deathwatch to stand sentry against all of these terrible xenos races and many more besides. They are ready to act when such ancient evils rise to threaten Mankind once more. The Space Marines of the Deathwatch form the first, and often only, line of defence against these inhuman horrors.",
         "customkeyword": "<CHAPTER>",
         "ploys": {
@@ -14040,7 +14040,7 @@
         "factionid": "TAU",
         "killteamid": "HC24",
         "edition": "kt24",
-        "killteamname": "Hunter Cadre (Unofficial)",
+        "killteamname": "Hunter Cadre",
         "description": "A Hunter Cadre is the Tau terminology used to indicate what the Imperium of Man would call a company of soldiers. The Tau were once a species of hunters and gatherers and the Tau who now make up what is the T'au Empire's Fire Caste were the most-skilled hunters of that ancient time. <br/><br/> Even though the Tau are now a xenos species gifted in some areas with technology that is more advanced than that available to Mankind, the Tau Lexicon still makes use of much terminology derived from their hunter-gatherer period and companies of Tau warriors are always referred to as Hunter Cadres in the Low Gothic translation. ",
         "customkeyword": "<SEPT>",
         "ploys": {

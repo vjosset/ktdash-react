@@ -1,8 +1,9 @@
 'use client'
-import { Card, Container, Image, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
+import { ActionIcon, Card, Container, Image, Popover, SimpleGrid, Stack, Tabs, Text, Title } from "@mantine/core";
 import classes from './faction.module.css';
 import { useSettings } from "../../hooks/use-settings";
 import Link from "next/link";
+import { IconFlask } from "@tabler/icons-react";
 
 export default function Faction(props) {
     const { faction } = props;
@@ -11,7 +12,14 @@ export default function Faction(props) {
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
-                <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
+                <Title order={3}>{!!killteam.isCustom && <Popover width={200} position="bottom" withArrow shadow="md">
+                        <Popover.Target>
+                            <ActionIcon mr={5} variant="outline"><IconFlask /></ActionIcon>
+                        </Popover.Target>
+                        <Popover.Dropdown>
+                            <Text>This is experimental content. Use with caution.</Text>
+                        </Popover.Dropdown>
+                    </Popover>}{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
                 <span dangerouslySetInnerHTML={{ __html: `${killteam.description.split('<br/>')[0]}` }} />
             </Stack>
         </Card>
@@ -20,7 +28,17 @@ export default function Faction(props) {
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
             <Stack>
                 <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
-                <Title order={3}>{killteam.killteamname} <sup>{killteam.edition}</sup></Title>
+                <Title order={3}  onClick={(e) => { e.preventDefault(); e.stopPropigation() }}>
+                    {!!killteam.isCustom && <Popover withArrow shadow="md">
+                        <Popover.Target>
+                            <ActionIcon mr={5} variant="outline"><IconFlask /></ActionIcon>
+                        </Popover.Target>
+                        <Popover.Dropdown>
+                            <Text>This is experimental content and should not be used in competitive events.</Text>
+                        </Popover.Dropdown>
+                    </Popover>}
+                    {killteam.killteamname} <sup>{killteam.edition}</sup>
+                </Title>
                 <span dangerouslySetInnerHTML={{ __html: `${killteam.description.split('<br/>')[0]}` }} />
             </Stack>
         </Card>
