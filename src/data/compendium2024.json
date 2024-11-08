@@ -7006,6 +7006,15 @@
                   },
                   {
                     "factionid": "IMP",
+                    "killteamid": "PHO24",
+                    "fireteamid": "PHO24",
+                    "opid": "WM",
+                    "abilityid": "AS",
+                    "title": "Shield of Honor",
+                    "description": "Once per turning point when a friendly TALONS OF THE EMPEROR operative is selected as the valid target of a Shoot action or to be fought against during the Fight action you may use this ability. If that operative is visible to and within 3\" of this operative, this operative becomes the valid target or to be fought against (as appropriate) instead even if it normally\nwould not be valid for this.\nIf it is the Fight action, treat this operative as being within the fighting operative's control range for the duration of that action.<br/>\nThis ploy has no effect if it is the Shoot action and the ranged weapon has the Blast or Torrent weapon rule."
+                  },
+                  {
+                    "factionid": "IMP",
                     "killteamid": "TOE24",
                     "fireteamid": "TOE24",
                     "opid": "SGT",
