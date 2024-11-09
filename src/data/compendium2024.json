@@ -6,7 +6,7 @@
     "killteams": [
       {
         "factionid": "IMP",
-        "killteamid": "ECC",
+        "killteamid": "ECC24",
         "edition": "hidden",
         "killteamname": "Ecclesiarchy",
         "description": "The Adepta Sororitas, colloquially called the \"Sisterhood,\" whose military arm is also known as the Sisters of Battle and formerly as the Daughters of the Emperor, are an all-female division of the Imperium of Man's state church known as the Ecclesiarchy or, more formally, as the Adeptus Ministorum.\n<br/><br/>\n   The Sisterhood's Orders Militant serve as the Ecclesiarchy's armed forces, mercilessly rooting out spiritual corruption and heresy within Humanity and every organisation of the Adeptus Terra.",
@@ -7748,7 +7748,7 @@
     "killteams": [
       {
         "factionid": "ORK",
-        "killteamid": "GSK",
+        "killteamid": "GSK24",
         "edition": "hidden",
         "killteamname": "Greenskins",
         "description": "The Orks, also called greenskins, are a savage, warlike, green-skinned species of humanoids who possess physiological features of both animals and fungi who are spread all across the Milky Way Galaxy.  <br/><br/> They are seen by their enemies (pretty much everyone else in the universe) as savage, violent, and crude, but they are the most successful species in the whole galaxy, outnumbering possibly every other intelligent starfaring species, even Humanity (with the very plausible exception of the Tyranids). ",
@@ -9969,7 +9969,7 @@
     "killteams": [
       {
         "factionid": "AEL",
-        "killteamid": "COM",
+        "killteamid": "COM24",
         "edition": "hidden",
         "killteamname": "Commorrites",
         "description": "The Drukhari or \"Dark Ones\" in the Aeldari Lexicon, also known to outsiders as the Dark Eldar, are a forsaken and corrupt Aeldari kindred, the sadistic, malicious counterparts of the Asuryani. Like their cousins of the craftworlds, the Drukhari are an ancient and highly advanced alien race of fey humanoids.\n <br/><br/>\n The alternative term \"Dark Eldar,\" or Eladrith Ynneas in the Aeldari tongue, was first coined by the Drukhari archon and Supreme Overlord of Commorragh Asdrubael Vect in the 32nd Millennium.",
@@ -11582,7 +11582,7 @@
       },
       {
         "factionid": "AEL",
-        "killteamid": "CW",
+        "killteamid": "CW24",
         "edition": "hidden",
         "killteamname": "Craftworld",
         "description": "A craftworld is a vast, planetoid-sized spacecraft populated by the Asuryani faction of the highly advanced humanoid species known as the Aeldari. The craftworlds travel through the void of space at sublight speeds, carrying the greater remnant of the Aeldari species after their Fall.\n <br/></br>\n Every craftworld is built upon a skeleton of psychoactive, crystalline wraithbone whose structure extends throughout the gigantic voidcraft. A similar skeletal core lies at the heart of most Asuryani constructions and every one of their spacecraft. ",
@@ -15646,7 +15646,7 @@
     "killteams": [
       {
         "factionid": "CHAOS",
-        "killteamid": "DAEM",
+        "killteamid": "DAEM24",
         "edition": "hidden",
         "killteamname": "Chaos Daemons",
         "description": "A Chaos Daemon, or simply Daemon, also known as a \"Neverborn\" amongst the forces of Chaos, is an intelligent and usually malevolent entity of the Warp comprised of purely psychic energy. Daemons are sentient embodiments of Chaos and collectively the greatest servants of the Chaos Gods and of Chaos itself as a universal force. \n <br/><br/>\n Daemons are created at the whim of one of the four major Chaos Gods from a fraction of the god's own power within the Immaterium and act as an extension of its will. A Daemon's appearance and intrinsic character reflect the god's own nature. These Daemons may be reabsorbed into the god's psychic signature in the Warp at their whim.",
@@ -18109,7 +18109,7 @@
     "killteams": [
       {
         "factionid": "TYR",
-        "killteamid": "BC",
+        "killteamid": "BC24",
         "edition": "hidden",
         "killteamname": "Brood Coven",
         "description": "A Genestealer Cult is a xenos-worshipping secret society made up of and controlled by Tyranid Genestealers that thrives in the dark corners of the Imperial underworld across the galaxy. Secretive, stealthy, and utterly malignant, Genestealer Cults are the cancers growing unseen in the hidden spaces of Mankind's realm.\n<br/></br>\nTheir purpose is to rise up and take control of Imperial worlds in the name of a xenos god that is actually a Tyranid Hive Fleet. Once the world is under their control, the cultists' psychic emanations are picked up by the closest Hive Fleet's extension of the Hive Mind which is then drawn to consume the world, cultists and all. ",
@@ -22404,7 +22404,7 @@
                 ],
                 "uniqueactions": [],
                 "abilities": [
-                  { 
+                  {
                     "factionid": "TYR",
                     "killteamid": "HF24",
                     "fireteamid": "HF24",
@@ -22472,6 +22472,893 @@
             "edition": "kt24"
           }
         ]
+      },
+      {
+        "factionid": "TYR",
+        "killteamid": "IV24",
+        "edition": "hidden",
+        "killteamname": "Infiltration Vanguard",
+        "description": "Hosts of vanguard organisms including lictors, leapers and other stealthy tyranid creatures are typically sent before a full scale attack to damage enemy supply lines and key targets.",
+        "customkeyword": "",
+        "ploys": {
+          "strat": [
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "F",
+              "ployname": "Feed",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly HIVE FLEET operative fights in combat, the first time you strike with a critical hit in that combat, inflict one additional damage."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "L",
+              "ployname": "Lurk",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a shooting attack is made against a friendly HIVE FLEET operative, in the Roll Defence Dice step of that shooting attack, before rolling your Defence dice, if it is in Cover and either has a Conceal order or is ready, one additional die can be retained as a successful normal save as a result of Cover, regardless of any rules that treat the operative as having an Engage order (e.g. Vantage Point)."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "S",
+              "ployname": "Stalk",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "One friendly HIVE FLEET operative that has a Conceal order and is more than 3\" from enemy operatives can perform a free Normal Move action."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "HH",
+              "ployname": "Hidden Horrors",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the turning point, while friendly INFILTRATION VANGUARD operatives have a Conceal order, they are always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
+            }
+          ],
+          "tac": [
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "AB",
+              "ployname": "Aggressive Biostrain",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy after making a shooting attack with a friendly HIVE FLEET operative in which the target did not lose any wounds. Repeat that shooting attack."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "UH",
+              "ployname": "Unseen Hunter",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy at the start or end of any activation.\nSelect one friendly HIVE FLEET operative that has not performed a shooting attack during this Turning Point. You can change its order."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "WOTHH",
+              "ployname": "Will Of The Hive Mind",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy when a friendly HIVE FLEET operative within 6\" of a friendly HIVE FLEET SYNAPSE operative is activated. Add 1 to the activated operative's APL."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "IV24",
+              "ployid": "GU",
+              "ployname": "Outnumber",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this firefight ploy during a friendly HIVE FLEET operative’s activation, before or after it performs an action. Select one enemy operative within its control range. One other friendly HIVE FLEET operative can immediately perform a free Fight action, but it can only fight against that enemy operative."
+            }
+          ]
+        },
+        "equipments": [
+          {
+            "factionid": "TYR",
+            "killteamid": "IV24",
+            "eqid": "AG",
+            "eqname": "Adrenal Glands",
+            "eqdescription": "Once per game as a STRATEGIC GAMBIT, add 1\" to the Movement characteristic of all friendly HIVE FLEET operatives until the end of the turning point.",
+            "eqpts": "2",
+            "eqtype": "OpMod",
+            "eqvar1": "M",
+            "eqvar2": "+1\"",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "TYR",
+            "killteamid": "IV24",
+            "eqid": "EC",
+            "eqname": "Extended Chitin",
+            "eqdescription": "Once per turning point, when an operative is shooting a friendly HIVE FLEET operative (Excluding Tyranid Prime), in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
+            "eqpts": "2/3",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "TYR",
+            "killteamid": "IV24",
+            "eqid": "FT",
+            "eqname": "Feeder Tendrils",
+            "eqdescription": "Once per turning point when a HIVE FLEET operative incapacitates an enemy operative in combat, it regains up to 1D3 lost wounds.",
+            "eqpts": "2",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "TYR",
+            "killteamid": "IV24",
+            "eqid": "CR",
+            "eqname": "Climbing Claws",
+            "eqdescription": "Whenever a friendly HIVE FLEET operative is climbing, treat the vertical distance as 1\" less (to a minimum of 2\").\nNote this has no effect when using ladder equipment terrain, which treats the vertical distance as 1\" (but would have an effect if the operative then continued climbing another terrain feature).",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 2
+          }
+        ],
+        "killteamcomp": "A HIVE FLEET kill team consists of 14 operatives selected from the following list:\n<ul><li>TYRANID WARRIOR PRIME</li><li>TYRANID WARRIOR LEADER operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</ul></li><li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li><li>\nTERMAGAUNT GUNNER equipped with Claws and one of the following options:\n        <ul>\n<li>Spike rifle, Shardlauncher, or Strangleweb</li></ul></li>\n<li>RIPPER SWARM</li>        </ul>\n    </li></ul>Your kill team may include no more than 2 ripper swarm operatives. \nYour kill team may include no more than 3 TYRANID WARRIOR operatives, each counting as 2 selections and other than TYRANID WARRIOR FIGHTER operatives each TYRANID WARRIOR operative may only be selected once. Your team may include no more than 3 TERMAGANT GUNNER operatives, each with a unique weapon.<br/>",
+        "fireteams": [
+          {
+            "factionid": "TYR",
+            "killteamid": "IV24",
+            "fireteamid": "IV24",
+            "seq": 0,
+            "fireteamname": "Infiltration Vanguard",
+            "archetype": "Seek And Destroy/Security/Recon",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
+                "opid": "LIC",
+                "opseq": 0,
+                "opname": "Lictor",
+                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "9",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "HH",
+                    "title": "Bio-Adaptation",
+                    "description": "(This will be something where each kill grade you achieve causes your bonuses to increase)"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "LR",
+                    "title": "Lightning Reflexes",
+                    "description": "This operative has a 5+ invulnerable save. Each time this operative is activated, it can perform a free Dash action during that activation."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Hunter Organism",
+                    "description": "When this operative is set up in the killzone, choose an enemy operative to be your mark. Each time this operative performs a Fight action or a Shoot action against that enemy operative, its weapons gain the Relentless special rule."
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
+                "opid": "NLIC",
+                "opseq": 0,
+                "opname": "Neurolictor",
+                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "9",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "HH",
+                    "title": "Hidden Horror",
+                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "LR",
+                    "title": "Lightning Reflexes",
+                    "description": "This operative has a 5+ invulnerable save. Each time this operative is activated, it can perform a free Dash action during that activation."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n\t<li>Each time this operative is activated, if it is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract [CIRCLE] from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
+                "opid": "GLDR",
+                "opseq": 0,
+                "opname": "Genestealer Leader",
+                "description": "Within Genestealer Broods, there usually arises one Genestealer with the ability to impress its will upon others through their brood telepathy. This bioform ensures their kin kill those they need to, while infecting the most important prey with their genetic taint.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, LEADER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "LDR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "LDR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "LDR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "abilityid": "HH",
+                    "title": "Hidden Horror",
+                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "abilityid": "LR",
+                    "title": "Lightning Reflexes",
+                    "description": "This operative has a 5+ invulnerable save. Each time this operative is activated, it can perform a free Dash action during that activation."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "LDR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n\t<li>Each time this operative is activated, if it is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract [CIRCLE] from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
+                "opid": "GFTR",
+                "opseq": 0,
+                "opname": "Genestealer Fighter",
+                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "9",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "HH",
+                    "title": "Hidden Horror",
+                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "LR",
+                    "title": "Lightning Reflexes",
+                    "description": "This operative has a 5+ invulnerable save. Each time this operative is activated, it can perform a free Dash action during that activation."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n\t<li>Each time this operative is activated, if it is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract [CIRCLE] from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
+                "opid": "LP",
+                "opseq": 0,
+                "opname": "Leaper",
+                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "9",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "HH",
+                    "title": "Hidden Horror",
+                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "LR",
+                    "title": "Lightning Reflexes",
+                    "description": "This operative has a 5+ invulnerable save. Each time this operative is activated, it can perform a free Dash action during that activation."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n\t<li>Each time this operative is activated, if it is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract [CIRCLE] from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within [PENT] of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              }
+            ],
+            "fireteamcomp": "A TYRANID SWARM fire team includes eight TYRANID SWARM operatives selected from the following list:\n<ul>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT each separately equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li>\n</ul>\nEach TERMAGAUNT operative equipped with a Devourer counts as two selections."
+          }
+        ],
+        "tacops": [
+          {
+            "tacopid": "ZZZ-INF-01",
+            "archetype": "Infiltration",
+            "tacopseq": 1,
+            "title": "Implant",
+            "description": "<em>TACOP</em><br/>\r <strong>Reveal: </strong> When you first score VP from this op.<br/><br/>\r <strong>Additional Rules:</strong><br/>\r Whenever a friendly operative is fighting, when you would resolve an attack dice, you can implant the enemy operative instead of striking or blocking (then discard that dice).<br/>\r Whenever a friendly operative is shooting an enemy operative within 6\" of it, when you would resolve an attack dice, you can instead implant the enemy operative instead of inflicting damage with that dice.<br/>\r Each operative can only be implanted once, and cannot be implanted during the first turning point.<br/><br/>\r <strong>Victory Points:</strong><br/>\r Once per turning point after the first, if you implant an enemy operative, you score 1VP.<br/>\r At the end of each turning point after the first, if any implanted enemy operatives are in the killzone, you score 1 VP.",
+            "edition": "kt24"
+          },
+          {
+            "tacopid": "ZZZ-INF-02",
+            "archetype": "Infiltration",
+            "tacopseq": 2,
+            "title": "Surveillance",
+            "description": "<em>TACOP</em><br/>\r <strong>Reveal: </strong> The first time a friendly operative performs the Surveillance Action.<br/><br/>\r <strong>Mission Action: Surveillance (1 AP)</strong><br/>\r The active operative has gathered surveillance.\r <ul>\r <li>An operative cannot perform this action while it has an Engage order. It must be wholly within your opponent's territory to perform this action, and there must be an enemy operative that is a valid target for it.</li>\r <li>An operative cannot perform this action during the first turning point, or while within control range of an enemy operative.</li>\r </ul><br/>\r <strong>Victory Points:</strong><br/>\r Once per turning point after the first, if a friendly operative performs the Surveillance action, you score 1 VP.<br/>\r At the end of each turning point after the first, if a friendly operative has performed the Surveillance action during that turning point is in the killzone and has a conceal order, you score 1 VP",
+            "edition": "kt24"
+          },
+          {
+            "tacopid": "ZZZ-INF-03",
+            "archetype": "Infiltration",
+            "tacopseq": 3,
+            "title": "Wiretap",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal: </strong> The first time a friendly operative performs the Wiretap Action.<br/><br/>\n<strong>Mission Action: Wiretap (1 AP)</strong><br/>\nPlace one of your Wiretap mission markers within the active operative's control range.\nIn the ready step of the next Strategy phase, remove that marker.<br/>\nAn operative cannot perform this action during the first turning point, while within control range of an enemy operative, during an activation in which it was set up, or if a friendly operative has already performed this\naction during the turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per tuning point after the first, whenever an enemy operative starts or ends an action within 2\" of your Wiretap mission marker, you score 1 VP.<br/>\nAt the end of each turning point after the first, if any enemy operatives with an Engage order are within 2\" of your Wiretap mission marker, you score 1 VP.",
+            "edition": "kt24"
+          },
+          {
+            "tacopid": "ZZZ-SAD-01",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 1,
+            "title": "Champion",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you select your first Champion.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAs a STRATEGIC GAMBIT in each turning point after the first, you can select one friendly operative to be your champion for the turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nIn each turning point after the first, whenever your champion incapacitates an enemy operative you score 1VP, or 2VP if that enemy operative had a wound stat of 12 or more (in either case to a maximum of 2VP per turning point).",
+            "edition": "kt24"
+          },
+          {
+            "tacopid": "ZZZ-SAD-02",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 2,
+            "title": "Overrun",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an enemy operative is incapacitated by a friendly operative, and that friendly operative is wholly within your opponent's territory when it does so, you score 1VP.<br/>\nAt the end of each turning point after the first, if the total APL stat of friendly operatives that both fulfilled the above condition that turning point (regardless of you scoring the VP) and are still wholly within your opponent's territory is 3 or more, you score 1 VP.",
+            "edition": "kt24"
+          },
+          {
+            "tacopid": "ZZZ-SAD-03",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 3,
+            "title": "Storm Objectives",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAt the end of each friendly operative's activation, if it controls an objective marker that enemy operatives controlled at the start of that activation or that is wholly within your opponent's territory,\nand that objective marker is not contested by enemy operatives, that objective marker is stormed by friendly operatives this turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an objective marker is stormed by Friendly operatives this turning point, you score 1VP.<br/>\nAt the end of each turning point after the first, if friendly operatives control an objective marker that was stormed by friendly operatives this turning point, you score 1VP.",
+            "edition": "kt24"
+          }
+        ]
       }
     ],
     "seq": 6
@@ -22483,7 +23370,7 @@
     "killteams": [
       {
         "factionid": "NEC",
-        "killteamid": "TW",
+        "killteamid": "TW24",
         "edition": "hidden",
         "killteamname": "Tomb World",
         "description": "A Tomb World is one of the worlds across the Milky Way Galaxy where the ancient and terrible xenos known as the Necrons chose to go into hibernation over 60 million standard years ago, deep beneath its surface in their specially prepared catacombs and tombs.\n<br/><br/>\nMany Tomb Worlds are now settled planets of the Imperium of Man and their status as a Necron Tomb World remains unknown until the Necrons beneath its surface begin to awaken, much to the detriment of all life on the world. An unknown number of these planets exist across the galaxy in the 41st Millennium. ",
@@ -24316,1130 +25203,7 @@
     "factionid": "SPEC",
     "factionname": "Special Teams",
     "description": "Special teams, one-off narrative events, and custom play modes.",
-    "killteams": [
-      {
-        "factionid": "SPEC",
-        "killteamid": "ATP",
-        "edition": "hidden",
-        "killteamname": "Apprehend The Prisoner",
-        "description": "<em>A three-player narrative mission for Kill Team that pitches two rival forces against each other as they try to capture a powerful psyker!<br/><br/></em>\n\nAn escaped prisoner and their growing band of thralls have been cornered aboard the Gallowdark. Two rival bands of elite hunters have chased the\nescapee - and at times each other - before running them to ground. Both forces seek to capture the prisoner alive for their own, secret agendas\nand must attempt to hold back their rivals while securing the quarry. Yet the prisoner is far from vulnerable. While its hunters savage each other\nin their desperation, and its own thralls slavishly lay down their lives to ensure its escape, the prisoner uses its unnatural powersof witchfire\nto incinerate any who get too close.",
-        "customkeyword": "",
-        "ploys": {
-          "strat": [
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "OTR",
-              "ployname": "On The Run",
-              "ploytype": "S",
-              "CP": "1",
-              "description": "1D3 friendly CULT OF THE UNSHACKLED operatives that are not within Line of Sight of an enemy operative can immediately perform a free Dash action,\nbut they cannot finish that action within Line of Sight of an enemy operative."
-            },
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "SIN",
-              "ployname": "Strength In Numbers",
-              "ploytype": "S",
-              "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly CULT OF THE UNSHACKLED operative fights in combat or makes a shooting attack,\nif at least one other friendly CULT OF THE UNSHACKLED operative fought in combat with or made a shooting attack against the same enemy operative\nin the same Turning Point, in the Roll Attack Dice step of that combat or shooting attack, you can re-roll one of your attack dice."
-            },
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "ST",
-              "ployname": "Summon Thralls",
-              "ploytype": "S",
-              "CP": "1",
-              "description": "Set up D3 incapacitated THRALL operatives, each with an order of your choice, wholly within your drop zone with all\ntheir wounds regained. This Strategic Ploy costs 1 additional Command point for each previous time you have used it\nduring the battle (e.g. 1CP the first time you would use it, 2CP the second time, etc.)."
-            }
-          ],
-          "tac": [
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "FOR",
-              "ployname": "Fires Of Revival",
-              "ploytype": "T",
-              "CP": "1",
-              "description": "Use this Firefight Ploy during a PRISONER operative's activation.\nIncapacitate one friendly THRALL operative Visible to and within 3\" of it.\nIf you do so, that PRISONER operative regains 1D6 lost wounds."
-            },
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "INF",
-              "ployname": "Inferno",
-              "ploytype": "T",
-              "CP": "1",
-              "description": "Use this Firefight Ploy when a friendly PRISONER operative is activated.\nUntil the end of its activation, each time that operative makes a shooting attack against an enemy operative\nwithin 6\" of it, in the Roll Attack Dice step of that shooting attack, you can re-roll any or all of your attack dice results of one result (e.g. results of 2)."
-            },
-            {
-              "factionid": "SPEC",
-              "killteamid": "ATP",
-              "ployid": "VOL",
-              "ployname": "Volatile",
-              "ploytype": "T",
-              "CP": "1",
-              "description": "Use this Firefight Ploy when a PRISONER operative loses a Wound.\nEach other operative Visible to and within 2\" of it suffers 1D3 Mortal Wounds (roll separately for each)."
-            }
-          ]
-        },
-        "equipments": [
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-INEX",
-            "eqname": "(Combat) Inexorable",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, the enemy operative in that combat cannot be supported.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 301
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-BW",
-            "eqname": "(Combat) Bladework",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, you can re-roll one of your attack dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 302
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-DF",
-            "eqname": "(Combat) Dirty Fighter",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, if any friendly operatives are supporting them, add 1 to the Attacks characteristic of their melee weapons for that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 303
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-VIC",
-            "eqname": "(Combat) Vicious",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nAdd 1 to the Critical Damage characteristic of this operative’s melee weapons.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "D:0/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 304
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-DUE",
-            "eqname": "(Combat) Duellist",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, subtract 1 from the Weapon Skill characteristic of the enemy operative for that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 305
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-SAV",
-            "eqname": "(Combat) Savage",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, if you retain any critical hits, you can inflict one Mortal Wound on the enemy operative in that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 306
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-RES",
-            "eqname": "(Staunch) Resilient",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nAdd 2 to this operative’s Wounds characteristic.",
-            "eqpts": "0",
-            "eqtype": "OpMod",
-            "eqvar1": "W",
-            "eqvar2": "+2",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 311
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-SO",
-            "eqname": "(Staunch) Shrug Off",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Attack Dice step of that shooting attack, you can change one of your opponent's retained critical hits to a normal hit.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 312
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-FOC",
-            "eqname": "(Staunch) Focused",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nWhen determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 313
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-STA",
-            "eqname": "(Staunch) Stalwart",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nThis operative is never injured.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 314
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-INV",
-            "eqname": "(Staunch) Invulnerable",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the roll defence dice step of that shooting attack, ignore the Prc1 special rule.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 315
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-IND",
-            "eqname": "(Staunch) Indomitable",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative would lose a wound as a result of a mortal wound or critical damage, roll one D6: on a 5+, that wound is not lost.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 316
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-GA",
-            "eqname": "(Marksman) Gun Ace",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, in the Roll Attack Dice step of that shooting attack, you can re-roll one of your attack dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 321
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CS",
-            "eqname": "(Marksman) Crack Shot",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, if you roll any critical hits, inflict one mortal wound on the target.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 322
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CALC",
-            "eqname": "(Marksman) Calculated",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative performs an Overwatch action, for that action’s shooting attack, do not worsen the Ballistic Skill characteristic of its ranged weapons as a result of performing an Overwatch action.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 323
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CA",
-            "eqname": "(Marksman) Careful Aim",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, when determining if the intended target is in Cover, Cover lines ignore the bases of all other operatives.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 324
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-SS",
-            "eqname": "(Marksman) Sharpshooter",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em> Each time this operative performs a Shoot action, when you would retain attack dice for that action’s shooting attack, if it has not performed a Normal Move, Fall Back or Charge action during that activation, you can select one of your results of 5+ to be retained as a critical hit.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 325
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-DFA",
-            "eqname": "(Marksman) Death From Above",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nOnce per Turning Point, after this operative makes a shooting attack while on a Vantage Point, if the target did not lose any wounds as a result of that shooting attack, repeat that shooting attack.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 326
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-RUN",
-            "eqname": "(Scout) Runner",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is activated, so long as it does not perform a Shoot or Fight action during that activation, it can perform one free Dash action.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 331
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-SW",
-            "eqname": "(Scout) Swift",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nThis operative can perform a Dash action more than once during its Activation. In addition, it automatically passes Jump tests and does not need to spend 2\" to traverse.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 332
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-COV",
-            "eqname": "(Scout) Covert",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nWhen this operative is activated during the first Turning Point, you can change its order.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 333
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-PIC",
-            "eqname": "(Scout) Picket",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em> During the Set Up Operatives step of the mission sequence, this operative can be set up within 3\" of your drop zone.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 334
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-EV",
-            "eqname": "(Scout) Evasive",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Defence Dice step of that shooting attack, if it has a Conceal order, you can re-roll one of your defence dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 335
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-DOD",
-            "eqname": "(Scout) Dodge",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative performs a Normal Move or Dash action, it can move within Engagement Range of enemy operatives, but cannot finish that move within Engagement Range of them. Each time this operative performs a Charge action, so long as it finishes that move within Engagement Range of an enemy operative, it can move within Engagement Range of any enemy operatives during that move.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 336
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-AL",
-            "eqname": "Auto-Loader",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Ceaseless special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Ceaseless",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 501
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-FC",
-            "eqname": "Flux Capacitor",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the P1 critical hit rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:P1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 502
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-RR",
-            "eqname": "Rending Rounds",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Rending special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Rending",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 503
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PA",
-            "eqname": "Propulsion Amplifier",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nAdd 1 to both Damage characteristics of this ranged weapon.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "D:1/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 504
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-TS",
-            "eqname": "Thermal Sight",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Saturate special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Saturate",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 505
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-SS",
-            "eqname": "Seeker Spirit",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nEach time a friendly operative makes a shooting attack with this ranged weapon, in the Roll Attack Dice step of that shooting attack, for each critical hit you retain, you can re-roll one of your attack dice.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 506
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PE",
-            "eqname": "Power Enhancer",
-            "eqdescription": "<em>Rare Equipment</em><br/> Add 1 to both Damage characteristics of this melee weapon.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "D:1/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 507
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-ID",
-            "eqname": "Inertia Displacer",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Brutal special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Brutal",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 508
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PW",
-            "eqname": "Perfectly Weighted",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Balanced special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Bal",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 509
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-RB",
-            "eqname": "Rending Blade",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Rending special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Rending",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 510
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-MME",
-            "eqname": "Monomolecular Edge",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Lethal 5+ special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Lethal 5+",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 511
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-AU",
-            "eqname": "Arc Unit",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Stun critical hit rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Stun",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 512
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SL",
-            "eqname": "Slain",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative can no longer be used. Remove it from your dataslate.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 801
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-CI",
-            "eqname": "Critical Impairment",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative cannot perform Dash actions and its APL characteristic cannot be increased.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 802
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SC",
-            "eqname": "Severe Concussion",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Ballistic Skill characteristic of its ranged weapons as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "BS:+1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 803
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SS",
-            "eqname": "Sapped Strength",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Weapon Skill characteristic of its melee weapons as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "BS:+1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 804
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-LA",
-            "eqname": "Lingering Ailment",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to its Movement characteristic as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "OpMod",
-            "eqvar1": "M",
-            "eqvar2": "-2\"",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 805
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-CA",
-            "eqname": "Cerebral Affliction",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative does not gain a Battle Scar but does not gain any experience from this battle.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 806
-          }
-        ],
-        "killteamcomp": "A CULT OF THE UNSHACKLED killteam is composed of:\n<ul>\n<li>1 PRISONER operative</li>\n<li>10 THRALL operatives</li>\n</ul>\n\n<h2>RULES</h2>\n \n<strong>Surgical Incapacitation:<br/></strong> The PRISONER operative can only be selected as a target for shooting attacks\nif it is within 6\" of the active operative. In addition, it cannot be targeted with ranged weapons that\nhave the Blast or Torrent special rule, the word \"Grenade\" in their name, or any other rules that target\noperatives within a specified distance of something (e.g. mines). If another operative is targeted, but a\nsubsequent shooting attack would be made against the PRISONER operative as a result of a special\nrule (e.g. Blast), then the original target cannot be selected either.\n<br/><br/>\n<strong>Apprehend Prisoner:<br/></strong> If the PRISONER operative is incapacitated, before it is removed from the killzone,\nplace a Prisoner token underneath it as close as possible to the centre of its base. The Attacker's and\nDefender's operatives can perform the Pick Up action on that token while not within Engagement Range of\nan enemy operative. Subtract 2\" from their Movement characteristic while they are carrying it. Friendly\noperatives can move off your killzone edge while carrying the Prisoner token.\n<br/><br/>\n<strong>Battle Length:<br/></strong>\nThe battle does not last four Turning Points. Instead, the battle ends if an operative carrying\nthe Prisoner token moves off the edge of their killzone edge, or the PRISONER operative moves across the escape route (as marked on the mission map).\n\n<h2>OBJECTIVE</h2>\n\nThe Attacker's and Defender's mission objectives are as follows:\n<ul>\n<li>Each time a friendly operative incapacitates an enemy LEADER operative (i.e. including the PRISONER operative), you score 3VPs.</li>\n<li>If a friendly operative moves off your killzone edge while carrying the Prisoner token, you score 6VPs.</li>\n</ul>\n\nThe Cult of the Unshackled player's mission objective is to move the PRISONER operative wholly across the\nescape route (as marked on the mission map). If they achieve this, they score 12VPs.",
-        "fireteams": [
-          {
-            "factionid": "SPEC",
-            "killteamid": "ATP",
-            "fireteamid": "ATP",
-            "seq": 0,
-            "fireteamname": "Cult Of The Unshackled",
-            "archetype": null,
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "SPEC",
-                "killteamid": "ATP",
-                "fireteamid": "ATP",
-                "opid": "PRI",
-                "opseq": 0,
-                "opname": "Prisoner",
-                "description": "If the psychic prisoner known in sealed records as ZH00X/_I_ had a name, the memory of it has burned away in the fires of its insanity. Now unshackled aboard the Gallowdark, the prisoner's unnatural powers and ambition are swollen with the warp taint that saturates the space hulk.",
-                "M": "6\"",
-                "APL": "3",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "10",
-                "keywords": "CULT OF THE UNSHACKLED, LEADER, PSYKER, PRISONER",
-                "weapons": [
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "wepid": "BU",
-                    "wepseq": 0,
-                    "wepname": "Burn",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "PRI",
-                        "wepid": "BU",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Lethal 5+, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "wepid": "BL",
-                    "wepseq": 0,
-                    "wepname": "Blaze",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "PRI",
-                        "wepid": "BL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/4",
-                        "SR": "Rng 6\", Tor 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "wepid": "IG",
-                    "wepseq": 0,
-                    "wepname": "Ignite",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "PRI",
-                        "wepid": "IG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Blast 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "wepid": "WH",
-                    "wepseq": 0,
-                    "wepname": "Wyrdlit Hands",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "PRI",
-                        "wepid": "WH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "4/5",
-                        "SR": "Lethal 5+, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "uniqueactionid": "CONF",
-                    "title": "Conflagration",
-                    "description": "<em>Psychic action<br/></em>\nSelect one friendly THRALL operative Visible to this operative.\nThat operative and all other operatives (excluding a PRISONER operative) within 2\" of it suffer 1D6 mortal wounds (roll separately for each).",
-                    "AP": 1
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "uniqueactionid": "SP",
-                    "title": "Soulflame Parasite",
-                    "description": "<em>Psychic action<br/></em>\nPlace one Soulflame Parasite token in a location that is Visible to this operative.\nThe first time another operative (i.e. excluding a PRISONER operative)\nwithout a Soulflame Parasite token moves within 2\" of that token, it gains that token and suffers 1D3 mortal wounds.\nEach time an operative with a Soulflame Parasite token is activated,\nit suffers 1D3 mortal wounds. If an operative with a Soulflame Parasite token performs a Pass action, remove that token.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "abilityid": "ELP",
-                    "title": "Extremis-Level Psyker",
-                    "description": "<ul>\n<li>This operative can perform two Shoot actions during its activation, but it cannmot use each of its Ranged Weapons more than once per Turning Point</li>\n<li>This operative is such a powerful Psyker that enemy operatives' abilities that affect this operative when it performs psychic actions (or prevent it from doin so) have no effect.</li>\n</ul>"
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "PRI",
-                    "abilityid": "WFC",
-                    "title": "Warp-Fueled Constitution",
-                    "description": "<ul>\n<li>This operative ignores the Piercing weapon rule</li>\n<li>Each time this operative would lose a Wound, roll 1D6: on a 5+, that Wound is not lost</li>\n</ul>"
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": ""
-              },
-              {
-                "factionid": "SPEC",
-                "killteamid": "ATP",
-                "fireteamid": "ATP",
-                "opid": "THR",
-                "opseq": 1,
-                "opname": "Thrall",
-                "description": "All manner of dangerous or desperate fighters have gathered around the prisoner, including Chaos Cultists, Beastmen, and even other escapees of the prison barge. Drawn to its powers, or dominated by its maelfic will, they risk their sould to fight the prisoner's foes with a motley of crude weapons.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "7",
-                "keywords": "CULT OF THE UNSHACKLED, THRALL",
-                "weapons": [
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "wepid": "FA",
-                    "wepseq": 0,
-                    "wepname": "Firearm",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "THR",
-                        "wepid": "FA",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "wepid": "P",
-                    "wepseq": 0,
-                    "wepname": "Pistol",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "THR",
-                        "wepid": "P",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "2/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "wepid": "CMW",
-                    "wepseq": 0,
-                    "wepname": "Crude Melee Weapon",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "THR",
-                        "wepid": "CMW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "SPEC",
-                        "killteamid": "ATP",
-                        "fireteamid": "ATP",
-                        "opid": "THR",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "abilityid": "MW",
-                    "title": "Mastered Will",
-                    "description": "Each time a friendly PRISONER operative Visible to and within 2\" of this operative is selected as the target of a combat or shooting attack, you can resolve that combat or shooting attack against this operative instead."
-                  },
-                  {
-                    "factionid": "SPEC",
-                    "killteamid": "ATP",
-                    "fireteamid": "ATP",
-                    "opid": "THR",
-                    "abilityid": "SW",
-                    "title": "Scavenged Weapons",
-                    "description": "This operative is equipped with a Firearm and Gun Butt, or a Pistol and Crude Melee Weapon."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": ""
-              }
-            ],
-            "fireteamcomp": "N/A"
-          }
-        ],
-        "tacops": []
-      }
-    ],
+    "killteams": [],
     "seq": 50
   },
   {
@@ -25449,7 +25213,7 @@
     "killteams": [
       {
         "factionid": "HBR",
-        "killteamid": "AEF",
+        "killteamid": "AEF24",
         "edition": "hidden",
         "killteamname": "Assassin Execution Force",
         "description": "<strong><em>Homebrew team by <a href=\"https://www.reddit.com/user/Dangerous-Factor9265/\" target=\"_blank\">Dangerous-Factor9265</a></em></strong><br/> <br/> \"We do not determine the guilty; we do not decide the punishment; we are merely the cold instruments of the Emperor's vengeance.<br/> There is no form of Death unknown to us; there is no form of Terror beyond our means; there is no enemy outside our reach.<br/> We are the blade that hovers over the throat of the traitor; we are the bullet that awaits the heretic's skull; we are the poison in the throat of the alien.\"<br/> <em>- Decree Assassinorum</em>",
