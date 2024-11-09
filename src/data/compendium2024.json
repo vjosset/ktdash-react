@@ -14099,7 +14099,7 @@
               "ployname": "Supporting Fire",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this firefight ploy when a friendly HUNTER CADRE operative is performing the Shoot action and you’re selecting a valid target within 6\" of it. Having other friendly PATHFINDER operatives within an enemy operative’s control range doesn’t prevent that enemy operative from being selected."
+              "description": "Use this firefight ploy when a friendly HUNTER CADRE operative is performing the Shoot action and you’re selecting a valid target within 6\" of it. Having other friendly HUNTER CADRE operatives within an enemy operative’s control range doesn’t prevent that enemy operative from being selected."
             },
             {
               "factionid": "TAU",
@@ -14539,7 +14539,7 @@
                     "opid": "SU",
                     "abilityid": "BL",
                     "title": "Battlefield Leadership",
-                    "description": "Once per turning point, a firefight ploy for 0CP if the specified friendly HUNTER CADRE operative is visible to this operative."
+                    "description": "Once per turning point, you may use a Firefight Ploy for 0CP if the specified friendly HUNTER CADRE operative is visible to this operative."
                   },
                   {
                     "factionid": "TAU",
