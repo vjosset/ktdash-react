@@ -21015,16 +21015,16 @@
       },
       {
         "factionid": "TYR",
-        "killteamid": "HF",
-        "edition": "hidden",
+        "killteamid": "HF24",
+        "edition": "kt24",
         "killteamname": "Hive Fleet",
         "description": "A Hive Fleet is a large armada of living, biomechanical starships created by the Tyranids for the purpose of gathering the raw materials and biomass necessary for the reproduction, evolution and expansion of their species. A hive fleet is used to attack and strip star systems of their biomass using the full range of Tyranid bioforms. ",
-        "customkeyword": "<HIVE FLEET>",
+        "customkeyword": "",
         "ploys": {
           "strat": [
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "F",
               "ployname": "Feed",
               "ploytype": "S",
@@ -21033,7 +21033,7 @@
             },
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "L",
               "ployname": "Lurk",
               "ploytype": "S",
@@ -21042,18 +21042,27 @@
             },
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "S",
               "ployname": "Stalk",
               "ploytype": "S",
               "CP": "1",
               "description": "One friendly HIVE FLEET operative that has a Conceal order and is more than 3\" from enemy operatives can perform a free Normal Move action."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "HF24",
+              "ployid": "CTS",
+              "ployname": "Call the Swarm",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "As a STRATEGIC GAMBIT in any turning point after the first. Select one defeated HORMAGANT or TERMAGANT operative and set it up wholly within 3\" of your dropzone with all its wounds remaining."
             }
           ],
           "tac": [
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "AB",
               "ployname": "Aggressive Biostrain",
               "ploytype": "T",
@@ -21062,7 +21071,7 @@
             },
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "UH",
               "ployname": "Unseen Hunter",
               "ploytype": "T",
@@ -21071,65 +21080,31 @@
             },
             {
               "factionid": "TYR",
-              "killteamid": "HF",
+              "killteamid": "HF24",
               "ployid": "WOTHH",
               "ployname": "Will Of The Hive Mind",
               "ploytype": "T",
               "CP": "1",
               "description": "Use this Firefight Ploy when a friendly HIVE FLEET operative within 6\" of a friendly HIVE FLEET SYNAPSE operative is activated. Add 1 to the activated operative's APL."
+            },
+            {
+              "factionid": "TYR",
+              "killteamid": "HF24",
+              "ployid": "GU",
+              "ployname": "Outnumber",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this firefight ploy during a friendly HIVE FLEET operative’s activation, before or after it performs an action. Select one enemy operative within its control range. One other friendly HIVE FLEET operative can immediately perform a free Fight action, but it can only fight against that enemy operative."
             }
           ]
         },
         "equipments": [
           {
             "factionid": "TYR",
-            "killteamid": "HF",
-            "eqid": "AM",
-            "eqname": "Acid Maw",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br/>\n<table width=\"100%\" class=\"eqtable\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>BS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Acid Maw</td>\n        <td>4</td>\n        <td>2+</td>\n        <td>3/3</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">Rng 6\", Splash 1</td>\n    </tr>\n</table>",
-            "eqpts": "2",
-            "eqtype": "Weapon",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 0,
-            "weapon": {
-              "factionid": "TYR",
-              "killteamid": "HF",
-              "fireteamid": "EQ",
-              "opid": "EQ",
-              "wepid": "AM",
-              "wepseq": 0,
-              "wepname": "Acid Maw",
-              "weptype": "R",
-              "isdefault": 0,
-              "profiles": [
-                {
-                  "factionid": "TYR",
-                  "killteamid": "HF",
-                  "fireteamid": "EQ",
-                  "opid": "EQ",
-                  "wepid": "AM",
-                  "profileid": "0",
-                  "name": "",
-                  "A": "4",
-                  "BS": "2+",
-                  "D": "3/3",
-                  "SR": "Rng 6\", Splash 1"
-                }
-              ]
-            }
-          },
-          {
-            "factionid": "TYR",
-            "killteamid": "HF",
+            "killteamid": "HF24",
             "eqid": "AG",
             "eqname": "Adrenal Glands",
-            "eqdescription": "Add 1\" to the operative's Movement characteristic for the battle.",
+            "eqdescription": "Once per game as a STRATEGIC GAMBIT, add 1\" to the Movement characteristic of all friendly HIVE FLEET operatives until the end of the turning point.",
             "eqpts": "2",
             "eqtype": "OpMod",
             "eqvar1": "M",
@@ -21143,10 +21118,10 @@
           },
           {
             "factionid": "TYR",
-            "killteamid": "HF",
+            "killteamid": "HF24",
             "eqid": "EC",
             "eqname": "Extended Chitin",
-            "eqdescription": "The operative gains the following ability for the battle:<br/>\n<strong>Extended Chitin:</strong> \nEach time a shooting attack is made against this operative, in the Roll Defence Dice step of that shooting attack, you may re-roll one of your Defence Dice.<br/>\nIf the operative is a TYRANID WARRIOR, this equipment costs 3 EP, otherwise it costs 2 EP.",
+            "eqdescription": "Once per turning point, when an operative is shooting a friendly HIVE FLEET operative (Excluding Tyranid Prime), in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
             "eqpts": "2/3",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -21160,10 +21135,10 @@
           },
           {
             "factionid": "TYR",
-            "killteamid": "HF",
+            "killteamid": "HF24",
             "eqid": "FT",
             "eqname": "Feeder Tendrils",
-            "eqdescription": "The operative gains the following ability for the battle:<br/>\n<strong>Feeder Tendrils:</strong> \nEach time this operative incapacitates an enemy operative in combat, it regain up to 1D3 lost wounds.",
+            "eqdescription": "Once per turning point when a HIVE FLEET operative incapacitates an enemy operative in combat, it regains up to 1D3 lost wounds.",
             "eqpts": "2",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -21177,54 +21152,11 @@
           },
           {
             "factionid": "TYR",
-            "killteamid": "HF",
-            "eqid": "FH",
-            "eqname": "Flesh Hooks",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br/>\n <table width=\"100%\" class=\"eqtable\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Flesh Hooks</td>\n         <td>4</td>\n         <td>2+</td>\n         <td>3/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 3\", Lethal 5+</td>\n     </tr>\n </table>",
-            "eqpts": "2",
-            "eqtype": "Weapon",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 0,
-            "weapon": {
-              "factionid": "TYR",
-              "killteamid": "HF",
-              "fireteamid": "EQ",
-              "opid": "EQ",
-              "wepid": "FH",
-              "wepseq": 0,
-              "wepname": "Flesh Hooks",
-              "weptype": "R",
-              "isdefault": 0,
-              "profiles": [
-                {
-                  "factionid": "TYR",
-                  "killteamid": "HF",
-                  "fireteamid": "EQ",
-                  "opid": "EQ",
-                  "wepid": "FH",
-                  "profileid": "0",
-                  "name": "",
-                  "A": "4",
-                  "BS": "2+",
-                  "D": "3/4",
-                  "SR": "Rng 3\", Lethal 5+"
-                }
-              ]
-            }
-          },
-          {
-            "factionid": "TYR",
-            "killteamid": "HF",
-            "eqid": "TS",
-            "eqname": "Toxin Sacks",
-            "eqdescription": "The operative gains the following ability for the battle:<br/>\n <strong>Toxin Sacks:</strong> \n Each time this operative fights in combat, in the Roll Attack Dice step of that combat, if you retain any critical hits, you can retain one of your failed hits as a successful normal hit.",
-            "eqpts": "2",
+            "killteamid": "HF24",
+            "eqid": "CR",
+            "eqname": "Climbing Claws",
+            "eqdescription": "Whenever a friendly HIVE FLEET operative is climbing, treat the vertical distance as 1\" less (to a minimum of 2\").\nNote this has no effect when using ladder equipment terrain, which treats the vertical distance as 1\" (but would have an effect if the operative then continued climbing another terrain feature).",
+            "eqpts": "0",
             "eqtype": "Ability",
             "eqvar1": "",
             "eqvar2": "",
@@ -21233,1006 +21165,15 @@
             "eqcategory": "Equipment",
             "fireteamid": "",
             "opid": "",
-            "eqseq": 0
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-INEX",
-            "eqname": "(Combat) Inexorable",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, the enemy operative in that combat cannot be supported.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 301
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-BW",
-            "eqname": "(Combat) Bladework",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, you can re-roll one of your attack dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 302
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-DF",
-            "eqname": "(Combat) Dirty Fighter",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, if any friendly operatives are supporting them, add 1 to the Attacks characteristic of their melee weapons for that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 303
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-VIC",
-            "eqname": "(Combat) Vicious",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nAdd 1 to the Critical Damage characteristic of this operative’s melee weapons.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "D:0/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 304
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-DUE",
-            "eqname": "(Combat) Duellist",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, subtract 1 from the Weapon Skill characteristic of the enemy operative for that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 305
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-COM-SAV",
-            "eqname": "(Combat) Savage",
-            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, if you retain any critical hits, you can inflict one Mortal Wound on the enemy operative in that combat.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 306
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-RES",
-            "eqname": "(Staunch) Resilient",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nAdd 2 to this operative’s Wounds characteristic.",
-            "eqpts": "0",
-            "eqtype": "OpMod",
-            "eqvar1": "W",
-            "eqvar2": "+2",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 311
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-SO",
-            "eqname": "(Staunch) Shrug Off",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Attack Dice step of that shooting attack, you can change one of your opponent's retained critical hits to a normal hit.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 312
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-FOC",
-            "eqname": "(Staunch) Focused",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nWhen determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 313
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-STA",
-            "eqname": "(Staunch) Stalwart",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nThis operative is never injured.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 314
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-INV",
-            "eqname": "(Staunch) Invulnerable",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the roll defence dice step of that shooting attack, ignore the Prc1 special rule.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 315
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-STA-IND",
-            "eqname": "(Staunch) Indomitable",
-            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative would lose a wound as a result of a mortal wound or critical damage, roll one D6: on a 5+, that wound is not lost.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 316
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-GA",
-            "eqname": "(Marksman) Gun Ace",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, in the Roll Attack Dice step of that shooting attack, you can re-roll one of your attack dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 321
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CS",
-            "eqname": "(Marksman) Crack Shot",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, if you roll any critical hits, inflict one mortal wound on the target.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 322
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CALC",
-            "eqname": "(Marksman) Calculated",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative performs an Overwatch action, for that action’s shooting attack, do not worsen the Ballistic Skill characteristic of its ranged weapons as a result of performing an Overwatch action.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 323
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-CA",
-            "eqname": "(Marksman) Careful Aim",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, when determining if the intended target is in Cover, Cover lines ignore the bases of all other operatives.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 324
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-SS",
-            "eqname": "(Marksman) Sharpshooter",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em> Each time this operative performs a Shoot action, when you would retain attack dice for that action’s shooting attack, if it has not performed a Normal Move, Fall Back or Charge action during that activation, you can select one of your results of 5+ to be retained as a critical hit.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 325
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-MRK-DFA",
-            "eqname": "(Marksman) Death From Above",
-            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nOnce per Turning Point, after this operative makes a shooting attack while on a Vantage Point, if the target did not lose any wounds as a result of that shooting attack, repeat that shooting attack.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 326
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-RUN",
-            "eqname": "(Scout) Runner",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is activated, so long as it does not perform a Shoot or Fight action during that activation, it can perform one free Dash action.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 331
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-SW",
-            "eqname": "(Scout) Swift",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nThis operative can perform a Dash action more than once during its Activation. In addition, it automatically passes Jump tests and does not need to spend 2\" to traverse.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 332
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-COV",
-            "eqname": "(Scout) Covert",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nWhen this operative is activated during the first Turning Point, you can change its order.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 333
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-PIC",
-            "eqname": "(Scout) Picket",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em> During the Set Up Operatives step of the mission sequence, this operative can be set up within 3\" of your drop zone.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 334
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-EV",
-            "eqname": "(Scout) Evasive",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Defence Dice step of that shooting attack, if it has a Conceal order, you can re-roll one of your defence dice.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 335
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BH-SCT-DOD",
-            "eqname": "(Scout) Dodge",
-            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative performs a Normal Move or Dash action, it can move within Engagement Range of enemy operatives, but cannot finish that move within Engagement Range of them. Each time this operative performs a Charge action, so long as it finishes that move within Engagement Range of an enemy operative, it can move within Engagement Range of any enemy operatives during that move.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Honour",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 336
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-AL",
-            "eqname": "Auto-Loader",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Ceaseless special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Ceaseless",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 501
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-FC",
-            "eqname": "Flux Capacitor",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the P1 critical hit rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:P1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 502
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-RR",
-            "eqname": "Rending Rounds",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Rending special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Rending",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 503
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PA",
-            "eqname": "Propulsion Amplifier",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nAdd 1 to both Damage characteristics of this ranged weapon.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "D:1/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 504
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-TS",
-            "eqname": "Thermal Sight",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Saturate special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "SR:Saturate",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 505
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-SS",
-            "eqname": "Seeker Spirit",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nEach time a friendly operative makes a shooting attack with this ranged weapon, in the Roll Attack Dice step of that shooting attack, for each critical hit you retain, you can re-roll one of your attack dice.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 506
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PE",
-            "eqname": "Power Enhancer",
-            "eqdescription": "<em>Rare Equipment</em><br/> Add 1 to both Damage characteristics of this melee weapon.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "D:1/1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 507
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-ID",
-            "eqname": "Inertia Displacer",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Brutal special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Brutal",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 508
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-PW",
-            "eqname": "Perfectly Weighted",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Balanced special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Bal",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 509
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-RB",
-            "eqname": "Rending Blade",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Rending special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Rending",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 510
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-MME",
-            "eqname": "Monomolecular Edge",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Lethal 5+ special rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Lethal 5+",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 511
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "RE-AU",
-            "eqname": "Arc Unit",
-            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Stun critical hit rule.",
-            "eqpts": "2",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "SR:Stun",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Rare Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 512
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SL",
-            "eqname": "Slain",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative can no longer be used. Remove it from your dataslate.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 801
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-CI",
-            "eqname": "Critical Impairment",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative cannot perform Dash actions and its APL characteristic cannot be increased.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 802
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SC",
-            "eqname": "Severe Concussion",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Ballistic Skill characteristic of its ranged weapons as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:R",
-            "eqvar2": "BS:+1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 803
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-SS",
-            "eqname": "Sapped Strength",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Weapon Skill characteristic of its melee weapons as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "WepMod",
-            "eqvar1": "weptype:M",
-            "eqvar2": "BS:+1",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 804
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-LA",
-            "eqname": "Lingering Ailment",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to its Movement characteristic as if it were injured.",
-            "eqpts": "0",
-            "eqtype": "OpMod",
-            "eqvar1": "M",
-            "eqvar2": "-2\"",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 805
-          },
-          {
-            "factionid": "kt21",
-            "killteamid": "ALL",
-            "eqid": "BS-CA",
-            "eqname": "Cerebral Affliction",
-            "eqdescription": "<em>Battle Scar<br/></em>This operative does not gain a Battle Scar but does not gain any experience from this battle.",
-            "eqpts": "0",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Battle Scar",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 806
+            "eqseq": 2
           }
         ],
-        "killteamcomp": "A HIVE FLEET kill team consists of two fireteams selected from the following list:\n<ul>\n<li>GENESTEALER</li>\n<li>TYRANID SWARM (max one per kill team)</li>\n<li>TYRANID WARRIOR</li>\n</ul>\n",
+        "killteamcomp": "A HIVE FLEET kill team consists of 14 operatives selected from the following list:\n<ul><li>TYRANID WARRIOR PRIME</li><li>TYRANID WARRIOR LEADER operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</ul></li><li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li><li>\nTERMAGAUNT GUNNER equipped with Claws and one of the following options:\n        <ul>\n<li>Spike rifle, Shardlauncher, or Strangleweb</li></ul></li>\n<li>RIPPER SWARM</li>        </ul>\n    </li></ul>Your kill team may include no more than 2 ripper swarm operatives. \nYour kill team may include no more than 3 TYRANID WARRIOR operatives, each counting as 2 selections and other than TYRANID WARRIOR FIGHTER operatives each TYRANID WARRIOR operative may only be selected once. Your team may include no more than 3 TERMAGANT GUNNER operatives, each with a unique weapon.<br/>",
         "fireteams": [
           {
             "factionid": "TYR",
-            "killteamid": "HF",
-            "fireteamid": "GS",
-            "seq": 0,
-            "fireteamname": "Genestealers",
-            "archetype": "Seek And Destroy/Infiltration",
-            "description": "",
-            "killteammax": 1,
-            "operatives": [
-              {
-                "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "GS",
-                "opid": "FTR",
-                "opseq": 0,
-                "opname": "Genestealer Fighter",
-                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "9",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, GENESTEALER, FIGHTER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "DRC",
-                    "wepseq": 0,
-                    "wepname": "Double Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "DRC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Relentless, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "HH",
-                    "title": "Hidden Horror",
-                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "LR",
-                    "title": "Lightning Reflexes",
-                    "description": "This operative ignores the Piercing weapon rule. Each time this operative is activated, it can perform a free Dash action during that activation."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "GS",
-                "opid": "LDR",
-                "opseq": 0,
-                "opname": "Genestealer Leader",
-                "description": "Within Genestealer Broods, there usually arises one Genestealer with the ability to impress its will upon others through their brood telepathy. This bioform ensures their kin kill those they need to, while infecting the most important prey with their genetic taint.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, GENESTEALER, LEADER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "DRC",
-                    "wepseq": 0,
-                    "wepname": "Double Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "DRC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Relentless, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "abilityid": "HH",
-                    "title": "Hidden Horror",
-                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "abilityid": "LR",
-                    "title": "Lightning Reflexes",
-                    "description": "This operative ignores the Piercing weapon rule. Each time this operative is activated, it can perform a free Dash action during that activation."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              }
-            ],
-            "fireteamcomp": "A GENESTEALER fire team includes five GENESTEALER FIGHTER operatives each separately equipped with one of the following options:\n<ul>\n<li>Double Rending Claws</li>\n    <li>Rending Claws, Scything Talons</li>\n</ul>\nIf your kill team does not include any other LEADER operatives, instead of selecting one GENESTEALER FIGHTER operative for one GENESTEALER fire team, you can select one GENESTEALER LEADER operative equipped with one of the following options:\n<ul>\n<li>Double Rending Claws</li>\n    <li>Rending Claws, Scything Talons</li>\n</ul>"
-          },
-          {
-            "factionid": "TYR",
-            "killteamid": "HF",
-            "fireteamid": "TS",
+            "killteamid": "HF24",
+            "fireteamid": "HF24",
             "seq": 0,
             "fireteamname": "Tyranid Swarm",
             "archetype": "Seek And Destroy/Security/Recon",
@@ -22241,24 +21182,842 @@
             "operatives": [
               {
                 "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "TS",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "TYRP",
+                "opseq": 0,
+                "opname": "Tyranid Warrior Prime",
+                "description": "Tyranid Primes are highly intelligent, more so than their common counterparts. When they lead a brood of Tyranid Warriors, the brood acts as one entity using tactics and precision that military commanders find hard to match.",
+                "M": "6\"",
+                "APL": "3",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "20",
+                "keywords": "HIVE FLEET,TYRANID, SYNAPSE, TYRANID WARRIOR, PRIME",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Prime Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Ceaseless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TSI",
+                    "uniqueactionid": "TYRP",
+                    "title": "Synaptic Command",
+                    "description": "Select one other friendly HIVE FLEET operative Visible to this operative. It can immediately perform any 1 AP action.",
+                    "AP": 1
+                  }
+                ],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TYRP",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TYRP",
+                    "abilityid": "ADV",
+                    "title": "Advanced Organism",
+                    "description": "Whenever an opponent is selecting a valid target, if this operative has a conceal order, it cannot use Light Terrain for cover. While this can allow this operative to be targeted (assuming it is visible) it does not remove its cover save (if any)."
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch,Marksman"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "LDR",
+                "opseq": 0,
+                "opname": "Tyranid Warrior Leader",
+                "description": "Tyranid Warriors are synapse creatures, psychic resonators for the Hive Mind. In many broods one bioform will dominate, having a deeper connection to the alien will that drives them. This bioform directs where its brood hunts and where it spreads the malignancy of the Hive Mind.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "19",
+                "keywords": "HIVE FLEET,TYRANID, SYNAPSE, TYRANID WARRIOR, LEADER",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "DS",
+                    "wepseq": 0,
+                    "wepname": "Deathspitter",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "DS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "DV",
+                    "wepseq": 0,
+                    "wepname": "Devourer",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "DV",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": "Ceaseless"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "LW",
+                    "wepseq": 0,
+                    "wepname": "Lash Whip",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "LW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": "Rng 3\", Stun, Lash Whip"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "SF",
+                    "wepseq": 0,
+                    "wepname": "Spinefists",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "SF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "BSW",
+                    "wepseq": 0,
+                    "wepname": "Bonesword",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "BSW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "BSWS",
+                    "wepseq": 0,
+                    "wepname": "Boneswords",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "BSWS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "LDR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "LDR",
+                    "abilityid": "WB",
+                    "title": "Weaponbeast",
+                    "description": "If this operative is equipped with two melee weapons, add 1 to their Attacks characteristics."
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch,Marksman"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "FTR",
+                "opseq": 0,
+                "opname": "Tyranid Warrior Fighter",
+                "description": "Tyranid Warriors are the most adaptable of all Tyranid bioforms. They are unstoppable killing machines protected by a carapace of thick chitin, yet with reactions as fast as a whip. In battle they can be found in the thick of the fighting, in close quarters or at range.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "18",
+                "keywords": "HIVE FLEET,TYRANID, SYNAPSE, TYRANID WARRIOR, FIGHTER",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "DS",
+                    "wepseq": 0,
+                    "wepname": "Deathspitter",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "DS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "DV",
+                    "wepseq": 0,
+                    "wepname": "Devourer",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "DV",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "3/4",
+                        "SR": "Ceaseless"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "LW",
+                    "wepseq": 0,
+                    "wepname": "Lash Whip",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "LW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": "Rng 3\", Stun, Lash Whip"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "SF",
+                    "wepseq": 0,
+                    "wepname": "Spinefists",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "SF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "BS",
+                    "wepseq": 0,
+                    "wepname": "Bonesword",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "BS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "BSS",
+                    "wepseq": 0,
+                    "wepname": "Boneswords",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "BSS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "FTR",
+                    "abilityid": "WB",
+                    "title": "Weaponbeast",
+                    "description": "If this operative is equipped with two melee weapons, add 1 to their Attacks characteristics."
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch,Marksman"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "HGNR",
+                "opseq": 0,
+                "opname": "Tyranid Warrior Heavy Gunner",
+                "description": "Tyranid Warriors have the mental flexibility to employ a wide variety of weapon-symbiotes, including heavy bio-cannons. They are dangerous and unforgiving foes, able to identify and exploit the weaknesses of their targets with innate shrewdness.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "18",
+                "keywords": "HIVE FLEET,TYRANID, SYNAPSE, TYRANID WARRIOR, HEAVY GUNNER",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "BS",
+                    "wepseq": 0,
+                    "wepname": "Barbed Strangler",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "BS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/5",
+                        "SR": "Hvy, Blast 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "LW",
+                    "wepseq": 0,
+                    "wepname": "Lash Whip",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "LW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": "Rng 3\", Stun, Lash Whip"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "VC",
+                    "wepseq": 0,
+                    "wepname": "Venom Cannon",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "VC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "5/6",
+                        "SR": "Hvy, Prc1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "BSW",
+                    "wepseq": 0,
+                    "wepname": "Bonesword",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "BSW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "BSWS",
+                    "wepseq": 0,
+                    "wepname": "Boneswords",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "BSWS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "HGNR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "HGNR",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Staunch,Marksman"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
                 "opid": "HRM",
                 "opseq": 0,
                 "opname": "Hormagaunt",
                 "description": "Hormagaunts have razor-sharp talons specially developed for ripping and piercing flesh and  armour, and their powerful hind legs drive them after their prey.. Extraordinarily single-minded, they will pursue their victims without pause or fatigue until they run their quarry down.",
-                "M": "6\"",
+                "M": "7\"",
                 "APL": "2",
                 "GA": "2",
                 "DF": "3",
                 "SV": "6+",
                 "W": "7",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, TYRANID SWARM, HOMAGAUNT",
+                "keywords": "HIVE FLEET,TYRANID, TYRANID SWARM, HOMAGAUNT",
                 "weapons": [
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "HRM",
                     "wepid": "ST",
                     "wepseq": 0,
@@ -22268,8 +22027,8 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TS",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
                         "opid": "HRM",
                         "wepid": "ST",
                         "profileid": "0",
@@ -22287,12 +22046,21 @@
                 "abilities": [
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "HRM",
                     "abilityid": "SYN",
                     "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "abilityid": "GA",
+                    "title": "Group Activation",
+                    "description": "Whenever this operative is expended, you must then activate one other ready friendly TYRANID SWARM HORMAGANT operative (if able) before your opponent activates.\nWhen that other operative is expended, your opponent then activates as normal (in other words, you cannot activate more than two operatives in succession with this rule)."
                   }
                 ],
                 "edition": "hidden",
@@ -22301,8 +22069,8 @@
               },
               {
                 "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "TS",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
                 "opid": "TRM",
                 "opseq": 0,
                 "opname": "Termagant",
@@ -22313,12 +22081,12 @@
                 "DF": "3",
                 "SV": "6+",
                 "W": "7",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, TYRANID SWARM, TERMAGAUNT",
+                "keywords": "HIVE FLEET,TYRANID, TYRANID SWARM, TERMAGAUNT",
                 "weapons": [
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "TRM",
                     "wepid": "DV",
                     "wepseq": 0,
@@ -22328,8 +22096,8 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TS",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
                         "opid": "TRM",
                         "wepid": "DV",
                         "profileid": "0",
@@ -22344,8 +22112,8 @@
                   },
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "TRM",
                     "wepid": "FB",
                     "wepseq": 0,
@@ -22355,8 +22123,8 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TS",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
                         "opid": "TRM",
                         "wepid": "FB",
                         "profileid": "0",
@@ -22371,8 +22139,8 @@
                   },
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "TRM",
                     "wepid": "SF",
                     "wepseq": 0,
@@ -22382,8 +22150,8 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TS",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
                         "opid": "TRM",
                         "wepid": "SF",
                         "profileid": "0",
@@ -22398,8 +22166,8 @@
                   },
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "TRM",
                     "wepid": "CL",
                     "wepseq": 0,
@@ -22409,8 +22177,8 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TS",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
                         "opid": "TRM",
                         "wepid": "CL",
                         "profileid": "0",
@@ -22428,989 +22196,280 @@
                 "abilities": [
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TS",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
                     "opid": "TRM",
                     "abilityid": "SYN",
                     "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "abilityid": "GA",
+                    "title": "Group Activation",
+                    "description": "Whenever this operative is expended, you must then activate one other ready friendly TYRANID SWARM TERMAGANT operative (if able) before your opponent activates.\nWhen that other operative is expended, your opponent then activates as normal (in other words, you cannot activate more than two operatives in succession with this rule)."
                   }
                 ],
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Marksman,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "TRM",
+                "opseq": 0,
+                "opname": "Termagant Gunner",
+                "description": "Termagants are fast and cunning creatures. In battle they scuttle forwards, unleashing torrents of fire from their bio-weaponry. They also have a strong sense of self-preservation, and often find a way to circumvent ambushes as well as assail the foe from an unexpected quarter.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "2",
+                "DF": "3",
+                "SV": "6+",
+                "W": "7",
+                "keywords": "HIVE FLEET,TYRANID, TYRANID SWARM, TERMAGAUNT",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "wepid": "DV",
+                    "wepseq": 0,
+                    "wepname": "Spike rifle",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "TRM",
+                        "wepid": "DV",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/3",
+                        "SR": "Hvy (DashOnly), Dev3, Prc1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "wepid": "FB",
+                    "wepseq": 0,
+                    "wepname": "Shardlauncher",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "TRM",
+                        "wepid": "FB",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/5",
+                        "SR": "Hvy (DashOnly), Blast 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "wepid": "SF",
+                    "wepseq": 0,
+                    "wepname": "Strangleweb",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "TRM",
+                        "wepid": "SF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "2/2",
+                        "SR": "Rng 6\", Stun, Tor 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "wepid": "CL",
+                    "wepseq": 0,
+                    "wepname": "Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "TRM",
+                        "wepid": "CL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Marksman,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "HF24",
+                "fireteamid": "HF24",
+                "opid": "RIP",
+                "opseq": 0,
+                "opname": "Ripper Swarm",
+                "description": "Termagants are fast and cunning creatures. In battle they scuttle forwards, unleashing torrents of fire from their bio-weaponry. They also have a strong sense of self-preservation, and often find a way to circumvent ambushes as well as assail the foe from an unexpected quarter.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "2",
+                "DF": "3",
+                "SV": "-",
+                "W": "14",
+                "keywords": "HIVE FLEET,TYRANID, TYRANID SWARM, TERMAGAUNT",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "RIP",
+                    "wepid": "DV",
+                    "wepseq": 0,
+                    "wepname": "Swarming Claws",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF24",
+                        "fireteamid": "HF24",
+                        "opid": "TRM",
+                        "wepid": "DV",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "5+",
+                        "D": "2/3",
+                        "SR": "Ceaseless"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  { 
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TRM",
+                    "abilityid": "SYN",
+                    "title": "Synapse",
+                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Marksman,Scout"
               }
             ],
             "fireteamcomp": "A TYRANID SWARM fire team includes eight TYRANID SWARM operatives selected from the following list:\n<ul>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT each separately equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li>\n</ul>\nEach TERMAGAUNT operative equipped with a Devourer counts as two selections."
-          },
-          {
-            "factionid": "TYR",
-            "killteamid": "HF",
-            "fireteamid": "TW",
-            "seq": 0,
-            "fireteamname": "Tyranid Warriors",
-            "archetype": "Seek And Destroy/Security",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "TW",
-                "opid": "FTR",
-                "opseq": 0,
-                "opname": "Tyranid Warrior Fighter",
-                "description": "Tyranid Warriors are the most adaptable of all Tyranid bioforms. They are unstoppable killing machines protected by a carapace of thick chitin, yet with reactions as fast as a whip. In battle they can be found in the thick of the fighting, in close quarters or at range.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "18",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, SYNAPSE, TYRANID WARRIOR, FIGHTER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "DS",
-                    "wepseq": 0,
-                    "wepname": "Deathspitter",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "DS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "DV",
-                    "wepseq": 0,
-                    "wepname": "Devourer",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "DV",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "3/4",
-                        "SR": "Ceaseless"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "LW",
-                    "wepseq": 0,
-                    "wepname": "Lash Whip",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "LW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": "Rng 3\", Stun, Lash Whip"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "SF",
-                    "wepseq": 0,
-                    "wepname": "Spinefists",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "SF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "BS",
-                    "wepseq": 0,
-                    "wepname": "Bonesword",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "BS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "BSS",
-                    "wepseq": 0,
-                    "wepname": "Boneswords",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "BSS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "FTR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "FTR",
-                    "abilityid": "WB",
-                    "title": "Weaponbeast",
-                    "description": "If this operative is equipped with two melee weapons, add 1 to their Attacks characteristics."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Staunch,Marksman"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "TW",
-                "opid": "HGNR",
-                "opseq": 0,
-                "opname": "Tyranid Warrior Heavy Gunner",
-                "description": "Tyranid Warriors have the mental flexibility to employ a wide variety of weapon-symbiotes, including heavy bio-cannons. They are dangerous and unforgiving foes, able to identify and exploit the weaknesses of their targets with innate shrewdness.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "18",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, SYNAPSE, TYRANID WARRIOR, HEAVY GUNNER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "BS",
-                    "wepseq": 0,
-                    "wepname": "Barbed Strangler",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "BS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "4/5",
-                        "SR": "Hvy, Blast 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "LW",
-                    "wepseq": 0,
-                    "wepname": "Lash Whip",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "LW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": "Rng 3\", Stun, Lash Whip"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "VC",
-                    "wepseq": 0,
-                    "wepname": "Venom Cannon",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "VC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "5/6",
-                        "SR": "Hvy, Prc1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "BSW",
-                    "wepseq": 0,
-                    "wepname": "Bonesword",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "BSW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "BSWS",
-                    "wepseq": 0,
-                    "wepname": "Boneswords",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "BSWS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "HGNR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "HGNR",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch,Marksman"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "HF",
-                "fireteamid": "TW",
-                "opid": "LDR",
-                "opseq": 0,
-                "opname": "Tyranid Warrior Leader",
-                "description": "Tyranid Warriors are synapse creatures, psychic resonators for the Hive Mind. In many broods one bioform will dominate, having a deeper connection to the alien will that drives them. This bioform directs where its brood hunts and where it spreads the malignancy of the Hive Mind.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "19",
-                "keywords": "HIVE FLEET,TYRANID, <HIVE FLEET>, SYNAPSE, TYRANID WARRIOR, LEADER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "DS",
-                    "wepseq": 0,
-                    "wepname": "Deathspitter",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "DS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "DV",
-                    "wepseq": 0,
-                    "wepname": "Devourer",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "DV",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": "Ceaseless"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "LW",
-                    "wepseq": 0,
-                    "wepname": "Lash Whip",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "LW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": "Rng 3\", Stun, Lash Whip"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "SF",
-                    "wepseq": 0,
-                    "wepname": "Spinefists",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "SF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "BSW",
-                    "wepseq": 0,
-                    "wepname": "Bonesword",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "BSW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "BSWS",
-                    "wepseq": 0,
-                    "wepname": "Boneswords",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "BSWS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "TW",
-                        "opid": "LDR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the Ballistic Skill and Weapon Skill of ranged and melee weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "TW",
-                    "opid": "LDR",
-                    "abilityid": "WB",
-                    "title": "Weaponbeast",
-                    "description": "If this operative is equipped with two melee weapons, add 1 to their Attacks characteristics."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Staunch,Marksman"
-              }
-            ],
-            "fireteamcomp": "A TYRANID WARRIOR fire team includes three TYRANID WARRIOR operatives selected from the following list:\n<ul>\n<li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, orLash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n</ul>\nEach TYRANID WARRIOR fire team can only include up to one TYRANID WARRIOR HEAVY GUNNER operative.<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one TYRANID WARRIOR FIGHTER operative for one TYRANID WARRIOR fire team, you can select one TYRANID WARRIOR LEADER operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>"
           }
         ],
         "tacops": [
           {
-            "tacopid": "ZZZ-INF-01ST",
+            "tacopid": "ZZZ-INF-01",
             "archetype": "Infiltration",
             "tacopseq": 1,
-            "title": "Stalk Target",
-            "description": "\n You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one enemy operative to be stalked for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if a friendly operative with a Conceal order is within 3\" but not within Engagement Range of the enemy operative you selected to be stalked for that Turning Point, you score 1 VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1 VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-INF-02GS",
-            "archetype": "Infiltration",
-            "tacopseq": 2,
-            "title": "Gather Surveillance",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one friendly operative to gather surveillance for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if the friendly operative you selected to gather surveillance for that Turning Point has a Conceal order, is wholly within your opponent's territory and is more than 3\" from enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-INF-03IM",
-            "archetype": "Infiltration",
-            "tacopseq": 3,
             "title": "Implant",
-            "description": "You can reveal this Tac Op when you would strike an enemy operative in combat.\n <ul>\n <li>Instead of inflicting damage on an enemy operative from that strike, you can implant that operative instead. That operative does not lose any wounds and you score 1 VP</li>\n <li>If two other enemy operatives are implanted, you score 1 VP</li>\n </ul>\n ",
-            "edition": "kt21"
+            "description": "<em>TACOP</em><br/>\r <strong>Reveal: </strong> When you first score VP from this op.<br/><br/>\r <strong>Additional Rules:</strong><br/>\r Whenever a friendly operative is fighting, when you would resolve an attack dice, you can implant the enemy operative instead of striking or blocking (then discard that dice).<br/>\r Whenever a friendly operative is shooting an enemy operative within 6\" of it, when you would resolve an attack dice, you can instead implant the enemy operative instead of inflicting damage with that dice.<br/>\r Each operative can only be implanted once, and cannot be implanted during the first turning point.<br/><br/>\r <strong>Victory Points:</strong><br/>\r Once per turning point after the first, if you implant an enemy operative, you score 1VP.<br/>\r At the end of each turning point after the first, if any implanted enemy operatives are in the killzone, you score 1 VP.",
+            "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-INF-04SD",
+            "tacopid": "ZZZ-INF-02",
             "archetype": "Infiltration",
-            "tacopseq": 4,
-            "title": "Seize Defences",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if you control an opponent's barricade, you score 1VP.</li>  <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>  </ul>  Friendly operatives control a barricade if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.  ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-INF-05ID",
-            "archetype": "Infiltration",
-            "tacopseq": 5,
-            "title": "Install Device",
-            "description": "Reveal this Tac Op when a friendly operative performs the Install Device mission action.\n <ul>\n <li>At the end of any Turning Point, if your Device token has been in the killzone for the whole of that Turning Point, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n Friendly operatives can perform the following mission action:<br/>\n <strong>Install Device (1 AP):<br/></strong>\n An operative can perform this action while it controls an objective marker in your opponent's territory or on the centre line. Place your Device token on that objective marker. Remove it if an enemy operative controls that objective marker. An operative connot perform this action if your Device token is in the killzone.\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-INF-06SC",
-            "archetype": "Infiltration",
-            "tacopseq": 6,
-            "title": "Subversive Control",
-            "description": "You can reveal this Tac Op in ther Target Reveal step of the third or fourth Turning Point.\n <ul>\n <li>At the end of the third Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n <li>At the end of the fourth Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-REC-01OF",
-            "archetype": "Recon",
-            "tacopseq": 1,
-            "title": "Outflank",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n <ul>\n <li>At the end of any Turning Point, if friendly operatives control both neutral killzone edges, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n Friendly operatives control a neutral killzone edge if the total APL of friendly operatives within 3\" of it is greater than that of enemy operatives. Operatives within 6\" of their own drop zone cannot contribute their APL when determining this total.",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-REC-02CO",
-            "archetype": "Recon",
             "tacopseq": 2,
-            "title": "Courier",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nWhen you do so, select one friendly operative.\n <ul>\n <li>At the end of any Turning Point, if that operative is within 6\" of your opponent's drop zone, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>",
-            "edition": "kt21"
+            "title": "Surveillance",
+            "description": "<em>TACOP</em><br/>\r <strong>Reveal: </strong> The first time a friendly operative performs the Surveillance Action.<br/><br/>\r <strong>Mission Action: Surveillance (1 AP)</strong><br/>\r The active operative has gathered surveillance.\r <ul>\r <li>An operative cannot perform this action while it has an Engage order. It must be wholly within your opponent's territory to perform this action, and there must be an enemy operative that is a valid target for it.</li>\r <li>An operative cannot perform this action during the first turning point, or while within control range of an enemy operative.</li>\r </ul><br/>\r <strong>Victory Points:</strong><br/>\r Once per turning point after the first, if a friendly operative performs the Surveillance action, you score 1 VP.<br/>\r At the end of each turning point after the first, if a friendly operative has performed the Surveillance action during that turning point is in the killzone and has a conceal order, you score 1 VP",
+            "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-REC-03PT",
-            "archetype": "Recon",
+            "tacopid": "ZZZ-INF-03",
+            "archetype": "Infiltration",
             "tacopseq": 3,
-            "title": "Plant Transponder",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning point after the first.\n <ul>\n <li>If a friendly operative performs the Plant Transponder mission action, you score 1 VP.</li>\n <li>If you achieve the first condition in any subsequent Turning Points, you score 1 VP.</li>\n </ul>\n Friendly operatives can perform the following mission action:\n <strong>Plant Transponder (1 AP):<br/></strong>\n An operative can perform this action while wholly within your opponent's territory and more than 2\" from terrain features (barricades are terrain features; ignore terrain features that have the Insignificant trait).\n If it does so, place one of your Transponder tokens underneath the operative as close as possible to the centre of its base.\n An operative cannot perform this action while within Engagement Range of an enemy operative or 6\" of your other Transponder tokens.",
-            "edition": "kt21"
+            "title": "Wiretap",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal: </strong> The first time a friendly operative performs the Wiretap Action.<br/><br/>\n<strong>Mission Action: Wiretap (1 AP)</strong><br/>\nPlace one of your Wiretap mission markers within the active operative's control range.\nIn the ready step of the next Strategy phase, remove that marker.<br/>\nAn operative cannot perform this action during the first turning point, while within control range of an enemy operative, during an activation in which it was set up, or if a friendly operative has already performed this\naction during the turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per tuning point after the first, whenever an enemy operative starts or ends an action within 2\" of your Wiretap mission marker, you score 1 VP.<br/>\nAt the end of each turning point after the first, if any enemy operatives with an Engage order are within 2\" of your Wiretap mission marker, you score 1 VP.",
+            "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-REC-04SV",
-            "archetype": "Recon",
-            "tacopseq": 4,
-            "title": "Secure Vantage",
-            "description": "<em>Not usable in Close Quarters<br/></em>\n You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n <ul>\n <li>At the end of any Turning Point, if you control a Vantage Point that is more than 3\" from your drop zone, you score 1VP.</li>\n <li>If you achieve the first condition with a different vantage point at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n Friendly operatives control a Vantage Point if the total APL of friendly operatives on it is greater than that of enemy operatives.",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-REC-05RE",
-            "archetype": "Recon",
-            "tacopseq": 5,
-            "title": "Recover Item",
-            "description": "You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n<br/>\nPlace one of your Item tokens within your opponent's territory. The Pick Up action can be performed by friendly operatives (but not enemy operatives) upon your Item token.\n <ul>\n <li>At the end of any Turning Point, if a friendly operative controls your Item token, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-REC-06SF",
-            "archetype": "Recon",
-            "tacopseq": 6,
-            "title": "Surge Forward",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n <ul>\n <li>At the end of any Turning Point, if the total APL of friendly operatives within 6\" of your opponent's drop zone is 4 or more, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>\n </ul>",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-REC-07SU",
-            "archetype": "Recon",
-            "tacopseq": 7,
-            "title": "Secure Unexplored Rooms",
-            "description": "<em>Close Quarters only<br/></em>\nYou can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n<ul>\n<li>At the end of any Turning Point, if the total APL of friendly operatives within an Unexplored Room (see below) is greater than that of enemy operatives, you score 1VP.</li>\n<li>If you achieve the first condition with a different Unexplored Room (i.e. separated by access points) at the end of any subsequent Turning Points, you score 1VP.</li>\n</ul>\nAn Unexplored Room is an area of the killzone that friendly operatives must move through an access point to enter. You cannot use Unexplored Rooms that contain your drop zone or have an access point along the line of your drop zone for this Tac Op.\n",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SAD-01HH",
+            "tacopid": "ZZZ-SAD-01",
             "archetype": "Seek And Destroy",
             "tacopseq": 1,
-            "title": "Headhunter",
-            "description": "Reveal this Tac Op when an enemy LEADER operative is incapacitated.\n <ul>\n <li>You score 1 VP</li>\n <li>If it is the first or second Turning Point, you score 1 VP</li>\n </ul>\n ",
-            "edition": "kt21"
+            "title": "Champion",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you select your first Champion.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAs a STRATEGIC GAMBIT in each turning point after the first, you can select one friendly operative to be your champion for the turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nIn each turning point after the first, whenever your champion incapacitates an enemy operative you score 1VP, or 2VP if that enemy operative had a wound stat of 12 or more (in either case to a maximum of 2VP per turning point).",
+            "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-SAD-02AT",
+            "tacopid": "ZZZ-SAD-02",
             "archetype": "Seek And Destroy",
             "tacopseq": 2,
-            "title": "Assassinate Target",
-            "description": "You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n<br/>\nYour opponent selects one of their operatives.\n<ul>\n<li>If that operative is incapacitated, you score 2VPs.</li>\n<li>At the end of the battle, if that operative has not been incapacitated but has fewer than half of its wounds remaining, you score 1VP.</li>\n<ul>",
-            "edition": "kt21"
+            "title": "Overrun",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an enemy operative is incapacitated by a friendly operative, and that friendly operative is wholly within your opponent's territory when it does so, you score 1VP.<br/>\nAt the end of each turning point after the first, if the total APL stat of friendly operatives that both fulfilled the above condition that turning point (regardless of you scoring the VP) and are still wholly within your opponent's territory is 3 or more, you score 1 VP.",
+            "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-SAD-03RT",
+            "tacopid": "ZZZ-SAD-03",
             "archetype": "Seek And Destroy",
             "tacopseq": 3,
-            "title": "Rout",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point\n <ul>\n <li>If an enemy operative is incapacitated by a friendly operative, and that friendly operative is within 6\" of your opponent's drop zone when it does so, you score 1 VP</li>\n <li>If you achieve the first condition in any subsequent Turning Point, you score 1 VP</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SAD-04EX",
-            "archetype": "Seek And Destroy",
-            "tacopseq": 4,
-            "title": "Executioner",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nWhen you do so, select one friendly operative to be your executioner. At the end of each Target Reveal step, select one enemy operative to be executed for the Turning Point.\n <ul>\n <li>If the enemy operative you selected to be executed for the Turning Point is incapacitated by your executioner during the same Turning Point, score 1VP.</li>\n <li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SAD-05EG",
-            "archetype": "Seek And Destroy",
-            "tacopseq": 5,
-            "title": "Eliminate Guards",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select an objective marker on the centre line or within your opponent's territory, then select one enemy operative within 2\" of it to be the guard for the Turning Point.\n<ul>\n<li>If the enemy operative you selected to be the guard for the Turning Point is incapacitated during the same Turning Point, you score 1VP.</li>\n<li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n</ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SAD-06RR",
-            "archetype": "Seek And Destroy",
-            "tacopseq": 6,
-            "title": "Rob And Ransack",
-            "description": "\n You can reveal this Tac Op when an enemy operative is incapacitated by a friendly operative within its Engagement Range, and that friendly operative is more than 3\" from other enemy operatives\n <ul>\n <li>You score 1 VP</li>\n <li>At the end of the battle, if you achieved the first condition and that friendly operative has not been incapacitated, you score 1 VP</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-01SG",
-            "archetype": "Security",
-            "tacopseq": 1,
-            "title": "Seize Ground",
-            "description": "<em>Not usable in Close Quarters<br/></em>\n You must reveal this Tac Op in the Target Reveal step of the first turning point.\n <br/>\n Select one terrain feature that is more than 3\" from your drop zone and includes\n any parts with the Heavy trait.\n <ul>\n <li>At the end of the battle, if friendly operatives control that terrain feature, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 1\" of that terrain feature, and the total APL of the friendly operatives that control it is 4 or more, you score 1VP.</li>\n </ul>\n Friendly operatives control that terrain feature if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-02HB",
-            "archetype": "Security",
-            "tacopseq": 2,
-            "title": "Hold Them Back",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning point after the first.\n <ul>\n <li>At the end of any Turning Point, if there are no enemy operatives wholly within your territory, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul> ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-03PA",
-            "archetype": "Security",
-            "tacopseq": 3,
-            "title": "Protect Assets",
-            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if two or more enemy operatives were incapacitated within 2\" of an objective marker during that Turning Point, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-04SC",
-            "archetype": "Security",
-            "tacopseq": 4,
-            "title": "Secure Centre Line",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n <ul>\n <li>At the end of any Turning Point, if the total APL of friendly operatives on the centre line and not on a Vantage Point is greater than that of the enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-05EO",
-            "archetype": "Security",
-            "tacopseq": 5,
-            "title": "Escort Operative",
-            "description": "You can reveal this Tac Op in the Target Reveal step of the first or second Turning Point.\n<br/>\nSelect one friendly operative.\n<br/>\nAt the end of the battle:\n <ul>\n <li>If that friendly operative is wholly within your opponent's territory, you score 1VP.</li>\n <li>If that friendly operative is within 6\" of your opponent's killzone edge, you score 1VP.</li>\n </ul>\n ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-06CC",
-            "archetype": "Security",
-            "tacopseq": 6,
-            "title": "Central Control",
-            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point after the first.  <ul>  <li>At the end of any Turning Point, if the total APL of friendly operatives within 3\" of the center and not on a Vantage Point is greater than that of enemy operatives, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-07SA",
-            "archetype": "Security",
-            "tacopseq": 7,
-            "title": "Seize Access Point",
-            "description": "<em>Close Quarters only<br/></em>\n  You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n <br/>\n Select one access point on the centre line or within your opponent’s territory.\n <ul>\n <li>At the end of the battle, if the total APL of friendly operatives within 2\" of that access point is greater than that of enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 2\" of that access point, and the total APL of friendly operatives within 2\" of it is 4 or more, you score 1VP.</li>\n </ul>",
-            "edition": "kt21"
-          },
-          {
-            "tacopid": "ZZZ-SEC-08FFC",
-            "archetype": "Security",
-            "tacopseq": 8,
-            "title": "Ferratonic Furnace Control",
-            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n<ul>\n<li>At the end of any Turning Point, if the total APL of friendly operatives on the roof of the ferratonic furnace is greater than that of enemy operatives, you score 1VP.</li>\n<li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>",
-            "edition": "kt21"
+            "title": "Storm Objectives",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAt the end of each friendly operative's activation, if it controls an objective marker that enemy operatives controlled at the start of that activation or that is wholly within your opponent's territory,\nand that objective marker is not contested by enemy operatives, that objective marker is stormed by friendly operatives this turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an objective marker is stormed by Friendly operatives this turning point, you score 1VP.<br/>\nAt the end of each turning point after the first, if friendly operatives control an objective marker that was stormed by friendly operatives this turning point, you score 1VP.",
+            "edition": "kt24"
           }
         ]
       }

@@ -29,7 +29,7 @@ export default function Faction(props) {
             <Stack>
                 <Image alt="Killteam Image" fit="cover" style={{ objectPosition: "top" }} radius="sm" src={`${!killteam.isCustom ? 'https://ktdash.app' : ''}/img/portraits/${faction.factionid}/${killteam.killteamid}/${killteam.killteamid}.jpg`} />
                 <Title order={3}  onClick={(e) => { e.preventDefault(); e.stopPropigation() }}>
-                    {!!killteam.isCustom && <Popover withArrow shadow="md">
+                    {!!killteam.isCustom && <Popover width={200} withArrow shadow="md">
                         <Popover.Target>
                             <ActionIcon mr={5} variant="outline"><IconFlask /></ActionIcon>
                         </Popover.Target>
