@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
         title: `${user.username}'s Rosters | KTDash.app`,
         url: `https://ktdash.app/u/${username}`,
         description: `${user.username}'s rosters`,
-        images: [`https://ktdash.app/api/rosterportrait.php?rid=${user.rosters[0].rosterid}`],
+        images: [`https://ktdash.app/api/rosterportrait.php?rid=${user?.rosters?.[0]?.rosterid}`],
         type: 'website'
     }
   }

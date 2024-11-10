@@ -1,5 +1,5 @@
 'use client'
-import { ActionIcon, Card, Group, Image, Menu, Stack, Text, Title } from "@mantine/core";
+import { ActionIcon, Anchor, Card, Group, Image, Menu, Stack, Text, Title } from "@mantine/core";
 import classes from './rosters.module.css';
 import { API_PATH } from "../../hooks/use-api";
 import { IconCards, IconCopy, IconDotsVertical, IconEye, IconFileImport, IconPhoto, IconStar, IconStarFilled, IconTrash } from "@tabler/icons-react";
@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function RosterCard(props) {
-    const { roster, editable, onDelete = () => { }, onDeploy = () => { }, onCopy = () => {} } = props;
+    const { roster, editable, onDelete = () => { }, onDeploy = () => { }, onCopy = () => { } } = props;
     const router = useRouter();
     return (
         <Card key={roster.rosterid} p="md" radius="sm" style={{ cursor: 'pointer' }} onClick={() => router.push(`/r/${roster.rosterid}`)} className={classes.card}>
@@ -48,7 +48,7 @@ export default function RosterCard(props) {
                 </Menu>
             </Group>
             <Stack mt="md">
-                <Image  alt="Roster Portrait" radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
+                <Image alt="Roster Portrait" radius="sm" src={`${API_PATH}/rosterportrait.php?rid=${roster.rosterid}`} />
                 <Group justify="space-between" gap={5}>
                     <Group>
                         {!!roster.spotlight ? <IconStarFilled /> : <IconStar />}
@@ -56,7 +56,9 @@ export default function RosterCard(props) {
                         <Group gap={5}><IconFileImport />{roster.importcount.toString()}</Group>
                     </Group>
                     <Group>
-                        <Text><Link href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname} <sup>{roster.edition}</sup></Link> by <Link href={`/u/${roster.username}`}>{roster.username}</Link></Text>
+                        <Text>
+                            <Anchor onClick={(e) => e.stopPropagation() } component={Link} href={`/fa/${roster.factionid}/kt/${roster.killteamid}`}>{roster.killteamname} <sup>{roster.edition}</sup></Anchor> by <Anchor onClick={(e) => e.stopPropagation() }  component={Link} href={`/u/${roster.username}`}>{roster.username}</Anchor>
+                        </Text>
                     </Group>
                 </Group>
             </Stack>
