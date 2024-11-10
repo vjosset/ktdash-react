@@ -1,6 +1,6 @@
 'use client'
-import { API_PATH, useRequest } from "../../hooks/use-api";
-import { ActionIcon, Card, Container, Group, Image, LoadingOverlay, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { API_PATH } from "../../hooks/use-api";
+import { ActionIcon, Card, Container, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 import { IconCamera, IconUserDown } from "@tabler/icons-react";
 import useAuth from "../../hooks/use-auth";
@@ -9,8 +9,10 @@ import { modals } from "@mantine/modals";
 import useWindowDimensions from "../../hooks/get-window-dimensions";
 import { UpdateRosterPotraitModal } from "../roster/modals";
 import { UpdateOperativePotraitModal } from "../../components/operative-card/modals";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { fetchRoster } from "@/hooks/use-api/fetchers";
+import useSWR from "swr";
 
 function OperativeGalleryCard(props) {
     const [imageExpire, setImageExpire] = React.useState('');
@@ -56,10 +58,11 @@ function OperativeGalleryCard(props) {
 }
 
 export default function Gallery(props) {
-    const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
+    const params = useParams();
+    const rosterId = params.roster;
     const { appState, setAppState } = useAppContext();
-    const { data: roster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
+    const { data: roster } = useSWR(['/roster.php', rosterId], fetchRoster);
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
     const { width } = useWindowDimensions();

@@ -4,9 +4,13 @@ import classes from './faction.module.css';
 import { useSettings } from "../../hooks/use-settings";
 import Link from "next/link";
 import { IconFlask } from "@tabler/icons-react";
+import { fetchFaction } from "@/hooks/use-api/fetchers";
+import useSWR from "swr";
+import { useParams } from "next/navigation";
 
-export default function Faction(props) {
-    const { faction } = props;
+export default function Faction() {
+    const params = useParams();
+    const { data: faction, error, isLoading } = useSWR(`/faction.php?fa=${params.faction}`, fetchFaction);
     const [settings] = useSettings();
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>

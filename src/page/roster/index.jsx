@@ -1,5 +1,5 @@
 'use client'
-import { API_PATH, request, useRequest } from "../../hooks/use-api";
+import { API_PATH, request } from "../../hooks/use-api";
 import { Container, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
@@ -10,15 +10,16 @@ import { OperativeModal, OrderOperativesModal, ShareModal, UpdateRosterModal, Up
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { keyBy } from "lodash";
+import { useParams, useRouter } from "next/navigation";
 import useWindowDimensions from "@/hooks/get-window-dimensions";
+import useSWR from "swr";
+import { fetchRoster } from "@/hooks/use-api/fetchers";
 
 export default function Roster(props) {
-    const { rosterId, roster: initialData } = props;
+    const params = useParams();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const { data: roster, setData: setRoster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
+    const { data: roster, mutate: setRoster } = useSWR(['/roster.php', params.roster], fetchRoster);
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
     const [imageExpire, setImageExpire] = React.useState('');
@@ -352,7 +353,7 @@ export default function Roster(props) {
                 </SimpleGrid>
                 <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md">
                     {roster?.operatives?.map((operative, index) => (
-                        <OperativeCard key={index} editable={canEdit} operative={operative} onEdit={handleShowEditOperative} onDelete={handleConfirmDeleteOperative} />
+                        <OperativeCard key={index} editable={canEdit} operative={operative} onEdit={handleShowEditOperative} onDelete={handleConfirmDeleteOperative} edition={roster.edition} />
                     ))}
                 </SimpleGrid>
             </Stack>

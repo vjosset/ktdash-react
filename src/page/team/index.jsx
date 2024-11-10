@@ -9,10 +9,14 @@ import TacOpCards from "../../components/tacop-cards";
 import { IconListCheck } from "@tabler/icons-react";
 import React from "react";
 import { useAppContext } from "../../hooks/app-context";
+import useSWR from "swr";
+import { useParams } from "next/navigation";
+import { fetchKillteam } from "@/hooks/use-api/fetchers";
 
-export default function Team(props) {
+export default function Team() {
     const { appState, setAppState } = useAppContext();
-    const { killteam } = props;
+    const params = useParams();
+    const { data: killteam } = useSWR([`/killteam.php`, params.faction, params.killteam], fetchKillteam);
     const isCustom = !!killteam.isCustom;
     const showTeamComp = () =>
         modals.open({

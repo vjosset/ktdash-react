@@ -1,5 +1,5 @@
 'use client'
-import { request, useRequest } from "../../hooks/use-api";
+import { request } from "../../hooks/use-api";
 import { ActionIcon, Card, Container, Group, SimpleGrid, Stack, Tabs, Title } from "@mantine/core";
 import OperativeCard from "../../components/operative-card";
 import React from "react";
@@ -14,15 +14,18 @@ import { SelectOperativesModal } from "./modals";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 import { useSettings } from "../../hooks/use-settings";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import useSWR from "swr";
+import { fetchRoster } from "@/hooks/use-api/fetchers";
 
 export default function Dashboard(props) {
-    const { rosterId, roster: initialData } = props;
     const { user: userData } = useAuth();
+    const params = useParams();
+    const rosterId = params.roster;
     const [settings] = useSettings();
     const { appState, setAppState } = useAppContext();
-    const { data: roster, setData: setRoster } = useRequest(`/roster.php?rid=${rosterId}&loadrosterdetail=1`, { initialData });
+    const { data: roster, mutate: setRoster } = useSWR(['/roster.php', rosterId], fetchRoster);
     const router = useRouter();
     const canEdit = userData?.username === roster?.username;
     const killteam = roster?.killteam;

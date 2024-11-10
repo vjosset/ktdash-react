@@ -3726,7 +3726,7 @@
             "killteamid": "DW24",
             "eqid": "BA",
             "eqname": "Beacon Angelis",
-            "eqdescription": "Once per battle, at the end of each firefight phase you may remove a LONG VIGIL operative that is not within engagement range from the killzone. In the next turning point as a Strategic Gambit you then place them wholly within 6\" of your deployment zone. Treat this operative as having performed a reposition action.",
+            "eqdescription": "Once per battle, at the end of the firefight phase you may remove a LONG VIGIL operative that is not within engagement range from the killzone. In the next turning point as a Strategic Gambit you then place them wholly within 6\" of your drop zone and more than 6\" from enemy operatives. Treat this operative as having performed a reposition action.",
             "eqpts": "3",
             "eqtype": "Ability",
             "eqvar1": "",

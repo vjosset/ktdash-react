@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { Anchor, Container, SimpleGrid, Text, Title } from "@mantine/core";
-import { request, useRequest } from "../../hooks/use-api";
+import { request } from "../../hooks/use-api";
 import RosterCard from "../../components/roster-card";
 import { useAppContext } from "../../hooks/app-context";
 import { IconPlus, IconUsers } from "@tabler/icons-react";
@@ -10,15 +10,17 @@ import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
 import { notifications } from "@mantine/notifications";
 import { useSettings } from "../../hooks/use-settings";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import useSWR from "swr";
 
 export default function Rosters(props) {
     const router = useRouter()
     const [settings] = useSettings();
     const { user: userData } = useAuth();
+    const params = useParams();
     const { appState, setAppState } = useAppContext();
-    const { username, user: initialData } = props;
-    const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${username}`, { initialData });
+    const username = params.user;
+    const { data: user, mutate: setUser } = useSWR(`/user.php?username=${username}`, request);
     const canEdit = userData?.username === username;
     const rosters = user?.rosters ?? [];
 

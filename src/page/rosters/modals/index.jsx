@@ -1,11 +1,12 @@
 import { TextInput, Stack, Button, Group, Select } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useRequest } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import useAuth from '../../../hooks/use-auth';
 import { isNil } from 'lodash';
 import { useSettings } from '../../../hooks/use-settings';
+import useSWR from 'swr';
+import { fetchFactions } from '@/hooks/use-api/fetchers';
 
 export function AddRosterModal(props) {
     const { onClose } = props;
@@ -28,7 +29,7 @@ export function AddRosterModal(props) {
         loadkts: 1,
         edition: settings.edition
     }).toString();
-    const { data: factions } = useRequest(`/faction.php?${teamParams}`, { condition: !isNil(settings.edition) });
+    const { data: factions } = useSWR(`/faction.php?${teamParams}`, !isNil(settings.edition) ? fetchFactions : null);
 
     React.useEffect(() => {
         form.setFieldValue('team', null);
@@ -40,7 +41,7 @@ export function AddRosterModal(props) {
         value: index.toString()
     }));
 
-    const teamOptions = factions?.[form?.getValues()?.faction]?.killteams?.map((team, index) => ({
+    const teamOptions = factions?.[form?.getValues()?.faction]?.killteams?.filter(team => !team?.isCustom)?.map((team, index) => ({
         label: `${team.killteamname} (${team.edition})`,
         value: index.toString()
     }));
