@@ -1,0 +1,214 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ability {
+  factionid   String    @db.VarChar(10)
+  killteamid  String    @db.VarChar(50)
+  fireteamid  String    @db.VarChar(50)
+  opid        String    @db.VarChar(50)
+  abilityid   String    @db.VarChar(50)
+  title       String    @db.VarChar(200)
+  description String?
+  operative   operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "fk_ability_operative")
+
+  @@id([killteamid, fireteamid, opid, abilityid, factionid])
+}
+
+model equipment {
+  factionid     String  @db.VarChar(10)
+  killteamid    String  @db.VarChar(50)
+  fireteamid    String? @default("") @db.VarChar(50)
+  opid          String? @default("") @db.VarChar(50)
+  eqid          String  @db.VarChar(50)
+  eqseq         Int?    @default(0)
+  eqpts         String? @db.VarChar(10)
+  eqname        String? @db.VarChar(250)
+  eqdescription String?
+  eqtype        String? @db.VarChar(45)
+  eqvar1        String? @db.VarChar(45)
+  eqvar2        String? @db.VarChar(45)
+  eqvar3        String? @db.VarChar(45)
+  eqvar4        String? @db.VarChar(45)
+  eqcategory    String? @default("Equipment") @db.VarChar(200)
+
+  @@id([factionid, killteamid, eqid])
+  @@index([factionid, killteamid], map: "fk_equipment_killteam_idx")
+}
+
+model event {
+  eventid     Int       @id @default(autoincrement())
+  datestamp   DateTime? @default(now()) @db.Timestamp(0)
+  sessiontype String?   @default("") @db.VarChar(50)
+  userid      String?   @db.VarChar(45)
+  eventtype   String?   @db.VarChar(50)
+  action      String?   @db.VarChar(45)
+  label       String?   @db.VarChar(45)
+  var1        String?   @db.VarChar(45)
+  var2        String?   @db.VarChar(45)
+  var3        String?   @db.VarChar(45)
+  url         String?   @default("") @db.VarChar(500)
+  userip      String?   @default("") @db.VarChar(250)
+  useragent   String?   @default("") @db.VarChar(500)
+  referrer    String?   @db.VarChar(500)
+}
+
+model event_bkp_20240720 {
+  eventid     Int       @id @default(autoincrement())
+  datestamp   DateTime? @default(now()) @db.Timestamp(0)
+  sessiontype String?   @default("") @db.VarChar(50)
+  userid      String?   @db.VarChar(45)
+  eventtype   String?   @db.VarChar(50)
+  action      String?   @db.VarChar(45)
+  label       String?   @db.VarChar(45)
+  var1        String?   @db.VarChar(45)
+  var2        String?   @db.VarChar(45)
+  var3        String?   @db.VarChar(45)
+  url         String?   @default("") @db.VarChar(500)
+  userip      String?   @default("") @db.VarChar(250)
+  useragent   String?   @default("") @db.VarChar(500)
+  referrer    String?   @db.VarChar(500)
+}
+
+model faction {
+  factionid   String     @id @db.VarChar(10)
+  seq         Int?
+  factionname String?    @db.VarChar(250)
+  description String?
+  killteam    killteam[]
+}
+
+model homebrewkillteam {
+  userid       String  @db.VarChar(50)
+  seq          Int?    @default(0)
+  killteamid   String  @db.VarChar(50)
+  killteamname String? @db.VarChar(250)
+  content      String?
+
+  @@id([userid, killteamid])
+}
+
+model killteam {
+  factionid     String  @db.VarChar(10)
+  killteamid    String  @db.VarChar(50)
+  edition       String? @default("kt24") @db.VarChar(45)
+  killteamname  String? @db.VarChar(250)
+  description   String?
+  killteamcomp  String?
+  customkeyword String? @default("") @db.VarChar(250)
+  faction       faction @relation(fields: [factionid], references: [factionid], onDelete: Cascade, map: "fk_killteam_faction")
+  ploy          ploy[]
+
+  @@id([factionid, killteamid])
+  @@index([factionid], map: "fk_killteam_faction_idx")
+}
+
+model operative {
+  factionid    String         @db.VarChar(10)
+  killteamid   String         @db.VarChar(50)
+  fireteamid   String         @db.VarChar(250)
+  opseq        Int?           @default(0)
+  opid         String         @db.VarChar(50)
+  opname       String?        @db.VarChar(250)
+  description  String?
+  edition      String?        @default("kt24") @db.VarChar(45)
+  m            String?        @db.VarChar(15)
+  apl          String?        @db.VarChar(15)
+  ga           String?        @db.VarChar(15)
+  df           String?        @db.VarChar(15)
+  sv           String?        @db.VarChar(15)
+  w            String?        @db.VarChar(15)
+  keywords     String?        @db.VarChar(4000)
+  basesize     Int?           @default(32)
+  fireteammax  Int?           @default(0)
+  specialisms  String?        @default("") @db.VarChar(50)
+  ability      ability[]
+  uniqueaction uniqueaction[]
+
+  @@id([factionid, killteamid, fireteamid, opid])
+  @@index([factionid, killteamid, fireteamid], map: "ix_operative_factionidkillteamidfireteamid")
+}
+
+model ploy {
+  factionid   String   @db.VarChar(10)
+  killteamid  String   @db.VarChar(10)
+  ploytype    String   @db.VarChar(250)
+  ployid      String   @db.VarChar(50)
+  ployname    String?  @db.VarChar(250)
+  cp          String?  @db.VarChar(10)
+  description String?
+  killteam    killteam @relation(fields: [factionid, killteamid], references: [factionid, killteamid], onDelete: Cascade, map: "fk_ploy_killteam")
+
+  @@id([factionid, killteamid, ploytype, ployid])
+}
+
+model rosterequipment {
+  userid       String @db.VarChar(50)
+  rosterid     String @db.VarChar(50)
+  eqfactionid  String @db.VarChar(50)
+  eqkillteamid String @db.VarChar(50)
+  eqid         String @db.VarChar(50)
+
+  @@id([userid, rosterid, eqfactionid, eqkillteamid, eqid])
+}
+
+model tacop {
+  tacopid     String  @id @db.VarChar(50)
+  edition     String? @default("kt21") @db.VarChar(45)
+  archetype   String? @db.VarChar(50)
+  tacopseq    Int?
+  title       String? @db.VarChar(50)
+  description String? @db.VarChar(2000)
+}
+
+model uniqueaction {
+  factionid      String    @db.VarChar(10)
+  killteamid     String    @db.VarChar(50)
+  fireteamid     String    @db.VarChar(50)
+  opid           String    @db.VarChar(50)
+  uniqueactionid String    @db.VarChar(50)
+  title          String?   @db.VarChar(200)
+  ap             Int?      @default(1)
+  description    String?
+  operative      operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "fk_uniqueactions_operative")
+
+  @@id([factionid, killteamid, fireteamid, opid, uniqueactionid])
+}
+
+model weapon {
+  factionid     String          @db.VarChar(10)
+  killteamid    String          @db.VarChar(50)
+  fireteamid    String          @db.VarChar(50)
+  opid          String          @db.VarChar(50)
+  wepid         String          @db.VarChar(50)
+  wepseq        Int?            @default(0)
+  wepname       String?         @db.VarChar(250)
+  weptype       String?         @db.VarChar(1)
+  isdefault     Int?            @default(0) @db.SmallInt
+  weaponprofile weaponprofile[]
+
+  @@id([factionid, killteamid, fireteamid, opid, wepid])
+  @@index([killteamid, fireteamid, opid], map: "fk_weapon_operative_idx")
+}
+
+model weaponprofile {
+  factionid  String  @db.VarChar(10)
+  killteamid String  @db.VarChar(50)
+  fireteamid String  @db.VarChar(50)
+  opid       String  @db.VarChar(50)
+  wepid      String  @db.VarChar(50)
+  profileid  String  @db.VarChar(200)
+  name       String? @db.VarChar(200)
+  a          String? @db.VarChar(5)
+  bs         String? @db.VarChar(5)
+  d          String? @db.VarChar(5)
+  sr         String? @db.VarChar(4000)
+  weapon     weapon  @relation(fields: [factionid, killteamid, fireteamid, opid, wepid], references: [factionid, killteamid, fireteamid, opid, wepid], onDelete: Cascade, map: "fk_weaponprofile_weapon")
+
+  @@id([factionid, killteamid, fireteamid, opid, wepid, profileid])
+}

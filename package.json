@@ -16,6 +16,7 @@
     "@mantine/hooks": "^7.13.4",
     "@mantine/modals": "^7.13.4",
     "@mantine/notifications": "^7.13.4",
+    "@prisma/client": "^5.22.0",
     "@tabler/icons-react": "^3.21.0",
     "lodash": "^4.17.21",
     "next": "15.0.2",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "15.0.2"
+    "eslint-config-next": "15.0.2",
+    "prisma": "^5.22.0"
   }
 }

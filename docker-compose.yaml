@@ -1,0 +1,20 @@
+services:
+  ktdash-postgres:
+    image: postgres
+    container_name: ktdash-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ktdash}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ktdash}
+      POSTGRES_DB: ${POSTGRES_DB:-ktdash}
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
