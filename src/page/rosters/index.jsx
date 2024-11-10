@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { Container, LoadingOverlay, SimpleGrid, Text, Title } from "@mantine/core";
+import { Anchor, Container, SimpleGrid, Text, Title } from "@mantine/core";
 import { request, useRequest } from "../../hooks/use-api";
 import RosterCard from "../../components/roster-card";
 import { useAppContext } from "../../hooks/app-context";
@@ -8,7 +8,6 @@ import { IconPlus, IconUsers } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
 import { AddRosterModal } from "./modals";
 import useAuth from "../../hooks/use-auth";
-import { useLocalStorage } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import { useSettings } from "../../hooks/use-settings";
 import { useRouter } from "next/navigation";
@@ -18,7 +17,6 @@ export default function Rosters(props) {
     const [settings] = useSettings();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
-    const [, setDashboardrosterId] = useLocalStorage({ key: 'dashboardrosterid' });
     const { username, user: initialData } = props;
     const { data: user, isFetching: isFetchingRosters, setData: setUser } = useRequest(`/user.php?username=${username}`, { initialData });
     const canEdit = userData?.username === username;
@@ -36,6 +34,15 @@ export default function Rosters(props) {
                 })
             }
         })
+    }
+
+    const handleShowCreateRoster = () => {
+        modals.open({
+            modalId: "create-roster",
+            size: "lg",
+            title: <Title order={2}>Create Roster</Title>,
+            children: <AddRosterModal onClose={handleCreateRoster} />
+        });
     }
 
     const handleCreateRoster = (roster) => {
@@ -99,14 +106,7 @@ export default function Rosters(props) {
                 ...(canEdit ? [{
                     icon: <IconPlus />,
                     text: "Create",
-                    onClick: () => {
-                        modals.open({
-                            modalId: "create-roster",
-                            size: "lg",
-                            title: <Title order={2}>Create Roster</Title>,
-                            children: <AddRosterModal onClose={handleCreateRoster} />
-                        });
-                    }
+                    onClick: () => handleShowCreateRoster()
                 }] : []),
                 {
                     icon: <IconUsers />,
@@ -138,8 +138,12 @@ export default function Rosters(props) {
             });
         }} roster={roster} onDelete={handleConfirmDeleteRoster} onDeploy={handleDeployRoster} />
     ));
-    if (isFetchingRosters) {
-        return (<LoadingOverlay visible={isFetchingRosters} />);
+    if (!rosters?.length) {
+        return (
+            <Container py="md" px="md" fluid>
+                You currently have no rosters. Click <Anchor onClick={handleShowCreateRoster}>here</Anchor> to create one.
+            </Container>
+        )
     }
 
     return (

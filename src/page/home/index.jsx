@@ -1,5 +1,5 @@
 'use client'
-import { Title, Text, Container, Card, Stack, Image, Group, SimpleGrid } from "@mantine/core";
+import { Title, Text, Container, Card, Stack, Image, Group, SimpleGrid, Anchor } from "@mantine/core";
 import classes from './home.module.css';
 import { API_PATH } from "../../hooks/use-api";
 import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
@@ -61,7 +61,7 @@ export default function Home(props) {
                                 <Group gap={5}><IconFileImport />{spotlight.importcount.toString()}</Group>
                             </Group>
                             <Group>
-                                <Text><Link href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname} <sup>{spotlight.edition}</sup></Link> by <Link href={`/u/${spotlight.username}`}>{spotlight.username}</Link></Text>
+                                <Text><Anchor onClick={(e) => e.stopPropagation() } component={Link} href={`/fa/${spotlight.factionid}/kt/${spotlight.killteamid}`}>{spotlight.killteamname} <sup>{spotlight.edition}</sup></Anchor> by <Anchor component={Link} onClick={(e) => e.stopPropagation() } href={`/u/${spotlight.username}`}>{spotlight.username}</Anchor></Text>
                             </Group>
                         </Group>
                     </Stack>
