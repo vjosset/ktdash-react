@@ -71,10 +71,10 @@ export default function OperativeCard(props) {
     const [imageExpire, setImageExpire] = React.useState(true);
     const opImageUrl = operative.rosteropid ? `${API_PATH}/operativeportrait.php?roid=${operative.rosteropid}&expire=${imageExpire}` : `${!isCustom ? 'https://ktdash.app' : ''}/img/portraits/${operative.factionid}/${operative.killteamid}/${operative.fireteamid}/${operative.opid}.jpg`;
     const getStatusColor = () => {
-        if (operative.curW <= 0) {
+        if (!!woundTracker && operative.curW <= 0) {
             return "var(--mantine-color-gray-6)";
         }
-        if (operative.curW < operative.W / 2) {
+        if (!!woundTracker && operative.curW < operative.W / 2) {
             return "var(--mantine-color-red-6)";
         }
         return "var(--mantine-color-orange-8)";
