@@ -57,7 +57,7 @@ function OperativeGalleryCard(props) {
     )
 }
 
-export default function Gallery(props) {
+export default function Gallery() {
     const { user: userData } = useAuth();
     const params = useParams();
     const rosterId = params.roster;

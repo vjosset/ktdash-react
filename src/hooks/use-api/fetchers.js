@@ -35,13 +35,5 @@ export async function fetchKillteam([, factionId, killteamId]) {
 }
 
 export async function fetchRoster([, rosterId]) {
-    const roster = await request(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
-    const factionId = roster.factionid;
-    const killteamId = roster.killteamid;
-    const killteam = await request(`/faction.php?fa=${factionId}&kt=${factionId}`);
-    const customTeamsByFaction = keyBy(customFactions, 'factionid');
-    const customTeam = keyBy(customTeamsByFaction?.[factionId]?.killteams, 'killteamid')?.[killteamId];
-    const isCustom = !!customTeam;
-    const team = isCustom ? { ...customTeam, isCustom: true } : killteam;
-    return { ...roster, killteam: team };
+    return await request(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
 }

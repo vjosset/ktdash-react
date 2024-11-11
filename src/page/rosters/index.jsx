@@ -13,7 +13,7 @@ import { useSettings } from "../../hooks/use-settings";
 import { useParams, useRouter } from "next/navigation";
 import useSWR from "swr";
 
-export default function Rosters(props) {
+export default function Rosters() {
     const router = useRouter()
     const [settings] = useSettings();
     const { user: userData } = useAuth();

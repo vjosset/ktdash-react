@@ -15,7 +15,7 @@ import useWindowDimensions from "@/hooks/get-window-dimensions";
 import useSWR from "swr";
 import { fetchRoster } from "@/hooks/use-api/fetchers";
 
-export default function Roster(props) {
+export default function Roster() {
     const params = useParams();
     const { user: userData } = useAuth();
     const { appState, setAppState } = useAppContext();
@@ -55,7 +55,7 @@ export default function Roster(props) {
         setRoster({
             ...roster,
             operatives
-        });
+        }, { optimisticData: true, revalidate: false });
         request(`/rosteropseq.php`, {
             method: "POST",
             body: JSON.stringify(updatedOperatives)
