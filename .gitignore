@@ -42,3 +42,7 @@ yarn-error.log*
 next-env.d.ts
 
 certificates
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/ktdash-react.iml
+.idea/modules.xml
