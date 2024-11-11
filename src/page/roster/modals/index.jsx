@@ -1,10 +1,10 @@
 import { TextInput, Stack, Button, Group, Select, Table, SimpleGrid, Text, Checkbox, Textarea, LoadingOverlay, Box, ActionIcon, FileInput, Image, Paper, Title, Popover, ScrollArea, Flex } from '@mantine/core';
-import { API_PATH, request, requestText, useRequest } from '../../../hooks/use-api';
+import { API_PATH, request, requestText } from '../../../hooks/use-api';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import { groupBy, keyBy } from 'lodash';
 import { convertShapes } from '../../../utils/shapes';
-import { IconArrowBigRight, IconCrosshair, IconDice, IconDroplet, IconGripVertical, IconHelp, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
+import { IconArrowBigRight, IconCrosshair, IconDice, IconDroplet, IconHelp, IconPhoto, IconRefresh, IconShield, IconSwords, IconTriangleInverted, IconUser } from '@tabler/icons-react';
 import useAuth from '../../../hooks/use-auth';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
@@ -13,6 +13,8 @@ import useWindowDimensions from '../../../hooks/get-window-dimensions';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import { useListState } from '@mantine/hooks';
 import Link from 'next/link';
+import useSWR from 'swr';
+import { fetchKillteam } from '@/hooks/use-api/fetchers';
 
 export function ShareModal(props) {
     const { roster } = props;
@@ -339,7 +341,7 @@ export function OperativeModal(props) {
     const [operativeData, setOperativeData] = React.useState(existingOperative);
     const [operativeId, setOperativeId] = React.useState(existingOperative?.opid);
     const [fireteamId, setFireteamId] = React.useState(existingOperative?.fireteamid);
-    const { data: killteam, isFetching: isFetchingTeam } = useRequest(`/killteam.php?fa=${roster?.factionid}&kt=${roster?.killteamid}`);
+    const { data: killteam, isLoading: isFetchingTeam } = useSWR([`/killteam.php`, roster.factionid, roster.killteamid], fetchKillteam);
     const fireteams = keyBy(killteam?.fireteams.map((fireteam) => ({ ...fireteam, operatives: keyBy(fireteam?.operatives, 'opid') })), 'fireteamid');
     const fireteamOptions = killteam?.fireteams?.map((fireteam) => ({
         label: fireteam.fireteamname,

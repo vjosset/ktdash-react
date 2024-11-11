@@ -1,4 +1,7 @@
 export function convertShapes(word) {
+    if (!word) {
+        return;
+    }
     return word
         .replaceAll("[PENT]", "&#11039")
         .replaceAll("[pent]", "&#11039")

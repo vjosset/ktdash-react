@@ -18,12 +18,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function RosterRoute({
-    params
-  }) {
-    const rosterId = (await params).roster;
-    const roster = await request(`/roster.php?rid=${rosterId}&loadrosterdetail=1`);
+export default async function RosterRoute() {
     return (
-        <Gallery roster={roster} rosterId={rosterId} />
+        <Gallery />
     );
 }

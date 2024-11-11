@@ -1,6 +1,6 @@
 import React from "react";
-import { request } from "@/hooks/use-api";
 import Factions from "@/page/factions";
+import { fetchFactions } from "@/hooks/use-api/fetchers";
 
 export async function generateMetadata() {
     return {
@@ -17,7 +17,7 @@ export async function generateMetadata() {
 }
 
 export default async function FactionsRoute() {
-    const factions = await request('/faction.php');
+    const factions = await fetchFactions('/faction.php');
     return (
         <Factions factions={factions} />
     );

@@ -24,9 +24,9 @@ export default function Login() {
             form.reset();
             if (data?.username) {
                 router.push('/');
-            } else {
-                setErrors(data);
             }
+        }).catch(e => {
+            setErrors(e.message);
         });
     })
 

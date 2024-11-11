@@ -22,7 +22,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${oswald.className}`}>
+      <body className={`${oswald.className}`} style={{ backgroundColor: '#242424' }}>
         <MantineProvider defaultColorScheme="dark" theme={theme}>
           <AppContextProvider>
             <Notifications />

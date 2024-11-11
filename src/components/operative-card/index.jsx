@@ -64,7 +64,8 @@ export default function OperativeCard(props) {
         onDelete = () => { },
         woundTracker, onUpdateWounds = () => { },
         orderTracker, onUpdateOrder = () => { },
-        isCustom = false
+        isCustom = false,
+        edition = "kt24"
     } = props;
     const [opened, setOpened] = React.useState(true);
     const [settings] = useSettings();
@@ -79,7 +80,7 @@ export default function OperativeCard(props) {
         }
         return "var(--mantine-color-orange-8)";
     }
-    const operativeStatGrid = operative?.edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
+    const operativeStatGrid = edition === "kt21" ? (settings.display === "list" ? 6 : 3) : (settings.display === "list" ? 4 : 2);
     if (!operative) {
         return <></>;
     }
@@ -243,24 +244,24 @@ export default function OperativeCard(props) {
                                 {/* Op Stats */}
                                 <SimpleGrid cols={{ base: operativeStatGrid }} spacing={5}>
                                     <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>APL</Text><Group gap={2}><IconTriangleInverted color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.APL}</Text></Group></Stack></Paper>
-                                    <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{operative?.edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
-                                    {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
-                                    {operative?.edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
-                                    <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{operative?.edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
+                                    <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{edition !== "kt21" ? "MOVE" : "MV"}</Text> <Group gap={0}>{edition !== "kt21" && <IconArrowBigRight color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}><span dangerouslySetInnerHTML={{ __html: `${convertShapes(operative.M)}` }} /></Text></Group></Stack></Paper>
+                                    {edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>GA</Text> <Group gap={2}><IconUser color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.GA}</Text></Group></Stack></Paper>}
+                                    {edition === "kt21" && <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>DF</Text> <Group gap={2}><IconDice color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.DF}</Text></Group></Stack></Paper>}
+                                    <Paper><Stack h="100%" justify="center" align="center" gap={5}><Text fw={700}>{edition !== "kt21" ? "SAVE" : "SV"}</Text> <Group gap={2}><IconShield color=" var(--mantine-color-orange-8)" size={20} /><Text fw={700}>{operative.SV}</Text></Group></Stack></Paper>
                                     {woundTracker ?
                                         (<Paper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                             <UnstyledButton color="white" variant="subtle" style={{ padding: 0 }} onClick={showUpdateWounds}>
                                                 <Stack justify="center" align="center" gap={5}>
-                                                    <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                                    <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color={getStatusColor()} size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
+                                                    <Text fw={700}>{edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                    <Group gap={2}>{edition !== "kt21" && <IconDroplet color={getStatusColor()} size={20} />}<Text fw={700}>{`${operative.curW}/${operative.W}`}</Text></Group>
                                                 </Stack>
                                             </UnstyledButton>
                                         </Paper>)
                                         :
                                         (<Paper>
                                             <Stack h="100%" justify="center" align="center" gap={5}>
-                                                <Text fw={700}>{operative?.edition !== "kt21" ? "WOUND" : "WND"}</Text>
-                                                <Group gap={2}>{operative?.edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
+                                                <Text fw={700}>{edition !== "kt21" ? "WOUND" : "WND"}</Text>
+                                                <Group gap={2}>{edition !== "kt21" && <IconDroplet color=" var(--mantine-color-orange-8)" size={20} />}<Text fw={700}>{operative.W}</Text></Group>
                                             </Stack>
                                         </Paper>
                                         )}

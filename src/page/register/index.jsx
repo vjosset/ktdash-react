@@ -25,10 +25,10 @@ export default function Signup() {
             form.reset();
             if (data?.userid) {
                 router.push('/');
-            } else {
-                setErrors(data);
             }
-        })
+        }).catch(e => {
+            setErrors(e.message);
+        });
     })
 
     return (
