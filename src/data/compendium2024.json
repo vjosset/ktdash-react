@@ -77,7 +77,7 @@
             "killteamid": "ECC",
             "eqid": "FG",
             "eqname": "Frag Grenade*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br />\n <table width=\"100%\" class=\"eqtable\">\n <tr>\n <th>Name</th>\n     <th>A</th>\n     <th>BS</th>\n     <th>D</th>\n </tr>\n <tr>\n <td>Frag Grenade</td>\n     <td>4</td>\n     <td>3+</td>\n     <td>2/3</td>\n </tr>\n <tr>\n <th colspan=\"4\">Special Rules</th>\n </tr>\n <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br />\n <table width=\"100%\" class=\"eqtable\">\n <tr>\n <th>Name</th>\n     <th>A</th>\n     <th>BS</th>\n     <th>D</th>\n </tr>\n <tr>\n <td>Frag Grenade</td>\n     <td>4</td>\n     <td>3+</td>\n     <td>2/3</td>\n </tr>\n <tr>\n <th colspan=\"4\">Special Rules</th>\n </tr>\n <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Sat</td>\n </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -110,7 +110,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "2/3",
-                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                  "SR": "Rng 6\", Lim, Blast 2\", Sat"
                 }
               ]
             }
@@ -120,7 +120,7 @@
             "killteamid": "ECC",
             "eqid": "KG",
             "eqname": "Krak Grenade*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br />\n<table width=\"100%\" class=\"eqtable\">\n<tr>\n<th>Name</th>\n    <th>A</th>\n    <th>BS</th>\n    <th>D</th>\n</tr>\n<tr>\n<td>Krak Grenade</td>\n    <td>4</td>\n    <td>3+</td>\n    <td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 6\", Lim, Prc1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:<br />\n<table width=\"100%\" class=\"eqtable\">\n<tr>\n<th>Name</th>\n    <th>A</th>\n    <th>BS</th>\n    <th>D</th>\n</tr>\n<tr>\n<td>Krak Grenade</td>\n    <td>4</td>\n    <td>3+</td>\n    <td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 6\", Lim, Prc1, Sat</td>\n</tr>\n</table>",
             "eqpts": "3",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -153,7 +153,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Lim, Prc1, Saturate"
+                  "SR": "Rng 6\", Lim, Prc1, Sat"
                 }
               ]
             }
@@ -1118,7 +1118,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "6/3",
-                        "SR": "Combi-Boltgun, Rng 6\", Prc2, Lim, MW4"
+                        "SR": "Combi-Boltgun, Rng 6\", Prc2, Lim, Dev4"
                       }
                     ],
                     "isselected": false
@@ -1185,7 +1185,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "3/3",
-                        "SR": "Combi-Boltgun, Sil, Lim, MW1, PrcCrit1"
+                        "SR": "Combi-Boltgun, Sil, Lim, Dev1, PrcCrit1"
                       }
                     ],
                     "isselected": false
@@ -1212,7 +1212,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "5/3",
-                        "SR": "Rng 3\", Prc2, MW3"
+                        "SR": "Rng 3\", Prc2, Dev3"
                       }
                     ],
                     "isselected": false
@@ -1266,7 +1266,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "2/3",
-                        "SR": "Rng 6\", Tor 1\""
+                        "SR": "Rng 6\", Tor 1\", Sat"
                       }
                     ],
                     "isselected": false
@@ -1562,7 +1562,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Rng 6\", Prc2, MW4"
+                        "SR": "Rng 6\", Prc2, Dev4"
                       }
                     ],
                     "isselected": false
@@ -2445,7 +2445,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-FRAG",
             "eqname": "Explosive Grenade - Frag",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -2478,7 +2478,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Blast 2\", Saturate"
+                  "SR": "Rng 6\", Blast 2\", Sat"
                 }
               ]
             }
@@ -2488,7 +2488,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-KRAK",
             "eqname": "Explosive Grenade - Krak",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -2521,7 +2521,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Prc1, Saturate"
+                  "SR": "Rng 6\", Prc1, Sat"
                 }
               ]
             }
@@ -3417,7 +3417,7 @@
                         "A": "6",
                         "BS": "2+",
                         "D": "2/3",
-                        "SR": "Hvy (RepOnly), Rng 6\", Tor 2\", Saturate"
+                        "SR": "Hvy (RepOnly), Rng 6\", Tor 2\", Sat"
                       }
                     ],
                     "isselected": false
@@ -3913,7 +3913,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-FRAG",
             "eqname": "Explosive Grenade - Frag",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -3946,7 +3946,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Blast 2\", Saturate"
+                  "SR": "Rng 6\", Blast 2\", Sat"
                 }
               ]
             }
@@ -3956,7 +3956,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-KRAK",
             "eqname": "Explosive Grenade - Krak",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -3989,7 +3989,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Prc1, Saturate"
+                  "SR": "Rng 6\", Prc1, Sat"
                 }
               ]
             }
@@ -4150,7 +4150,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "3/4",
-                        "SR": "Saturate"
+                        "SR": "Sat"
                       },
                       {
                         "factionid": "IMP",
@@ -4323,7 +4323,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Combi-DWBG, Rng 6\", Prc2, Lim, MW4"
+                        "SR": "Combi-DWBG, Rng 6\", Prc2, Lim, Dev4"
                       }
                     ],
                     "isselected": false
@@ -4444,7 +4444,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "2/2",
-                        "SR": "Rng 6\", Tor 1\""
+                        "SR": "Rng 6\", Tor 1\", Sat"
                       }
                     ],
                     "isselected": false
@@ -4471,7 +4471,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "5/3",
-                        "SR": "Rng 3\", Prc2, MW3"
+                        "SR": "Rng 3\", Prc2, Dev3"
                       }
                     ],
                     "isselected": false
@@ -4940,7 +4940,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "3/4",
-                        "SR": "Saturate"
+                        "SR": "Sat"
                       },
                       {
                         "factionid": "IMP",
@@ -5290,7 +5290,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "5/3",
-                        "SR": "Rng 3\", Prc2, MW3"
+                        "SR": "Rng 3\", Prc2, Dev3"
                       }
                     ],
                     "isselected": false
@@ -5705,7 +5705,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Combi-DWBG, Rng 6\", Prc2, Lim, MW4"
+                        "SR": "Combi-DWBG, Rng 6\", Prc2, Lim, Dev4"
                       }
                     ],
                     "isselected": false
@@ -5772,7 +5772,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "3/4",
-                        "SR": "Saturate"
+                        "SR": "Sat"
                       },
                       {
                         "factionid": "IMP",
@@ -5892,7 +5892,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Rng 6\", Prc2, MW4"
+                        "SR": "Rng 6\", Prc2, Dev4"
                       }
                     ],
                     "isselected": false
@@ -6617,7 +6617,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-FRAG",
             "eqname": "Explosive Grenade - Frag",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -6650,7 +6650,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Blast 2\", Saturate"
+                  "SR": "Rng 6\", Blast 2\", Sat"
                 }
               ]
             }
@@ -6660,7 +6660,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-KRAK",
             "eqname": "Explosive Grenade - Krak",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -6693,7 +6693,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Prc1, Saturate"
+                  "SR": "Rng 6\", Prc1, Sat"
                 }
               ]
             }
@@ -7456,7 +7456,7 @@
                         "A": "5",
                         "BS": "2+",
                         "D": "2/2",
-                        "SR": "Rng 6\", Tor 2\", Saturate"
+                        "SR": "Rng 6\", Tor 2\", Sat"
                       }
                     ],
                     "isselected": true
@@ -8008,7 +8008,7 @@
                         "A": "6",
                         "BS": "2+",
                         "D": "3/3",
-                        "SR": "Hvy (RepOnly), Rng 6\", Tor 2\", Saturate"
+                        "SR": "Hvy (RepOnly), Rng 6\", Tor 2\", Sat"
                       }
                     ],
                     "isselected": false
@@ -8666,7 +8666,7 @@
             "killteamid": "GSK",
             "eqid": "SB",
             "eqname": "Stikkbomb*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Sat</td>\n     </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -8699,7 +8699,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                  "SR": "Rng 6\", Lim, Blast 2\", Sat"
                 }
               ]
             }
@@ -9673,7 +9673,7 @@
             "killteamid": "GSK",
             "eqid": "SB",
             "eqname": "Stikkbomb*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Sat</td>\n     </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -9706,7 +9706,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                  "SR": "Rng 6\", Lim, Blast 2\", Sat"
                 }
               ]
             }
@@ -11091,7 +11091,7 @@
             "killteamid": "GSK",
             "eqid": "SB",
             "eqname": "Stikkbomb*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Sat</td>\n     </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -11124,7 +11124,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                  "SR": "Rng 6\", Lim, Blast 2\", Sat"
                 }
               ]
             }
@@ -12875,7 +12875,7 @@
             "killteamid": "COM",
             "eqid": "PG",
             "eqname": "Plasma Grenade*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>BS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Plasma Grenade</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/4</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">Rng 6\", Blast 2\", Lim, Saturate</td>\n    </tr>\n</table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>BS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Plasma Grenade</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/4</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">Rng 6\", Blast 2\", Lim, Sat</td>\n    </tr>\n</table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -12908,7 +12908,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "3/4",
-                  "SR": "Rng 6\", Blast 2\", Lim, Saturate"
+                  "SR": "Rng 6\", Blast 2\", Lim, Sat"
                 }
               ]
             }
@@ -14317,7 +14317,7 @@
             "killteamid": "CW",
             "eqid": "PG",
             "eqname": "Plasma Grenade*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>BS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Plasma Grenade</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/4</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">Rng 6\", Blast 2\", Lim, Saturate</td>\n    </tr>\n</table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>BS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Plasma Grenade</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/4</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">Rng 6\", Blast 2\", Lim, Sat</td>\n    </tr>\n</table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -14350,7 +14350,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "3/4",
-                  "SR": "Rng 6\", Blast 2\", Lim, Saturate"
+                  "SR": "Rng 6\", Blast 2\", Lim, Sat"
                 }
               ]
             }
@@ -15957,7 +15957,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "3/3",
-                        "SR": "Heavy, Silent, Balanced, MW1"
+                        "SR": "Heavy, Silent, Balanced, Dev1"
                       }
                     ],
                     "isselected": false
@@ -16071,7 +16071,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "3/3",
-                        "SR": "Heavy, Silent, MW1"
+                        "SR": "Heavy, Silent, Dev1"
                       }
                     ],
                     "isselected": false
@@ -16225,7 +16225,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Rng 6\", Prc2, MW4"
+                        "SR": "Rng 6\", Prc2, Dev4"
                       }
                     ],
                     "isselected": false
@@ -16978,7 +16978,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-FRAG",
             "eqname": "Explosive Grenade - Frag",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -17011,7 +17011,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Blast 2\", Saturate"
+                  "SR": "Rng 6\", Blast 2\", Sat"
                 }
               ]
             }
@@ -17021,7 +17021,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-KRAK",
             "eqname": "Explosive Grenade - Krak",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -17054,7 +17054,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Prc1, Saturate"
+                  "SR": "Rng 6\", Prc1, Sat"
                 }
               ]
             }
@@ -17245,7 +17245,7 @@
                         "A": "4",
                         "BS": "3+",
                         "D": "6/3",
-                        "SR": "Rng 6\", Prc2, MW4"
+                        "SR": "Rng 6\", Prc2, Dev4"
                       }
                     ],
                     "isselected": false
@@ -17539,7 +17539,7 @@
                         "A": "4",
                         "BS": "4+",
                         "D": "6/3",
-                        "SR": "Rng 6\", Prc2, MW4"
+                        "SR": "Rng 6\", Prc2, Dev4"
                       }
                     ],
                     "isselected": false
@@ -20784,7 +20784,7 @@
             "killteamid": "BC",
             "eqid": "BC",
             "eqname": "Blasting Charge*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Blasting Charge</td>\n <td>4</td>\n         <td>3+</td>\n         <td>2/3</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">\n Rng 6\", Blast 2\", Saturate, Lim\n         </td>\n     </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Blasting Charge</td>\n <td>4</td>\n         <td>3+</td>\n         <td>2/3</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">\n Rng 6\", Blast 2\", Sat, Lim\n         </td>\n     </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -20827,7 +20827,7 @@
             "killteamid": "BC",
             "eqid": "DC",
             "eqname": "Demolition Charge*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Demolition Charge</td>\n <td>4</td>\n         <td>3+</td>\n         <td>5/6</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">\n Rng 6\", Blast 2\", Prc1, Saturate, Unwieldy, Lim\n         </td>\n     </tr>\n </table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Demolition Charge</td>\n <td>4</td>\n         <td>3+</td>\n         <td>5/6</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">\n Rng 6\", Blast 2\", Prc1, Sat, Unwieldy, Lim\n         </td>\n     </tr>\n </table>",
             "eqpts": "4",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -21652,10 +21652,10 @@
         "fireteams": [
           {
             "factionid": "TYR",
-            "killteamid": "BC",
+            "killteamid": "BC24",
             "fireteamid": "AH",
             "seq": 0,
-            "fireteamname": "Acolyte Hybrid",
+            "fireteamname": "Brood Coven",
             "archetype": "Seek And Destroy/Infiltration",
             "description": "",
             "killteammax": 0,
@@ -21666,8 +21666,8 @@
                 "fireteamid": "AH",
                 "opid": "FTR",
                 "opseq": 0,
-                "opname": "Acolyte Hybrid Fighter",
-                "description": "Employing their xeno-augmented strength, some Acolyte Hybrids wield monstrous pieces of mining equipment repurposed for close combat. Howling saws and churning drills intended to gouge a path through solid rock make short work of even the toughest foes.",
+                "opname": "Biophagus",
+                "description": "A Biophagus is a Genestealer hybrid who acts as a medicae and biomedical scientist for Genestealer Cults and specialises in perverse genetic engineering and bio-alchemy using Tyranid DNA. Their primary role is to determine new ways to spread and adapt the Genestealer Curse to the needs of the cult.",
                 "M": "6\"",
                 "APL": "2",
                 "GA": "1",
@@ -21702,87 +21702,6 @@
                       }
                     ],
                     "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "FTR",
-                    "wepid": "HRC",
-                    "wepseq": 0,
-                    "wepname": "Heavy Rock Cutter",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "FTR",
-                        "wepid": "HRC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "5/7",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "FTR",
-                    "wepid": "HRD",
-                    "wepseq": 0,
-                    "wepname": "Heavy Rock Drill",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "FTR",
-                        "wepid": "HRD",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/7",
-                        "SR": "Brutal"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "FTR",
-                    "wepid": "HRS",
-                    "wepseq": 0,
-                    "wepname": "Heavy Rock Saw",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "FTR",
-                        "wepid": "HRS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "5/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
                   }
                 ],
                 "uniqueactions": [],
@@ -21790,181 +21709,6 @@
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "AH",
-                "opid": "GNR",
-                "opseq": 0,
-                "opname": "Acolyte Hybrid Gunner",
-                "description": "Some Acolyte Hybrids wield hand flamers as they charge into battle. Ideal weapons for confined spaces, these compact flamethrowers allow their wielders to engulf their victims in sheets of blazing promethium before they storm in and finish off their survivors hand-to-hand.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "8",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, ACOLYTE HYBRID, GUNNER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "GNR",
-                    "wepid": "HF",
-                    "wepseq": 0,
-                    "wepname": "Hand Flamer",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "GNR",
-                        "wepid": "HF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Tor 1\""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "GNR",
-                    "wepid": "CKAC",
-                    "wepseq": 0,
-                    "wepname": "Cult Knife and Claw",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "GNR",
-                        "wepid": "CKAC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Bal, Rending"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Marksman,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "AH",
-                "opid": "IB",
-                "opseq": 0,
-                "opname": "Acolyte Hybrid Icon Bearer",
-                "description": "Acolyte Hybrids bearing cult icons provide inspiration for their brood brothers and sisters to fight all the harder. The icons' twisted wyrmforms sway above the bloody back and forth of battle, serving as rallying points and menacing reminders of the horrors at the heart of the cult.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "8",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, ACOLYTE HYBRID, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "IB",
-                    "wepid": "AP",
-                    "wepseq": 0,
-                    "wepname": "Autopistol",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "IB",
-                        "wepid": "AP",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "IB",
-                    "wepid": "CKAC",
-                    "wepseq": 0,
-                    "wepname": "Cult Knife and Claw",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "AH",
-                        "opid": "IB",
-                        "wepid": "CKAC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Bal, Rending"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "IB",
-                    "uniqueactionid": "CI",
-                    "title": "Cult Icon",
-                    "description": "Until the end of the Turning Point, while this operative is Visible to and within 3\" of a friendly BROOD COVEN operative, that friendly operative is inspired by vengeance. While an operative is inspired by vengeance, each time it fights in combat or makes a shooting attack, in the Roll Attack Dice step of that combat or shooting attack, if you retain any critical hits, you can select one of your failed hits to be retained as a successful normal hit.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "AH",
-                    "opid": "IB",
-                    "abilityid": "IB",
-                    "title": "Icon Bearer",
-                    "description": "When determining control of an objective marker, treat this operative's APL characteristic as being 1 higher. Note that this is not a modifier. In narrative play, this is cumulative with the Focused Battle Honour (see Kill Team Core Book)."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch"
               },
               {
                 "factionid": "TYR",
@@ -22013,7 +21757,7 @@
                     "factionid": "TYR",
                     "killteamid": "BC",
                     "fireteamid": "AH",
-                    "opid": "LDR",
+                    "opid": "GNR",
                     "wepid": "HF",
                     "wepseq": 0,
                     "wepname": "Hand Flamer",
@@ -22024,17 +21768,17 @@
                         "factionid": "TYR",
                         "killteamid": "BC",
                         "fireteamid": "AH",
-                        "opid": "LDR",
+                        "opid": "GNR",
                         "wepid": "HF",
                         "profileid": "0",
                         "name": "",
                         "A": "4",
                         "BS": "2+",
                         "D": "2/2",
-                        "SR": "Rng 6\", Tor 1\""
+                        "SR": "Rng 6\", Sat, Tor 1\""
                       }
                     ],
-                    "isselected": false
+                    "isselected": true
                   },
                   {
                     "factionid": "TYR",
@@ -22138,6 +21882,289 @@
                 "factionid": "TYR",
                 "killteamid": "BC",
                 "fireteamid": "AH",
+                "opid": "FTR",
+                "opseq": 0,
+                "opname": "Acolyte Hybrid Fighter",
+                "description": "Employing their xeno-augmented strength, some Acolyte Hybrids wield monstrous pieces of mining equipment repurposed for close combat. Howling saws and churning drills intended to gouge a path through solid rock make short work of even the toughest foes.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "8",
+                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, ACOLYTE HYBRID, FIGHTER",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "FTR",
+                    "wepid": "AP",
+                    "wepseq": 0,
+                    "wepname": "Autopistol",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "FTR",
+                        "wepid": "AP",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "GNR",
+                    "wepid": "HF",
+                    "wepseq": 0,
+                    "wepname": "Hand Flamer",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "GNR",
+                        "wepid": "HF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Rng 6\", Sat, Tor 1\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "FTR",
+                    "wepid": "HRC",
+                    "wepseq": 0,
+                    "wepname": "Heavy Rock Cutter",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "FTR",
+                        "wepid": "HRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "4+",
+                        "D": "5/7",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "FTR",
+                    "wepid": "HRD",
+                    "wepseq": 0,
+                    "wepname": "Heavy Rock Drill",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "FTR",
+                        "wepid": "HRD",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/7",
+                        "SR": "Brutal"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "FTR",
+                    "wepid": "HRS",
+                    "wepseq": 0,
+                    "wepname": "Heavy Rock Saw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "FTR",
+                        "wepid": "HRS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "BC",
+                "fireteamid": "AH",
+                "opid": "IB",
+                "opseq": 0,
+                "opname": "Acolyte Hybrid Icon Bearer",
+                "description": "Acolyte Hybrids bearing cult icons provide inspiration for their brood brothers and sisters to fight all the harder. The icons' twisted wyrmforms sway above the bloody back and forth of battle, serving as rallying points and menacing reminders of the horrors at the heart of the cult.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "8",
+                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, ACOLYTE HYBRID, ICON BEARER",
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "IB",
+                    "wepid": "AP",
+                    "wepseq": 0,
+                    "wepname": "Autopistol",
+                    "weptype": "R",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "IB",
+                        "wepid": "AP",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "GNR",
+                    "wepid": "HF",
+                    "wepseq": 0,
+                    "wepname": "Hand Flamer",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "GNR",
+                        "wepid": "HF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Rng 6\", Sat, Tor 1\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "IB",
+                    "wepid": "CKAC",
+                    "wepseq": 0,
+                    "wepname": "Cult Knife and Claw",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "IB",
+                        "wepid": "CKAC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Bal, Rending"
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "IB",
+                    "uniqueactionid": "CI",
+                    "title": "Cult Icon",
+                    "description": "Until the end of the Turning Point, while this operative is Visible to and within 3\" of a friendly BROOD COVEN operative, that friendly operative is inspired by vengeance. While an operative is inspired by vengeance, each time it fights in combat or makes a shooting attack, in the Roll Attack Dice step of that combat or shooting attack, if you retain any critical hits, you can select one of your failed hits to be retained as a successful normal hit.",
+                    "AP": 1
+                  }
+                ],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "IB",
+                    "abilityid": "IB",
+                    "title": "Icon Bearer",
+                    "description": "When determining control of an objective marker, treat this operative's APL characteristic as being 1 higher. Note that this is not a modifier. In narrative play, this is cumulative with the Focused Battle Honour (see Kill Team Core Book)."
+                  }
+                ],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Staunch"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "BC",
+                "fireteamid": "AH",
                 "opid": "TRP",
                 "opseq": 0,
                 "opname": "Acolyte Hybrid Trooper",
@@ -22159,7 +22186,7 @@
                     "wepseq": 0,
                     "wepname": "Autopistol",
                     "weptype": "R",
-                    "isdefault": 1,
+                    "isdefault": 0,
                     "profiles": [
                       {
                         "factionid": "TYR",
@@ -22173,6 +22200,33 @@
                         "BS": "4+",
                         "D": "2/3",
                         "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BC",
+                    "fireteamid": "AH",
+                    "opid": "GNR",
+                    "wepid": "HF",
+                    "wepseq": 0,
+                    "wepname": "Hand Flamer",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BC",
+                        "fireteamid": "AH",
+                        "opid": "GNR",
+                        "wepid": "HF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Rng 6\", Sat, Tor 1\""
                       }
                     ],
                     "isselected": true
@@ -22318,31 +22372,31 @@
                 "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, HYBRID METAMORPH, GUNNER",
                 "weapons": [
                   {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "HM",
-                    "opid": "GNR",
-                    "wepid": "HF",
+                    "factionid": "IMP",
+                    "killteamid": "AOD",
+                    "fireteamid": "AOD",
+                    "opid": "ASGT",
+                    "wepid": "HFL",
                     "wepseq": 0,
                     "wepname": "Hand Flamer",
                     "weptype": "R",
-                    "isdefault": 1,
+                    "isdefault": 0,
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "HM",
-                        "opid": "GNR",
-                        "wepid": "HF",
+                        "killteamid": "BC24",
+                        "fireteamid": "BC24",
+                        "opid": "ASGT",
+                        "wepid": "HFL",
                         "profileid": "0",
                         "name": "",
                         "A": "4",
                         "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Tor 1\""
+                        "D": "3/3",
+                        "SR": "Rng 6\", Sat, Tor 1\""
                       }
                     ],
-                    "isselected": true
+                    "isselected": false
                   },
                   {
                     "factionid": "TYR",
@@ -22520,11 +22574,11 @@
                     "isselected": false
                   },
                   {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "HM",
-                    "opid": "LDR",
-                    "wepid": "HF",
+                    "factionid": "IMP",
+                    "killteamid": "AOD",
+                    "fireteamid": "AOD",
+                    "opid": "ASGT",
+                    "wepid": "HFL",
                     "wepseq": 0,
                     "wepname": "Hand Flamer",
                     "weptype": "R",
@@ -22532,16 +22586,16 @@
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "HM",
-                        "opid": "LDR",
-                        "wepid": "HF",
+                        "killteamid": "BC24",
+                        "fireteamid": "BC24",
+                        "opid": "ASGT",
+                        "wepid": "HFL",
                         "profileid": "0",
                         "name": "",
                         "A": "4",
                         "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Tor 1\""
+                        "D": "3/3",
+                        "SR": "Rng 6\", Sat, Tor 1\""
                       }
                     ],
                     "isselected": false
@@ -22609,802 +22663,6 @@
               }
             ],
             "fireteamcomp": "A HYBRID METAMORPH fire team includes five HYBRID METAMORPH operatives selected from the following list:\n <ul>\n         <li>HYBRID METAMORPH FIGHTER</li>\n         <li>HYBRID METAMORPH GUNNER</li>\n         <li>HYBRID METAMORPH ICON BEARER</li>\n </ul>\n \n Each HYBRID METAMORPH fire team can only include up to two HYBRID METAMORPH GUNNER operatives.\n Your kill team can only include up to one ICON BEARER operative.\n <br/><br/>\n If your kill team does not include any other LEADER operatives, instead of selecting one HYBRID METAMORPH FIGHTER operative for one HYBRID METAMORPH fire team, you can select one HYBRID METAMORPH LEADER operative equipped with one option from each of the following:\n <ul>\n         <li>Autopistol, or Hand Flamer</li>\n         <li>Cult Bonesword and Metamorph Mutations, or Metamorph Mutations</li>\n </ul>"
-          },
-          {
-            "factionid": "TYR",
-            "killteamid": "BC",
-            "fireteamid": "NH",
-            "seq": 0,
-            "fireteamname": "Neophyte Hybrid",
-            "archetype": "Security/Recon/Infiltration",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "NH",
-                "opid": "GNR",
-                "opseq": 0,
-                "opname": "Neophyte Hybrid Gunner",
-                "description": "Some Neophyte Hybrids are fortunate enough to get their hands on a special weapon, traded on the black market or stolen from local defence forces. They unleash these weapons upon their former masters with grim delight, each shot another blow struck in the name of rebellion.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "7",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, NEOPHYTE HYBRID, GUNNER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "GNR",
-                    "wepid": "FL",
-                    "wepseq": 0,
-                    "wepname": "Flamer",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "GNR",
-                        "wepid": "FL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Tor 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "GNR",
-                    "wepid": "GL",
-                    "wepseq": 0,
-                    "wepname": "Grenade Launcher",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "GNR",
-                        "wepid": "GL",
-                        "profileid": "0",
-                        "name": "Frag",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "2/4",
-                        "SR": "Blast 2\""
-                      },
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "GNR",
-                        "wepid": "GL",
-                        "profileid": "1",
-                        "name": "Krak",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "4/5",
-                        "SR": "Prc1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "GNR",
-                    "wepid": "WB",
-                    "wepseq": 0,
-                    "wepname": "Webber",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "GNR",
-                        "wepid": "WB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Lethal 5+, Stun"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "GNR",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "GNR",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Marksman,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "NH",
-                "opid": "HGNR",
-                "opseq": 0,
-                "opname": "Neophyte Hybrid Heavy Gunner",
-                "description": "Hefting massive man-portable firearms and repurposed mining gear, these Neophytes rain heavy fire into the rangs of the enemy. So armed, they are able to lay low even large and formidable enemies, and provide covering fire for their brothers and sisters as they storm into battle.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "8",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, NEOPHYTE HYBRID, HEAVY GUNNER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "HGNR",
-                    "wepid": "HS",
-                    "wepseq": 0,
-                    "wepname": "Heavy Stubber",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "HGNR",
-                        "wepid": "HS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "3/4",
-                        "SR": "Hvy, Ceaseless"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "HGNR",
-                    "wepid": "ML",
-                    "wepseq": 0,
-                    "wepname": "Mining Laser",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "HGNR",
-                        "wepid": "ML",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "4+",
-                        "D": "5/6",
-                        "SR": "Hvy, Prc1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "HGNR",
-                    "wepid": "SC",
-                    "wepseq": 0,
-                    "wepname": "Seismic Cannon",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "HGNR",
-                        "wepid": "SC",
-                        "profileid": "0",
-                        "name": "Long-Wave",
-                        "A": "6",
-                        "BS": "4+",
-                        "D": "2/2",
-                        "SR": "Hvy, Blast 1\", Stun"
-                      },
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "HGNR",
-                        "wepid": "SC",
-                        "profileid": "1",
-                        "name": "Short-Wave",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/4",
-                        "SR": "Rng 6\", Hvy, Stun, PrcCrit1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "HGNR",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "HGNR",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch,Marksman"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "NH",
-                "opid": "IB",
-                "opseq": 0,
-                "opname": "Neophyte Hybrid Icon Bearer",
-                "description": "It is a great honour for a lowly Neophyte Hybrid to bear aloft the icon of their cult. Those who do become rallying points for their brothers and sisters, beacons of unassailable faith int he will of the Boordmind and the coming of the Star Children.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "7",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, NEOPHYTE HYBRID, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "IB",
-                    "wepid": "AG",
-                    "wepseq": 0,
-                    "wepname": "Autogun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "IB",
-                        "wepid": "AG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "IB",
-                    "wepid": "SG",
-                    "wepseq": 0,
-                    "wepname": "Shotgun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "IB",
-                        "wepid": "SG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "IB",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "IB",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "IB",
-                    "uniqueactionid": "CI",
-                    "title": "Cult Icon",
-                    "description": "Until the end of the Turning Point, while this operative is Visible to and within 3\" of a friendly BROOD COVEN operative, that friendly operative is inspired by vengeance. While an operative is inspired by vengeance, each time it fights in combat or makes a shooting attack, in the Roll Attack Dice step of that combat or shooting attack, if you retain any critical hits, you can select one of your failed hits to be retained as a successful normal hit.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "IB",
-                    "abilityid": "IB",
-                    "title": "Icon Bearer",
-                    "description": "When determining control of an objective marker, treat this operative's APL characteristic as being 1 higher. Note that this is not a modifier. In narrative play, this is cumulative with the Focused Battle Honour (see Kill Team Core Book)."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "NH",
-                "opid": "LDR",
-                "opseq": 0,
-                "opname": "Neophyte Hybrid Leader",
-                "description": "Rising up from the shadows, Neophyte Hubrids surge into battle with guns blazing. At their head stride the boldest and most ruthless of their number, natural leaders who direct their fellows while roaring encouragement and brandishing the best weapons their brood could acquire.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "7",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, NEOPHYTE HYBRID, LEADER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "AG",
-                    "wepseq": 0,
-                    "wepname": "Autogun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "AG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "AP",
-                    "wepseq": 0,
-                    "wepname": "Autopistol",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "AP",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "2/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "BP",
-                    "wepseq": 0,
-                    "wepname": "Bolt Pistol",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "BP",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "SG",
-                    "wepseq": 0,
-                    "wepname": "Shotgun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "SG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "WP",
-                    "wepseq": 0,
-                    "wepname": "Web Pistol",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "WP",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Stun"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "CS",
-                    "wepseq": 0,
-                    "wepname": "Chainsword",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "CS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "PM",
-                    "wepseq": 0,
-                    "wepname": "Power Maul",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "PM",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Stun"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "LDR",
-                    "wepid": "PP",
-                    "wepseq": 0,
-                    "wepname": "Power PIck",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "LDR",
-                        "wepid": "PP",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Marksman,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "BC",
-                "fireteamid": "NH",
-                "opid": "TRP",
-                "opseq": 0,
-                "opname": "Neophyte Hybrid Trooper",
-                "description": "Amongst the Genestealer Cults, Neophyte Hybrids most closely resemble untainted Humans. This allows them to infiltrate labour gangs ang the like before rising up en masse to overthrow their Imperial oppressors. What they lack in might, the make up for in numbers and zealoutry.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "2",
-                "DF": "3",
-                "SV": "5+",
-                "W": "7",
-                "keywords": "BROOD COVEN, GENESTEALER CULTS, <CULT>, NEOPHYTE HYBRID, TROOPER",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "TRP",
-                    "wepid": "AG",
-                    "wepseq": 0,
-                    "wepname": "Autogun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "TRP",
-                        "wepid": "AG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "TRP",
-                    "wepid": "SG",
-                    "wepseq": 0,
-                    "wepname": "Shotgun",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "TRP",
-                        "wepid": "SG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "BC",
-                    "fireteamid": "NH",
-                    "opid": "TRP",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gun Butt",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "BC",
-                        "fireteamid": "NH",
-                        "opid": "TRP",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Marksman,Scout"
-              }
-            ],
-            "fireteamcomp": "A NEOPHYTE HYBRID fire team includes seven NEOPHYTE HYBRID operatives selected from the following list:\n  <ul>\n          <li>\n NEOPHYTE HYBRID TROOPER each separately equipped with a Gun Butt and one of the following options:\n             <ul>\n <li>Autogun OR Shotgun</li>\n             </ul>\n </li>\n          <li>NEOPHYTE HYBRID GUNNER equipped with: Gun Butt; Flamer</li>\n          <li>NEOPHYTE HYBRID GUNNER equipped with: Gun Butt; Grenade Launcher</li>\n          <li>NEOPHYTE HYBRID GUNNER equipped with: Gun Butt; Webber</li>\n          <li>NEOPHYTE HYBRID HEAVY GUNNER equipped with: Gun Butt; Heavy Stubber</li>\n          <li>NEOPHYTE HYBRID HEAVY GUNNER equipped with: Gun Butt; Mining Laser</li>\n          <li>NEOPHYTE HYBRID HEAVY GUNNER equipped with: Gun Butt; Seismic Cannon</li>\n          <li>NEOPHYTE HYBRID ICON BEARER</li>\n  </ul>\n  \n  Each NEOPHYTE fire team can only include up to two NEOPHYTE HYBRID GUNNER operatives and up to one NEOPHYTE HYBRID HEAVY GUNNER operative.\n  Other than NEOPHYTE HYBRID TROOPER operatives, your kill team can only include each operative above once.\n  Your kill team can only include up to one ICON BEARER operative.\n  <br/><br/>\n  If your kill team does not include any other LEADER operatives, instead of selecting one NEOPHYTE HYBRID TROOPER operative for one NEOPHYTE HYBRID fire team, you can select one NEOPHYTE HYBRID LEADER operative equipped with one of the following options:\n  <ul>\n          <li>\n                  Gun Butt and one of the following options:\n                  <ul>\n                          <li>Autogun or Shotgun</li>\n                  </ul>\n          </li>\n          <li>\n                  One option from each of the following options:\n                  <ul>\n                          <li>Chainsword, Power Maul, or Power Pick</li>\n                          <li>Autopistol, Bolt Pistol, or Web Pistol</li>\n                  </ul>\n          </li>\n  </ul>"
           }
         ],
         "tacops": [
@@ -23955,7 +23213,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-FRAG",
             "eqname": "Explosive Grenade - Frag",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -23988,7 +23246,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "2/4",
-                  "SR": "Rng 6\", Blast 2\", Saturate"
+                  "SR": "Rng 6\", Blast 2\", Sat"
                 }
               ]
             }
@@ -23998,7 +23256,7 @@
             "killteamid": "ALL",
             "eqid": "UE-XG-KRAK",
             "eqname": "Explosive Grenade - Krak",
-            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Sat</td>\n</tr>\n</table>",
             "eqpts": "0",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -24031,7 +23289,7 @@
                   "A": "4",
                   "BS": "4+",
                   "D": "4/5",
-                  "SR": "Rng 6\", Prc1, Saturate"
+                  "SR": "Rng 6\", Prc1, Sat"
                 }
               ]
             }
@@ -25603,6 +24861,130 @@
                 "factionid": "TYR",
                 "killteamid": "IV24",
                 "fireteamid": "IV24",
+                "opid": "LP",
+                "opseq": 0,
+                "opname": "Von Ryan's Leaper",
+                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
+                "M": "6\"",
+                "APL": "3",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "14",
+                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "DRC",
+                    "wepseq": 0,
+                    "wepname": "Double Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "DRC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Relentless, Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "RC",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "RC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "wepid": "ST",
+                    "wepseq": 0,
+                    "wepname": "Scything Talons",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "HF",
+                        "fireteamid": "GS",
+                        "opid": "FTR",
+                        "wepid": "ST",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/6",
+                        "SR": "Bal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Gather Intelligence",
+                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "LR",
+                    "title": "Pouncing Strike",
+                    "description": "This operative can perform two Fight actions during its activation. Whenever this operative ends the Fight action, if it’s no longer within control range of enemy operatives, it can immediately perform a free Charge action (even if it’s already performed the Charge action during that activation), but it cannot move more than 3\" during that action.\nDoing so doesn’t prevent it from performing the Dash action afterwards during that activation."
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
                 "opid": "GLDR",
                 "opseq": 0,
                 "opname": "Genestealer Leader",
@@ -25708,15 +25090,6 @@
                     "abilityid": "SYN",
                     "title": "Gather Intelligence",
                     "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "abilityid": "HH",
-                    "title": "Hidden Horror",
-                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
                   },
                   {
                     "factionid": "TYR",
@@ -25847,148 +25220,6 @@
                     "killteamid": "HF",
                     "fireteamid": "GS",
                     "opid": "GFTR",
-                    "abilityid": "HH",
-                    "title": "Hidden Horror",
-                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "GFTR",
-                    "abilityid": "LR",
-                    "title": "Lightning Reflexes",
-                    "description": "This operative ignores the Piercing weapon rule. Each time this operative is activated, it can perform a free Dash action during that activation."
-                  }
-                ],
-                "edition": "kt24",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "IV24",
-                "fireteamid": "IV24",
-                "opid": "LP",
-                "opseq": 0,
-                "opname": "Von Ryan's Leaper",
-                "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "9",
-                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
-                "basesize": 32,
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "DRC",
-                    "wepseq": 0,
-                    "wepname": "Double Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "DRC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Relentless, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "SYN",
-                    "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "HH",
-                    "title": "Hidden Horror",
-                    "description": "While this operative has a Conceal order, it is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point)."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
                     "abilityid": "LR",
                     "title": "Lightning Reflexes",
                     "description": "This operative ignores the Piercing weapon rule. Each time this operative is activated, it can perform a free Dash action during that activation."
@@ -26134,7 +25365,7 @@
             "killteamid": "TW",
             "eqid": "DNS",
             "eqname": "Devourer Nanoscarabs*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n\n<table width=\"100%\" class=\"eqtable\">\n<tr>\n<th>Name</th>\n <th>A</th>\n <th>BS</th>\n <th>D</th>\n </tr>\n <tr>\n<td>Devourer Nanoscarabs</td>\n <td>4</td>\n <td>3+</td>\n <td>3/4</td>\n </tr>\n <tr>\n<th colspan=\"4\">Special Rules</th>\n </tr>\n <tr>\n<td colspan=\"4\">\nRng 6\", Lim, Saturate, Lethal 5+\n </td>\n </tr>\n</table>",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n\n<table width=\"100%\" class=\"eqtable\">\n<tr>\n<th>Name</th>\n <th>A</th>\n <th>BS</th>\n <th>D</th>\n </tr>\n <tr>\n<td>Devourer Nanoscarabs</td>\n <td>4</td>\n <td>3+</td>\n <td>3/4</td>\n </tr>\n <tr>\n<th colspan=\"4\">Special Rules</th>\n </tr>\n <tr>\n<td colspan=\"4\">\nRng 6\", Lim, Sat, Lethal 5+\n </td>\n </tr>\n</table>",
             "eqpts": "3",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -26167,7 +25398,7 @@
                   "A": "4",
                   "BS": "3+",
                   "D": "3/4",
-                  "SR": "Rng 6\", Lim, Saturate, Lethal 5+"
+                  "SR": "Rng 6\", Lim, Sat, Lethal 5+"
                 }
               ]
             }
@@ -27022,7 +26253,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "4/4",
-                        "SR": "Hvy, Prc1, Bal, MW1"
+                        "SR": "Hvy, Prc1, Bal, Dev1"
                       }
                     ],
                     "isselected": true
@@ -27109,7 +26340,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "4/4",
-                        "SR": "Hvy, Prc1, MW1"
+                        "SR": "Hvy, Prc1, Dev1"
                       }
                     ],
                     "isselected": true
@@ -28012,7 +27243,7 @@
             "killteamid": "AEF",
             "eqid": "EA",
             "eqname": "Exitus Ammunition",
-            "eqdescription": "VINDICARE ASSASSIN operative only.</br/>\nOnce per battle, this operative can use one of the following ranged weapons:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Shield-Breaker Round</td>\n<td>4</td>\n<td>2+</td>\n<td>4/1</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Lethal 5+, Silent, Heavy, MW6</td>\n</tr>\n</table>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Hellfire Round</td>\n<td>4</td>\n<td>2+</td>\n<td>3/3</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Blast 2\", Saturate, Lethal 5+, Heavy, Splash 2</td>\n</tr>\n</table>",
+            "eqdescription": "VINDICARE ASSASSIN operative only.</br/>\nOnce per battle, this operative can use one of the following ranged weapons:\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Shield-Breaker Round</td>\n<td>4</td>\n<td>2+</td>\n<td>4/1</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Lethal 5+, Silent, Heavy, Dev6</td>\n</tr>\n</table>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Hellfire Round</td>\n<td>4</td>\n<td>2+</td>\n<td>3/3</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Blast 2\", Sat, Lethal 5+, Heavy, Splash 2</td>\n</tr>\n</table>",
             "eqpts": "4",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -28041,7 +27272,7 @@
             "killteamid": "AEF",
             "eqid": "POG",
             "eqname": "Psyk-Out Grenade*",
-            "eqdescription": "CULEXUS ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Psyk-Out Grenade</td>\n<td>4</td>\n<td>3+</td>\n<td>1/2</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Blast 2\", Saturate, Lim, Psyk-Out*</td>\n</tr>\n</table>\n* <strong>Psyk-Out:</strong> \nIf an enemy operative loses any wounds as a result of an attack with this weapon and has a Conceal order, change it to Engage order; if it has an Engage order, change it to Conceal order.\n<br/>\nEach time a shooting attack is made with this weapon, if the target has the PSYKER or DAEMON keyword, this weapon gains the MW2 special rule for that attack.",
+            "eqdescription": "CULEXUS ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Psyk-Out Grenade</td>\n<td>4</td>\n<td>3+</td>\n<td>1/2</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Blast 2\", Sat, Lim, Psyk-Out*</td>\n</tr>\n</table>\n* <strong>Psyk-Out:</strong> \nIf an enemy operative loses any wounds as a result of an attack with this weapon and has a Conceal order, change it to Engage order; if it has an Engage order, change it to Conceal order.\n<br/>\nEach time a shooting attack is made with this weapon, if the target has the PSYKER or DAEMON keyword, this weapon gains the Dev2 special rule for that attack.",
             "eqpts": "3",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -28087,7 +27318,7 @@
             "killteamid": "AEF",
             "eqid": "MB",
             "eqname": "Melta Bomb*",
-            "eqdescription": "EVERSOR ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Melta Bomb</td>\n<td>4</td>\n<td>2+</td>\n<td>6/3</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 5\", Blast 2\", Prc2, MW4, Saturate, Lim</td>\n</tr>\n</table>",
+            "eqdescription": "EVERSOR ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Melta Bomb</td>\n<td>4</td>\n<td>2+</td>\n<td>6/3</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 5\", Blast 2\", Prc2, Dev4, Sat, Lim</td>\n</tr>\n</table>",
             "eqpts": "3",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -28133,7 +27364,7 @@
             "killteamid": "AEF",
             "eqid": "PB",
             "eqname": "Poison Blade",
-            "eqdescription": "CALLIDUS ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Poison Blade</td>\n<td>4</td>\n<td>2+</td>\n<td>3/2</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 6\", Lethal 5+, Silent, MW2, Lim</td>\n</tr>\n</table>",
+            "eqdescription": "CALLIDUS ASSASSIN operative only.</br/>\nThe operative is equipped with the following ranged weapon for the battle:<br/>\n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n<th>A</th>\n<th>BS</th>\n<th>D</th>\n</tr>\n<tr>\n<td>Poison Blade</td>\n<td>4</td>\n<td>2+</td>\n<td>3/2</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td colspan=\"4\">Rng 6\", Lethal 5+, Silent, Dev2, Lim</td>\n</tr>\n</table>",
             "eqpts": "3",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -28939,7 +28170,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "4/4",
-                        "SR": "Lethal 5+, Silent, Heavy, MW3"
+                        "SR": "Lethal 5+, Silent, Heavy, Dev3"
                       }
                     ],
                     "isselected": true
@@ -28966,7 +28197,7 @@
                         "A": "4",
                         "BS": "2+",
                         "D": "3/4",
-                        "SR": "Rng 6\", Prc1, Ceaseless, MW1"
+                        "SR": "Rng 6\", Prc1, Ceaseless, Dev1"
                       }
                     ],
                     "isselected": true
@@ -29101,7 +28332,7 @@
                         "A": "5",
                         "BS": "2+",
                         "D": "2/2",
-                        "SR": "Prc1, Blast 2\", MW1, Stun"
+                        "SR": "Prc1, Blast 2\", Dev1, Stun"
                       }
                     ],
                     "isselected": true
@@ -29236,7 +28467,7 @@
                         "A": "5",
                         "BS": "2+",
                         "D": "3/4",
-                        "SR": "Rng 6\", Balanced, MW1"
+                        "SR": "Rng 6\", Balanced, Dev1"
                       }
                     ],
                     "isselected": true
