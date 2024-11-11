@@ -7629,8 +7629,1006 @@
         "factionid": "ORK",
         "killteamid": "GSK24",
         "edition": "hidden",
-        "killteamname": "Greenskins",
-        "description": "The Orks, also called greenskins, are a savage, warlike, green-skinned species of humanoids who possess physiological features of both animals and fungi who are spread all across the Milky Way Galaxy.  <br/><br/> They are seen by their enemies (pretty much everyone else in the universe) as savage, violent, and crude, but they are the most successful species in the whole galaxy, outnumbering possibly every other intelligent starfaring species, even Humanity (with the very plausible exception of the Tyranids). ",
+        "killteamname": "Green Tide",
+        "description": "In their current incarnation, Orks are very much a close-combat-optimized species, their weapons having short range and low accuracy -- though this can sometimes be made up by sheer numbers. Orks are quite cheap in terms of in-game points. That is, it is possible to build a very large army, colloquially known as a \"sea of green\" or \"green tide\" from the skin color of the Orks. This is often necessary, since the effectiveness of an individual Ork at any but the shortest range is small, and the Ork commander must be prepared to absorb considerable casualties in his effort to close in for axe (\"Choppa\") work.",
+        "customkeyword": "<CLAN>",
+        "ploys": {
+          "strat": [
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "DAKKA",
+              "ployname": "Dakka! Dakka! Dakka!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "GSI",
+              "ployname": "Get Stuck In!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly BOY \noperative performs a Fight action, in the Roll Attack Dice step \nof that combat, you can re-roll one of your attack dice. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "WAGH",
+              "ployname": "Waaaagh!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
+            }
+          ],
+          "tac": [
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "JAS",
+              "ployname": "Just A Scratch",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREENSKIN operative from an attack die. \nIgnore the damage inflicted from that attack die. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "MD",
+              "ployname": "More Dakka",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREENSKIN operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+            }
+          ]
+        },
+        "equipments": [
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "EA",
+            "eqname": "'Eavy armour",
+            "eqdescription": "Operative with a 5+ Save characteristic only. Change the \noperative's Save characteristic to 4+ for the battle. ",
+            "eqpts": "2",
+            "eqtype": "OpMod",
+            "eqvar1": "SV",
+            "eqvar2": "4+",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "BP",
+            "eqname": "Bosspole*",
+            "eqdescription": "BOSS NOB or KOMMANDO NOB operative only. Add 1  to \nthe operative's APL for the battle.",
+            "eqpts": "3",
+            "eqtype": "OpMod",
+            "eqvar1": "APL",
+            "eqvar2": "3",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "CN",
+            "eqname": "Cuttin' Nozzle",
+            "eqdescription": "BURNA BOY operative only. The operative is equipped with \nthe following melee weapon for the battle: \n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>WS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Cuttin' Nozzle</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/5</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">\nLethal 5+\n        </td>\n    </tr>\n</table>",
+            "eqpts": "2",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0,
+            "weapon": {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "CN",
+              "wepseq": 0,
+              "wepname": "Cuttin' Nozzle",
+              "weptype": "M",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "ORK",
+                  "killteamid": "GSK",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "CN",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "3+",
+                  "D": "3/5",
+                  "SR": "Lethal 5+"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "DM",
+            "eqname": "Drum Mag",
+            "eqdescription": "Select one shoota or big shoota this operative is equipped \nwith. That weapon gains the Ceaseless special rule for \nthe battle. ",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "wepname:shoota",
+            "eqvar2": "SR:Ceaseless",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "KFF",
+            "eqname": "Kustom Force Field*",
+            "eqdescription": "SPANNER operative only. The operative gains the following \nability for the battle: \n<br/>\n<strong>Kustom Force Field:</strong> Each time an operative makes a \nshooting attack, if the target is wholly within• of this \noperative and the operative making the shooting attack is not, \nthe target ignores the Piercing weapon rule for that shooting attack. ",
+            "eqpts": "3",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "SB",
+            "eqname": "Stikkbomb*",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
+            "eqpts": "2",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0,
+            "weapon": {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "SB",
+              "wepseq": 0,
+              "wepname": "Stikkbomb",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "ORK",
+                  "killteamid": "GSK",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "SB",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "3+",
+                  "D": "2/4",
+                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "TF",
+            "eqname": "Targetin' Fing",
+            "eqdescription": "Select one ranged weapon this operative is equipped \nwith (excluding a burna or a ranged weapon with the \nkombi special rule). Improve that weapon's Ballistic Skill \ncharacteristic by  1  for the battle (to a maximum of 4+).",
+            "eqpts": "3",
+            "eqtype": "WepMod",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          }
+        ],
+        "killteamcomp": "A GREENSKIN kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
+        "fireteams": [
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK24",
+            "fireteamid": "GSK24",
+            "seq": 0,
+            "fireteamname": "Boyz",
+            "archetype": "Seek And Destroy/Security",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "BN",
+                "opseq": 0,
+                "opname": "Boss Nob",
+                "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "13",
+                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KR",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Rokkit",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KR",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "5+",
+                        "D": "4/5",
+                        "SR": "Kombi-Shoota, Lim, Prc1, Splash 1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KS",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Scorcha",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Kombi-Shoota, Lim, Rng 6\", Tor 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SH",
+                    "wepseq": 0,
+                    "wepname": "Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SL",
+                    "wepseq": 0,
+                    "wepname": "Slugga",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "BC",
+                    "wepseq": 0,
+                    "wepname": "Big Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "BC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "5/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "CH",
+                    "wepseq": 0,
+                    "wepname": "Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "CH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "KSAW",
+                    "wepseq": 0,
+                    "wepname": "Killsaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "KSAW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "PW",
+                    "wepseq": 0,
+                    "wepname": "Power Klaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "PW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Brutal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "FTR",
+                "opseq": 0,
+                "opname": "Boy Fighter",
+                "description": "Boys form the muscled, brutal majority of any teeming Ork horde. No self-respecting Ork would be without a loud slugga and at least one enormous choppa with which to vent their wild fury. They live only for the joy of violence and the clamouring din of war.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, FIGHTER",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "FTR",
+                    "wepid": "SH",
+                    "wepseq": 0,
+                    "wepname": "Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "FTR",
+                        "wepid": "SH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "FTR",
+                    "wepid": "SL",
+                    "wepseq": 0,
+                    "wepname": "Slugga",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "FTR",
+                        "wepid": "SL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "FTR",
+                    "wepid": "CH",
+                    "wepseq": 0,
+                    "wepname": "Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "FTR",
+                        "wepid": "CH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "FTR",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "FTR",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Combat,Marksman"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "GNR",
+                "opseq": 0,
+                "opname": "Boy Gunner",
+                "description": "Orks enjoy the din and recoil of the large firearms they refer to collectively as shootas, as much as the weapons' gory results. Shootas are often cobbled together from scrap, but unleash hails of solid shot that can rip apart almost anything through sheer volume.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GUNNER",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GNR",
+                    "wepid": "BS",
+                    "wepseq": 0,
+                    "wepname": "Big Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "GNR",
+                        "wepid": "BS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "5+",
+                        "D": "2/3",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GNR",
+                    "wepid": "RL",
+                    "wepseq": 0,
+                    "wepname": "Rokkit Launcha",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "GNR",
+                        "wepid": "RL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "5+",
+                        "D": "4/5",
+                        "SR": "Prc1, Splash 1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GNR",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "GNR",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Staunch,Marksman"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "GRE",
+                "opseq": 0,
+                "opname": "Gretchin",
+                "description": "Gretchin - or grots - are stunted, sneaky, and vicious. They are more nimble than their Okr masters, able to squeeze through narrow spaces and operate more complicated gubbins. Their sharp eyes enable them to act as lookouts and sentries, and their screech of alarm is piercing.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "2",
+                "DF": "3",
+                "SV": "6+",
+                "W": "5",
+                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GRETCHIN",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GRE",
+                    "wepid": "GB",
+                    "wepseq": 0,
+                    "wepname": "Gretchin Blasta",
+                    "weptype": "R",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "GRE",
+                        "wepid": "GB",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GRE",
+                    "wepid": "GK",
+                    "wepseq": 0,
+                    "wepname": "Gretchin Knife",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "GRE",
+                        "wepid": "GK",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "5+",
+                        "D": "1/2",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "GRE",
+                    "abilityid": "RNT",
+                    "title": "Runt",
+                    "description": "This operative cannot be equipped with equipment. This operative cannot benefit from your Strategic and Firefight Ploys."
+                  }
+                ],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Marksman,Scout"
+              }
+            ],
+            "fireteamcomp": "A BOY fire team includes five BOY operatives selected from the following list: \n<ul>\n<li>\n        BOY FIGHTER each separately equipped with one of the following options:\n        <ul>\n        <li>Shoota; fists \n        <li>Slugga; choppa \n        </ul>\n</li>\n<li>BOY GUNNER each separately equipped with fists and one of the following options: \n<ul>\n<li>Big shoota or rokkit launcha</li>\n</ul></li>\n</ul>\nEach BOY fire team can only include up to one BOY GUNNER operative. \n<br/>\nInstead of selecting one BOY FIGHTER operative in each BOY fire team, you can select two BOY GRETCHIN operatives. \n<br/><br/>\nIf your kill team does not include any other LEADER operatives, one BOY fire team can also include one BOY BOSS NOB \noperative equipped with one of the following options: \n<ul>\n<li>Shoota; fists \n<li>\n        One option from each of the following: \n        <ul>\n                <li>Kombi-rokkit, kombi-skorcha or slugga \n                <li>Big choppa, choppa, killsaw or power klaw\n        </ul>\n</li>\n</ul>"
+          }
+        ],
+        "tacops": [
+          {
+            "tacopid": "ZZZ-INF-01ST",
+            "archetype": "Infiltration",
+            "tacopseq": 1,
+            "title": "Stalk Target",
+            "description": "\n You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one enemy operative to be stalked for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if a friendly operative with a Conceal order is within 3\" but not within Engagement Range of the enemy operative you selected to be stalked for that Turning Point, you score 1 VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1 VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-02GS",
+            "archetype": "Infiltration",
+            "tacopseq": 2,
+            "title": "Gather Surveillance",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one friendly operative to gather surveillance for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if the friendly operative you selected to gather surveillance for that Turning Point has a Conceal order, is wholly within your opponent's territory and is more than 3\" from enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-03IM",
+            "archetype": "Infiltration",
+            "tacopseq": 3,
+            "title": "Implant",
+            "description": "You can reveal this Tac Op when you would strike an enemy operative in combat.\n <ul>\n <li>Instead of inflicting damage on an enemy operative from that strike, you can implant that operative instead. That operative does not lose any wounds and you score 1 VP</li>\n <li>If two other enemy operatives are implanted, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-04SD",
+            "archetype": "Infiltration",
+            "tacopseq": 4,
+            "title": "Seize Defences",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if you control an opponent's barricade, you score 1VP.</li>  <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>  </ul>  Friendly operatives control a barricade if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-05ID",
+            "archetype": "Infiltration",
+            "tacopseq": 5,
+            "title": "Install Device",
+            "description": "Reveal this Tac Op when a friendly operative performs the Install Device mission action.\n <ul>\n <li>At the end of any Turning Point, if your Device token has been in the killzone for the whole of that Turning Point, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n Friendly operatives can perform the following mission action:<br/>\n <strong>Install Device (1 AP):<br/></strong>\n An operative can perform this action while it controls an objective marker in your opponent's territory or on the centre line. Place your Device token on that objective marker. Remove it if an enemy operative controls that objective marker. An operative connot perform this action if your Device token is in the killzone.\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-06SC",
+            "archetype": "Infiltration",
+            "tacopseq": 6,
+            "title": "Subversive Control",
+            "description": "You can reveal this Tac Op in ther Target Reveal step of the third or fourth Turning Point.\n <ul>\n <li>At the end of the third Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n <li>At the end of the fourth Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-01HH",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 1,
+            "title": "Headhunter",
+            "description": "Reveal this Tac Op when an enemy LEADER operative is incapacitated.\n <ul>\n <li>You score 1 VP</li>\n <li>If it is the first or second Turning Point, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-02AT",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 2,
+            "title": "Assassinate Target",
+            "description": "You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n<br/>\nYour opponent selects one of their operatives.\n<ul>\n<li>If that operative is incapacitated, you score 2VPs.</li>\n<li>At the end of the battle, if that operative has not been incapacitated but has fewer than half of its wounds remaining, you score 1VP.</li>\n<ul>",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-03RT",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 3,
+            "title": "Rout",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point\n <ul>\n <li>If an enemy operative is incapacitated by a friendly operative, and that friendly operative is within 6\" of your opponent's drop zone when it does so, you score 1 VP</li>\n <li>If you achieve the first condition in any subsequent Turning Point, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-04EX",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 4,
+            "title": "Executioner",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nWhen you do so, select one friendly operative to be your executioner. At the end of each Target Reveal step, select one enemy operative to be executed for the Turning Point.\n <ul>\n <li>If the enemy operative you selected to be executed for the Turning Point is incapacitated by your executioner during the same Turning Point, score 1VP.</li>\n <li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-05EG",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 5,
+            "title": "Eliminate Guards",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select an objective marker on the centre line or within your opponent's territory, then select one enemy operative within 2\" of it to be the guard for the Turning Point.\n<ul>\n<li>If the enemy operative you selected to be the guard for the Turning Point is incapacitated during the same Turning Point, you score 1VP.</li>\n<li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n</ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-06RR",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 6,
+            "title": "Rob And Ransack",
+            "description": "\n You can reveal this Tac Op when an enemy operative is incapacitated by a friendly operative within its Engagement Range, and that friendly operative is more than 3\" from other enemy operatives\n <ul>\n <li>You score 1 VP</li>\n <li>At the end of the battle, if you achieved the first condition and that friendly operative has not been incapacitated, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-01SG",
+            "archetype": "Security",
+            "tacopseq": 1,
+            "title": "Seize Ground",
+            "description": "<em>Not usable in Close Quarters<br/></em>\n You must reveal this Tac Op in the Target Reveal step of the first turning point.\n <br/>\n Select one terrain feature that is more than 3\" from your drop zone and includes\n any parts with the Heavy trait.\n <ul>\n <li>At the end of the battle, if friendly operatives control that terrain feature, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 1\" of that terrain feature, and the total APL of the friendly operatives that control it is 4 or more, you score 1VP.</li>\n </ul>\n Friendly operatives control that terrain feature if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-02HB",
+            "archetype": "Security",
+            "tacopseq": 2,
+            "title": "Hold Them Back",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning point after the first.\n <ul>\n <li>At the end of any Turning Point, if there are no enemy operatives wholly within your territory, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul> ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-03PA",
+            "archetype": "Security",
+            "tacopseq": 3,
+            "title": "Protect Assets",
+            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if two or more enemy operatives were incapacitated within 2\" of an objective marker during that Turning Point, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-04SC",
+            "archetype": "Security",
+            "tacopseq": 4,
+            "title": "Secure Centre Line",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n <ul>\n <li>At the end of any Turning Point, if the total APL of friendly operatives on the centre line and not on a Vantage Point is greater than that of the enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-05EO",
+            "archetype": "Security",
+            "tacopseq": 5,
+            "title": "Escort Operative",
+            "description": "You can reveal this Tac Op in the Target Reveal step of the first or second Turning Point.\n<br/>\nSelect one friendly operative.\n<br/>\nAt the end of the battle:\n <ul>\n <li>If that friendly operative is wholly within your opponent's territory, you score 1VP.</li>\n <li>If that friendly operative is within 6\" of your opponent's killzone edge, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-06CC",
+            "archetype": "Security",
+            "tacopseq": 6,
+            "title": "Central Control",
+            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point after the first.  <ul>  <li>At the end of any Turning Point, if the total APL of friendly operatives within 3\" of the center and not on a Vantage Point is greater than that of enemy operatives, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-07SA",
+            "archetype": "Security",
+            "tacopseq": 7,
+            "title": "Seize Access Point",
+            "description": "<em>Close Quarters only<br/></em>\n  You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n <br/>\n Select one access point on the centre line or within your opponent’s territory.\n <ul>\n <li>At the end of the battle, if the total APL of friendly operatives within 2\" of that access point is greater than that of enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 2\" of that access point, and the total APL of friendly operatives within 2\" of it is 4 or more, you score 1VP.</li>\n </ul>",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-08FFC",
+            "archetype": "Security",
+            "tacopseq": 8,
+            "title": "Ferratonic Furnace Control",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n<ul>\n<li>At the end of any Turning Point, if the total APL of friendly operatives on the roof of the ferratonic furnace is greater than that of enemy operatives, you score 1VP.</li>\n<li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>",
+            "edition": "kt21"
+          }
+        ]
+      },
+      {
+        "factionid": "ORK",
+        "killteamid": "LOOT24",
+        "edition": "hidden",
+        "killteamname": "Dakkaboys",
+        "description": "Lootas are the thieves and scavengers of Ork society - light-fingered villains who will pinch anything that isn't nailed down. No one can feel safe around a mob of Lootas - a brief scuffle with a Loota over a stolen thing will most often result to the previous owner finding his lunch, his Slugga and his golden teef are mysteriously missing. Some of them are so efficient, they can even loot enemy vehicles.",
         "customkeyword": "<CLAN>",
         "ploys": {
           "strat": [
@@ -8584,801 +9582,6 @@
           {
             "factionid": "ORK",
             "killteamid": "GSK",
-            "fireteamid": "BOY",
-            "seq": 0,
-            "fireteamname": "Boyz",
-            "archetype": "Seek And Destroy/Security",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "BOY",
-                "opid": "BN",
-                "opseq": 0,
-                "opname": "Boss Nob",
-                "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "13",
-                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "KR",
-                    "wepseq": 0,
-                    "wepname": "Kombi-Rokkit",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "KR",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "5+",
-                        "D": "4/5",
-                        "SR": "Kombi-Shoota, Lim, Prc1, Splash 1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "KS",
-                    "wepseq": 0,
-                    "wepname": "Kombi-Scorcha",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "KS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "6",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Kombi-Shoota, Lim, Rng 6\", Tor 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "SH",
-                    "wepseq": 0,
-                    "wepname": "Shoota",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "SH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "SL",
-                    "wepseq": 0,
-                    "wepname": "Slugga",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "SL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "BC",
-                    "wepseq": 0,
-                    "wepname": "Big Choppa",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "BC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "5/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "CH",
-                    "wepseq": 0,
-                    "wepname": "Choppa",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "CH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "KSAW",
-                    "wepseq": 0,
-                    "wepname": "Killsaw",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "KSAW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "5/7",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "PW",
-                    "wepseq": 0,
-                    "wepname": "Power Klaw",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "PW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "5/7",
-                        "SR": "Brutal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Staunch"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "BOY",
-                "opid": "FTR",
-                "opseq": 0,
-                "opname": "Boy Fighter",
-                "description": "Boys form the muscled, brutal majority of any teeming Ork horde. No self-respecting Ork would be without a loud slugga and at least one enormous choppa with which to vent their wild fury. They live only for the joy of violence and the clamouring din of war.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, FIGHTER",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "FTR",
-                    "wepid": "SH",
-                    "wepseq": 0,
-                    "wepname": "Shoota",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "FTR",
-                        "wepid": "SH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "FTR",
-                    "wepid": "SL",
-                    "wepseq": 0,
-                    "wepname": "Slugga",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "FTR",
-                        "wepid": "SL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "FTR",
-                    "wepid": "CH",
-                    "wepseq": 0,
-                    "wepname": "Choppa",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "FTR",
-                        "wepid": "CH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "FTR",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "FTR",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Marksman"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "BOY",
-                "opid": "GNR",
-                "opseq": 0,
-                "opname": "Boy Gunner",
-                "description": "Orks enjoy the din and recoil of the large firearms they refer to collectively as shootas, as much as the weapons' gory results. Shootas are often cobbled together from scrap, but unleash hails of solid shot that can rip apart almost anything through sheer volume.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GUNNER",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GNR",
-                    "wepid": "BS",
-                    "wepseq": 0,
-                    "wepname": "Big Shoota",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GNR",
-                        "wepid": "BS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "6",
-                        "BS": "5+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GNR",
-                    "wepid": "RL",
-                    "wepseq": 0,
-                    "wepname": "Rokkit Launcha",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GNR",
-                        "wepid": "RL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "5+",
-                        "D": "4/5",
-                        "SR": "Prc1, Splash 1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GNR",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GNR",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch,Marksman"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "BOY",
-                "opid": "GRE",
-                "opseq": 0,
-                "opname": "Gretchin",
-                "description": "Gretchin - or grots - are stunted, sneaky, and vicious. They are more nimble than their Okr masters, able to squeeze through narrow spaces and operate more complicated gubbins. Their sharp eyes enable them to act as lookouts and sentries, and their screech of alarm is piercing.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "2",
-                "DF": "3",
-                "SV": "6+",
-                "W": "5",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GRETCHIN",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GRE",
-                    "wepid": "GB",
-                    "wepseq": 0,
-                    "wepname": "Gretchin Blasta",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GRE",
-                        "wepid": "GB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GRE",
-                    "wepid": "GK",
-                    "wepseq": 0,
-                    "wepname": "Gretchin Knife",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GRE",
-                        "wepid": "GK",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "5+",
-                        "D": "1/2",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GRE",
-                    "abilityid": "RNT",
-                    "title": "Runt",
-                    "description": "This operative cannot be equipped with equipment. This operative cannot benefit from your Strategic and Firefight Ploys."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Marksman,Scout"
-              }
-            ],
-            "fireteamcomp": "A BOY fire team includes five BOY operatives selected from the following list: \n<ul>\n<li>\n        BOY FIGHTER each separately equipped with one of the following options:\n        <ul>\n        <li>Shoota; fists \n        <li>Slugga; choppa \n        </ul>\n</li>\n<li>BOY GUNNER each separately equipped with fists and one of the following options: \n<ul>\n<li>Big shoota or rokkit launcha</li>\n</ul></li>\n</ul>\nEach BOY fire team can only include up to one BOY GUNNER operative. \n<br/>\nInstead of selecting one BOY FIGHTER operative in each BOY fire team, you can select two BOY GRETCHIN operatives. \n<br/><br/>\nIf your kill team does not include any other LEADER operatives, one BOY fire team can also include one BOY BOSS NOB \noperative equipped with one of the following options: \n<ul>\n<li>Shoota; fists \n<li>\n        One option from each of the following: \n        <ul>\n                <li>Kombi-rokkit, kombi-skorcha or slugga \n                <li>Big choppa, choppa, killsaw or power klaw\n        </ul>\n</li>\n</ul>"
-          },
-          {
-            "factionid": "ORK",
-            "killteamid": "GSK",
-            "fireteamid": "CK",
-            "seq": 0,
-            "fireteamname": "Clan Kommandoz",
-            "archetype": "Seek And Destroy/Infiltration",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "CK",
-                "opid": "FTR",
-                "opseq": 0,
-                "opname": "Clan Kommando Fighter",
-                "description": "Kommandos epitomise the Orky virtue of low cunning, taking a less directly confrontational approach to their peers. Few things make them happier than sneakin gup on an unsuspecting enemy and hacking, slashing, and shooting before the foe can strike back.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, CLAN KOMMANDO, FIGHTER",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "CK",
-                    "opid": "FTR",
-                    "wepid": "SL",
-                    "wepseq": 0,
-                    "wepname": "Slugga",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "CK",
-                        "opid": "FTR",
-                        "wepid": "SL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "CK",
-                    "opid": "FTR",
-                    "wepid": "CH",
-                    "wepseq": 0,
-                    "wepname": "Choppa",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "CK",
-                        "opid": "FTR",
-                        "wepid": "CH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "CK",
-                "opid": "NOB",
-                "opseq": 0,
-                "opname": "Clan Kommando Nob",
-                "description": "The sneakiest of all their tribe's sneaky gits, Kommando Nobs are both brutal and cunning enough to boss about the most conniving of their species as they lead espionage operations behind enemy lines.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "13",
-                "keywords": "GREENSKIN, ORK, <CLAN>, CLAN KOMMANDO, KOMMANDO NOB",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "CK",
-                    "opid": "NOB",
-                    "wepid": "SL",
-                    "wepseq": 0,
-                    "wepname": "Slugga",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "CK",
-                        "opid": "NOB",
-                        "wepid": "SL",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "4+",
-                        "D": "3/4",
-                        "SR": "Rng 6\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "CK",
-                    "opid": "NOB",
-                    "wepid": "CH",
-                    "wepseq": 0,
-                    "wepname": "Choppa",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "CK",
-                        "opid": "NOB",
-                        "wepid": "CH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "CK",
-                    "opid": "NOB",
-                    "wepid": "PW",
-                    "wepseq": 0,
-                    "wepname": "Power Klaw",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "CK",
-                        "opid": "NOB",
-                        "wepid": "PW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "5/7",
-                        "SR": "Brutal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Staunch"
-              }
-            ],
-            "fireteamcomp": "A CLAN KOMMANDO fire team includes five CLAN \nKOMMANDO FIGHTER operatives. \n<br/><br/>\nIf your kill team does not include any other LEADER \noperatives, instead of selecting one CLAN KOMMANDO \nFIGHTER operative for one CLAN KOMMANDO fire team, \nyou can select one CLAN KOMMANDO NOB operative \nequipped with a slugga and one of the following options: \n<ul><li>Chappa or power klaw</li></ul>"
-          },
-          {
-            "factionid": "ORK",
-            "killteamid": "GSK",
             "fireteamid": "SPE",
             "seq": 0,
             "fireteamname": "Speshulists",
@@ -9388,162 +9591,8 @@
             "operatives": [
               {
                 "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "SPE",
-                "opid": "BUR",
-                "opseq": 0,
-                "opname": "Burna Boy",
-                "description": "Burna Boyz are pyromaniacs all, obsessed with raging infernos - the bigger and hotter the better. Their burnas can weed hiding enemies out of cover, belching roaring flames that rush into defensive networks and incinerate lighter barriers entirely.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, BURNA BOY",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "SPE",
-                    "opid": "BUR",
-                    "wepid": "BU",
-                    "wepseq": 0,
-                    "wepname": "Burna",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "SPE",
-                        "opid": "BUR",
-                        "wepid": "BU",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Rng 6\", Tor 2\""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "SPE",
-                    "opid": "BUR",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "SPE",
-                        "opid": "BUR",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch,Marksman"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "SPE",
-                "opid": "LOO",
-                "opseq": 0,
-                "opname": "Loota",
-                "description": "Lootas are the most heavily armed of all Orks - because they steal the best weapons from everyone else! They are kleptomaniacs obsessed with owning and firing the loudest and most destructive guns, modifying them to make them ever more ostentatious and killy.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, LOOTA",
-                "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "SPE",
-                    "opid": "LOO",
-                    "wepid": "DG",
-                    "wepseq": 0,
-                    "wepname": "Deffgun",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "SPE",
-                        "opid": "LOO",
-                        "wepid": "DG",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "5+",
-                        "D": "4/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "SPE",
-                    "opid": "LOO",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "SPE",
-                        "opid": "LOO",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch,Marksman"
-              },
-              {
-                "factionid": "ORK",
-                "killteamid": "GSK",
-                "fireteamid": "SPE",
+                "killteamid": "LOOT24",
+                "fireteamid": "LOOT24",
                 "opid": "SPN",
                 "opseq": 0,
                 "opname": "Spanner",
@@ -9670,6 +9719,1825 @@
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Staunch,Marksman"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "LOOT24",
+                "fireteamid": "LOOT24",
+                "opid": "BUR",
+                "opseq": 0,
+                "opname": "Burna Boy",
+                "description": "Burna Boyz are pyromaniacs all, obsessed with raging infernos - the bigger and hotter the better. Their burnas can weed hiding enemies out of cover, belching roaring flames that rush into defensive networks and incinerate lighter barriers entirely.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, BURNA BOY",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "BUR",
+                    "wepid": "BU",
+                    "wepseq": 0,
+                    "wepname": "Burna",
+                    "weptype": "R",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "BUR",
+                        "wepid": "BU",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Rng 6\", Tor 2\""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "BUR",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "BUR",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Staunch,Marksman"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "LOOT24",
+                "fireteamid": "LOOT24",
+                "opid": "LOO",
+                "opseq": 0,
+                "opname": "Loota",
+                "description": "Lootas are the most heavily armed of all Orks - because they steal the best weapons from everyone else! They are kleptomaniacs obsessed with owning and firing the loudest and most destructive guns, modifying them to make them ever more ostentatious and killy.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, LOOTA",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "LOO",
+                    "wepid": "DG",
+                    "wepseq": 0,
+                    "wepname": "Deffgun",
+                    "weptype": "R",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "LOO",
+                        "wepid": "DG",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "LOO",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "LOO",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Staunch,Marksman"
+              }
+            ],
+            "fireteamcomp": "A SPESHULIST fire team includes four SPESHULIST \noperatives selected from the following list: \n<ul>\n<li>BURNA BOY SPESHULIST</li>\n<li>LOOTA SPESHULIST</li>\n</ul>\n<br/><br/>\nIf your kill team does not include any other LEADER \noperatives, instead of selecting one BURNA BOY operative \nfor one SPESHULIST fire team, you can select one \nSPANNER SPESHULIST operative equipped with fists and \none of the following options: \n<ul><li>Big shoota, kustom mega-blasta or rokkit launcha</li></ul>"
+          }
+        ],
+        "tacops": [
+          {
+            "tacopid": "ZZZ-INF-01ST",
+            "archetype": "Infiltration",
+            "tacopseq": 1,
+            "title": "Stalk Target",
+            "description": "\n You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one enemy operative to be stalked for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if a friendly operative with a Conceal order is within 3\" but not within Engagement Range of the enemy operative you selected to be stalked for that Turning Point, you score 1 VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1 VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-02GS",
+            "archetype": "Infiltration",
+            "tacopseq": 2,
+            "title": "Gather Surveillance",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select one friendly operative to gather surveillance for that Turning Point.\n <ul>\n <li>At the end of any Turning Point, if the friendly operative you selected to gather surveillance for that Turning Point has a Conceal order, is wholly within your opponent's territory and is more than 3\" from enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-03IM",
+            "archetype": "Infiltration",
+            "tacopseq": 3,
+            "title": "Implant",
+            "description": "You can reveal this Tac Op when you would strike an enemy operative in combat.\n <ul>\n <li>Instead of inflicting damage on an enemy operative from that strike, you can implant that operative instead. That operative does not lose any wounds and you score 1 VP</li>\n <li>If two other enemy operatives are implanted, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-04SD",
+            "archetype": "Infiltration",
+            "tacopseq": 4,
+            "title": "Seize Defences",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if you control an opponent's barricade, you score 1VP.</li>  <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>  </ul>  Friendly operatives control a barricade if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-05ID",
+            "archetype": "Infiltration",
+            "tacopseq": 5,
+            "title": "Install Device",
+            "description": "Reveal this Tac Op when a friendly operative performs the Install Device mission action.\n <ul>\n <li>At the end of any Turning Point, if your Device token has been in the killzone for the whole of that Turning Point, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n Friendly operatives can perform the following mission action:<br/>\n <strong>Install Device (1 AP):<br/></strong>\n An operative can perform this action while it controls an objective marker in your opponent's territory or on the centre line. Place your Device token on that objective marker. Remove it if an enemy operative controls that objective marker. An operative connot perform this action if your Device token is in the killzone.\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-INF-06SC",
+            "archetype": "Infiltration",
+            "tacopseq": 6,
+            "title": "Subversive Control",
+            "description": "You can reveal this Tac Op in ther Target Reveal step of the third or fourth Turning Point.\n <ul>\n <li>At the end of the third Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n <li>At the end of the fourth Turning Point, if friendly operatives control an objective marker in your opponent's territory and not on the centre line, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-01HH",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 1,
+            "title": "Headhunter",
+            "description": "Reveal this Tac Op when an enemy LEADER operative is incapacitated.\n <ul>\n <li>You score 1 VP</li>\n <li>If it is the first or second Turning Point, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-02AT",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 2,
+            "title": "Assassinate Target",
+            "description": "You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n<br/>\nYour opponent selects one of their operatives.\n<ul>\n<li>If that operative is incapacitated, you score 2VPs.</li>\n<li>At the end of the battle, if that operative has not been incapacitated but has fewer than half of its wounds remaining, you score 1VP.</li>\n<ul>",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-03RT",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 3,
+            "title": "Rout",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point\n <ul>\n <li>If an enemy operative is incapacitated by a friendly operative, and that friendly operative is within 6\" of your opponent's drop zone when it does so, you score 1 VP</li>\n <li>If you achieve the first condition in any subsequent Turning Point, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-04EX",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 4,
+            "title": "Executioner",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nWhen you do so, select one friendly operative to be your executioner. At the end of each Target Reveal step, select one enemy operative to be executed for the Turning Point.\n <ul>\n <li>If the enemy operative you selected to be executed for the Turning Point is incapacitated by your executioner during the same Turning Point, score 1VP.</li>\n <li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-05EG",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 5,
+            "title": "Eliminate Guards",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.\n<br/>\nOnce you do so, at the end of each Target Reveal step, select an objective marker on the centre line or within your opponent's territory, then select one enemy operative within 2\" of it to be the guard for the Turning Point.\n<ul>\n<li>If the enemy operative you selected to be the guard for the Turning Point is incapacitated during the same Turning Point, you score 1VP.</li>\n<li>If you achieve the first condition in any subsequent Turning Points, you score 1VP.</li>\n</ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SAD-06RR",
+            "archetype": "Seek And Destroy",
+            "tacopseq": 6,
+            "title": "Rob And Ransack",
+            "description": "\n You can reveal this Tac Op when an enemy operative is incapacitated by a friendly operative within its Engagement Range, and that friendly operative is more than 3\" from other enemy operatives\n <ul>\n <li>You score 1 VP</li>\n <li>At the end of the battle, if you achieved the first condition and that friendly operative has not been incapacitated, you score 1 VP</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-01SG",
+            "archetype": "Security",
+            "tacopseq": 1,
+            "title": "Seize Ground",
+            "description": "<em>Not usable in Close Quarters<br/></em>\n You must reveal this Tac Op in the Target Reveal step of the first turning point.\n <br/>\n Select one terrain feature that is more than 3\" from your drop zone and includes\n any parts with the Heavy trait.\n <ul>\n <li>At the end of the battle, if friendly operatives control that terrain feature, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 1\" of that terrain feature, and the total APL of the friendly operatives that control it is 4 or more, you score 1VP.</li>\n </ul>\n Friendly operatives control that terrain feature if the total APL of friendly operatives within 1\" of it is greater than that of enemy operatives.",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-02HB",
+            "archetype": "Security",
+            "tacopseq": 2,
+            "title": "Hold Them Back",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning point after the first.\n <ul>\n <li>At the end of any Turning Point, if there are no enemy operatives wholly within your territory, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul> ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-03PA",
+            "archetype": "Security",
+            "tacopseq": 3,
+            "title": "Protect Assets",
+            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point.  <ul>  <li>At the end of any Turning Point, if two or more enemy operatives were incapacitated within 2\" of an objective marker during that Turning Point, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-04SC",
+            "archetype": "Security",
+            "tacopseq": 4,
+            "title": "Secure Centre Line",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n <ul>\n <li>At the end of any Turning Point, if the total APL of friendly operatives on the centre line and not on a Vantage Point is greater than that of the enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-05EO",
+            "archetype": "Security",
+            "tacopseq": 5,
+            "title": "Escort Operative",
+            "description": "You can reveal this Tac Op in the Target Reveal step of the first or second Turning Point.\n<br/>\nSelect one friendly operative.\n<br/>\nAt the end of the battle:\n <ul>\n <li>If that friendly operative is wholly within your opponent's territory, you score 1VP.</li>\n <li>If that friendly operative is within 6\" of your opponent's killzone edge, you score 1VP.</li>\n </ul>\n ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-06CC",
+            "archetype": "Security",
+            "tacopseq": 6,
+            "title": "Central Control",
+            "description": "You can reveal this TacOp in the Target Reveal step of any Turning Point after the first.  <ul>  <li>At the end of any Turning Point, if the total APL of friendly operatives within 3\" of the center and not on a Vantage Point is greater than that of enemy operatives, you score 1 VP</li>  <li>If you achieve the first condition at the end of any subsequent Turning Point, you score 1 VP</li>  </ul>  ",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-07SA",
+            "archetype": "Security",
+            "tacopseq": 7,
+            "title": "Seize Access Point",
+            "description": "<em>Close Quarters only<br/></em>\n  You must reveal this Tac Op in the Target Reveal step of the first Turning Point.\n <br/>\n Select one access point on the centre line or within your opponent’s territory.\n <ul>\n <li>At the end of the battle, if the total APL of friendly operatives within 2\" of that access point is greater than that of enemy operatives, you score 1VP.</li>\n <li>If you achieve the first condition, there are no enemy operatives within 2\" of that access point, and the total APL of friendly operatives within 2\" of it is 4 or more, you score 1VP.</li>\n </ul>",
+            "edition": "kt21"
+          },
+          {
+            "tacopid": "ZZZ-SEC-08FFC",
+            "archetype": "Security",
+            "tacopseq": 8,
+            "title": "Ferratonic Furnace Control",
+            "description": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.\n<ul>\n<li>At the end of any Turning Point, if the total APL of friendly operatives on the roof of the ferratonic furnace is greater than that of enemy operatives, you score 1VP.</li>\n<li>If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP.</li>",
+            "edition": "kt21"
+          }
+        ]
+      },
+      {
+        "factionid": "ORK",
+        "killteamid": "NOBZ24",
+        "edition": "hidden",
+        "killteamname": "Gitstompas",
+        "description": "To rise through the ranks of the Orks requires cunning brutality, brutal cunning, and smashing the head of any challenger to Nob's throne. Ork Nobz often come to blows with rival mob leaders, and go out of their way to prove their competency to their Warboss. Nobz are thus both feared and revered. They can thrive as leaders provided they can survive a few knives in the back and dole out appropriate punishments.",
+        "customkeyword": "<CLAN>",
+        "ploys": {
+          "strat": [
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "DAKKA",
+              "ployname": "Dakka! Dakka! Dakka!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "GSI",
+              "ployname": "Get Stuck In!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly BOY \noperative performs a Fight action, in the Roll Attack Dice step \nof that combat, you can re-roll one of your attack dice. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "SA",
+              "ployname": "Skulk About",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a shooting \nattack is made against a friendly CLAN KOMMANDO \noperative, in the Roll Defence Dice step of that shooting \nattack, before rolling defence dice, if it has a Conceal order, \nyou can retain one as a successful normal save without \nrolling it. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "WAGH",
+              "ployname": "Waaaagh!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
+            }
+          ],
+          "tac": [
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "JAS",
+              "ployname": "Just A Scratch",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREENSKIN operative from an attack die. \nIgnore the damage inflicted from that attack die. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "MD",
+              "ployname": "More Dakka",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREENSKIN operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+            }
+          ]
+        },
+        "equipments": [
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "EA",
+            "eqname": "'Eavy armour",
+            "eqdescription": "Operative with a 5+ Save characteristic only. Change the \noperative's Save characteristic to 4+ for the battle. ",
+            "eqpts": "2",
+            "eqtype": "OpMod",
+            "eqvar1": "SV",
+            "eqvar2": "4+",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "BP",
+            "eqname": "Bosspole*",
+            "eqdescription": "BOSS NOB or KOMMANDO NOB operative only. Add 1  to \nthe operative's APL for the battle.",
+            "eqpts": "3",
+            "eqtype": "OpMod",
+            "eqvar1": "APL",
+            "eqvar2": "3",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "CN",
+            "eqname": "Cuttin' Nozzle",
+            "eqdescription": "BURNA BOY operative only. The operative is equipped with \nthe following melee weapon for the battle: \n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>WS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Cuttin' Nozzle</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/5</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">\nLethal 5+\n        </td>\n    </tr>\n</table>",
+            "eqpts": "2",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0,
+            "weapon": {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "CN",
+              "wepseq": 0,
+              "wepname": "Cuttin' Nozzle",
+              "weptype": "M",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "ORK",
+                  "killteamid": "GSK",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "CN",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "3+",
+                  "D": "3/5",
+                  "SR": "Lethal 5+"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "DM",
+            "eqname": "Drum Mag",
+            "eqdescription": "Select one shoota or big shoota this operative is equipped \nwith. That weapon gains the Ceaseless special rule for \nthe battle. ",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "wepname:shoota",
+            "eqvar2": "SR:Ceaseless",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "KFF",
+            "eqname": "Kustom Force Field*",
+            "eqdescription": "SPANNER operative only. The operative gains the following \nability for the battle: \n<br/>\n<strong>Kustom Force Field:</strong> Each time an operative makes a \nshooting attack, if the target is wholly within• of this \noperative and the operative making the shooting attack is not, \nthe target ignores the Piercing weapon rule for that shooting attack. ",
+            "eqpts": "3",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "SB",
+            "eqname": "Stikkbomb*",
+            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
+            "eqpts": "2",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0,
+            "weapon": {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "SB",
+              "wepseq": 0,
+              "wepname": "Stikkbomb",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "ORK",
+                  "killteamid": "GSK",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "SB",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "3+",
+                  "D": "2/4",
+                  "SR": "Rng 6\", Lim, Blast 2\", Saturate"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "ORK",
+            "killteamid": "GSK",
+            "eqid": "TF",
+            "eqname": "Targetin' Fing",
+            "eqdescription": "Select one ranged weapon this operative is equipped \nwith (excluding a burna or a ranged weapon with the \nkombi special rule). Improve that weapon's Ballistic Skill \ncharacteristic by  1  for the battle (to a maximum of 4+).",
+            "eqpts": "3",
+            "eqtype": "WepMod",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 0
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-INEX",
+            "eqname": "(Combat) Inexorable",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, the enemy operative in that combat cannot be supported.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 301
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-BW",
+            "eqname": "(Combat) Bladework",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, you can re-roll one of your attack dice.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 302
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-DF",
+            "eqname": "(Combat) Dirty Fighter",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, if any friendly operatives are supporting them, add 1 to the Attacks characteristic of their melee weapons for that combat.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 303
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-VIC",
+            "eqname": "(Combat) Vicious",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nAdd 1 to the Critical Damage characteristic of this operative’s melee weapons.",
+            "eqpts": "0",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "D:0/1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 304
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-DUE",
+            "eqname": "(Combat) Duellist",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, subtract 1 from the Weapon Skill characteristic of the enemy operative for that combat.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 305
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-COM-SAV",
+            "eqname": "(Combat) Savage",
+            "eqdescription": "<em>Combat Specialist Battle Honour<br/></em>\nEach time this operative fights in combat, in the Roll Attack Dice step of that combat, if you retain any critical hits, you can inflict one Mortal Wound on the enemy operative in that combat.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 306
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-RES",
+            "eqname": "(Staunch) Resilient",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nAdd 2 to this operative’s Wounds characteristic.",
+            "eqpts": "0",
+            "eqtype": "OpMod",
+            "eqvar1": "W",
+            "eqvar2": "+2",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 311
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-SO",
+            "eqname": "(Staunch) Shrug Off",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Attack Dice step of that shooting attack, you can change one of your opponent's retained critical hits to a normal hit.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 312
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-FOC",
+            "eqname": "(Staunch) Focused",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nWhen determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 313
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-STA",
+            "eqname": "(Staunch) Stalwart",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nThis operative is never injured.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 314
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-INV",
+            "eqname": "(Staunch) Invulnerable",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the roll defence dice step of that shooting attack, ignore the Prc1 special rule.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 315
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-STA-IND",
+            "eqname": "(Staunch) Indomitable",
+            "eqdescription": "<em>Staunch Specialist Battle Honour<br/></em>\nEach time this operative would lose a wound as a result of a mortal wound or critical damage, roll one D6: on a 5+, that wound is not lost.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 316
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-GA",
+            "eqname": "(Marksman) Gun Ace",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, in the Roll Attack Dice step of that shooting attack, you can re-roll one of your attack dice.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 321
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-CS",
+            "eqname": "(Marksman) Crack Shot",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, if you roll any critical hits, inflict one mortal wound on the target.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 322
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-CALC",
+            "eqname": "(Marksman) Calculated",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative performs an Overwatch action, for that action’s shooting attack, do not worsen the Ballistic Skill characteristic of its ranged weapons as a result of performing an Overwatch action.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 323
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-CA",
+            "eqname": "(Marksman) Careful Aim",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nEach time this operative makes a shooting attack, when determining if the intended target is in Cover, Cover lines ignore the bases of all other operatives.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 324
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-SS",
+            "eqname": "(Marksman) Sharpshooter",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em> Each time this operative performs a Shoot action, when you would retain attack dice for that action’s shooting attack, if it has not performed a Normal Move, Fall Back or Charge action during that activation, you can select one of your results of 5+ to be retained as a critical hit.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 325
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-MRK-DFA",
+            "eqname": "(Marksman) Death From Above",
+            "eqdescription": "<em>Marksman Specialist Battle Honour<br/></em>\nOnce per Turning Point, after this operative makes a shooting attack while on a Vantage Point, if the target did not lose any wounds as a result of that shooting attack, repeat that shooting attack.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 326
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-RUN",
+            "eqname": "(Scout) Runner",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is activated, so long as it does not perform a Shoot or Fight action during that activation, it can perform one free Dash action.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 331
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-SW",
+            "eqname": "(Scout) Swift",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nThis operative can perform a Dash action more than once during its Activation. In addition, it automatically passes Jump tests and does not need to spend 2\" to traverse.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 332
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-COV",
+            "eqname": "(Scout) Covert",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nWhen this operative is activated during the first Turning Point, you can change its order.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 333
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-PIC",
+            "eqname": "(Scout) Picket",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em> During the Set Up Operatives step of the mission sequence, this operative can be set up within 3\" of your drop zone.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 334
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-EV",
+            "eqname": "(Scout) Evasive",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative is the target of a shooting attack, in the Roll Defence Dice step of that shooting attack, if it has a Conceal order, you can re-roll one of your defence dice.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 335
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BH-SCT-DOD",
+            "eqname": "(Scout) Dodge",
+            "eqdescription": "<em>Scout Specialist Battle Honour<br/></em>\nEach time this operative performs a Normal Move or Dash action, it can move within Engagement Range of enemy operatives, but cannot finish that move within Engagement Range of them. Each time this operative performs a Charge action, so long as it finishes that move within Engagement Range of an enemy operative, it can move within Engagement Range of any enemy operatives during that move.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Honour",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 336
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-AL",
+            "eqname": "Auto-Loader",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Ceaseless special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "SR:Ceaseless",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 501
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-FC",
+            "eqname": "Flux Capacitor",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the P1 critical hit rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "SR:P1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 502
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-RR",
+            "eqname": "Rending Rounds",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Rending special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "SR:Rending",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 503
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-PA",
+            "eqname": "Propulsion Amplifier",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nAdd 1 to both Damage characteristics of this ranged weapon.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "D:1/1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 504
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-TS",
+            "eqname": "Thermal Sight",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis ranged weapon gains the Saturate special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "SR:Saturate",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 505
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-SS",
+            "eqname": "Seeker Spirit",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nEach time a friendly operative makes a shooting attack with this ranged weapon, in the Roll Attack Dice step of that shooting attack, for each critical hit you retain, you can re-roll one of your attack dice.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 506
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-PE",
+            "eqname": "Power Enhancer",
+            "eqdescription": "<em>Rare Equipment</em><br/> Add 1 to both Damage characteristics of this melee weapon.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "D:1/1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 507
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-ID",
+            "eqname": "Inertia Displacer",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Brutal special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "SR:Brutal",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 508
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-PW",
+            "eqname": "Perfectly Weighted",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Balanced special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "SR:Bal",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 509
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-RB",
+            "eqname": "Rending Blade",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Rending special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "SR:Rending",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 510
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-MME",
+            "eqname": "Monomolecular Edge",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Lethal 5+ special rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "SR:Lethal 5+",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 511
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "RE-AU",
+            "eqname": "Arc Unit",
+            "eqdescription": "<em>Rare Equipment</em><br/>\nThis melee weapon gains the Stun critical hit rule.",
+            "eqpts": "2",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "SR:Stun",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Rare Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 512
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-SL",
+            "eqname": "Slain",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative can no longer be used. Remove it from your dataslate.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 801
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-CI",
+            "eqname": "Critical Impairment",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative cannot perform Dash actions and its APL characteristic cannot be increased.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 802
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-SC",
+            "eqname": "Severe Concussion",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Ballistic Skill characteristic of its ranged weapons as if it were injured.",
+            "eqpts": "0",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:R",
+            "eqvar2": "BS:+1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 803
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-SS",
+            "eqname": "Sapped Strength",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to the Weapon Skill characteristic of its melee weapons as if it were injured.",
+            "eqpts": "0",
+            "eqtype": "WepMod",
+            "eqvar1": "weptype:M",
+            "eqvar2": "BS:+1",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 804
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-LA",
+            "eqname": "Lingering Ailment",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative always suffers the penalty to its Movement characteristic as if it were injured.",
+            "eqpts": "0",
+            "eqtype": "OpMod",
+            "eqvar1": "M",
+            "eqvar2": "-2\"",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 805
+          },
+          {
+            "factionid": "kt21",
+            "killteamid": "ALL",
+            "eqid": "BS-CA",
+            "eqname": "Cerebral Affliction",
+            "eqdescription": "<em>Battle Scar<br/></em>This operative does not gain a Battle Scar but does not gain any experience from this battle.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Battle Scar",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 806
+          }
+        ],
+        "killteamcomp": "A GREENSKIN kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
+        "fireteams": [
+          {
+            "factionid": "ORK",
+            "killteamid": "NOBZ24",
+            "fireteamid": "NOBZ24",
+            "seq": 0,
+            "fireteamname": "Nobz",
+            "archetype": "Seek And Destroy",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+              {
+                "factionid": "ORK",
+                "killteamid": "NOBZ24",
+                "fireteamid": "NOBZ24",
+                "opid": "WB",
+                "opseq": 0,
+                "opname": "Warboss",
+                "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "13",
+                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KR",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Rokkit",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KR",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "5+",
+                        "D": "4/5",
+                        "SR": "Kombi-Shoota, Lim, Prc1, Splash 1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KS",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Scorcha",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Kombi-Shoota, Lim, Rng 6\", Tor 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SH",
+                    "wepseq": 0,
+                    "wepname": "Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SL",
+                    "wepseq": 0,
+                    "wepname": "Slugga",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "BC",
+                    "wepseq": 0,
+                    "wepname": "Big Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "BC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "5/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "CH",
+                    "wepseq": 0,
+                    "wepname": "Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "CH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "KSAW",
+                    "wepseq": 0,
+                    "wepname": "Killsaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "KSAW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "PW",
+                    "wepseq": 0,
+                    "wepname": "Power Klaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "PW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Brutal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "BN",
+                "opseq": 0,
+                "opname": "Boss Nob",
+                "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "13",
+                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KR",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Rokkit",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KR",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "5+",
+                        "D": "4/5",
+                        "SR": "Kombi-Shoota, Lim, Prc1, Splash 1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "KS",
+                    "wepseq": 0,
+                    "wepname": "Kombi-Scorcha",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "KS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "2+",
+                        "D": "2/2",
+                        "SR": "Kombi-Shoota, Lim, Rng 6\", Tor 2\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SH",
+                    "wepseq": 0,
+                    "wepname": "Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "SL",
+                    "wepseq": 0,
+                    "wepname": "Slugga",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "SL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "5+",
+                        "D": "3/4",
+                        "SR": "Rng 6\""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "BC",
+                    "wepseq": 0,
+                    "wepname": "Big Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "BN",
+                        "wepid": "BC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "5/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "CH",
+                    "wepseq": 0,
+                    "wepname": "Choppa",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "CH",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "BN",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "KSAW",
+                    "wepseq": 0,
+                    "wepname": "Killsaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "KSAW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "PW",
+                    "wepseq": 0,
+                    "wepname": "Power Klaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "PW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Brutal"
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch"
               }
             ],
             "fireteamcomp": "A SPESHULIST fire team includes four SPESHULIST \noperatives selected from the following list: \n<ul>\n<li>BURNA BOY SPESHULIST</li>\n<li>LOOTA SPESHULIST</li>\n</ul>\n<br/><br/>\nIf your kill team does not include any other LEADER \noperatives, instead of selecting one BURNA BOY operative \nfor one SPESHULIST fire team, you can select one \nSPANNER SPESHULIST operative equipped with fists and \none of the following options: \n<ul><li>Big shoota, kustom mega-blasta or rokkit launcha</li></ul>"
