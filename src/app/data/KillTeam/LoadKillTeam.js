@@ -1,8 +1,8 @@
-import { GetPloys } from "@/app/data/Killteam/GetPloys";
-import { GetEquipments } from "@/app/data/Killteam/GetEquipments";
+import { GetPloys } from "@/app/data/KillTeam/GetPloys";
+import { GetEquipments } from "@/app/data/KillTeam/GetEquipments";
 import { GetWeaponByEqId } from "@/app/data/Weapon/GetWeaponByEqId";
 import { GetWeaponProfile } from "@/app/data/Weapon/GetWeaponProfile";
-import { GetKillTeam } from "@/app/data/Killteam/GetKillTeam";
+import { GetKillTeam } from "@/app/data/KillTeam/GetKillTeam";
 
 export async function LoadKillTeam(factionId, ktId) {
   const [killTeam, ploys, equipments] = await Promise.all([

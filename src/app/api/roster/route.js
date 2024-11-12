@@ -1,19 +1,25 @@
-import { GetPrismaClient } from "@/app/db/prisma";
-import { GetRoster } from "@/app/data/Roster/GetRoster";
-import { GetOperatives } from "@/app/data/Operative/GetOperatives";
-import { GetRandomRosterId } from "@/app/data/Roster/GetRandomRosterId";
-import { GetRosterByUserId } from "@/app/data/Roster/GetRosterByUserId";
-import { LoadKillTeam } from "@/app/data/Killteam/LoadKillTeam";
-import { GetTacOps } from "@/app/data/Roster/GetTacOps";
-import { GetRosterEquipment } from "@/app/data/Roster/GetRosterEquipment";
-import { LoadOperatives } from "@/app/data/Operative/LoadOperatives";
-import { LoadEquipments } from "@/app/data/RosterOperative/LoadEquipments";
-import { UpdateViewCount } from "@/app/data/Roster/UpdateViewCount";
+import { GetRoster } from "@/app/data/Roster/GetRoster.js";
+import { GetRandomRosterId } from "@/app/data/Roster/GetRandomRosterId.js";
+import { GetRosterTacOps } from "@/app/data/Roster/GetRosterTacOps.js";
+import { GetRosterOperatives } from "@/app/data/RosterOperative/GetRosterOperatives.js";
+import { GetEquipments } from "@/app/data/KillTeam/GetEquipments.js";
+import { GetKillTeam } from "@/app/data/KillTeam/GetKillTeam.js";
 
+/**
+ * Returns a Roster object from the database based on input rosterId.
+ * @function
+ * @async
+ * @param {Object} req - The Http Request for this API call
+ * @returns {Promise<Object>} A promise that resolves to an object containing the result of the request.
+ * @throws {Error} If an error occurs.
+ */
 export async function GET(req) {
+  /*
+  Sample API request: /api/roster?rosterId=jghim&loadRosterDetail=1
+  */
   let [loadRoasterDetail, randomSpotlight, rosterId] = [
-    req.nextUrl.searchParams.get("loadRosterDetail") ?? undefined,
-    req.nextUrl.searchParams.get("randomSpotlight") ?? undefined,
+    req.nextUrl.searchParams.get("loadRosterDetail") ?? 0,
+    req.nextUrl.searchParams.get("randomSpotlight") ?? 0,
     req.nextUrl.searchParams.get("rosterId") ?? undefined,
   ];
 
@@ -25,7 +31,7 @@ export async function GET(req) {
     rosterId = await GetRandomRosterId();
   }
 
-  // No roster id passed in, need to get user's roster
+  // No roster id passed in, need to get current user's rosters
   if (!rosterId) {
     // TODO: Add auth check here
 
@@ -46,29 +52,30 @@ export async function GET(req) {
   } else {
     const roster = await GetRoster(rosterId);
 
-    if (!roster)
+    if (!roster) {
       return Response.json({ error: "Roster Not Found" }, { status: 404 });
+    }
 
-    const rosterData = Promise.all([
-      LoadOperatives("123", roster[0].rosterid),
-      GetTacOps("123", roster[0].rosterid),
-      LoadEquipments(roster[0].factionid, roster[0].killteamid, roster[0].eqid),
+    Promise.all([
+      roster.operatives = await GetRosterOperatives(roster.rosterid),
+      roster.tacops = await GetRosterTacOps(roster.rosterid),
+      roster.equipments = await GetEquipments(roster.factionid, roster.killteamid),
     ]);
 
     if (loadRoasterDetail > 0) {
-      rosterData.killTeam = await LoadKillTeam(
-        roster[0].factionid,
+      roster.killTeam = await GetKillTeam(
+        roster.factionid,
         roster.killteamid,
       );
     }
 
-    const skipViewCount = req.params["skipviewcount"];
+    const skipViewCount = req.nextUrl.searchParams.get("skipviewcount") ?? 1;
 
-    // TODO: Add if req user ==== roster's user id
-    if (!!skipViewCount && skipViewCount != "1") {
-      await UpdateViewCount(roster[0].rosterid);
-    }
+    //// TODO: Add if req user ==== roster's user id
+    //if (!!skipViewCount && skipViewCount != "1") {
+    //  await UpdateViewCount(roster.rosterid);
+    //}
 
-    return Response.json({ rosterData }, { status: 200 });
+    return Response.json(roster, { status: 200 });
   }
 }
