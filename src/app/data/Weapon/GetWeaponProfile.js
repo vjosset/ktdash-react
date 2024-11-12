@@ -17,5 +17,8 @@ export async function GetWeaponProfile(
       opid: opId,
       wepid: wepId,
     },
+    orderBy: {
+      profileid: 'asc'
+    }
   });
 }
