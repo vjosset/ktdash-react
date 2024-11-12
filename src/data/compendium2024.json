@@ -7907,6 +7907,33 @@
                       }
                     ],
                     "isselected": false
+                  },
+                  {
+                    "factionid": "IMP",
+                    "killteamid": "SM",
+                    "fireteamid": "DW24",
+                    "opid": "SGT",
+                    "wepid": "SS",
+                    "wepseq": 0,
+                    "wepname": "Storm Shield",
+                    "weptype": "E",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "IMP",
+                        "killteamid": "SM",
+                        "fireteamid": "DW24",
+                        "opid": "SGT",
+                        "wepid": "SS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "-",
+                        "BS": "-",
+                        "D": "-",
+                        "SR": "*Storm Shield"
+                      }
+                    ],
+                    "isselected": false
                   }
                 ],
                 "uniqueactions": [],
@@ -7926,7 +7953,7 @@
                     "fireteamid": "SHV24",
                     "opid": "SGT",
                     "abilityid": "SS",
-                    "title": "Storm Shield",
+                    "title": "*Storm Shield",
                     "description": "If this operative is equipped with a Storm Shield, each time it fights in combat, in the Resolve Successful Hits step of that combat, each time it parries, two of your opponent's successful hits are discarded (instead of one)."
                   },
                   {
@@ -8212,6 +8239,33 @@
                     "killteamid": "SHV24",
                     "fireteamid": "SHV24",
                     "opid": "FTR",
+                    "wepid": "LC",
+                    "wepseq": 0,
+                    "wepname": "Lightning Claws",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "HBR",
+                        "killteamid": "SHV24",
+                        "fireteamid": "SHV24",
+                        "opid": "FTR",
+                        "wepid": "LC",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Lethal 5+, Ceaseless"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "HBR",
+                    "killteamid": "SHV24",
+                    "fireteamid": "SHV24",
+                    "opid": "FTR",
                     "wepid": "TH",
                     "wepseq": 0,
                     "wepname": "Thunder Hammer",
@@ -8235,28 +8289,28 @@
                     "isselected": false
                   },
                   {
-                    "factionid": "HBR",
-                    "killteamid": "SHV24",
-                    "fireteamid": "SHV24",
-                    "opid": "FTR",
-                    "wepid": "LC",
+                    "factionid": "IMP",
+                    "killteamid": "SM",
+                    "fireteamid": "DW24",
+                    "opid": "SGT",
+                    "wepid": "SS",
                     "wepseq": 0,
-                    "wepname": "Lightning Claws",
-                    "weptype": "M",
+                    "wepname": "Storm Shield",
+                    "weptype": "E",
                     "isdefault": 0,
                     "profiles": [
                       {
-                        "factionid": "HBR",
-                        "killteamid": "SHV24",
-                        "fireteamid": "SHV24",
-                        "opid": "FTR",
-                        "wepid": "LC",
+                        "factionid": "IMP",
+                        "killteamid": "SM",
+                        "fireteamid": "DW24",
+                        "opid": "SGT",
+                        "wepid": "SS",
                         "profileid": "0",
                         "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Lethal 5+, Ceaseless"
+                        "A": "-",
+                        "BS": "-",
+                        "D": "-",
+                        "SR": "*Storm Shield"
                       }
                     ],
                     "isselected": false
@@ -8279,7 +8333,7 @@
                     "fireteamid": "SHV24",
                     "opid": "FTR",
                     "abilityid": "SS",
-                    "title": "Storm Shield",
+                    "title": "*Storm Shield",
                     "description": "If this operative is equipped with a Storm Shield, each time it fights in combat, in the Resolve Successful Hits step of that combat, each time it parries, two of your opponent's successful hits are discarded (instead of one)."
                   }
                 ],
