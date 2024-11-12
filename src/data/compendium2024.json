@@ -23295,7 +23295,7 @@
             }
           }
         ],
-        "killteamcomp": "A HIVE FLEET kill team consists of 14 operatives selected from the following list:\n<ul><li>TYRANID WARRIOR PRIME</li><li>TYRANID WARRIOR LEADER operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</ul></li><li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li><li>\nTERMAGAUNT GUNNER equipped with Claws and one of the following options:\n        <ul>\n<li>Spike rifle, Shardlauncher, or Strangleweb</li></ul></li>\n<li>RIPPER SWARM</li>        </ul>\n    </li></ul>Your kill team may include no more than 2 ripper swarm operatives. \nYour kill team may include no more than 3 TYRANID WARRIOR operatives, each counting as 2 selections and other than TYRANID WARRIOR FIGHTER operatives each TYRANID WARRIOR operative may only be selected once. Your team may include no more than 3 TERMAGANT GUNNER operatives, each with a unique weapon.<br/>",
+        "killteamcomp": "A HIVE FLEET kill team consists of 14 operatives selected from the following list:\n<ul><li>TYRANID WARRIOR PRIME operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</ul></li><li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li><li>\nTERMAGAUNT GUNNER equipped with Claws and one of the following options:\n        <ul>\n<li>Spike rifle, Shardlauncher, or Strangleweb</li></ul></li>\n<li>RIPPER SWARM</li>        </ul>\n    </li></ul>Your kill team may include no more than 2 ripper swarm operatives. \nYour kill team may include no more than 3 TYRANID WARRIOR operatives, each counting as 2 selections and other than TYRANID WARRIOR FIGHTER operatives each TYRANID WARRIOR operative may only be selected once. Your team may include no more than 3 TERMAGANT GUNNER operatives, each with a unique weapon.<br/>",
         "fireteams": [
           {
             "factionid": "TYR",
@@ -23311,89 +23311,9 @@
                 "factionid": "TYR",
                 "killteamid": "HF24",
                 "fireteamid": "HF24",
-                "opid": "TYRP",
-                "opseq": 0,
-                "opname": "Tyranid Warrior Prime",
-                "description": "Tyranid Primes are highly intelligent, more so than their common counterparts. When they lead a brood of Tyranid Warriors, the brood acts as one entity using tactics and precision that military commanders find hard to match.",
-                "M": "6\"",
-                "APL": "3",
-                "GA": "1",
-                "DF": "3",
-                "SV": "4+",
-                "W": "20",
-                "keywords": "HIVE FLEET,TYRANID, SYNAPSE, TYRANID WARRIOR, PRIME",
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF24",
-                    "fireteamid": "HF24",
-                    "opid": "LDR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Prime Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF24",
-                        "fireteamid": "HF24",
-                        "opid": "LDR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "6",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Ceaseless, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF24",
-                    "fireteamid": "HF24",
-                    "opid": "TSI",
-                    "uniqueactionid": "TYRP",
-                    "title": "Synaptic Command",
-                    "description": "Select one other friendly HIVE FLEET operative Visible to this operative. It can immediately perform any 1 AP action.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF24",
-                    "fireteamid": "HF24",
-                    "opid": "TYRP",
-                    "abilityid": "SYN",
-                    "title": "Synapse",
-                    "description": "<ul>\n<li>Each time this operative is activated, if it is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, for that activation, do not subtract 2\" from its Movement characteristic as a result of being injured</li>\n    <li>While this operative is injured and within 6\" of a friendly HIVE FLEET SYNAPSE operative, do not worsen the hit stat of weapons it is equipped with as a result of being injured</li>\n</ul>"
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF24",
-                    "fireteamid": "HF24",
-                    "opid": "TYRP",
-                    "abilityid": "ADV",
-                    "title": "Advanced Organism",
-                    "description": "Whenever an opponent is selecting a valid target, if this operative has a conceal order, it cannot use Light Terrain for cover. While this can allow this operative to be targeted (assuming it is visible) it does not remove its cover save (if any)."
-                  }
-                ],
-                "edition": "kt24",
-                "fireteammax": 0,
-                "specialisms": "Combat,Staunch,Marksman"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "HF24",
-                "fireteamid": "HF24",
                 "opid": "LDR",
                 "opseq": 0,
-                "opname": "Tyranid Warrior Leader",
+                "opname": "Tyranid Warrior Prime",
                 "description": "Tyranid Warriors are synapse creatures, psychic resonators for the Hive Mind. In many broods one bioform will dominate, having a deeper connection to the alien will that drives them. This bioform directs where its brood hunts and where it spreads the malignancy of the Hive Mind.",
                 "M": "6\"",
                 "APL": "2",
@@ -23620,7 +23540,18 @@
                     "isselected": false
                   }
                 ],
-                "uniqueactions": [],
+                "uniqueactions": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF24",
+                    "fireteamid": "HF24",
+                    "opid": "TSI",
+                    "uniqueactionid": "TYRP",
+                    "title": "Synaptic Command",
+                    "description": "Select one other friendly HIVE FLEET operative Visible to this operative. It can immediately perform any 1 AP action.",
+                    "AP": 1
+                  }
+                ],
                 "abilities": [
                   {
                     "factionid": "TYR",
