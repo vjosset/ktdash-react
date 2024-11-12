@@ -11,7 +11,7 @@ import { GetPrismaClient } from "@/app/db/prisma";
 export async function GetRoster(rosterId) {
   const prisma = await GetPrismaClient();
 
-  return prisma.RosterView.findFirst({
+  return prisma.RosterView.findUnique({
     where: {
         rosterid: rosterId
     }

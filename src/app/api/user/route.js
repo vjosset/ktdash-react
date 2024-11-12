@@ -1,4 +1,5 @@
 import { GetUserByUserName } from "@/app/data/User/GetUserByUserName.js";
+import { GetUser } from "@/app/data/User/GetUser.js";
 import { GetRostersByUserId } from "@/app/data/Roster/GetRostersByUserId.js";
 
 /**
@@ -13,16 +14,20 @@ export async function GET(req) {
   /*
   Sample API request: /api/user?username=jodawznev
   */
-  let [username] = [
-    req.nextUrl.searchParams.get("username") ?? undefined
+  let [username, userid] = [
+    req.nextUrl.searchParams.get("username") ?? undefined,
+    req.nextUrl.searchParams.get("userid") ?? undefined
   ];
 
-  if (!username) {
+  // Get the user record
+  let user = null;
+  if (username) {
+    user = await GetUserByUserName(username);
+  } else if (userid) {
+    user = await GetUser(userid);
+  } else {
     return Response.json({ error: "Invalid params" }, { status: 400 });
   }
-
-  // Get the user record
-  let user = await GetUserByUserName(username);
 
   if (!user) {
     return Response.json({ error: "User not found" }, { status: 404 });

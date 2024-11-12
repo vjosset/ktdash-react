@@ -11,7 +11,7 @@ import { GetPrismaClient } from "@/app/db/prisma";
 export async function GetUser(userId) {
   const prisma = await GetPrismaClient();
 
-  return prisma.User.findFirst({
+  return prisma.User.findUnique({
     select: {
       userid: true,
       username: true,
