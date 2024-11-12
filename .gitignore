@@ -46,3 +46,5 @@ certificates
 .idea/inspectionProfiles/Project_Default.xml
 .idea/ktdash-react.iml
 .idea/modules.xml
+
+*.xml
