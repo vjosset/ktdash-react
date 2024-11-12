@@ -3627,7 +3627,7 @@
               "ployname": "Sanction of the Black Vault",
               "ploytype": "S",
               "CP": "1",
-              "description": "Use at the start of any turning point. You may exchange one equipment for another so long as neither equipment must be deployed in the killzone."
+              "description": "Once per game, use at the start of any turning point. You may exchange one equipment for another so long as they are not limited and have been used. If either equipment is deployed, as long as no other enemy operatives are within 3\", you may remove it from the battlefield and then deploy the new pieces of equipment more than 3\" from enemy operatives. You must also follow any other placement rules for that equipment."
             }
           ],
           "tac": [
