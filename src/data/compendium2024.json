@@ -8060,7 +8060,7 @@
                         "profileid": "0",
                         "name": "Standard",
                         "A": "4",
-                        "BS": "3+",
+                        "BS": "4+",
                         "D": "4/6",
                         "SR": "Blast 2\", Hvy (DashOnly), Prc1"
                       },
@@ -8073,7 +8073,7 @@
                         "profileid": "1",
                         "name": "Supercharge",
                         "A": "4",
-                        "BS": "3+",
+                        "BS": "4+",
                         "D": "5/6",
                         "SR": "Blast 2\", Hvy (DashOnly), Hot, Lethal 5+, Prc1"
                       }
