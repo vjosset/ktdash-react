@@ -19,7 +19,7 @@ import Link from "next/link";
 import useSWR from "swr";
 import { fetchRoster } from "@/hooks/use-api/fetchers";
 
-export default function Dashboard(props) {
+export default function Dashboard() {
     const { user: userData } = useAuth();
     const params = useParams();
     const rosterId = params.roster;
@@ -45,7 +45,7 @@ export default function Dashboard(props) {
                     ...data
                 })
             }
-        })
+        }, { optimisticData: true })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleUpdateOperatives = React.useCallback((operatives) => {
@@ -53,7 +53,7 @@ export default function Dashboard(props) {
         setRoster({
             ...roster,
             operatives
-        });
+        }, { optimisticData: true, revalidate: false });
         let opCount = 0;
         operatives.forEach((op) => {
             // Only send requests for operatives we actually toggled
@@ -112,7 +112,7 @@ export default function Dashboard(props) {
         setRoster({
             ...roster,
             ...updates
-        });
+        }, { optimisticData: true, revalidate: false });
         handleSaveUpdateRoster(newRoster);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
@@ -138,14 +138,14 @@ export default function Dashboard(props) {
             "eqnotes": roster.eqnotes,
             "specopnotes": roster.specopnotes
         };
-        setRoster({
-            ...roster,
-            ...newRoster
-        });
         request(`/roster.php`, {
             method: "POST",
             body: JSON.stringify(newRoster)
         })
+        setRoster({
+            ...roster,
+            ...newRoster
+        }, { optimisticData: true, revalidate: false });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleUpdateTacOp = React.useCallback((tacop) => {
@@ -157,14 +157,14 @@ export default function Dashboard(props) {
             "VP1": tacop.VP1,
             "VP2": tacop.VP2
         };
-        setRoster({
-            ...roster,
-            tacops: [...roster.tacops.map((op) => op.tacopid === tacop.tacopid ? tacop : op)]
-        });
         request(`/rostertacop.php`, {
             method: !!tacop.active ? "POST" : "DELETE",
             body: JSON.stringify(newTacOp)
         })
+        setRoster({
+            ...roster,
+            tacops: [...roster.tacops.map((op) => op.tacopid === tacop.tacopid ? tacop : op)]
+        }, { optimisticData: true, revalidate: false });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roster]);
     const handleSelectEquipment = React.useCallback((equipment, checked) => {
@@ -179,7 +179,7 @@ export default function Dashboard(props) {
             setRoster({
                 ...roster,
                 rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 1 }) : eq)]
-            });
+            }, { optimisticData: true, revalidate: false });
             request(`/rostereq.php`, {
                 method: "POST",
                 body: JSON.stringify(newEq)
@@ -188,7 +188,7 @@ export default function Dashboard(props) {
             setRoster({
                 ...roster,
                 rostereqs: [...roster?.rostereqs?.map((eq) => eq.eqid === equipment.eqid ? ({ ...eq, selected: 0 }) : eq)]
-            });
+            }, { optimisticData: true, revalidate: false });
             request(`/rostereq.php`, {
                 method: "DELETE",
                 body: JSON.stringify(newEq)
@@ -207,7 +207,7 @@ export default function Dashboard(props) {
                         ...op,
                         curW: wounds
                     } : op)
-                });
+                }, { optimisticData: true, revalidate: false });
             }
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -220,7 +220,7 @@ export default function Dashboard(props) {
                 activated: newactivated,
                 oporder: newoporder
             } : op)
-        });
+        }, { optimisticData: true, revalidate: false });
         request(`/rosteroporder.php?roid=${operative.rosteropid}&order=${newoporder}`, {
             method: "POST"
         });

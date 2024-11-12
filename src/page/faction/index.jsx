@@ -10,7 +10,7 @@ import { useParams } from "next/navigation";
 
 export default function Faction() {
     const params = useParams();
-    const { data: faction, error, isLoading } = useSWR(`/faction.php?fa=${params.faction}`, fetchFaction);
+    const { data: faction } = useSWR(`/faction.php?fa=${params.faction}`, fetchFaction);
     const [settings] = useSettings();
     const cards2021 = faction.killteams?.filter((killteam) => killteam.edition === "kt21")?.map((killteam) => (
         <Card key={killteam.killteamid} className={classes.card} p="md" radius="sm" component={Link} href={`/fa/${faction.factionid}/kt/${killteam.killteamid}`}>
