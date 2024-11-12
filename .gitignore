@@ -48,3 +48,4 @@ certificates
 .idea/modules.xml
 
 *.xml
+*.idea

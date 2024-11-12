@@ -5,44 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f537c9bc-08f9-49f5-b0fb-2f9fdb3d123f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ktdash-react.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/roster/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/roster_view/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetEquipments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetKillTeam.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetPloys.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/LoadKillTeam.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/GetOperative.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/GetOperatives.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadAbilities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadBaseOperative.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadOperatives.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadUniqueAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadWeapons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRandomRosterId.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRoster.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRosterByUserId.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRosterEquipment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetTacOps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/LoadRosterEquipments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/UpdateViewCount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetEquipments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetROWeapons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetRosterOperative.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/LoadEquipments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Weapon/GetWeaponByEqId.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/data/Weapon/GetWeaponProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/db/prisma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/lib/errorHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktdash_schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/roster/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/roster/route.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731291848498</updated>
-      <workItem from="1731291849665" duration="24319000" />
+      <workItem from="1731291849665" duration="25592000" />
     </task>
     <servers />
   </component>

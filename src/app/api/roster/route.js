@@ -12,9 +12,9 @@ import { UpdateViewCount } from "@/app/data/Roster/UpdateViewCount";
 
 export async function GET(req) {
   let [loadRoasterDetail, randomSpotlight, rosterId] = [
-    req.params["loadRosterDetail"] ?? undefined,
-    req.params["randomSpotlight"] ?? undefined,
-    req.params["rosterId"] ?? undefined,
+    req.nextUrl.searchParams.get("loadRosterDetail") ?? undefined,
+    req.nextUrl.searchParams.get("randomSpotlight") ?? undefined,
+    req.nextUrl.searchParams.get("rosterId") ?? undefined,
   ];
 
   if (loadRoasterDetail.length > 2 || randomSpotlight.length > 1) {
