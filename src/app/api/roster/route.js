@@ -17,13 +17,13 @@ export async function GET(req) {
   /*
   Sample API request: /api/roster?rosterId=jghim&loadRosterDetail=1
   */
-  let [loadRoasterDetail, randomSpotlight, rosterId] = [
-    req.nextUrl.searchParams.get("loadRosterDetail") ?? 0,
-    req.nextUrl.searchParams.get("randomSpotlight") ?? 0,
+  let [loadRosterDetail, randomSpotlight, rosterId] = [
+    req.nextUrl.searchParams.get("loadRosterDetail") ?? "0",
+    req.nextUrl.searchParams.get("randomSpotlight") ?? "0",
     req.nextUrl.searchParams.get("rosterId") ?? undefined,
   ];
 
-  if (loadRoasterDetail.length > 2 || randomSpotlight.length > 1) {
+  if (loadRosterDetail.length > 1 || randomSpotlight.length > 1) {
     return Response.json({ error: "Invalid params" }, { status: 400 });
   }
 
@@ -40,9 +40,9 @@ export async function GET(req) {
       userRoster.map(
         async (ur) =>
           await Promise.all([
-            GetOperatives("123", ur.rosterid),
+            GetOperatives(ur.rosterid),
             LoadKillTeam(ur.factionid),
-            GetTacOps("123", ur.rosterid),
+            GetTacOps(ur.rosterid),
             GetRosterEquipment(ur.rosterid),
           ]),
       ),
@@ -50,28 +50,25 @@ export async function GET(req) {
 
     return Response.json({ userRosterData });
   } else {
-    const roster = await GetRoster(rosterId);
+    const roster = (await GetRoster(rosterId));
 
     if (!roster) {
       return Response.json({ error: "Roster Not Found" }, { status: 404 });
     }
 
-    Promise.all([
-      roster.operatives = await GetRosterOperatives(roster.rosterid),
-      roster.tacops = await GetRosterTacOps(roster.rosterid),
-      roster.equipments = await GetEquipments(roster.factionid, roster.killteamid),
-    ]);
+    if (loadRosterDetail > 0) {
+      Promise.all([
+        roster.operatives = await GetRosterOperatives(roster.rosterid),
+        roster.tacops = await GetRosterTacOps(roster.rosterid),
+        roster.equipments = await GetEquipments(roster.factionid, roster.killteamid),
+        roster.killTeam = (await GetKillTeam(roster.factionid,roster.killteamid))
+      ]);
 
-    if (loadRoasterDetail > 0) {
-      roster.killTeam = await GetKillTeam(
-        roster.factionid,
-        roster.killteamid,
-      );
     }
 
     const skipViewCount = req.nextUrl.searchParams.get("skipviewcount") ?? 1;
 
-    //// TODO: Add if req user ==== roster's user id
+    //// TODO: Skip updating view counts if current user is roster's user ID
     //if (!!skipViewCount && skipViewCount != "1") {
     //  await UpdateViewCount(roster.rosterid);
     //}

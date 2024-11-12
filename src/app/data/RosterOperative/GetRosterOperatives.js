@@ -11,13 +11,9 @@ import { GetPrismaClient } from "@/app/db/prisma";
 export async function GetRosterOperatives(rosterId) {
   const prisma = await GetPrismaClient();
 
-  // Commented out because SUPER slow (> 1s)
-  //    queryRaw is MUCH faster
-  //return prisma.rosterOperative.findMany({
-  //  where: {
-  //    rosterid: rosterId
-  //  }
-  //});
-
-  return await prisma.$queryRaw`SELECT * FROM RosterOperativeView WHERE rosterid = ${rosterId} ORDER BY seq`;
+  return prisma.RosterOperativeView.findMany({
+    where: {
+      rosterid: rosterId
+    }
+  });
 }

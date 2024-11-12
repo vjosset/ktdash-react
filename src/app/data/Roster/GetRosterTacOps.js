@@ -11,10 +11,10 @@ import { GetPrismaClient } from "@/app/db/prisma";
 export async function GetRosterTacOps(rosterId) {
   const prisma = await GetPrismaClient();
 
-  return await prisma.$queryRaw`
+  return prisma.$queryRaw`
     SELECT DISTINCT
         T.*,
-        
+
         /* MySQL returns these as BIGINT without the CAST(), which Prisma doesn't know how to serialize */
         CAST(CASE WHEN RTO.rosterid IS NULL THEN 0 ELSE 1 END AS DECIMAL) AS active,
         IFNULL(RTO.revealed, CAST(0 AS DECIMAL)) AS revealed,

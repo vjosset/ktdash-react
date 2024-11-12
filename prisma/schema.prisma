@@ -411,8 +411,8 @@ view RosterOperativeView {
   fireteamname      String? @db.VarChar(200)
   archetype         String? @db.VarChar(250)
   optype            String? @db.VarChar(250)
-
-  @@ignore
+  
+  @@unique([rosteropid])
 }
 
 /// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -447,9 +447,9 @@ view RosterView {
   reqpts                Int?    @default(0)
   stratnotes            String? @db.Text
   eqnotes               String? @db.Text
-  specopnotes           String? @db.Text
+  specopnotes           String? @db.LongText
 
-  @@ignore
+  @@unique([rosterid])
 }
 
 /// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.

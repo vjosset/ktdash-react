@@ -11,13 +11,9 @@ import { GetPrismaClient } from "@/app/db/prisma";
 export async function GetRosterOperative(rosterOpId) {
   const prisma = await GetPrismaClient();
 
-  // Commented out because SUPER slow (> 1s)
-  //    queryRaw is MUCH faster
-  //return prisma.rosterOperative.findUnique({
-  //  where: {
-  //    rosteropid: rosterOpId
-  //  }
-  //});
-  
-  return await prisma.$queryRaw`SELECT * FROM RosterOperativeView WHERE rosteropid = ${rosterOpId}`;
+  return prisma.RosterOperativeView.findUnique({
+    where: {
+      rosteropid: rosterOpId
+    }
+  });
 }
