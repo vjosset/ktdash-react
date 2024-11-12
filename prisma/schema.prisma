@@ -1,26 +1,28 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model ability {
+model Ability {
   factionid   String    @db.VarChar(10)
   killteamid  String    @db.VarChar(50)
   fireteamid  String    @db.VarChar(50)
   opid        String    @db.VarChar(50)
   abilityid   String    @db.VarChar(50)
   title       String    @db.VarChar(200)
-  description String?
-  operative   operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "fk_ability_operative")
+  description String?   @db.Text
+  Operative   Operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "FK_Ability_Operative")
 
   @@id([killteamid, fireteamid, opid, abilityid, factionid])
+  @@index([factionid, killteamid, fireteamid, opid], map: "FK_Ability_Operative_idx")
 }
 
-model equipment {
+model Equipment {
   factionid     String  @db.VarChar(10)
   killteamid    String  @db.VarChar(50)
   fireteamid    String? @default("") @db.VarChar(50)
@@ -29,7 +31,7 @@ model equipment {
   eqseq         Int?    @default(0)
   eqpts         String? @db.VarChar(10)
   eqname        String? @db.VarChar(250)
-  eqdescription String?
+  eqdescription String? @db.Text
   eqtype        String? @db.VarChar(45)
   eqvar1        String? @db.VarChar(45)
   eqvar2        String? @db.VarChar(45)
@@ -38,12 +40,12 @@ model equipment {
   eqcategory    String? @default("Equipment") @db.VarChar(200)
 
   @@id([factionid, killteamid, eqid])
-  @@index([factionid, killteamid], map: "fk_equipment_killteam_idx")
+  @@index([factionid, killteamid], map: "FK_Equipment_Killteam_idx")
 }
 
-model event {
+model Event {
   eventid     Int       @id @default(autoincrement())
-  datestamp   DateTime? @default(now()) @db.Timestamp(0)
+  datestamp   DateTime? @default(now()) @db.DateTime(0)
   sessiontype String?   @default("") @db.VarChar(50)
   userid      String?   @db.VarChar(45)
   eventtype   String?   @db.VarChar(50)
@@ -56,11 +58,15 @@ model event {
   userip      String?   @default("") @db.VarChar(250)
   useragent   String?   @default("") @db.VarChar(500)
   referrer    String?   @db.VarChar(500)
+
+  @@index([userid, eventtype, action, label], map: "IX_TAL")
+  @@index([var1, eventtype, action, label], map: "IX_VAR1")
+  @@index([datestamp], map: "IX_datestamp")
 }
 
-model event_bkp_20240720 {
+model Event_BKP_20240720 {
   eventid     Int       @id @default(autoincrement())
-  datestamp   DateTime? @default(now()) @db.Timestamp(0)
+  datestamp   DateTime? @default(now()) @db.DateTime(0)
   sessiontype String?   @default("") @db.VarChar(50)
   userid      String?   @db.VarChar(45)
   eventtype   String?   @db.VarChar(50)
@@ -73,81 +79,136 @@ model event_bkp_20240720 {
   userip      String?   @default("") @db.VarChar(250)
   useragent   String?   @default("") @db.VarChar(500)
   referrer    String?   @db.VarChar(500)
+
+  @@index([userid, eventtype, action, label], map: "IX_TAL")
+  @@index([var1, eventtype, action, label], map: "IX_VAR1")
+  @@index([datestamp], map: "IX_datestamp")
 }
 
-model faction {
+model Faction {
   factionid   String     @id @db.VarChar(10)
   seq         Int?
   factionname String?    @db.VarChar(250)
-  description String?
-  killteam    killteam[]
+  description String?    @db.Text
+  Killteam    Killteam[]
 }
 
-model homebrewkillteam {
+model Fireteam {
+  factionid    String   @db.VarChar(10)
+  killteamid   String   @db.VarChar(50)
+  fireteamid   String   @db.VarChar(200)
+  seq          Int?     @default(0)
+  description  String?  @db.Text
+  killteammax  Int?
+  fireteamname String?  @db.VarChar(200)
+  archetype    String?  @db.VarChar(250)
+  fireteamcomp String?  @db.Text
+  Killteam     Killteam @relation(fields: [factionid, killteamid], references: [factionid, killteamid], onDelete: Cascade, map: "FK_Fireteam_Killteam")
+
+  @@id([factionid, killteamid, fireteamid])
+  @@index([factionid, killteamid], map: "FK_Fireteam_Killteam_idx")
+}
+
+model HomebrewKillteam {
   userid       String  @db.VarChar(50)
   seq          Int?    @default(0)
   killteamid   String  @db.VarChar(50)
   killteamname String? @db.VarChar(250)
-  content      String?
+  content      String? @db.LongText
 
   @@id([userid, killteamid])
 }
 
-model killteam {
-  factionid     String  @db.VarChar(10)
-  killteamid    String  @db.VarChar(50)
-  edition       String? @default("kt24") @db.VarChar(45)
-  killteamname  String? @db.VarChar(250)
-  description   String?
-  killteamcomp  String?
-  customkeyword String? @default("") @db.VarChar(250)
-  faction       faction @relation(fields: [factionid], references: [factionid], onDelete: Cascade, map: "fk_killteam_faction")
-  ploy          ploy[]
+model Killteam {
+  factionid     String     @db.VarChar(10)
+  killteamid    String     @db.VarChar(50)
+  edition       String?    @default("kt24") @db.VarChar(45)
+  killteamname  String?    @db.VarChar(250)
+  description   String?    @db.Text
+  killteamcomp  String?    @db.Text
+  customkeyword String?    @default("") @db.VarChar(250)
+  Fireteam      Fireteam[]
+  Faction       Faction    @relation(fields: [factionid], references: [factionid], onDelete: Cascade, map: "FK_Killteam_Faction")
+  Ploy          Ploy[]
 
   @@id([factionid, killteamid])
-  @@index([factionid], map: "fk_killteam_faction_idx")
+  @@index([factionid], map: "FK_Killteam_Faction_idx")
 }
 
-model operative {
+model Operative {
   factionid    String         @db.VarChar(10)
   killteamid   String         @db.VarChar(50)
   fireteamid   String         @db.VarChar(250)
   opseq        Int?           @default(0)
   opid         String         @db.VarChar(50)
   opname       String?        @db.VarChar(250)
-  description  String?
+  description  String?        @db.Text
   edition      String?        @default("kt24") @db.VarChar(45)
-  m            String?        @db.VarChar(15)
-  apl          String?        @db.VarChar(15)
-  ga           String?        @db.VarChar(15)
-  df           String?        @db.VarChar(15)
-  sv           String?        @db.VarChar(15)
-  w            String?        @db.VarChar(15)
+  M            String?        @db.VarChar(15)
+  APL          String?        @db.VarChar(15)
+  GA           String?        @db.VarChar(15)
+  DF           String?        @db.VarChar(15)
+  SV           String?        @db.VarChar(15)
+  W            String?        @db.VarChar(15)
   keywords     String?        @db.VarChar(4000)
   basesize     Int?           @default(32)
   fireteammax  Int?           @default(0)
   specialisms  String?        @default("") @db.VarChar(50)
-  ability      ability[]
-  uniqueaction uniqueaction[]
+  Ability      Ability[]
+  UniqueAction UniqueAction[]
 
   @@id([factionid, killteamid, fireteamid, opid])
-  @@index([factionid, killteamid, fireteamid], map: "ix_operative_factionidkillteamidfireteamid")
+  @@index([factionid, killteamid, fireteamid], map: "IX_Operative_FactionIdKillTeamIdFireTeamID")
 }
 
-model ploy {
+model Ploy {
   factionid   String   @db.VarChar(10)
   killteamid  String   @db.VarChar(10)
   ploytype    String   @db.VarChar(250)
   ployid      String   @db.VarChar(50)
   ployname    String?  @db.VarChar(250)
-  cp          String?  @db.VarChar(10)
-  description String?
-  killteam    killteam @relation(fields: [factionid, killteamid], references: [factionid, killteamid], onDelete: Cascade, map: "fk_ploy_killteam")
+  CP          String?  @db.VarChar(10)
+  description String?  @db.Text
+  Killteam    Killteam @relation(fields: [factionid, killteamid], references: [factionid, killteamid], onDelete: Cascade, map: "FK_Ploy_Killteam")
 
   @@id([factionid, killteamid, ploytype, ployid])
 }
 
-model rosterequipment {
+model Roster {
+  userid            String            @db.VarChar(50)
+  rosterid          String            @unique(map: "rosterid_UNIQUE") @db.VarChar(50)
+  seq               Int?
+  rostername        String?           @db.VarChar(250)
+  factionid         String?           @db.VarChar(50)
+  killteamid        String?           @db.VarChar(50)
+  notes             String?           @default("") @db.VarChar(2000)
+  keyword           String?           @default("") @db.VarChar(250)
+  TP                Int?              @default(1)
+  CP                Int?              @default(2)
+  VP                Int?              @default(2)
+  RP                Int?              @default(0)
+  spotlight         Int?              @default(0)
+  hascustomportrait Int?              @default(0)
+  portraitcopyok    Int?              @default(0)
+  viewcount         Int?              @default(0)
+  importcount       Int?              @default(0)
+  eqids             String?           @default("") @db.VarChar(250)
+  ployids           String?           @db.VarChar(250)
+  tacopids          String?           @db.VarChar(250)
+  reqpts            Int?              @default(0)
+  stratnotes        String?           @db.Text
+  eqnotes           String?           @db.Text
+  specopnotes       String?           @db.Text
+  createddate       DateTime?         @default(now()) @db.DateTime(0)
+  User              User              @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction, map: "FK_Roster_User")
+  RosterOperative   RosterOperative[]
+  RosterTacOp       RosterTacOp[]
+
+  @@id([userid, rosterid])
+  @@index([rosterid], map: "IX_Roster_rosterid")
+}
+
+model RosterEquipment {
   userid       String @db.VarChar(50)
   rosterid     String @db.VarChar(50)
   eqfactionid  String @db.VarChar(50)
@@ -157,30 +218,106 @@ model rosterequipment {
   @@id([userid, rosterid, eqfactionid, eqkillteamid, eqid])
 }
 
-model tacop {
-  tacopid     String  @id @db.VarChar(50)
-  edition     String? @default("kt21") @db.VarChar(45)
-  archetype   String? @db.VarChar(50)
-  tacopseq    Int?
-  title       String? @db.VarChar(50)
-  description String? @db.VarChar(2000)
+model RosterOperative {
+  userid            String  @db.VarChar(50)
+  rosterid          String  @db.VarChar(50)
+  rosteropid        String  @unique(map: "rosteropid_UNIQUE") @db.VarChar(50)
+  seq               Int?
+  opname            String? @db.VarChar(250)
+  factionid         String? @db.VarChar(50)
+  killteamid        String? @db.VarChar(50)
+  fireteamid        String? @db.VarChar(50)
+  opid              String? @db.VarChar(50)
+  wepids            String? @db.VarChar(250)
+  eqids             String? @db.VarChar(250)
+  curW              Int?
+  notes             String? @db.VarChar(2000)
+  activated         Int?    @default(0) @db.TinyInt
+  hidden            Int?    @default(0) @db.TinyInt
+  xp                Int?    @default(0)
+  oporder           String? @default("conceal") @db.VarChar(45)
+  hascustomportrait Int?    @default(0)
+  specialism        String? @default("") @db.VarChar(50)
+  isinjured         Int?    @default(0) @db.TinyInt
+  rested            Int?    @default(0)
+  custom            String? @db.Text
+  Roster            Roster  @relation(fields: [userid, rosterid], references: [userid, rosterid], onDelete: Cascade, map: "FK_RosterOperative_Roster")
+
+  @@id([userid, rosterid, rosteropid])
+  @@index([rosteropid], map: "IX_RosterOperative_rosteropid")
 }
 
-model uniqueaction {
+model RosterTacOp {
+  userid   String @db.VarChar(50)
+  rosterid String @db.VarChar(50)
+  tacopid  String @db.VarChar(50)
+  revealed Int?   @default(0) @db.TinyInt
+  VP1      Int?   @default(0) @db.TinyInt
+  VP2      Int?   @default(0) @db.TinyInt
+  Roster   Roster @relation(fields: [userid, rosterid], references: [userid, rosterid], onDelete: Cascade, map: "FK_RosterTacOp_Roster")
+  TacOp    TacOp  @relation(fields: [tacopid], references: [tacopid], onDelete: Cascade, map: "FK_RosterTacOp_TacOp")
+  User     User   @relation(fields: [userid], references: [userid], onDelete: Cascade, map: "FK_RosterTacOp_User")
+
+  @@id([userid, rosterid, tacopid])
+  @@index([userid, rosterid], map: "FK_RosterTacOp_Roster_idx")
+  @@index([tacopid], map: "FK_RosterTacOp_TacOp_idx")
+  @@index([userid], map: "FK_RosterTacOp_User_idx")
+}
+
+model Session {
+  sessionid    String    @id @db.VarChar(50)
+  userid       String?   @db.VarChar(50)
+  lastactivity DateTime? @db.DateTime(0)
+  User         User?     @relation(fields: [userid], references: [userid], onDelete: Cascade, map: "FK_Session_User")
+
+  @@index([userid], map: "FK_Session_Player_idx")
+}
+
+model TacOp {
+  tacopid     String        @id @db.VarChar(50)
+  edition     String?       @default("kt21") @db.VarChar(45)
+  archetype   String?       @db.VarChar(50)
+  tacopseq    Int?
+  title       String?       @db.VarChar(50)
+  description String?       @db.VarChar(2000)
+  RosterTacOp RosterTacOp[]
+}
+
+model UniqueAction {
   factionid      String    @db.VarChar(10)
   killteamid     String    @db.VarChar(50)
   fireteamid     String    @db.VarChar(50)
   opid           String    @db.VarChar(50)
   uniqueactionid String    @db.VarChar(50)
   title          String?   @db.VarChar(200)
-  ap             Int?      @default(1)
-  description    String?
-  operative      operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "fk_uniqueactions_operative")
+  AP             Int?      @default(1)
+  description    String?   @db.Text
+  Operative      Operative @relation(fields: [factionid, killteamid, fireteamid, opid], references: [factionid, killteamid, fireteamid, opid], onDelete: Cascade, map: "FK_UniqueActions_Operative")
 
   @@id([factionid, killteamid, fireteamid, opid, uniqueactionid])
 }
 
-model weapon {
+model User {
+  userid      String        @id @db.VarChar(50)
+  username    String?       @unique(map: "username_UNIQUE") @db.VarChar(250)
+  passhash    String?       @db.VarChar(500)
+  createddate DateTime?     @default(now()) @db.DateTime(0)
+  Roster      Roster[]
+  RosterTacOp RosterTacOp[]
+  Session     Session[]
+  UserSetting UserSetting[]
+}
+
+model UserSetting {
+  userid String  @db.VarChar(50)
+  key    String  @db.VarChar(50)
+  value  String? @db.VarChar(50)
+  User   User    @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction, map: "FK_Setting_User")
+
+  @@id([userid, key])
+}
+
+model Weapon {
   factionid     String          @db.VarChar(10)
   killteamid    String          @db.VarChar(50)
   fireteamid    String          @db.VarChar(50)
@@ -190,13 +327,13 @@ model weapon {
   wepname       String?         @db.VarChar(250)
   weptype       String?         @db.VarChar(1)
   isdefault     Int?            @default(0) @db.SmallInt
-  weaponprofile weaponprofile[]
+  WeaponProfile WeaponProfile[]
 
   @@id([factionid, killteamid, fireteamid, opid, wepid])
-  @@index([killteamid, fireteamid, opid], map: "fk_weapon_operative_idx")
+  @@index([killteamid, fireteamid, opid], map: "FK_weapon_operative_idx")
 }
 
-model weaponprofile {
+model WeaponProfile {
   factionid  String  @db.VarChar(10)
   killteamid String  @db.VarChar(50)
   fireteamid String  @db.VarChar(50)
@@ -204,11 +341,141 @@ model weaponprofile {
   wepid      String  @db.VarChar(50)
   profileid  String  @db.VarChar(200)
   name       String? @db.VarChar(200)
-  a          String? @db.VarChar(5)
-  bs         String? @db.VarChar(5)
-  d          String? @db.VarChar(5)
-  sr         String? @db.VarChar(4000)
-  weapon     weapon  @relation(fields: [factionid, killteamid, fireteamid, opid, wepid], references: [factionid, killteamid, fireteamid, opid, wepid], onDelete: Cascade, map: "fk_weaponprofile_weapon")
+  A          String? @db.VarChar(5)
+  BS         String? @db.VarChar(5)
+  D          String? @db.VarChar(5)
+  SR         String? @db.VarChar(4000)
+  Weapon     Weapon  @relation(fields: [factionid, killteamid, fireteamid, opid, wepid], references: [factionid, killteamid, fireteamid, opid, wepid], onDelete: Cascade, map: "FK_WeaponProfile_Weapon")
 
   @@id([factionid, killteamid, fireteamid, opid, wepid, profileid])
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view EventLogView {
+  eventid    Int       @default(0)
+  datestamp  DateTime? @default(now()) @db.DateTime(0)
+  ActionLog  String?   @db.Text
+  userid     String?   @db.VarChar(45)
+  userip     String?   @default("") @db.VarChar(250)
+  eventtype  String?   @db.VarChar(50)
+  action     String?   @db.VarChar(45)
+  label      String?   @db.VarChar(45)
+  var1       String?   @db.VarChar(45)
+  var2       String?   @db.VarChar(45)
+  var3       String?   @db.VarChar(45)
+  username   String?   @db.VarChar(250)
+  rostername String?   @db.VarChar(250)
+  opname     String?   @db.VarChar(250)
+  optype     String?   @db.VarChar(250)
+
+  @@ignore
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterOperativeView {
+  userid            String  @db.VarChar(50)
+  rosterid          String  @db.VarChar(50)
+  rosteropid        String  @db.VarChar(50)
+  seq               Int?
+  opname            String? @db.VarChar(250)
+  factionid         String? @db.VarChar(50)
+  killteamid        String? @db.VarChar(50)
+  fireteamid        String? @db.VarChar(50)
+  opid              String? @db.VarChar(50)
+  hascustomportrait Int?    @default(0)
+  specialism        String? @default("") @db.VarChar(50)
+  isinjured         Int?    @default(0) @db.TinyInt
+  rested            Int?    @default(0)
+  M                 String? @db.VarChar(15)
+  APL               String? @db.VarChar(15)
+  GA                String? @db.VarChar(15)
+  DF                String? @db.VarChar(15)
+  SV                String? @db.VarChar(15)
+  W                 String? @db.VarChar(15)
+  keywords          String? @db.MediumText
+  basesize          Int?    @default(32)
+  specialisms       String? @default("") @db.VarChar(50)
+  curW              Int?
+  activated         Int?    @default(0) @db.TinyInt
+  oporder           String? @default("conceal") @db.VarChar(45)
+  hidden            Int?    @default(0) @db.TinyInt
+  wepids            String? @db.VarChar(250)
+  eqids             String? @db.VarChar(250)
+  notes             String? @db.VarChar(2000)
+  xp                Int?    @default(0)
+  username          String? @db.VarChar(250)
+  rostername        String? @db.VarChar(250)
+  factionname       String? @db.VarChar(250)
+  killteamname      String? @db.VarChar(250)
+  edition           String? @default("kt24") @db.VarChar(45)
+  fireteamname      String? @db.VarChar(200)
+  archetype         String? @db.VarChar(250)
+  optype            String? @db.VarChar(250)
+
+  @@ignore
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterView {
+  userid                String  @db.VarChar(50)
+  username              String? @db.VarChar(250)
+  rosterid              String  @db.VarChar(50)
+  seq                   Int?
+  rostername            String? @db.VarChar(250)
+  notes                 String? @default("") @db.VarChar(2000)
+  factionid             String? @db.VarChar(50)
+  killteamid            String? @db.VarChar(50)
+  hascustomportrait     Int?    @default(0)
+  keyword               String? @default("") @db.VarChar(250)
+  portraitcopyok        Int?    @default(0)
+  eqids                 String? @default("") @db.VarChar(250)
+  TP                    Int?    @default(1)
+  CP                    Int?    @default(2)
+  VP                    Int?    @default(2)
+  RP                    Int?    @default(0)
+  ployids               String? @db.VarChar(250)
+  tacopids              String? @db.VarChar(250)
+  spotlight             Int?    @default(0)
+  factionname           String? @db.VarChar(250)
+  killteamname          String? @db.VarChar(250)
+  edition               String? @default("kt24") @db.VarChar(45)
+  killteamcustomkeyword String? @default("") @db.VarChar(250)
+  killteamdescription   String? @db.Text
+  oplist                String? @db.Text
+  viewcount             Int?    @default(0)
+  importcount           Int?    @default(0)
+  reqpts                Int?    @default(0)
+  stratnotes            String? @db.Text
+  eqnotes               String? @db.Text
+  specopnotes           String? @db.Text
+
+  @@ignore
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterView_Orig {
+  userid              String  @db.VarChar(50)
+  username            String? @db.VarChar(250)
+  rosterid            String  @db.VarChar(50)
+  seq                 Int?
+  rostername          String? @db.VarChar(250)
+  notes               String? @default("") @db.VarChar(2000)
+  factionid           String? @db.VarChar(50)
+  killteamid          String? @db.VarChar(50)
+  hascustomportrait   Int?    @default(0)
+  TP                  Int?    @default(1)
+  CP                  Int?    @default(2)
+  VP                  Int?    @default(2)
+  RP                  Int?    @default(0)
+  ployids             String? @db.VarChar(250)
+  tacopids            String? @db.VarChar(250)
+  spotlight           Int?    @default(0)
+  factionname         String? @db.VarChar(250)
+  killteamname        String? @db.VarChar(250)
+  killteamdescription String? @db.Text
+  oplist              String? @db.Text
+  viewcount           Int?    @default(0)
+  importcount         Int?    @default(0)
+
+  @@ignore
 }

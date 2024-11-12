@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f537c9bc-08f9-49f5-b0fb-2f9fdb3d123f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ktdash-react.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/roster/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/roster_view/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetEquipments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetKillTeam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/GetPloys.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Killteam/LoadKillTeam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/GetOperative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/GetOperatives.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadAbilities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadBaseOperative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadOperatives.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadUniqueAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Operative/LoadWeapons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRandomRosterId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRoster.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRosterByUserId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetRosterEquipment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/GetTacOps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/LoadRosterEquipments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Roster/UpdateViewCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetEquipments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetROWeapons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/GetRosterOperative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/RosterOperative/LoadEquipments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Weapon/GetWeaponByEqId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/data/Weapon/GetWeaponProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/db/prisma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/lib/errorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktdash_schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ogWlAaa1JVZN9w0XcrY4YC4qzR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;RosterEndpoints&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matthewgarafalo/Documents/GitHub/Personal/ktdash-react&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/matthewgarafalo/Documents/GitHub/Personal/ktdash-react/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/api/roster" />
+      <recent name="$PROJECT_DIR$/src/app/data/Roster" />
+      <recent name="$PROJECT_DIR$/src/app/data/Operative" />
+      <recent name="$PROJECT_DIR$/src/app/api/roster/[roster_id]" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f537c9bc-08f9-49f5-b0fb-2f9fdb3d123f" name="Changes" comment="" />
+      <created>1731291848498</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731291848498</updated>
+      <workItem from="1731291849665" duration="24319000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+</project>
