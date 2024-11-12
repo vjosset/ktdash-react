@@ -22951,7 +22951,7 @@
               "factionid": "TYR",
               "killteamid": "HF24",
               "ployid": "F",
-              "ployname": "Feed",
+              "ployname": "Feed Biomass",
               "ploytype": "S",
               "CP": "1",
               "description": "Until the end of the Turning Point, each time a friendly HIVE FLEET operative fights in combat, the first time you strike with a critical hit in that combat, inflict one additional damage."
@@ -22960,16 +22960,16 @@
               "factionid": "TYR",
               "killteamid": "HF24",
               "ployid": "L",
-              "ployname": "Lurk",
+              "ployname": "Territorial Instinct",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a shooting attack is made against a friendly HIVE FLEET operative, in the Roll Defence Dice step of that shooting attack, before rolling your Defence dice, if it is in Cover and either has a Conceal order or is ready, one additional die can be retained as a successful normal save as a result of Cover, regardless of any rules that treat the operative as having an Engage order (e.g. Vantage Point)."
+              "description": "Whenever an operative is shooting a friendly HIVE FLEET operative that’s within 2\" of an objective marker or an enemy operative, you can re-roll one of your defence dice."
             },
             {
               "factionid": "TYR",
               "killteamid": "HF24",
               "ployid": "S",
-              "ployname": "Stalk",
+              "ployname": "Stalk Target",
               "ploytype": "S",
               "CP": "1",
               "description": "One friendly HIVE FLEET operative that has a Conceal order and is more than 3\" from enemy operatives can perform a free Normal Move action."
@@ -23046,7 +23046,7 @@
             "killteamid": "HF24",
             "eqid": "EC",
             "eqname": "Extended Chitin",
-            "eqdescription": "Once per turning point, when an operative is shooting a friendly HIVE FLEET operative (Excluding Tyranid Prime), in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
+            "eqdescription": "Once per turning point, when an operative is shooting a friendly HIVE FLEET operative, in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
             "eqpts": "2/3",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -24588,7 +24588,7 @@
       {
         "factionid": "TYR",
         "killteamid": "IV24",
-        "edition": "hidden",
+        "edition": "kt24",
         "killteamname": "Infiltration Vanguard",
         "description": "Hosts of vanguard organisms including lictors, leapers and other stealthy tyranid creatures are typically sent before a full scale attack to damage enemy supply lines and key targets. While these creaetures typically work alone, sometimes it's necessary to organize and take out an important foe.",
         "customkeyword": "",
@@ -24597,11 +24597,11 @@
             {
               "factionid": "TYR",
               "killteamid": "IV24",
-              "ployid": "F",
-              "ployname": "Feed",
+              "ployid": "CD",
+              "ployname": "Death Throes",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly HIVE FLEET operative fights in combat, the first time you strike with a critical hit in that combat, inflict one additional damage."
+              "description": "Whenever a friendly INFILTRATION VANGUARD operative (excluding LICTOR) is incapacitated when fighting or retaliating,\nif you have any unresolved attack dice, you can roll 1D6.\nIf the result is a success as if it were the Roll Attack Dice step of that sequence (i.e, using the same weapon, but with no re-rolls), you can strike the enemy operative in that sequence with one of your unresolved\nnormal successes, or any of your successes instead if the 1D6 result is a critical success. In either case, that friendly operative is removed from the killzone afterwards."
             },
             {
               "factionid": "TYR",
@@ -24610,16 +24610,16 @@
               "ployname": "Lurk",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a shooting attack is made against a friendly HIVE FLEET operative, in the Roll Defence Dice step of that shooting attack, before rolling your Defence dice, if it is in Cover and either has a Conceal order or is ready, one additional die can be retained as a successful normal save as a result of Cover, regardless of any rules that treat the operative as having an Engage order (e.g. Vantage Point)."
+              "description": "Whenever an enemy operative is shooting a friendly INFILTRATION VANGUARD operative, if you can retain any cover saves as a result of Heavy terrain, you can retain one additional cover save."
             },
             {
               "factionid": "TYR",
               "killteamid": "IV24",
-              "ployid": "S",
-              "ployname": "Stalk",
+              "ployid": "ATSKNF",
+              "ployname": "Survival Instincts",
               "ploytype": "S",
               "CP": "1",
-              "description": "One friendly HIVE FLEET operative that has a Conceal order and is more than 3\" from enemy operatives can perform a free Normal Move action."
+              "description": "You can ignore any changes to the stats of friendly INFILTRATION VANGUARD operatives from being injured (including their weapons' stats)."
             },
             {
               "factionid": "TYR",
@@ -24635,11 +24635,11 @@
             {
               "factionid": "TYR",
               "killteamid": "IV24",
-              "ployid": "AB",
-              "ployname": "Aggressive Biostrain",
+              "ployid": "SA",
+              "ployname": "Stealth Assault",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy after making a shooting attack with a friendly HIVE FLEET operative in which the target did not lose any wounds. Repeat that shooting attack."
+              "description": "Use this firefight ploy when a friendly INFILTRATION VANGUARD operative that has a Conceal order is activated, is given an Engage order, performs the Charge and then the Fight action,\nand you’re resolving your first attack dice from this activation.\nAfter doing so, you can immediately resolve another of your attack dice (before your opponent). The operative cannot have performed any other actions during this activation (but can do so after resolving this ploy)."
             },
             {
               "factionid": "TYR",
@@ -24648,25 +24648,25 @@
               "ployname": "Unseen Hunter",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy at the start or end of any activation.\nSelect one friendly HIVE FLEET operative that has not performed a shooting attack during this Turning Point. You can change its order."
+              "description": "Use this Firefight Ploy at the start or end of any activation.\nSelect one friendly INFILTRATION VANGUARD operative that has not performed a shooting attack during this Turning Point. You can change its order."
             },
             {
               "factionid": "TYR",
               "killteamid": "IV24",
-              "ployid": "WOTHH",
-              "ployname": "Will Of The Hive Mind",
+              "ployid": "MD",
+              "ployname": "Aggressive Biostrain",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy when a friendly HIVE FLEET operative within 6\" of a friendly HIVE FLEET SYNAPSE operative is activated. Add 1 to the activated operative's APL."
+              "description": "Use this Firefight Ploy after making a melee attack with a friendly INFILTRATION VANGUARD operative  in which the target did not lose any wounds. Repeat that melee attack."
             },
             {
               "factionid": "TYR",
               "killteamid": "IV24",
-              "ployid": "GU",
-              "ployname": "Outnumber",
+              "ployid": "PA",
+              "ployname": "Patient Ambush",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this firefight ploy during a friendly HIVE FLEET operative’s activation, before or after it performs an action. Select one enemy operative within its control range. One other friendly HIVE FLEET operative can immediately perform a free Fight action, but it can only fight against that enemy operative."
+              "description": "Use this firefight ploy when it is your turn to activate a friendly operative. You can skip that activation."
             }
           ]
         },
@@ -24674,26 +24674,52 @@
           {
             "factionid": "TYR",
             "killteamid": "IV24",
-            "eqid": "AG",
-            "eqname": "Adrenal Glands",
-            "eqdescription": "Once per game as a STRATEGIC GAMBIT, add 1\" to the Movement characteristic of all friendly HIVE FLEET operatives until the end of the turning point.",
+            "eqid": "FH",
+            "eqname": "Flesh Hooks",
+            "eqdescription": "Operativies are equipped with the following ranged weapon for the battle:<br/>\n <table width=\"100%\" class=\"eqtable\">\n \t<tr>\n \t\t<th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n \t\t<td>Flesh Hooks</td>\n         <td>4</td>\n         <td>2+</td>\n         <td>3/4</td>\n     </tr>\n     <tr>\n \t\t<th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n \t\t<td colspan=\"4\">Rng 3\", Lethal 5+</td>\n     </tr>\n </table>",
             "eqpts": "2",
-            "eqtype": "OpMod",
-            "eqvar1": "M",
-            "eqvar2": "+1\"",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
             "eqvar3": "",
             "eqvar4": "",
             "eqcategory": "Equipment",
             "fireteamid": "",
             "opid": "",
-            "eqseq": 0
+            "eqseq": 0,
+            "weapon": {
+              "factionid": "TYR",
+              "killteamid": "HF",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "FH",
+              "wepseq": 0,
+              "wepname": "Flesh Hooks",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "TYR",
+                  "killteamid": "HF",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "FH",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "2+",
+                  "D": "3/4",
+                  "SR": "Rng 3\", Lethal 5+"
+                }
+              ]
+            }
           },
           {
             "factionid": "TYR",
             "killteamid": "IV24",
             "eqid": "EC",
-            "eqname": "Extended Chitin",
-            "eqdescription": "Once per turning point, when an operative is shooting a friendly HIVE FLEET operative (Excluding Tyranid Prime), in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
+            "eqname": "Toxin Sacks",
+            "eqdescription": "Once per turning point, when a friendly INFILTRATION VANGUARD operative is fighting, its melee weapons gain the Shock weapon rule.",
             "eqpts": "2/3",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -24710,7 +24736,7 @@
             "killteamid": "IV24",
             "eqid": "FT",
             "eqname": "Feeder Tendrils",
-            "eqdescription": "Once per turning point when a HIVE FLEET operative incapacitates an enemy operative in combat, it regains up to 1D3 lost wounds.",
+            "eqdescription": "Once per turning point when a INFILTRATION VANGUARD operative incapacitates an enemy operative in combat, it regains up to 1D3 lost wounds.",
             "eqpts": "2",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -24727,7 +24753,7 @@
             "killteamid": "IV24",
             "eqid": "CR",
             "eqname": "Climbing Claws",
-            "eqdescription": "Whenever a friendly HIVE FLEET operative is climbing, treat the vertical distance as 1\" less (to a minimum of 2\").\nNote this has no effect when using ladder equipment terrain, which treats the vertical distance as 1\" (but would have an effect if the operative then continued climbing another terrain feature).",
+            "eqdescription": "Whenever a friendly INFILTRATION VANGUARD operative is climbing, treat the vertical distance as 1\" less (to a minimum of 2\").\nNote this has no effect when using ladder equipment terrain, which treats the vertical distance as 1\" (but would have an effect if the operative then continued climbing another terrain feature).",
             "eqpts": "0",
             "eqtype": "Ability",
             "eqvar1": "",
@@ -24740,7 +24766,7 @@
             "eqseq": 2
           }
         ],
-        "killteamcomp": "A HIVE FLEET kill team consists of 14 operatives selected from the following list:\n<ul><li>TYRANID WARRIOR PRIME</li><li>TYRANID WARRIOR LEADER operative equipped with one option from each of the following:\n<ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Spinefists, or Lash Whip; Bonesword</li>\n    <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</ul></li><li>\nTYRANID WARRIOR FIGHTER each separately equipped with one option from each of the following:\n        <ul>\n<li>Boneswords, DeathSpitter, Devourer, Rending Claws, Scything Talons, Bonesword, Spinefists, or Lash Whip</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>\nTYRANID WARRIOR HEAVY GUNNER each separately equipped with one option from each of the following:\n        <ul>\n<li>Barbed Strangler or Venom Cannon</li>\n            <li>Boneswords, Rending Claws, Scything Talons, or Lash Whip; Bonesword</li>\n</ul>\n</li>\n<li>HORMAGAUNT</li>\n    <li>\nTERMAGAUNT equipped with Claws and one of the following options:\n        <ul>\n<li>Devourer, Fleshborer, or Spinefists</li>\n        </ul>\n    </li><li>\nTERMAGAUNT GUNNER equipped with Claws and one of the following options:\n        <ul>\n<li>Spike rifle, Shardlauncher, or Strangleweb</li></ul></li>\n<li>RIPPER SWARM</li>        </ul>\n    </li></ul>Your kill team may include no more than 2 ripper swarm operatives. \nYour kill team may include no more than 3 TYRANID WARRIOR operatives, each counting as 2 selections and other than TYRANID WARRIOR FIGHTER operatives each TYRANID WARRIOR operative may only be selected once. Your team may include no more than 3 TERMAGANT GUNNER operatives, each with a unique weapon.<br/>",
+        "killteamcomp": "An INFILTRATION VANGUARD team consists of 10 operatives selected from the following list:\n<ul><li>LICTOR (counts as three selections)</li><li>NEUROLICTOR (counts as three selections)</li><li>VON RYAN'S LEAPER (counts as two selections)</li><li>GENESTEALER equipped with one of the following options:\n<ul>\n\t<li>Double Rending Claws</li>\n    <li>Rending Claws, Scything Talons</li>\n</ul></ul>Other than VON RYAN'S LEAPERS and GENESTEALER FIGHTER operatives, your kill team can only include each operative on this list once. Your kill team can only include up to two VON RYAN'S LEAPERS operatives. Your kill team can only include one LICTOR operative.<br/>",
         "fireteams": [
           {
             "factionid": "TYR",
@@ -24748,7 +24774,7 @@
             "fireteamid": "IV24",
             "seq": 0,
             "fireteamname": "Infiltration Vanguard",
-            "archetype": "Seek And Destroy/Security/Recon",
+            "archetype": "Infiltration/Recon",
             "description": "",
             "killteammax": 0,
             "operatives": [
@@ -24846,6 +24872,106 @@
                 "factionid": "TYR",
                 "killteamid": "IV24",
                 "fireteamid": "IV24",
+                "opid": "NLIC",
+                "opseq": 14,
+                "opname": "Neurolictor",
+                "description": "",
+                "M": "6\"",
+                "APL": "4",
+                "GA": "0",
+                "DF": "0",
+                "SV": "4+",
+                "W": "19",
+                "keywords": "INFILTRATION VANGUARD, TYRANID, LICTOR, NEUROLICTOR, LEADER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "IV24",
+                    "fireteamid": "IV24",
+                    "opid": "NLIC",
+                    "wepid": "C",
+                    "wepseq": 0,
+                    "wepname": "Rending Claws",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "IV24",
+                        "fireteamid": "IV24",
+                        "opid": "PAT",
+                        "wepid": "C",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "3+",
+                        "D": "4/5",
+                        "SR": "Rending"
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "IV24",
+                    "fireteamid": "IV24",
+                    "opid": "PAT",
+                    "uniqueactionid": "IS",
+                    "title": "Into Shadow",
+                    "description": "Change this operative's order.<br/>\nThis operative cannot perform this action while within control range of an enemy operative.",
+                    "AP": 1
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "IV24",
+                    "fireteamid": "IV24",
+                    "opid": "NLIC",
+                    "uniqueactionid": "DCM",
+                    "title": "Psychic Control",
+                    "description": "<em>Psychic Action<br/></em>\nSelect one enemy operative wihin 6\" of this operative, then select one of the following for that enemy operative (you can only select each one once per battle):\n<ul>\n<li>Subtract 1 from its APL</li>\n<li>Change its order</li>\n<li>Perform a free Dash action (specific the location for your opponent to move it to)</li>\n</ul>\nThis operative cannot perform this action while within Engagement Range of an enemy operative.",
+                    "AP": 1
+                  }
+                ],
+                "abilities": [
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "HF",
+                    "fireteamid": "GS",
+                    "opid": "FTR",
+                    "abilityid": "SYN",
+                    "title": "Gather Intelligence",
+                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BBRO24",
+                    "fireteamid": "BBRO24",
+                    "opid": "PAT",
+                    "abilityid": "AP",
+                    "title": "Alpha Predator",
+                    "description": "Whenever an operative is shooting this operative, ignore the Piercing weapon rule.\nYou can activate this operative twice during the turning point as long as it has AP to spend (it stays ready while it can still be activated a second time).\nPer turning point it cannot move more than 9\" and you cannot spend more than 4AP in total for it."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BBRO24",
+                    "fireteamid": "BBRO24",
+                    "opid": "PAT",
+                    "abilityid": "MNS",
+                    "title": "Monster",
+                    "description": "This operative cannot use any weapons that are not on its datacard, or perform unique actions (excluding Into Shadow and Mind Control).\nWhenever your opponent is selecting a valid target, if this operative has a conceal order, it cannot use Light terrain for cover.\nWhile this can allow this operative to be targeted (assuming it is visible), it does not remove its cover save (if any)."
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": ""
+              },
+              {
+                "factionid": "TYR",
+                "killteamid": "IV24",
+                "fireteamid": "IV24",
                 "opid": "LP",
                 "opseq": 0,
                 "opname": "Von Ryan's Leaper",
@@ -24856,89 +24982,35 @@
                 "DF": "3",
                 "SV": "4+",
                 "W": "14",
-                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "keywords": "INFILTRATION VANGUARD, TYRANID, VON RYAN'S LEAPER, FIGHTER",
                 "basesize": 32,
                 "weapons": [
                   {
                     "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "DRC",
+                    "killteamid": "IV24",
+                    "fireteamid": "IV24",
+                    "opid": "LIC",
+                    "wepid": "C",
                     "wepseq": 0,
-                    "wepname": "Double Rending Claws",
+                    "wepname": "Claws and Talons",
                     "weptype": "M",
-                    "isdefault": 0,
+                    "isdefault": 1,
                     "profiles": [
                       {
                         "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "DRC",
+                        "killteamid": "IV24",
+                        "fireteamid": "IV24",
+                        "opid": "PAT",
+                        "wepid": "C",
                         "profileid": "0",
                         "name": "",
                         "A": "5",
                         "BS": "3+",
                         "D": "4/5",
-                        "SR": "Relentless, Rending"
+                        "SR": "Lethal 5+, Rending"
                       }
                     ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "FTR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
+                    "isselected": true
                   }
                 ],
                 "uniqueactions": [],
@@ -24970,133 +25042,9 @@
                 "factionid": "TYR",
                 "killteamid": "IV24",
                 "fireteamid": "IV24",
-                "opid": "GLDR",
-                "opseq": 0,
-                "opname": "Genestealer Leader",
-                "description": "Within Genestealer Broods, there usually arises one Genestealer with the ability to impress its will upon others through their brood telepathy. This bioform ensures their kin kill those they need to, while infecting the most important prey with their genetic taint.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "10",
-                "keywords": "INFILTRATION VANGUARD, TYRANID, GENESTEALER, LEADER",
-                "basesize": 32,
-                "weapons": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "DRC",
-                    "wepseq": 0,
-                    "wepname": "Double Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "DRC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Relentless, Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "RC",
-                    "wepseq": 0,
-                    "wepname": "Rending Claws",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "RC",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "wepid": "ST",
-                    "wepseq": 0,
-                    "wepname": "Scything Talons",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "TYR",
-                        "killteamid": "HF",
-                        "fireteamid": "GS",
-                        "opid": "LDR",
-                        "wepid": "ST",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Bal"
-                      }
-                    ],
-                    "isselected": false
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "FTR",
-                    "abilityid": "SYN",
-                    "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
-                  },
-                  {
-                    "factionid": "TYR",
-                    "killteamid": "HF",
-                    "fireteamid": "GS",
-                    "opid": "LDR",
-                    "abilityid": "LR",
-                    "title": "Lightning Reflexes",
-                    "description": "This operative ignores the Piercing weapon rule. Each time this operative is activated, it can perform a free Dash action during that activation."
-                  }
-                ],
-                "edition": "kt24",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "TYR",
-                "killteamid": "IV24",
-                "fireteamid": "IV24",
                 "opid": "GFTR",
                 "opseq": 0,
-                "opname": "Genestealer Fighter",
+                "opname": "Genestealer",
                 "description": "Genestealers are swift and powerful predators with lightning-fast reflexes and serrated claws that can tear through the thickest armour. Their large, highly-adaptive brains give them a brood telepathy which enables them to operate independently from the Hive Mind.",
                 "M": "6\"",
                 "APL": "2",
@@ -25104,7 +25052,7 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "9",
-                "keywords": "HIVE FLEET,TYRANID, GENESTEALER, FIGHTER",
+                "keywords": "INFILTRATION VANGUARD, TYRANID, GENESTEALER",
                 "basesize": 32,
                 "weapons": [
                   {
@@ -25244,27 +25192,27 @@
             "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-SAD-01",
-            "archetype": "Seek And Destroy",
+            "tacopid": "ZZZ-REC-01",
+            "archetype": "Recon",
             "tacopseq": 1,
-            "title": "Champion",
-            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you select your first Champion.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAs a STRATEGIC GAMBIT in each turning point after the first, you can select one friendly operative to be your champion for the turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nIn each turning point after the first, whenever your champion incapacitates an enemy operative you score 1VP, or 2VP if that enemy operative had a wound stat of 12 or more (in either case to a maximum of 2VP per turning point).",
+            "title": "Confirm Kill",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal: </strong>The first time an enemy operative is incapacitated.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nWhenever an enemy operative is incapacitated, before it is removed from the killzone, place one of your Confirm Kill mission markers within its control range.<br/><br/>\n<strong>Victory Points:</strong><br/>\nAt the end of each turning point after the first, if a friendly operative controls one of your Confirm Kill mission markers, that marker is not contested by enemy operatives and no enemy operatives are that are\nwithin that friendly operative's control range, you can remove that marker to score 1VP, or 2VP if it was placed for an enemy operative with a wounds stat of 12 or more.<br/>\nYou can score a maximum of 2 VP from this op per turning point.",
             "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-SAD-02",
-            "archetype": "Seek And Destroy",
+            "tacopid": "ZZZ-REC-02",
+            "archetype": "Recon",
             "tacopseq": 2,
-            "title": "Overrun",
-            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an enemy operative is incapacitated by a friendly operative, and that friendly operative is wholly within your opponent's territory when it does so, you score 1VP.<br/>\nAt the end of each turning point after the first, if the total APL stat of friendly operatives that both fulfilled the above condition that turning point (regardless of you scoring the VP) and are still wholly within your opponent's territory is 3 or more, you score 1 VP.",
+            "title": "Recover Items",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal: </strong>At the start of the Set Up operatives step, before equipment is set up.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nWhen revealed, your opponent places one of your Item mission markers on the centreline and one within 2\" of your territory.\nYou then place one more than 6\" from your territory. In all cases, your Item mission markers must be 2\" from other markers (including other item mission markers).\nYour operatives can perform the Pick Up Marker action on your Item mission markers after the first turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nAt the end of the fourth turning point, for each of your Item mission markers that both the Pick Up Marker action has been performed\nupon and friendly operatives control, you score 2VP. Note that it is not a requirement to be carrying those markers, but each of them\nmust have been carried by friendly operatives at some point during the battle.",
             "edition": "kt24"
           },
           {
-            "tacopid": "ZZZ-SAD-03",
-            "archetype": "Seek And Destroy",
+            "tacopid": "ZZZ-REC-03",
+            "archetype": "Recon",
             "tacopseq": 3,
-            "title": "Storm Objectives",
-            "description": "<em>TACOP</em><br/>\n<strong>Reveal:</strong> When you first score VP from this op.<br/><br/>\n<strong>Additional Rules:</strong><br/>\nAt the end of each friendly operative's activation, if it controls an objective marker that enemy operatives controlled at the start of that activation or that is wholly within your opponent's territory,\nand that objective marker is not contested by enemy operatives, that objective marker is stormed by friendly operatives this turning point.<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, if an objective marker is stormed by Friendly operatives this turning point, you score 1VP.<br/>\nAt the end of each turning point after the first, if friendly operatives control an objective marker that was stormed by friendly operatives this turning point, you score 1VP.",
+            "title": "Plant Beacon",
+            "description": "<em>TACOP</em><br/>\n<strong>Reveal: </strong>The first time a friendly operative performs the Plant Beacon action.<br/><br/>\n<strong>Mission Action: Plant Beacon (1 AP)</strong><br/>\nPlace one of your Beacon mission markers:\n<ul>\n<li>Within the active operative's control range</li>\n<li>More than 4\" from your drop zone</li>\n<li>More than 6\" from your other Beacon mission markers</li>\n<li>With no part of it underneath Vantage terrain.</li>\n</ul>\nAn operative cannot perform this action during the first turning point, or while within control range of an enemy operative, or during an activation in which it was set up.\n<br/><br/>\n<strong>Victory Points:</strong><br/>\nOnce per turning point after the first, whenever one of your Beacon mission markers is placed wholly within your territory, you score 1VP.<br/>\nOnce per turning point after the first, whenever one of your Beacon mission markers is placed wholly within your opponent's territory, you score 1VP.",
             "edition": "kt24"
           }
         ]
