@@ -3,7 +3,7 @@ import { useForm } from '@mantine/form';
 import { modals } from '@mantine/modals';
 import React from 'react';
 import useAuth from '../../../hooks/use-auth';
-import { isNil } from 'lodash';
+import { find, isNil } from 'lodash';
 import { useSettings } from '../../../hooks/use-settings';
 import useSWR from 'swr';
 import { fetchFactions } from '@/hooks/use-api/fetchers';
@@ -36,22 +36,22 @@ export function AddRosterModal(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form?.getValues()?.faction]);
 
-    const factionOptions = factions?.map((faction, index) => ({
+    const factionOptions = factions?.map((faction) => ({
         label: faction.factionname,
-        value: index.toString()
+        value: faction.factionid
     }));
 
-    const teamOptions = factions?.[form?.getValues()?.faction]?.killteams?.filter(team => !team?.isCustom)?.map((team, index) => ({
+    const teamOptions = find(factions, { factionid: form?.getValues()?.faction })?.killteams?.filter(team => !team.isCustom)?.map((team) => ({
         label: `${team.killteamname} (${team.edition})`,
-        value: index.toString()
+        value: team.killteamid
     }));
 
     const handleCreateRoster = form.onSubmit((values) => {
         form.reset();
         var roster = {
             "rosterid": null,
-            "factionid": factions[values.faction].factionid,
-            "killteamid": factions[values.faction].killteams[values.team].killteamid,
+            "factionid": values.faction,
+            "killteamid": values.team,
             "rostername": values.rostername,
             "portraitcopyok": 0,
             "keyword": "",
