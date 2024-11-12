@@ -7770,6 +7770,262 @@
             "fireteamid": "",
             "opid": "",
             "eqseq": 0
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-AC",
+            "eqname": "Ammo Cache",
+            "eqdescription": "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action during the battle:\r <strong>AMMO RESUPPLY (0 AP):</strong> One of your Ammo Cache markers the active operative controls is used during this turning point.<br/>\r Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice.</br>\r An operative cannot perform this action while within control range of an enemy operative, if that marker is not yours, or if that marker has been used this turning point.",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 601
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-RW",
+            "eqname": "Razor Wire",
+            "eqdescription": "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.<br/>\nObstructing: Whenever an operative would cross this terrain feature within 1\" of it, treat the distance as an additional 2\".",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 602
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-CD",
+            "eqname": "Comms Device",
+            "eqdescription": "Before the battle, you can set up one of your Comms Device markers wholly within your territory.\nWhile a friendly operative controls this marker, add 3\" to the distance requirements of its SUPPORT rules that refer to friendly operatives\n(e.g. ‘select one friendly operative within 6\"’ would be 9\" instead).\nNote that you cannot benefit from your opponent's Comms Device markers.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 603
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-MN",
+            "eqname": "Mines",
+            "eqdescription": "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers and access points.\nThe first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 604
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LB",
+            "eqname": "Light Barricades",
+            "eqdescription": "Light barricades are Light terrain. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 605
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-HB",
+            "eqname": "Heavy Barricade",
+            "eqdescription": "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 2\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 606
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LAD",
+            "eqname": "Ladders",
+            "eqdescription": "Ladders are Exposed terrain. Before the battle, you can set up any of them as follows:\r <ul>\r <li>Wholly within your territory.</li>\r <li>Upright against terrain that is at least 2\" tall.</li>\r <li>More than 2\" from other equipment terrain features.</li>\r <li>More than 1\" from doors and access points.</li>\r </ul>\r In addition, an operative can either move through ladders as if they aren’t there (but cannot finish on them), or climb them.\r Once per action, whenever an operative is climbing this terrain feature, treat the vertical distance as 1\".\r Note that if an operative then continues climbing another terrain feature during that action (including another ladder), that distance is determined as normal.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 607
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-PB",
+            "eqname": "Portable Barricade",
+            "eqdescription": "A portable barricade is Light, Protective and Portable terrain.\nBefore the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.\n<br/>\n<strong>Protective:</strong> While an operative is in cover from this terrain feature, improve its Save stat by 1 (to a maximum of 2+).<br/>\n<strong>Portable:</strong> This terrain feature only provides cover while an operative is connected to it and if the shield is intervening (ignore its feet).\nOperatives connected to the inside of it can perform the following action during the battle:<br/>\n<strong>Move With Barricade (1 AP):</strong>\nThe same as the Reposition action, except the active operative can move no more than its Move stat minus 2\" and cannot climb, drop or jump.<br/>\nBefore this operative moves, remove the portable barricade it is connected to. After it moves, set up the portable barricade so it is connected again.<br/>\nThis action is treated as a Reposition action. An operative cannot perform this action while within control range of an enemy operative, or in the same activation in which it performed the Fall Back or Charge action.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 608
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-SMK",
+            "eqname": "Utility Grenade - Smoke",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>SMOKE GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Place one of your Smoke Grenade markers within 6\" of this operative. It must be visible to this operative,\nor on Vantage terrain of a terrain feature that is visible to this operative. The marker creates an area of smoke 1\" horizontally and unlimited height vertically from (but not below) it.</li>\n<li>While an operative is wholly within an area of smoke, it is obscured to operatives more than 2\" from it, and vice versa.\nIn addition, whenever an operative is shooting an enemy operative wholly within an area of smoke, ignore the Piercing weapon rule unless they are within 2\" of each other.</li>\n<li>In the Ready step of the next Strategy phase, roll one D3. Remove that Smoke Grenade marker after a number of activations equal to that D3 have been completed\nor at the end of the turning point (whichever comes first).</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-STN",
+            "eqname": "Utility Grenade - Stun",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>STUN GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Select one enemy operative visible to and within 6\" of this operative. That operative and each other operative within 1\" of it takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-FRAG",
+            "eqname": "Explosive Grenade - Frag",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-FRAG",
+              "wepseq": 0,
+              "wepname": "Frag Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-FRAG",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "2/4",
+                  "SR": "Rng 6\", Blast 2\", Saturate"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-KRAK",
+            "eqname": "Explosive Grenade - Krak",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-KRAK",
+              "wepseq": 0,
+              "wepname": "Krak Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-KRAK",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "4/5",
+                  "SR": "Rng 6\", Prc1, Saturate"
+                }
+              ]
+            }
           }
         ],
         "killteamcomp": "A SPACE HULK VETERAN killteam includes:\n<ul>\n        <li>\n                1 SPACE HULK VETERAN SERGEANT operative with one of the following options:\n                <ul>\n                        <li>Storm Bolter and Power Weapon</li>\n                        <li>Thunder Hammer and Storm Shield</li>\n                        <li>Dual Lightning Claws</li>\n                </ul>\n        </li>\n        <li>\n                4 SPACE HULK VETERAN operatives selected from the following list:\n                <ul>\n                        <li>SPACE HULK VETERAN WARRIOR each separately equipped with Storm Bolter and Power Fist or Chainfist</li>\n                        <li>\n                                SPACE HULK VETERAN GUNNER equipped with Power Fist of Chainfist and one of the following options:\n                                <ul>\n                                        <li>Assault Cannon</li>\n                                        <li>Heavy Flamer</li>\n                                        <li>Storm Bolter and Cyclone Missile Laumcher</li>\n                                </ul>\n                        </li>\n                        <li>\n                                SPACE HULK VETERAN FIGHTER equipped with a Thunder Hammer and Storm Shield, or Dual Lightning Claws\n                        </li>\n                </ul>\n        </li>\n</ul>\n\nYour kill team can only include up to one SPACE HULK VETERAN GUNNER and one SPACE HULK VETERAN FIGHTER operative.",
@@ -8548,10 +8804,10 @@
       {
         "factionid": "ORK",
         "killteamid": "GSK24",
-        "edition": "hidden",
+        "edition": "kt24",
         "killteamname": "Green Tide",
-        "description": "In their current incarnation, Orks are very much a close-combat-optimized species, their weapons having short range and low accuracy -- though this can sometimes be made up by sheer numbers. Orks are quite cheap in terms of in-game points. That is, it is possible to build a very large army, colloquially known as a \"sea of green\" or \"green tide\" from the skin color of the Orks. This is often necessary, since the effectiveness of an individual Ork at any but the shortest range is small, and the Ork commander must be prepared to absorb considerable casualties in his effort to close in for axe (\"Choppa\") work.",
-        "customkeyword": "<CLAN>",
+        "description": "Orks are seen by their enemies (pretty much everyone else in the galaxy) as savage, warlike and crude, but they are one of the most successful species in the Milky Way, outnumbering possibly every other intelligent race, including Mankind. <br/><br/> However, the power of the Ork race as a whole is limited due to the fact that they are split into hundreds of tiny empires, klanz and tribes, which are more often warring between themselves than not. Were the Orks ever to unite as a species, they would undoubtedly crush all opposition in a massive migration-invasion known as a WAAAGH!.",
+        "customkeyword": "",
         "ploys": {
           "strat": [
             {
@@ -8561,7 +8817,16 @@
               "ployname": "Dakka! Dakka! Dakka!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+              "description": "Until the end of the Turning Point, each time a friendly \nGREEN TIDE operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "DGT",
+              "ployname": "Green Tide!",
+              "ploytype": "S",
+              "CP": "1",
+              "description": "Once per game, until the end of the Turning Point, operatives are treated as benefitting from the Waaaagh! ability but you may only choose one bonus instead of benefitting from all three."
             },
             {
               "factionid": "ORK",
@@ -8570,36 +8835,54 @@
               "ployname": "Get Stuck In!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly BOY \noperative performs a Fight action, in the Roll Attack Dice step \nof that combat, you can re-roll one of your attack dice. "
+              "description": "Until the end of the Turning Point, each time a friendly ORK BOY \noperative performs a Fight action, in the Roll Attack Dice step \nof that combat, you can re-roll one of your attack dice. "
             },
             {
               "factionid": "ORK",
               "killteamid": "GSK",
-              "ployid": "WAGH",
-              "ployname": "Waaaagh!",
-              "ploytype": "S",
+              "ployid": "MD",
+              "ployname": "Get `Em!",
+              "ploytype": "T",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
+              "description": "Until the end of the Turning Point, each time a shooting attack is completed against a friendly ORK BOY operative, that operative may perform a free Dash action."
             }
           ],
           "tac": [
             {
               "factionid": "ORK",
               "killteamid": "GSK",
+              "ployid": "GD",
+              "ployname": "Gimme Dat!",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this firefight ploy during a friendly GREEN TIDE operative’s activation. Until the end of that activation, that operative doesn’t have to control a marker to perform the Pick Up Marker or mission actions that usually require this (taking precedence over that action’s conditions – it only needs to contest the marker)."
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK24",
               "ployid": "JAS",
               "ployname": "Just A Scratch",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREENSKIN operative from an attack die. \nIgnore the damage inflicted from that attack die. "
+              "description": "Use this firefight ploy when an attack dice inflicts Normal Damage on a friendly ORK BOY operative. Ignore that inflicted damage."
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK24",
+              "ployid": "JAS",
+              "ployname": "Krump Em!",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this firefight ploy at the end of the Firefight phase. Select one friendly ORK BOY operative. It can immediately perform a free Fight action."
             },
             {
               "factionid": "ORK",
               "killteamid": "GSK",
               "ployid": "MD",
-              "ployname": "More Dakka",
+              "ployname": "Run Them Down!",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREENSKIN operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+              "description": "Use this firefight ploy after a friendly ORK BOY operative performs the Fight action, if it’s no longer within control range of enemy operatives. That friendly operative can immediately perform a free Charge action (even if it’s already performed the Charge action during that activation), but cannot move more than 3\" during that action."
             }
           ]
         },
@@ -8609,7 +8892,7 @@
             "killteamid": "GSK",
             "eqid": "EA",
             "eqname": "'Eavy armour",
-            "eqdescription": "Operative with a 5+ Save characteristic only. Change the \noperative's Save characteristic to 4+ for the battle. ",
+            "eqdescription": "Once per turning point, when an operative is shooting a friendly ORK BOY operative, in the roll defence dice step, you can retain one of your normal successes as a critical success instead.",
             "eqpts": "2",
             "eqtype": "OpMod",
             "eqvar1": "SV",
@@ -8625,12 +8908,12 @@
             "factionid": "ORK",
             "killteamid": "GSK",
             "eqid": "BP",
-            "eqname": "Bosspole*",
-            "eqdescription": "BOSS NOB or KOMMANDO NOB operative only. Add 1  to \nthe operative's APL for the battle.",
+            "eqname": "Bosspole",
+            "eqdescription": "You can ignore any changes to the Move stat of friendly GREEN TIDE operatives from being injured while within 3\" of the BOSS NOB operative.",
             "eqpts": "3",
-            "eqtype": "OpMod",
-            "eqvar1": "APL",
-            "eqvar2": "3",
+            "eqtype": "",
+            "eqvar1": "",
+            "eqvar2": "",
             "eqvar3": "",
             "eqvar4": "",
             "eqcategory": "Equipment",
@@ -8641,52 +8924,9 @@
           {
             "factionid": "ORK",
             "killteamid": "GSK",
-            "eqid": "CN",
-            "eqname": "Cuttin' Nozzle",
-            "eqdescription": "BURNA BOY operative only. The operative is equipped with \nthe following melee weapon for the battle: \n<table class=\"eqtable\" width=\"100%\">\n<tr>\n<th>Name</th>\n        <th>A</th>\n        <th>WS</th>\n        <th>D</th>\n    </tr>\n    <tr>\n<td>Cuttin' Nozzle</td>\n        <td>4</td>\n        <td>3+</td>\n        <td>3/5</td>\n    </tr>\n    <tr>\n<th colspan=\"4\">Special Rules</th>\n    </tr>\n    <tr>\n<td colspan=\"4\">\nLethal 5+\n        </td>\n    </tr>\n</table>",
-            "eqpts": "2",
-            "eqtype": "Weapon",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 0,
-            "weapon": {
-              "factionid": "ORK",
-              "killteamid": "GSK",
-              "fireteamid": "EQ",
-              "opid": "EQ",
-              "wepid": "CN",
-              "wepseq": 0,
-              "wepname": "Cuttin' Nozzle",
-              "weptype": "M",
-              "isdefault": 0,
-              "profiles": [
-                {
-                  "factionid": "ORK",
-                  "killteamid": "GSK",
-                  "fireteamid": "EQ",
-                  "opid": "EQ",
-                  "wepid": "CN",
-                  "profileid": "0",
-                  "name": "",
-                  "A": "4",
-                  "BS": "3+",
-                  "D": "3/5",
-                  "SR": "Lethal 5+"
-                }
-              ]
-            }
-          },
-          {
-            "factionid": "ORK",
-            "killteamid": "GSK",
             "eqid": "DM",
-            "eqname": "Drum Mag",
-            "eqdescription": "Select one shoota or big shoota this operative is equipped \nwith. That weapon gains the Ceaseless special rule for \nthe battle. ",
+            "eqname": "Drum Mags",
+            "eqdescription": "Ork shootas and big shootas gains the Ceaseless weapon rule for \nthe battle. ",
             "eqpts": "2",
             "eqtype": "WepMod",
             "eqvar1": "wepname:shoota",
@@ -8701,26 +8941,9 @@
           {
             "factionid": "ORK",
             "killteamid": "GSK",
-            "eqid": "KFF",
-            "eqname": "Kustom Force Field*",
-            "eqdescription": "SPANNER operative only. The operative gains the following \nability for the battle: \n<br/>\n<strong>Kustom Force Field:</strong> Each time an operative makes a \nshooting attack, if the target is wholly within• of this \noperative and the operative making the shooting attack is not, \nthe target ignores the Piercing weapon rule for that shooting attack. ",
-            "eqpts": "3",
-            "eqtype": "Ability",
-            "eqvar1": "",
-            "eqvar2": "",
-            "eqvar3": "",
-            "eqvar4": "",
-            "eqcategory": "Equipment",
-            "fireteamid": "",
-            "opid": "",
-            "eqseq": 0
-          },
-          {
-            "factionid": "ORK",
-            "killteamid": "GSK",
             "eqid": "SB",
             "eqname": "Stikkbomb*",
-            "eqdescription": "The operative is equipped with the following ranged weapon for the battle:\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Sat</td>\n     </tr>\n </table>",
+            "eqdescription": "Once per turning point, a friendly ORK BOY operative can use the following ranged weapon::\n <table class=\"eqtable\" width=\"100%\">\n <tr>\n <th>Name</th>\n         <th>A</th>\n         <th>BS</th>\n         <th>D</th>\n     </tr>\n     <tr>\n <td>Stikkbomb</td>\n         <td>4</td>\n         <td>3+</td>\n         <td>2/4</td>\n     </tr>\n     <tr>\n <th colspan=\"4\">Special Rules</th>\n     </tr>\n     <tr>\n <td colspan=\"4\">Rng 6\", Lim, Blast 2\", Saturate</td>\n     </tr>\n </table>",
             "eqpts": "2",
             "eqtype": "Weapon",
             "eqvar1": "",
@@ -8759,24 +8982,263 @@
             }
           },
           {
-            "factionid": "ORK",
-            "killteamid": "GSK",
-            "eqid": "TF",
-            "eqname": "Targetin' Fing",
-            "eqdescription": "Select one ranged weapon this operative is equipped \nwith (excluding a burna or a ranged weapon with the \nkombi special rule). Improve that weapon's Ballistic Skill \ncharacteristic by  1  for the battle (to a maximum of 4+).",
-            "eqpts": "3",
-            "eqtype": "WepMod",
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-AC",
+            "eqname": "Ammo Cache",
+            "eqdescription": "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action during the battle:\r <strong>AMMO RESUPPLY (0 AP):</strong> One of your Ammo Cache markers the active operative controls is used during this turning point.<br/>\r Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice.</br>\r An operative cannot perform this action while within control range of an enemy operative, if that marker is not yours, or if that marker has been used this turning point.",
+            "eqpts": "0",
+            "eqtype": "Action",
             "eqvar1": "",
             "eqvar2": "",
             "eqvar3": "",
             "eqvar4": "",
-            "eqcategory": "Equipment",
+            "eqcategory": "Universal Equipment",
             "fireteamid": "",
             "opid": "",
-            "eqseq": 0
+            "eqseq": 601
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-RW",
+            "eqname": "Razor Wire",
+            "eqdescription": "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.<br/>\nObstructing: Whenever an operative would cross this terrain feature within 1\" of it, treat the distance as an additional 2\".",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 602
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-CD",
+            "eqname": "Comms Device",
+            "eqdescription": "Before the battle, you can set up one of your Comms Device markers wholly within your territory.\nWhile a friendly operative controls this marker, add 3\" to the distance requirements of its SUPPORT rules that refer to friendly operatives\n(e.g. ‘select one friendly operative within 6\"’ would be 9\" instead).\nNote that you cannot benefit from your opponent's Comms Device markers.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 603
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-MN",
+            "eqname": "Mines",
+            "eqdescription": "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers and access points.\nThe first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 604
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LB",
+            "eqname": "Light Barricades",
+            "eqdescription": "Light barricades are Light terrain. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 605
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-HB",
+            "eqname": "Heavy Barricade",
+            "eqdescription": "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 2\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 606
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LAD",
+            "eqname": "Ladders",
+            "eqdescription": "Ladders are Exposed terrain. Before the battle, you can set up any of them as follows:\r <ul>\r <li>Wholly within your territory.</li>\r <li>Upright against terrain that is at least 2\" tall.</li>\r <li>More than 2\" from other equipment terrain features.</li>\r <li>More than 1\" from doors and access points.</li>\r </ul>\r In addition, an operative can either move through ladders as if they aren’t there (but cannot finish on them), or climb them.\r Once per action, whenever an operative is climbing this terrain feature, treat the vertical distance as 1\".\r Note that if an operative then continues climbing another terrain feature during that action (including another ladder), that distance is determined as normal.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 607
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-PB",
+            "eqname": "Portable Barricade",
+            "eqdescription": "A portable barricade is Light, Protective and Portable terrain.\nBefore the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.\n<br/>\n<strong>Protective:</strong> While an operative is in cover from this terrain feature, improve its Save stat by 1 (to a maximum of 2+).<br/>\n<strong>Portable:</strong> This terrain feature only provides cover while an operative is connected to it and if the shield is intervening (ignore its feet).\nOperatives connected to the inside of it can perform the following action during the battle:<br/>\n<strong>Move With Barricade (1 AP):</strong>\nThe same as the Reposition action, except the active operative can move no more than its Move stat minus 2\" and cannot climb, drop or jump.<br/>\nBefore this operative moves, remove the portable barricade it is connected to. After it moves, set up the portable barricade so it is connected again.<br/>\nThis action is treated as a Reposition action. An operative cannot perform this action while within control range of an enemy operative, or in the same activation in which it performed the Fall Back or Charge action.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 608
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-SMK",
+            "eqname": "Utility Grenade - Smoke",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>SMOKE GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Place one of your Smoke Grenade markers within 6\" of this operative. It must be visible to this operative,\nor on Vantage terrain of a terrain feature that is visible to this operative. The marker creates an area of smoke 1\" horizontally and unlimited height vertically from (but not below) it.</li>\n<li>While an operative is wholly within an area of smoke, it is obscured to operatives more than 2\" from it, and vice versa.\nIn addition, whenever an operative is shooting an enemy operative wholly within an area of smoke, ignore the Piercing weapon rule unless they are within 2\" of each other.</li>\n<li>In the Ready step of the next Strategy phase, roll one D3. Remove that Smoke Grenade marker after a number of activations equal to that D3 have been completed\nor at the end of the turning point (whichever comes first).</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-STN",
+            "eqname": "Utility Grenade - Stun",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>STUN GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Select one enemy operative visible to and within 6\" of this operative. That operative and each other operative within 1\" of it takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-FRAG",
+            "eqname": "Explosive Grenade - Frag",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-FRAG",
+              "wepseq": 0,
+              "wepname": "Frag Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-FRAG",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "2/4",
+                  "SR": "Rng 6\", Blast 2\", Saturate"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-KRAK",
+            "eqname": "Explosive Grenade - Krak",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-KRAK",
+              "wepseq": 0,
+              "wepname": "Krak Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-KRAK",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "4/5",
+                  "SR": "Rng 6\", Prc1, Saturate"
+                }
+              ]
+            }
           }
         ],
-        "killteamcomp": "A GREENSKIN kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
+        "killteamcomp": "A GREEN TIDE kill team consists of 10 operatives selected from the following list: \n<ul><li>BOY BOSS NOB \noperative equipped with one of the following options: \n<ul>\n<li>Slugga; Big Choppa \n</li><li>Slugga; Power Klaw \n</li></ul><li>PAINBOY</li>\n<li>\n        BOY FIGHTER equipped with one of the following options:\n        <ul>\n        <li>Shoota; fists \n        <li>Slugga; choppa \n       </li> </ul>\n</li>\n<li>BOY GUNNER equipped with fists and one of the following options: \n<ul>\n<li>Big shoota or rokkit launcha</li>\n</ul></li><li>2 GRETCHIN operatives (Still count as one selection)</li>\n</ul> Other than BOY FIGHTER, GRETCHIN and BOY GUNNER operatives, your kill team can only include each operative on this list once. Your kill team can only include up to two BOY GUNNER operatives. Your Kill team can include up to four GRETCHIN operatives.\n",
         "fireteams": [
           {
             "factionid": "ORK",
@@ -8797,94 +9259,13 @@
                 "opname": "Boss Nob",
                 "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
                 "M": "6\"",
-                "APL": "2",
+                "APL": "3",
                 "GA": "1",
                 "DF": "3",
                 "SV": "4+",
-                "W": "13",
-                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "W": "14",
+                "keywords": "GREEN TIDE, ORK, LEADER, BOY, BOSS NOB",
                 "weapons": [
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK24",
-                    "fireteamid": "GSK24",
-                    "opid": "BN",
-                    "wepid": "KR",
-                    "wepseq": 0,
-                    "wepname": "Kombi-Rokkit",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK24",
-                        "fireteamid": "GSK24",
-                        "opid": "BN",
-                        "wepid": "KR",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "5+",
-                        "D": "4/5",
-                        "SR": "Kombi-Shoota, Lim, Prc1, Splash 1"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK24",
-                    "fireteamid": "GSK24",
-                    "opid": "BN",
-                    "wepid": "KS",
-                    "wepseq": 0,
-                    "wepname": "Kombi-Scorcha",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK24",
-                        "fireteamid": "GSK24",
-                        "opid": "BN",
-                        "wepid": "KS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "6",
-                        "BS": "2+",
-                        "D": "2/2",
-                        "SR": "Kombi-Shoota, Lim, Rng 6\", Tor 2\""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK24",
-                    "fireteamid": "GSK24",
-                    "opid": "BN",
-                    "wepid": "SH",
-                    "wepseq": 0,
-                    "wepname": "Shoota",
-                    "weptype": "R",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK24",
-                        "fireteamid": "GSK24",
-                        "opid": "BN",
-                        "wepid": "SH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "5+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
                   {
                     "factionid": "ORK",
                     "killteamid": "GSK24",
@@ -8905,7 +9286,7 @@
                         "profileid": "0",
                         "name": "",
                         "A": "4",
-                        "BS": "5+",
+                        "BS": "4+",
                         "D": "3/4",
                         "SR": "Rng 6\""
                       }
@@ -8941,87 +9322,6 @@
                   },
                   {
                     "factionid": "ORK",
-                    "killteamid": "GSK24",
-                    "fireteamid": "GSK24",
-                    "opid": "BN",
-                    "wepid": "CH",
-                    "wepseq": 0,
-                    "wepname": "Choppa",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "CH",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK24",
-                    "fireteamid": "GSK24",
-                    "opid": "BN",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "BN",
-                    "wepid": "KSAW",
-                    "wepseq": 0,
-                    "wepname": "Killsaw",
-                    "weptype": "M",
-                    "isdefault": 0,
-                    "profiles": [
-                      {
-                        "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "BN",
-                        "wepid": "KSAW",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "5/7",
-                        "SR": "Rending"
-                      }
-                    ],
-                    "isselected": false
-                  },
-                  {
-                    "factionid": "ORK",
                     "killteamid": "GSK",
                     "fireteamid": "BOY",
                     "opid": "BN",
@@ -9048,9 +9348,137 @@
                     "isselected": false
                   }
                 ],
-                "uniqueactions": [],
-                "abilities": [],
-                "edition": "hidden",
+                "uniqueactions": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "KOM24",
+                    "fireteamid": "KOM24",
+                    "opid": "NOB",
+                    "uniqueactionid": "GID",
+                    "title": "Breakin `Eads",
+                    "description": "<strong>SUPPORT</strong> Select one other friendly GREEN TIDE operative (excluding GRETCHIN) visible to and within 6\" of this operative.\nUntil the end of that operative's next activation add 1 to its APL stat.<br/>\nThis operative cannot perform this action while within control range of an enemy operative.",
+                    "AP": 1
+                  }
+                ],
+                "abilities": [
+                  {
+                    "factionid": "IMP",
+                    "killteamid": "DKK24",
+                    "fireteamid": "DKK24",
+                    "opid": "WM",
+                    "abilityid": "GO",
+                    "title": "Waaaagh!",
+                    "description": "<strong>STRATEGIC GAMBIT</strong>\nOnce per game you may start a Waaaagh. Until the end of the turning point, all friendly GREEN TIDE operatives gain the following bonuses.\n<ul>\n<li>Whenever an enemy operative is shooting a friendly GREEN TIDE operative, normal Dmg of 3 or more inflicts 1 less damage on this operative.</li><li>Friendly GREEN TIDE operatives' melee weapons have the Ceaseless weapon rule.</li><li>Add 1\" to the Move stat of friendly GREEN TIDE operatives.</li></ul>"
+                  }
+                ],
+                "edition": "kt24",
+                "fireteammax": 0,
+                "specialisms": "Combat,Staunch"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "GSK24",
+                "fireteamid": "GSK24",
+                "opid": "PAIN",
+                "opseq": 0,
+                "opname": "Painboy",
+                "description": "Orks grow bigger and more belligerent the more they fight. Over time, the most experienced fighters become hulking greenskins. Nobz have survived endless war and infighting through a combination of strength, cunning, and the instinct to destroy anything that challenges them.",
+                "M": "6\"",
+                "APL": "3",
+                "GA": "1",
+                "DF": "3",
+                "SV": "4+",
+                "W": "12",
+                "keywords": "GREEN TIDE, ORK, BOY, PAIN BOY",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "BOY",
+                    "opid": "BN",
+                    "wepid": "PW",
+                    "wepseq": 0,
+                    "wepname": "Power Klaw",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "BOY",
+                        "opid": "BN",
+                        "wepid": "PW",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Brutal"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "MED",
+                    "wepid": "GN",
+                    "wepseq": 0,
+                    "wepname": "’Urty syringe",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "TYR",
+                        "killteamid": "BBRO24",
+                        "fireteamid": "BBRO24",
+                        "opid": "MED",
+                        "wepid": "GN",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "1",
+                        "BS": "3+",
+                        "D": "5/7",
+                        "SR": "Lethal 5+, Lim1"
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "MED",
+                    "uniqueactionid": "MED",
+                    "title": "Medikit",
+                    "description": "Select one friendly GREEN TIDE operative within this operative's control range to regain 2D3 lost wounds.\nIt cannot be an operative that the Medic! Rule was used on during this turning point.<br/>\nThis operative cannot perform this action while within control range of an enemy operative.",
+                    "AP": 1
+                  }
+                ],
+                "abilities": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "WM",
+                    "abilityid": "GO",
+                    "title": "Waaaagh!",
+                    "description": "<strong>STRATEGIC GAMBIT</strong>\nOnce per game you may start a Waaaagh. Until the end of the turning point, all friendly GREEN TIDE operatives gain the following bonuses.\n<ul>\n<li>Whenever an enemy operative is shooting a friendly GREEN TIDE operative, normal Dmg of 3 or more inflicts 1 less damage on this operative.</li><li>Friendly GREEN TIDE operatives' melee weapons have the Ceaseless weapon rule.</li><li>Add 1\" to the Move stat of friendly GREEN TIDE operatives.</li></ul>"
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "MED",
+                    "abilityid": "MED",
+                    "title": "Medic!",
+                    "description": "The first time during each turning point that another friendly GREEN TIDE would be removed from the killzone is incapacitated while visible to and within 3\" of this operative,\nyou can use this rule, providing neither this operative nor that operative is within control range of an enemy operative.\nIf you do, that friendly operative is not incapacitated and has 1 wound remaining.\nThat friendly operative can then immediately perform a free Dash action, but must end that move within this operative's control range.\nSubtract 1 from this and that operative's APL stats until the end of their next activations respectively, and if this rule was used during that friendly operative's activation, that activation ends.<br/>\nYou cannot use this rule if this operative is incapacitated."
+                  }
+                ],
+                "edition": "kt24",
                 "fireteammax": 0,
                 "specialisms": "Combat,Staunch"
               },
@@ -9068,7 +9496,7 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, FIGHTER",
+                "keywords": "GREEN TIDE, ORK, BOY, FIGHTER",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -9090,7 +9518,7 @@
                         "profileid": "0",
                         "name": "",
                         "A": "4",
-                        "BS": "5+",
+                        "BS": "4+",
                         "D": "3/4",
                         "SR": ""
                       }
@@ -9117,7 +9545,7 @@
                         "profileid": "0",
                         "name": "",
                         "A": "4",
-                        "BS": "5+",
+                        "BS": "4+",
                         "D": "3/4",
                         "SR": "Rng 6\""
                       }
@@ -9180,7 +9608,17 @@
                   }
                 ],
                 "uniqueactions": [],
-                "abilities": [],
+                "abilities": [
+                  {
+                    "factionid": "IMP",
+                    "killteamid": "DKK24",
+                    "fireteamid": "DKK24",
+                    "opid": "WM",
+                    "abilityid": "GO",
+                    "title": "Waaaagh!",
+                    "description": "<strong>STRATEGIC GAMBIT</strong>\nOnce per game you may start a Waaaagh. Until the end of the turning point, all friendly GREEN TIDE operatives gain the following bonuses.\n<ul>\n<li>Whenever an enemy operative is shooting a friendly GREEN TIDE operative, normal Dmg of 3 or more inflicts 1 less damage on this operative.</li><li>Friendly GREEN TIDE operatives' melee weapons have the Ceaseless weapon rule.</li><li>Add 1\" to the Move stat of friendly GREEN TIDE operatives.</li></ul>"
+                  }
+                ],
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Combat,Marksman"
@@ -9199,61 +9637,87 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GUNNER",
+                "keywords": "GREEN TIDE, ORK, BOY, GUNNER",
                 "weapons": [
                   {
                     "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GNR",
-                    "wepid": "BS",
+                    "killteamid": "KOM24",
+                    "fireteamid": "KOM24",
+                    "opid": "SNP",
+                    "wepid": "SBS",
                     "wepseq": 0,
                     "wepname": "Big Shoota",
                     "weptype": "R",
-                    "isdefault": 0,
+                    "isdefault": 1,
                     "profiles": [
                       {
                         "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GNR",
-                        "wepid": "BS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "6",
-                        "BS": "5+",
-                        "D": "2/3",
-                        "SR": ""
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "SNP",
+                        "wepid": "SBS",
+                        "profileid": "1",
+                        "name": "Stationary",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "3/3",
+                        "SR": "Hvy, Dev 2"
+                      },
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "SNP",
+                        "wepid": "SBS",
+                        "profileid": "2",
+                        "name": "Sweeping",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "3/4",
+                        "SR": "Hvy(DashOnly), Tor 1\""
                       }
                     ],
-                    "isselected": false
+                    "isselected": true
                   },
                   {
                     "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GNR",
+                    "killteamid": "GSK24",
+                    "fireteamid": "GSK24",
+                    "opid": "RKT",
                     "wepid": "RL",
                     "wepseq": 0,
                     "wepname": "Rokkit Launcha",
                     "weptype": "R",
-                    "isdefault": 0,
+                    "isdefault": 1,
                     "profiles": [
                       {
                         "factionid": "ORK",
-                        "killteamid": "GSK",
-                        "fireteamid": "BOY",
-                        "opid": "GNR",
+                        "killteamid": "GSK24",
+                        "fireteamid": "GSK24",
+                        "opid": "RKT",
                         "wepid": "RL",
                         "profileid": "0",
-                        "name": "",
-                        "A": "5",
-                        "BS": "5+",
+                        "name": "Aimed",
+                        "A": "6",
+                        "BS": "4+",
                         "D": "4/5",
-                        "SR": "Prc1, Splash 1"
+                        "SR": "Blast 1\", Ceaseless, Hvy(DashOnly)"
+                      },
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "KOM24",
+                        "fireteamid": "KOM24",
+                        "opid": "RKT",
+                        "wepid": "RL",
+                        "profileid": "1",
+                        "name": "Mobile",
+                        "A": "6",
+                        "BS": "4+",
+                        "D": "4/5",
+                        "SR": "Blast 1\""
                       }
                     ],
-                    "isselected": false
+                    "isselected": true
                   },
                   {
                     "factionid": "ORK",
@@ -9284,7 +9748,17 @@
                   }
                 ],
                 "uniqueactions": [],
-                "abilities": [],
+                "abilities": [
+                  {
+                    "factionid": "IMP",
+                    "killteamid": "DKK24",
+                    "fireteamid": "DKK24",
+                    "opid": "WM",
+                    "abilityid": "GO",
+                    "title": "Waaaagh!",
+                    "description": "<strong>STRATEGIC GAMBIT</strong>\nOnce per game you may start a Waaaagh. Until the end of the turning point, all friendly GREEN TIDE operatives gain the following bonuses.\n<ul>\n<li>Whenever an enemy operative is shooting a friendly GREEN TIDE operative, normal Dmg of 3 or more inflicts 1 less damage on this operative.</li><li>Friendly GREEN TIDE operatives' melee weapons have the Ceaseless weapon rule.</li><li>Add 1\" to the Move stat of friendly GREEN TIDE operatives.</li></ul>"
+                  }
+                ],
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Staunch,Marksman"
@@ -9303,7 +9777,7 @@
                 "DF": "3",
                 "SV": "6+",
                 "W": "5",
-                "keywords": "GREENSKIN, ORK, <CLAN>, BOY, GRETCHIN",
+                "keywords": "GREEN TIDE, ORK, BOY, GRETCHIN",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -9363,13 +9837,40 @@
                 "uniqueactions": [],
                 "abilities": [
                   {
-                    "factionid": "ORK",
-                    "killteamid": "GSK",
-                    "fireteamid": "BOY",
-                    "opid": "GRE",
-                    "abilityid": "RNT",
-                    "title": "Runt",
-                    "description": "This operative cannot be equipped with equipment. This operative cannot benefit from your Strategic and Firefight Ploys."
+                    "factionid": "IMP",
+                    "killteamid": "DKK24",
+                    "fireteamid": "DKK24",
+                    "opid": "WM",
+                    "abilityid": "GO",
+                    "title": "Waaaagh!",
+                    "description": "<strong>STRATEGIC GAMBIT</strong>\nOnce per game you may start a Waaaagh. Until the end of the turning point, all friendly GREEN TIDE operatives gain the following bonuses.\n<ul>\n<li>Whenever an enemy operative is shooting a friendly GREEN TIDE operative, normal Dmg of 3 or more inflicts 1 less damage on this operative.</li><li>Friendly GREEN TIDE operatives' melee weapons have the Ceaseless weapon rule.</li><li>Add 1\" to the Move stat of friendly GREEN TIDE operatives.</li></ul>"
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BBRO24",
+                    "fireteamid": "BBRO24",
+                    "opid": "FAM",
+                    "abilityid": "ELU",
+                    "title": "Elusive",
+                    "description": "This operative can perform mission actions while within control range of an enemy operative (taking precedence over those actions' normal conditions).\nIt can move through enemy operatives, move within control range of them, and during the Charge action can leave their control range (it must still end the move following all requirements for that move)."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BBRO24",
+                    "fireteamid": "BBRO24",
+                    "opid": "FAM",
+                    "abilityid": "GA",
+                    "title": "Group Activation",
+                    "description": "Whenever this operative is expended, you must then activate any other ready friendly GREEN TIDE GRETCHIN operative (if able) before your opponent activates.\nWhen that other operative is expended, your opponent then activates as normal."
+                  },
+                  {
+                    "factionid": "TYR",
+                    "killteamid": "BBRO24",
+                    "fireteamid": "BBRO24",
+                    "opid": "FAM",
+                    "abilityid": "smol",
+                    "title": "Small",
+                    "description": "This operative cannot use any weapons that are not on its datacard, or perform unique actions.\nWhile this operative has a Conceal order, it is always treated as having a conceal order, taking precedence over all other rules (i.e, vantage terrain).\nThis operative can perform the Fall Back action for 1 less AP."
                   }
                 ],
                 "edition": "hidden",
@@ -9559,7 +10060,7 @@
               "ployname": "Dakka! Dakka! Dakka!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+              "description": "Until the end of the Turning Point, each time a friendly \nGREEN TIDE operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
             },
             {
               "factionid": "ORK",
@@ -9586,7 +10087,7 @@
               "ployname": "Waaaagh!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
+              "description": "Until the end of the Turning Point, each time a friendly \nGREEN TIDE operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
             }
           ],
           "tac": [
@@ -9597,7 +10098,7 @@
               "ployname": "Just A Scratch",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREENSKIN operative from an attack die. \nIgnore the damage inflicted from that attack die. "
+              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREEN TIDE operative from an attack die. \nIgnore the damage inflicted from that attack die. "
             },
             {
               "factionid": "ORK",
@@ -9606,7 +10107,16 @@
               "ployname": "More Dakka",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREENSKIN operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREEN TIDE operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+            },
+            {
+              "factionid": "ORK",
+              "killteamid": "GSK",
+              "ployid": "MD",
+              "ployname": "Dats our Loot!",
+              "ploytype": "T",
+              "CP": "1",
+              "description": "Use this firefight ploy after rolling your attack dice for a friendly DAKKABOYS operative, if it’s shooting against or fighting against an enemy operative that controls an objective marker or one of your mission markers. You can re-roll any of your attack dice."
             }
           ]
         },
@@ -10497,7 +11007,7 @@
             "eqseq": 806
           }
         ],
-        "killteamcomp": "A GREENSKIN kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
+        "killteamcomp": "A GREEN TIDE kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
         "fireteams": [
           {
             "factionid": "ORK",
@@ -10513,6 +11023,137 @@
                 "factionid": "ORK",
                 "killteamid": "LOOT24",
                 "fireteamid": "LOOT24",
+                "opid": "MEK",
+                "opseq": 0,
+                "opname": "Mek",
+                "description": "On the lower hierarchical rungs of the madcap geniuses known as Meks, Spanners help to keep Ork technology working. They obsessively acquire loot and scrap to build weapons and contraptions, as well as kustom weapons that unleash strange energy beams or ammo.",
+                "M": "6\"",
+                "APL": "3",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "10",
+                "keywords": "GREEN TIDE, ORK, LEADER, SPESHULIST, SPANNER",
+                "weapons": [
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "SPN",
+                    "wepid": "BS",
+                    "wepseq": 0,
+                    "wepname": "Big Shoota",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "SPN",
+                        "wepid": "BS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "6",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "SPN",
+                    "wepid": "KMB",
+                    "wepseq": 0,
+                    "wepname": "Kustom Mega-Blasta",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "SPN",
+                        "wepid": "KMB",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "4+",
+                        "D": "5/6",
+                        "SR": "Prc2, Hot"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "SPN",
+                    "wepid": "RL",
+                    "wepseq": 0,
+                    "wepname": "Rokkit Launcha",
+                    "weptype": "R",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "SPN",
+                        "wepid": "RL",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "5",
+                        "BS": "4+",
+                        "D": "4/5",
+                        "SR": "Prc1, Splash 1"
+                      }
+                    ],
+                    "isselected": false
+                  },
+                  {
+                    "factionid": "ORK",
+                    "killteamid": "GSK",
+                    "fireteamid": "SPE",
+                    "opid": "SPN",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 0,
+                    "profiles": [
+                      {
+                        "factionid": "ORK",
+                        "killteamid": "GSK",
+                        "fireteamid": "SPE",
+                        "opid": "SPN",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "3+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": false
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [],
+                "edition": "hidden",
+                "fireteammax": 0,
+                "specialisms": "Staunch,Marksman"
+              },
+              {
+                "factionid": "ORK",
+                "killteamid": "LOOT24",
+                "fireteamid": "LOOT24",
                 "opid": "SPN",
                 "opseq": 0,
                 "opname": "Spanner",
@@ -10523,7 +11164,7 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, SPESHULIST, SPANNER",
+                "keywords": "GREEN TIDE, ORK, LEADER, SPESHULIST, SPANNER",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -10654,7 +11295,7 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, BURNA BOY",
+                "keywords": "GREEN TIDE, ORK, SPESHULIST, BURNA BOY",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -10731,7 +11372,7 @@
                 "DF": "3",
                 "SV": "5+",
                 "W": "10",
-                "keywords": "GREENSKIN, ORK, <CLAN>, SPESHULIST, LOOTA",
+                "keywords": "GREEN TIDE, ORK, SPESHULIST, LOOTA",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -10977,7 +11618,7 @@
               "ployname": "Dakka! Dakka! Dakka!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
+              "description": "Until the end of the Turning Point, each time a friendly \nGREEN TIDE operative makes a shooting attack, in the \nRoll Attack Dice step of that shooting attack, if you retain \nany critical hits, you can select one of your failed hits to be \nretained as a successful normal hit."
             },
             {
               "factionid": "ORK",
@@ -11004,7 +11645,7 @@
               "ployname": "Waaaagh!",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly \nGREENSKIN operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
+              "description": "Until the end of the Turning Point, each time a friendly \nGREEN TIDE operative fights in combat, in the Roll Attack \nDice step of that combat, when you would retain two or more \nnormal hits, you can select one of those hits to be retained as \na critical hit instead. "
             }
           ],
           "tac": [
@@ -11015,7 +11656,7 @@
               "ployname": "Just A Scratch",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREENSKIN operative from an attack die. \nIgnore the damage inflicted from that attack die. "
+              "description": "Use this Firefight Ploy in the Resolve Successful Hits step of a \nshooting attack or combat, when damage would be inflicted \non a friendly GREEN TIDE operative from an attack die. \nIgnore the damage inflicted from that attack die. "
             },
             {
               "factionid": "ORK",
@@ -11024,7 +11665,7 @@
               "ployname": "More Dakka",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREENSKIN operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
+              "description": "Use this Firefight Ploy after making a shooting attack with a \nfriendly GREEN TIDE operative in which the target did not \nlose any wounds. Repeat that shooting attack. "
             }
           ]
         },
@@ -11915,7 +12556,7 @@
             "eqseq": 806
           }
         ],
-        "killteamcomp": "A GREENSKIN kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
+        "killteamcomp": "A GREEN TIDE kill team consists of two fire teams selected from the following list: \n<ul>\n<li>BOY</li>\n<li>CLAN KOMMANDO</li>\n<li>SPESHULIST (max one per kill team)</li>\n</ul>",
         "fireteams": [
           {
             "factionid": "ORK",
@@ -11941,7 +12582,7 @@
                 "DF": "3",
                 "SV": "4+",
                 "W": "13",
-                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "keywords": "GREEN TIDE, ORK, LEADER, BOY, BOSS NOB",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -12206,8 +12847,8 @@
                 "GA": "1",
                 "DF": "3",
                 "SV": "4+",
-                "W": "13",
-                "keywords": "GREENSKIN, ORK, <CLAN>, LEADER, BOY, BOSS NOB",
+                "W": "14",
+                "keywords": "GREEN TIDE, ORK, LEADER, BOY, BOSS NOB",
                 "weapons": [
                   {
                     "factionid": "ORK",
@@ -24590,7 +25231,7 @@
         "killteamid": "IV24",
         "edition": "kt24",
         "killteamname": "Infiltration Vanguard",
-        "description": "Hosts of vanguard organisms including lictors, leapers and other stealthy tyranid creatures are typically sent before a full scale attack to damage enemy supply lines and key targets. While these creaetures typically work alone, sometimes it's necessary to organize and take out an important foe.",
+        "description": "Hosts of vanguard organisms including lictors, leapers and other stealthy tyranid creatures are typically sent before a full scale attack to damage enemy supply lines and key targets. While these creatures typically work alone, sometimes it's necessary to organize and take out an important foe.",
         "customkeyword": "",
         "ploys": {
           "strat": [
@@ -24657,7 +25298,7 @@
               "ployname": "Aggressive Biostrain",
               "ploytype": "T",
               "CP": "1",
-              "description": "Use this Firefight Ploy after making a melee attack with a friendly INFILTRATION VANGUARD operative  in which the target did not lose any wounds. Repeat that melee attack."
+              "description": "Use this Firefight Ploy after making a melee attack with a friendly INFILTRATION VANGUARD operative (excluding LICTOR) in which the target did not lose any wounds. Repeat that melee attack."
             },
             {
               "factionid": "TYR",
@@ -24764,6 +25405,262 @@
             "fireteamid": "",
             "opid": "",
             "eqseq": 2
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-AC",
+            "eqname": "Ammo Cache",
+            "eqdescription": "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action during the battle:\r <strong>AMMO RESUPPLY (0 AP):</strong> One of your Ammo Cache markers the active operative controls is used during this turning point.<br/>\r Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice.</br>\r An operative cannot perform this action while within control range of an enemy operative, if that marker is not yours, or if that marker has been used this turning point.",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 601
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-RW",
+            "eqname": "Razor Wire",
+            "eqdescription": "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.<br/>\nObstructing: Whenever an operative would cross this terrain feature within 1\" of it, treat the distance as an additional 2\".",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 602
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-CD",
+            "eqname": "Comms Device",
+            "eqdescription": "Before the battle, you can set up one of your Comms Device markers wholly within your territory.\nWhile a friendly operative controls this marker, add 3\" to the distance requirements of its SUPPORT rules that refer to friendly operatives\n(e.g. ‘select one friendly operative within 6\"’ would be 9\" instead).\nNote that you cannot benefit from your opponent's Comms Device markers.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 603
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-MN",
+            "eqname": "Mines",
+            "eqdescription": "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers and access points.\nThe first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 604
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LB",
+            "eqname": "Light Barricades",
+            "eqdescription": "Light barricades are Light terrain. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 605
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-HB",
+            "eqname": "Heavy Barricade",
+            "eqdescription": "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 2\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 606
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-LAD",
+            "eqname": "Ladders",
+            "eqdescription": "Ladders are Exposed terrain. Before the battle, you can set up any of them as follows:\r <ul>\r <li>Wholly within your territory.</li>\r <li>Upright against terrain that is at least 2\" tall.</li>\r <li>More than 2\" from other equipment terrain features.</li>\r <li>More than 1\" from doors and access points.</li>\r </ul>\r In addition, an operative can either move through ladders as if they aren’t there (but cannot finish on them), or climb them.\r Once per action, whenever an operative is climbing this terrain feature, treat the vertical distance as 1\".\r Note that if an operative then continues climbing another terrain feature during that action (including another ladder), that distance is determined as normal.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 607
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-PB",
+            "eqname": "Portable Barricade",
+            "eqdescription": "A portable barricade is Light, Protective and Portable terrain.\nBefore the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features.\n<br/>\n<strong>Protective:</strong> While an operative is in cover from this terrain feature, improve its Save stat by 1 (to a maximum of 2+).<br/>\n<strong>Portable:</strong> This terrain feature only provides cover while an operative is connected to it and if the shield is intervening (ignore its feet).\nOperatives connected to the inside of it can perform the following action during the battle:<br/>\n<strong>Move With Barricade (1 AP):</strong>\nThe same as the Reposition action, except the active operative can move no more than its Move stat minus 2\" and cannot climb, drop or jump.<br/>\nBefore this operative moves, remove the portable barricade it is connected to. After it moves, set up the portable barricade so it is connected again.<br/>\nThis action is treated as a Reposition action. An operative cannot perform this action while within control range of an enemy operative, or in the same activation in which it performed the Fall Back or Charge action.",
+            "eqpts": "0",
+            "eqtype": "Ability",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 608
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-SMK",
+            "eqname": "Utility Grenade - Smoke",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>SMOKE GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Place one of your Smoke Grenade markers within 6\" of this operative. It must be visible to this operative,\nor on Vantage terrain of a terrain feature that is visible to this operative. The marker creates an area of smoke 1\" horizontally and unlimited height vertically from (but not below) it.</li>\n<li>While an operative is wholly within an area of smoke, it is obscured to operatives more than 2\" from it, and vice versa.\nIn addition, whenever an operative is shooting an enemy operative wholly within an area of smoke, ignore the Piercing weapon rule unless they are within 2\" of each other.</li>\n<li>In the Ready step of the next Strategy phase, roll one D3. Remove that Smoke Grenade marker after a number of activations equal to that D3 have been completed\nor at the end of the turning point (whichever comes first).</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-UG-STN",
+            "eqname": "Utility Grenade - Stun",
+            "eqdescription": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n<br/>\n<strong>STUN GRENADE (1 AP):</strong><br/>\n<ul>\n<li>Select one enemy operative visible to and within 6\" of this operative. That operative and each other operative within 1\" of it takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.</li>\n<li>An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.</li>\n</ul>",
+            "eqpts": "0",
+            "eqtype": "Action",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 609
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-FRAG",
+            "eqname": "Explosive Grenade - Frag",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Frag Grenade</td><td>4</td><td>4+</td><td>2/4</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Blast 2\", Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-FRAG",
+              "wepseq": 0,
+              "wepname": "Frag Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-FRAG",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "2/4",
+                  "SR": "Rng 6\", Blast 2\", Saturate"
+                }
+              ]
+            }
+          },
+          {
+            "factionid": "kt24",
+            "killteamid": "ALL",
+            "eqid": "UE-XG-KRAK",
+            "eqname": "Explosive Grenade - Krak",
+            "eqdescription": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n<table class=\"eqtable\">\n<tr>\n<th>Name</th><th>A</th><th>BS</th><th>D</th><th>\n</tr>\n<tr>\n<td>Krak Grenade</td><td>4</td><td>4+</td><td>4/5</td>\n</tr>\n<tr>\n<th colspan=\"4\">Special Rules</th>\n</tr>\n<tr>\n<td>Rng 6\", Piercing 1, Saturate</td>\n</tr>\n</table>",
+            "eqpts": "0",
+            "eqtype": "Weapon",
+            "eqvar1": "",
+            "eqvar2": "",
+            "eqvar3": "",
+            "eqvar4": "",
+            "eqcategory": "Universal Equipment",
+            "fireteamid": "",
+            "opid": "",
+            "eqseq": 610,
+            "weapon": {
+              "factionid": "kt24",
+              "killteamid": "ALL",
+              "fireteamid": "EQ",
+              "opid": "EQ",
+              "wepid": "UE-XG-KRAK",
+              "wepseq": 0,
+              "wepname": "Krak Grenade",
+              "weptype": "R",
+              "isdefault": 0,
+              "profiles": [
+                {
+                  "factionid": "kt24",
+                  "killteamid": "ALL",
+                  "fireteamid": "EQ",
+                  "opid": "EQ",
+                  "wepid": "UE-XG-KRAK",
+                  "profileid": "0",
+                  "name": "",
+                  "A": "4",
+                  "BS": "4+",
+                  "D": "4/5",
+                  "SR": "Rng 6\", Prc1, Saturate"
+                }
+              ]
+            }
           }
         ],
         "killteamcomp": "An INFILTRATION VANGUARD team consists of 10 operatives selected from the following list:\n<ul><li>LICTOR (counts as three selections)</li><li>NEUROLICTOR (counts as three selections)</li><li>VON RYAN'S LEAPER (counts as two selections)</li><li>GENESTEALER equipped with one of the following options:\n<ul>\n\t<li>Double Rending Claws</li>\n    <li>Rending Claws, Scything Talons</li>\n</ul></ul>Other than VON RYAN'S LEAPERS and GENESTEALER FIGHTER operatives, your kill team can only include each operative on this list once. Your kill team can only include up to two VON RYAN'S LEAPERS operatives. Your kill team can only include one LICTOR operative.<br/>",
@@ -24843,7 +25740,7 @@
                     "opid": "FTR",
                     "abilityid": "SYN",
                     "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                    "description": "Once per turning point when you achieve a rank in the Kill Op, you immediately gain 1 CP."
                   },
                   {
                     "factionid": "TYR",
@@ -24943,7 +25840,7 @@
                     "opid": "FTR",
                     "abilityid": "SYN",
                     "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                    "description": "Once per turning point when you achieve a rank in the Kill Op, you immediately gain 1 CP."
                   },
                   {
                     "factionid": "TYR",
@@ -25022,7 +25919,7 @@
                     "opid": "FTR",
                     "abilityid": "SYN",
                     "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                    "description": "Once per turning point when you achieve a rank in the Kill Op, you immediately gain 1 CP."
                   },
                   {
                     "factionid": "TYR",
@@ -25146,7 +26043,7 @@
                     "opid": "GFTR",
                     "abilityid": "SYN",
                     "title": "Gather Intelligence",
-                    "description": "Each time your killteam achieves a rank in the Kill Op, you immediately gain 1 CP."
+                    "description": "Once per turning point when you achieve a rank in the Kill Op, you immediately gain 1 CP."
                   },
                   {
                     "factionid": "TYR",
