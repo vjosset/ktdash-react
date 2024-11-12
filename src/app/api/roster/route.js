@@ -34,8 +34,7 @@ export async function GET(req) {
   // No roster id passed in, need to get current user's rosters
   if (!rosterId) {
     // TODO: Add auth check here
-
-    const userRoster = await GetRosterByUserId(loadRoasterDetail, "123");
+    const userRoster = await GetRosterByUserId(loadRoasterDetail, "currentuser.userid");
     const userRosterData = Promise.all(
       userRoster.map(
         async (ur) =>

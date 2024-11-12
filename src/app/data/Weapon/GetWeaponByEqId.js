@@ -7,6 +7,8 @@ export async function GetWeaponByEqId(factionId, ktId, eqId) {
     where: {
       factionid: factionId,
       killteamid: ktId,
+      fireteamid: 'EQ',
+      opid: 'EQ',
       wepid: eqId,
     },
   });

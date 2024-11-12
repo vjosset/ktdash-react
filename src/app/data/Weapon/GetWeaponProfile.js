@@ -2,7 +2,7 @@ import { GetPrismaClient } from "@/app/db/prisma";
 
 export async function GetWeaponProfile(
   factionId,
-  ktId,
+  killteamId,
   fireteamId,
   opId,
   wepId,
@@ -12,7 +12,8 @@ export async function GetWeaponProfile(
   return prisma.weaponProfile.findMany({
     where: {
       factionid: factionId,
-      killteamid: ktId,
+      killteamid: killteamId,
+      fireteamid: fireteamId,
       opid: opId,
       wepid: wepId,
     },
