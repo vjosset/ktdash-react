@@ -14,6 +14,9 @@ export async function GetRosterOperatives(rosterId) {
   return prisma.RosterOperativeView.findMany({
     where: {
       rosterid: rosterId
+    },
+    orderBy: {
+      seq: 'asc'
     }
   });
 }
