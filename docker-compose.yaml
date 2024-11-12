@@ -1,24 +1,24 @@
 services:
-    db:
-      image: mysql:latest
-      container_name: ktdash-mysql
-      ports:
-        - "3306:3306"
-      environment:
-        - MYSQL_ROOT_PASSWORD=ktdash
-        - MYSQL_DATABASE=ktdash
-#    ktdash-postgres:
-#      image: postgres
-#      container_name: ktdash-postgres
-#      environment:
-#        POSTGRES_USER: ${POSTGRES_USER:-ktdash}
-#        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ktdash}
-#        POSTGRES_DB: ${POSTGRES_DB:-ktdash}
-#      ports:
-#        - "5432:5432"
-#      networks:
-#        - postgres
-#      restart: unless-stopped
+  db:
+    image: mysql:8.0
+    container_name: ktdash-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=ktdash
+      - MYSQL_DATABASE=ktdash
+#  ktdash-postgres:
+#    image: postgres
+#    container_name: ktdash-postgres
+#    environment:
+#      POSTGRES_USER: ${POSTGRES_USER:-ktdash}
+#      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ktdash}
+#      POSTGRES_DB: ${POSTGRES_DB:-ktdash}
+#    ports:
+#      - "5432:5432"
+#    networks:
+#      - postgres
+#    restart: unless-stopped
 
 networks:
   postgres:

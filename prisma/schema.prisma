@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -347,4 +348,134 @@ model WeaponProfile {
   Weapon     Weapon  @relation(fields: [factionid, killteamid, fireteamid, opid, wepid], references: [factionid, killteamid, fireteamid, opid, wepid], onDelete: Cascade, map: "FK_WeaponProfile_Weapon")
 
   @@id([factionid, killteamid, fireteamid, opid, wepid, profileid])
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view EventLogView {
+  eventid    Int       @default(0)
+  datestamp  DateTime? @default(now()) @db.DateTime(0)
+  ActionLog  String?   @db.Text
+  userid     String?   @db.VarChar(45)
+  userip     String?   @default("") @db.VarChar(250)
+  eventtype  String?   @db.VarChar(50)
+  action     String?   @db.VarChar(45)
+  label      String?   @db.VarChar(45)
+  var1       String?   @db.VarChar(45)
+  var2       String?   @db.VarChar(45)
+  var3       String?   @db.VarChar(45)
+  username   String?   @db.VarChar(250)
+  rostername String?   @db.VarChar(250)
+  opname     String?   @db.VarChar(250)
+  optype     String?   @db.VarChar(250)
+
+  @@ignore
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterOperativeView {
+  userid            String  @db.VarChar(50)
+  rosterid          String  @db.VarChar(50)
+  rosteropid        String  @db.VarChar(50)
+  seq               Int?
+  opname            String? @db.VarChar(250)
+  factionid         String? @db.VarChar(50)
+  killteamid        String? @db.VarChar(50)
+  fireteamid        String? @db.VarChar(50)
+  opid              String? @db.VarChar(50)
+  hascustomportrait Int?    @default(0)
+  specialism        String? @default("") @db.VarChar(50)
+  isinjured         Int?    @default(0) @db.TinyInt
+  rested            Int?    @default(0)
+  M                 String? @db.VarChar(15)
+  APL               String? @db.VarChar(15)
+  GA                String? @db.VarChar(15)
+  DF                String? @db.VarChar(15)
+  SV                String? @db.VarChar(15)
+  W                 String? @db.VarChar(15)
+  keywords          String? @db.MediumText
+  basesize          Int?    @default(32)
+  specialisms       String? @default("") @db.VarChar(50)
+  curW              Int?
+  activated         Int?    @default(0) @db.TinyInt
+  oporder           String? @default("conceal") @db.VarChar(45)
+  hidden            Int?    @default(0) @db.TinyInt
+  wepids            String? @db.VarChar(250)
+  eqids             String? @db.VarChar(250)
+  notes             String? @db.VarChar(2000)
+  xp                Int?    @default(0)
+  username          String? @db.VarChar(250)
+  rostername        String? @db.VarChar(250)
+  factionname       String? @db.VarChar(250)
+  killteamname      String? @db.VarChar(250)
+  edition           String? @default("kt24") @db.VarChar(45)
+  fireteamname      String? @db.VarChar(200)
+  archetype         String? @db.VarChar(250)
+  optype            String? @db.VarChar(250)
+  
+  @@unique([rosteropid])
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterView {
+  userid                String  @db.VarChar(50)
+  username              String? @db.VarChar(250)
+  rosterid              String  @db.VarChar(50)
+  seq                   Int?
+  rostername            String? @db.VarChar(250)
+  notes                 String? @default("") @db.VarChar(2000)
+  factionid             String? @db.VarChar(50)
+  killteamid            String? @db.VarChar(50)
+  hascustomportrait     Int?    @default(0)
+  keyword               String? @default("") @db.VarChar(250)
+  portraitcopyok        Int?    @default(0)
+  eqids                 String? @default("") @db.VarChar(250)
+  TP                    Int?    @default(1)
+  CP                    Int?    @default(2)
+  VP                    Int?    @default(2)
+  RP                    Int?    @default(0)
+  ployids               String? @db.VarChar(250)
+  tacopids              String? @db.VarChar(250)
+  spotlight             Int?    @default(0)
+  factionname           String? @db.VarChar(250)
+  killteamname          String? @db.VarChar(250)
+  edition               String? @default("kt24") @db.VarChar(45)
+  killteamcustomkeyword String? @default("") @db.VarChar(250)
+  killteamdescription   String? @db.Text
+  oplist                String? @db.Text
+  viewcount             Int?    @default(0)
+  importcount           Int?    @default(0)
+  reqpts                Int?    @default(0)
+  stratnotes            String? @db.Text
+  eqnotes               String? @db.Text
+  specopnotes           String? @db.LongText
+
+  @@unique([rosterid])
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+view RosterView_Orig {
+  userid              String  @db.VarChar(50)
+  username            String? @db.VarChar(250)
+  rosterid            String  @db.VarChar(50)
+  seq                 Int?
+  rostername          String? @db.VarChar(250)
+  notes               String? @default("") @db.VarChar(2000)
+  factionid           String? @db.VarChar(50)
+  killteamid          String? @db.VarChar(50)
+  hascustomportrait   Int?    @default(0)
+  TP                  Int?    @default(1)
+  CP                  Int?    @default(2)
+  VP                  Int?    @default(2)
+  RP                  Int?    @default(0)
+  ployids             String? @db.VarChar(250)
+  tacopids            String? @db.VarChar(250)
+  spotlight           Int?    @default(0)
+  factionname         String? @db.VarChar(250)
+  killteamname        String? @db.VarChar(250)
+  killteamdescription String? @db.Text
+  oplist              String? @db.Text
+  viewcount           Int?    @default(0)
+  importcount         Int?    @default(0)
+
+  @@ignore
 }
