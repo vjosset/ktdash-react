@@ -19092,8 +19092,297 @@
               {
                 "factionid": "CHAOS",
                 "killteamid": "DAEM24",
-                "fireteamid": "BL",
-                "opid": "FTR",
+                "fireteamid": "DAEM24",
+                "opid": "BR",
+                "opseq": 0,
+                "opname": "Bloodreaper",
+                "description": "Bloodreapers marshal Khorne's frenzied hordes in battle. They are among the deadliest warriors of their kind, each having offered up countless skulls to their lord. They are not blinded by rage, and despatch their lessers with martial precision to ensure no foe escapes.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "6+",
+                "W": "10",
+                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, KHORNE, LEADER, BLOODLETTER, BLOODREAPER",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "BL",
+                    "opid": "BR",
+                    "wepid": "HB",
+                    "wepseq": 0,
+                    "wepname": "Hellblade",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "CHAOS",
+                        "killteamid": "DAEM",
+                        "fireteamid": "BL",
+                        "opid": "BR",
+                        "wepid": "HB",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": "Lethal 5+"
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "BL",
+                    "opid": "BR",
+                    "abilityid": "DAEM",
+                    "title": "Daemon",
+                    "description": "This operative has a 5+ invulnerable save."
+                  },
+                  {
+                    "factionid": "AEL",
+                    "killteamid": "BOK24",
+                    "fireteamid": "BOK24",
+                    "opid": "DAX",
+                    "abilityid": "GOC",
+                    "title": "Gifts of Chaos",
+                    "description": "<ul>\n<li>You cannot use more than one ASPECT TECHNIQUE per activation or counteraction.</li>\n<li>You cannot use each ASPECT TECHNIQUE more than once per turning point.</li>\n<li>If every friendly BLADES OF KHAINE operative selected for deployment has the same Aspect keyword (e.g. STRIKING SCORPION), you cannot use each ASPECT TECHNIQUE more than twice per turning point (instead of once).</li>\n</ul>\n<h5>Dire Avenger Aspect Techniques</h5>\n<strong>The Slicing Hurricane</strong><br/>\nUse this ASPECT TECHNIQUE when a friendly DIRE AVENGER operative is performing the Reposition action.\nThat operative can perform the Shoot action during that action (it must do so in a location it can be placed, and any remaining move distance it had from that Reposition action can be used after it does so).\nYou must select its shuriken catapult, shuriken pistol or twin shuriken catapult for that Shoot action.\n<br/><br/>\n<strong>Death Of A Thousand Blades</strong><br/>\nUse this ASPECT TECHNIQUE when a friendly DIRE AVENGER operative is performing the Shoot action and you select a shuriken catapult or twin shuriken catapult.\nUntil the end of that action, that weapon has the Torrent 2\" weapon rule, but you cannot select more than one secondary target.\n<br/><br/>\n<strong>Vigilance Of The Avenger</strong><br/>\nUse this ASPECT TECHNIQUE when a friendly DIRE AVENGER operative is performing the Shoot action and you select a shuriken catapult or twin shuriken catapult. Until the end of that action, that weapon has the Lethal 5+ weapon rule.\n<br/><br/>\n<strong>Unstinting, Immovable</strong><br/>\nUse this ASPECT TECHNIQUE when an operative is shooting a friendly DIRE AVENGER operative, and you’ve rolled two or more fails. You can discard one of them to retain the other as a normal success instead.\n<br/><br/>\n<strong>Raging Heat Of The Dying Flame</strong><br/>\nUse this ASPECT TECHNIQUE during a friendly DIRE AVENGER operative’s activation. Until the start of that operative’s next activation, you can ignore any changes to its stats from being injured (including its weapons’ stats)."
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat"
+              },
+              {
+                "factionid": "CHAOS",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "IR",
+                "opseq": 0,
+                "opname": "Pink Horror Iridescent",
+                "description": "Iridescent Horrors are imbued with a sliver of Tzeentch's immortal knowledge. They revel in leading their capering daemons in enacting Tzeentch's schemes.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "6+",
+                "W": "9",
+                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, TZEENTCH, LEADER, PINK HORROR, IRIDESCENT",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PH",
+                    "opid": "IR",
+                    "wepid": "CF",
+                    "wepseq": 0,
+                    "wepname": "Coruscating Flames",
+                    "weptype": "R",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "CHAOS",
+                        "killteamid": "DAEM",
+                        "fireteamid": "PH",
+                        "opid": "IR",
+                        "wepid": "CF",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "3/4",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  },
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PH",
+                    "opid": "IR",
+                    "wepid": "F",
+                    "wepseq": 0,
+                    "wepname": "Fists",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "CHAOS",
+                        "killteamid": "DAEM",
+                        "fireteamid": "PH",
+                        "opid": "IR",
+                        "wepid": "F",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "3",
+                        "BS": "4+",
+                        "D": "2/3",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PH",
+                    "opid": "IR",
+                    "abilityid": "DAEM",
+                    "title": "Daemon",
+                    "description": "This operative has a 5+ Invulnerable Save."
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Marksman"
+              },
+              {
+                "factionid": "CHAOS",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "AL",
+                "opseq": 1,
+                "opname": "Alluress",
+                "description": "Most beauteous and yet more repulsive than most Daemonettes, Alluresses orchestrate their kin's slaughter with trilling songs of praise to Slaanesh. Their hypnotic glamour causes foes to falter in their presence, helpless as barbed claws and needle-like teeth close in.",
+                "M": "6\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "6+",
+                "W": "9",
+                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, SLAANESH, LEADER, DAEMONETTE, ALLURESS",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "DETTE",
+                    "opid": "AL",
+                    "wepid": "CLS",
+                    "wepseq": 0,
+                    "wepname": "Claws",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "CHAOS",
+                        "killteamid": "DAEM",
+                        "fireteamid": "DETTE",
+                        "opid": "AL",
+                        "wepid": "CLS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/5",
+                        "SR": "Relentless"
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "DETTE",
+                    "opid": "AL",
+                    "abilityid": "DAEM",
+                    "title": "Daemon",
+                    "description": "This operative has a 5+ invulnerable save."
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Combat,Scout"
+              },
+              {
+                "factionid": "CHAOS",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "PR",
+                "opseq": 0,
+                "opname": "Plagueridden",
+                "description": "Despite their death's head rictus grin, Plageridden are devoted to the serious business of spreading Nurgle's bounteous plagues across reality. They often bear signs fo Nurgle's favour - such as more elaborate horns - and direct other Plaguebearers in his grand plans.",
+                "M": "5\"",
+                "APL": "2",
+                "GA": "1",
+                "DF": "3",
+                "SV": "5+",
+                "W": "9",
+                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, NURGLE, LEADER, PLAGUEBEARER, PLAGUERIDDEN",
+                "basesize": 32,
+                "weapons": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PB",
+                    "opid": "PR",
+                    "wepid": "PS",
+                    "wepseq": 0,
+                    "wepname": "Plaguesword",
+                    "weptype": "M",
+                    "isdefault": 1,
+                    "profiles": [
+                      {
+                        "factionid": "CHAOS",
+                        "killteamid": "DAEM",
+                        "fireteamid": "PB",
+                        "opid": "PR",
+                        "wepid": "PS",
+                        "profileid": "0",
+                        "name": "",
+                        "A": "4",
+                        "BS": "2+",
+                        "D": "4/6",
+                        "SR": ""
+                      }
+                    ],
+                    "isselected": true
+                  }
+                ],
+                "uniqueactions": [],
+                "abilities": [
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PB",
+                    "opid": "PR",
+                    "abilityid": "DAEM",
+                    "title": "Daemon",
+                    "description": "This operative has a 5+ invulnerable save."
+                  },
+                  {
+                    "factionid": "CHAOS",
+                    "killteamid": "DAEM",
+                    "fireteamid": "PB",
+                    "opid": "PR",
+                    "abilityid": "DR",
+                    "title": "Disgustingly Resilient",
+                    "description": "Each time this operative would lose a wound, roll one D6: on a 5+, that wound is not lost. Other than the effects of Battle Scars, this operative cannot be injured."
+                  }
+                ],
+                "edition": "kt21",
+                "fireteammax": 0,
+                "specialisms": "Staunch"
+              },
+              {
+                "factionid": "CHAOS",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "BFTR",
                 "opseq": 0,
                 "opname": "Bloodletter Fighter",
                 "description": "Bloodletters are Khorne's most numerous warriors, the foot soldiers of the Blood Legions. Their skin is the colour of spilt gore, and their muscles bulge in response to their rage. They carry jagged Hellblades in their taloned hands that glow with the energies of the Warp.",
@@ -19152,7 +19441,7 @@
               {
                 "factionid": "CHAOS",
                 "killteamid": "DAEM24",
-                "fireteamid": "BH",
+                "fireteamid": "DAEM24",
                 "opid": "BLUE",
                 "opseq": 0,
                 "opname": "Blue Horror",
@@ -19239,7 +19528,7 @@
               {
                 "factionid": "CHAOS",
                 "killteamid": "DAEM24",
-                "fireteamid": "BH",
+                "fireteamid": "DAEM24",
                 "opid": "BRIM",
                 "opseq": 0,
                 "opname": "Brimstone Horror",
@@ -19298,9 +19587,9 @@
               },
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "DETTE",
-                "opid": "FTR",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "DFTR",
                 "opseq": 4,
                 "opname": "Daemonette Fighter",
                 "description": "Daemonettes are seductive harbingers of torment. They advance in a swift surge, dancing with impossible agility to pounce upon their victims with keening screams of horrific desire. They indulge in inflicting wounds with their razor-sharp claws.",
@@ -19358,9 +19647,9 @@
               },
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PH",
-                "opid": "FTR",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "ZFTR",
                 "opseq": 0,
                 "opname": "Pink Horror Fighter",
                 "description": "Pink Horrors are magic made manifest. They caper and whirl, cackling as bolts of raw sorcery leap from their clawed fingertips. These coruscating streams of multicoloured flame do not merely burn, they turn their victims into hedeous or nonsensical forms.",
@@ -19444,9 +19733,9 @@
               },
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PB",
-                "opid": "FTR",
+                "killteamid": "DAEM24",
+                "fireteamid": "DAEM24",
+                "opid": "PFTR",
                 "opseq": 0,
                 "opname": "Plaguebearer Fighter",
                 "description": "A Plaguebearer's body is swollen and bursting with contagion. They shamble purposefully forward with dour inevitability, bringing the promise of corruption with them. Despite their appearance, they swing their disease-laden plagueswords with great strength.",
