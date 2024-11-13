@@ -18425,7 +18425,7 @@
                 "opname": "Bloodreaper",
                 "description": "Bloodreapers marshal Khorne's frenzied hordes in battle. They are among the deadliest warriors of their kind, each having offered up countless skulls to their lord. They are not blinded by rage, and despatch their lessers with martial precision to ensure no foe escapes.",
                 "M": "6\"",
-                "APL": "3",
+                "APL": "2",
                 "GA": "1",
                 "DF": "3",
                 "SV": "5+",
@@ -18479,7 +18479,7 @@
                     "opid": "BR",
                     "abilityid": "DAEM",
                     "title": "Champion of Khorne",
-                    "description": "During this operative's activation, it may perform two Fight actions."
+                    "description": "During this operative's activation, it may perform a free Fight action and it is allowed to perform two Fight actions."
                   },
                   {
                     "factionid": "AEL",
@@ -18504,7 +18504,7 @@
                 "opname": "Pink Horror Iridescent",
                 "description": "Iridescent Horrors are imbued with a sliver of Tzeentch's immortal knowledge. They revel in leading their capering daemons in enacting Tzeentch's schemes.",
                 "M": "6\"",
-                "APL": "3",
+                "APL": "2",
                 "GA": "1",
                 "DF": "3",
                 "SV": "5+",
@@ -18585,7 +18585,7 @@
                     "opid": "BR",
                     "abilityid": "DAEM",
                     "title": "Champion of Tzeench",
-                    "description": "During this operative's activation, it may perform two Shoot actions."
+                    "description": "During this operative's activation, it may perform a free Shoot action and it is allowed to perform two Shoot actions."
                   },
                   {
                     "factionid": "AEL",
@@ -18610,7 +18610,7 @@
                 "opname": "Alluress",
                 "description": "Most beauteous and yet more repulsive than most Daemonettes, Alluresses orchestrate their kin's slaughter with trilling songs of praise to Slaanesh. Their hypnotic glamour causes foes to falter in their presence, helpless as barbed claws and needle-like teeth close in.",
                 "M": "7\"",
-                "APL": "3",
+                "APL": "2",
                 "GA": "1",
                 "DF": "3",
                 "SV": "5+",
@@ -18689,7 +18689,7 @@
                 "opname": "Plagueridden",
                 "description": "Despite their death's head rictus grin, Plageridden are devoted to the serious business of spreading Nurgle's bounteous plagues across reality. They often bear signs fo Nurgle's favour - such as more elaborate horns - and direct other Plaguebearers in his grand plans.",
                 "M": "5\"",
-                "APL": "3",
+                "APL": "2",
                 "GA": "1",
                 "DF": "3",
                 "SV": "5+",
