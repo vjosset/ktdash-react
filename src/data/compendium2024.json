@@ -21501,11 +21501,11 @@
             {
               "factionid": "TYR",
               "killteamid": "HF24",
-              "ployid": "F",
-              "ployname": "Feed Biomass",
+              "ployid": "SITW",
+              "ployname": "Shadow in the Warp",
               "ploytype": "S",
               "CP": "1",
-              "description": "Until the end of the Turning Point, each time a friendly HIVE FLEET operative fights in combat, the first time you strike with a critical hit in that combat, inflict one additional damage."
+              "description": "Until the end of the Turning Point, enemy operatives within 3\" of a friendly SYNAPSE operative cannot have their APL positively modified and cannot re-roll dice results of 1."
             },
             {
               "factionid": "TYR",
