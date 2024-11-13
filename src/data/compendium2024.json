@@ -18234,7 +18234,7 @@
           "strat": [
             {
               "factionid": "CHAOS",
-              "killteamid": "DAEM",
+              "killteamid": "DAEM24",
               "ployid": "C",
               "ployname": "Contagion",
               "ploytype": "S",
@@ -19081,17 +19081,17 @@
         "fireteams": [
           {
             "factionid": "CHAOS",
-            "killteamid": "DAEM",
+            "killteamid": "DAEM24",
             "fireteamid": "BL",
             "seq": 0,
-            "fireteamname": "Bloodletters",
+            "fireteamname": "Chaos Daemons",
             "archetype": "Seek And Destroy",
             "description": "",
             "killteammax": 0,
             "operatives": [
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
+                "killteamid": "DAEM24",
                 "fireteamid": "BL",
                 "opid": "FTR",
                 "opseq": 0,
@@ -19151,231 +19151,7 @@
               },
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "BL",
-                "opid": "HB",
-                "opseq": 0,
-                "opname": "Bloodletter Horn Bearer",
-                "description": "Accompanying the Blood Legions to war, some daemons bear immense brass war horns. They use these to sound the charge, spurring their diabolical brethren on in a red tide that sweeps away the living in a sea of blood.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "9",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, KHORNE, BLOODLETTER, HORN BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "HB",
-                    "wepid": "HB",
-                    "wepseq": 0,
-                    "wepname": "Hellblade",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "BL",
-                        "opid": "HB",
-                        "wepid": "HB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "HB",
-                    "uniqueactionid": "IOC",
-                    "title": "Instrument Of Chaos",
-                    "description": "Until the end of the Turning Point, each time a friendly BLOODLETTER operative performs a Normal Move or Charge action, it can move an additional 1\".",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "HB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "BL",
-                "opid": "IB",
-                "opseq": 0,
-                "opname": "Bloodletter Icon Bearer",
-                "description": "Bloodletters go to war under a semblance of martial affectation. Favoured deamons of their packs display blood-soaked banners, under which their howling kin rend and butcher Khorne's enemies with greater ferocity.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "9",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, KHORNE, BLOODLETTER, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "IB",
-                    "wepid": "HB",
-                    "wepseq": 0,
-                    "wepname": "Hellblade",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "BL",
-                        "opid": "IB",
-                        "wepid": "HB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "IB",
-                    "uniqueactionid": "DI",
-                    "title": "Daemonic Icon",
-                    "description": "Until the end of the Turning Point, while this operative is within 3\" of a friendly BLOODLETTER operative, that friendly operative is invigorated by Chaos. While an operative is invigorated by Chaos, improve its invulnerable save by 1.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "IB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "IB",
-                    "abilityid": "IB",
-                    "title": "Icon Bearer",
-                    "description": "When determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "BL",
-                "opid": "BR",
-                "opseq": 0,
-                "opname": "Bloodreaper",
-                "description": "Bloodreapers marshal Khorne's frenzied hordes in battle. They are among the deadliest warriors of their kind, each having offered up countless skulls to their lord. They are not blinded by rage, and despatch their lessers with martial precision to ensure no foe escapes.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "10",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, KHORNE, LEADER, BLOODLETTER, BLOODREAPER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "BR",
-                    "wepid": "HB",
-                    "wepseq": 0,
-                    "wepname": "Hellblade",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "BL",
-                        "opid": "BR",
-                        "wepid": "HB",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": "Lethal 5+"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "BL",
-                    "opid": "BR",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat"
-              }
-            ],
-            "fireteamcomp": "A BLOOTLETTER fire team includes six BLOODLETTER operatives selected from the following list:\n<ul>\n<li>BLOODLETTER FIGHTER</li>\n<li>BLOODLETTER ICON BEARER</li>\n<li>BLOODLETTER HORN BEARER</li>\n</ul>\nOther than BLOODLETTER FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one BLOODLETTER FIGHTER operative for one BLOODLETTER fire team, you can select one BLOODREAPER operative."
-          },
-          {
-            "factionid": "CHAOS",
-            "killteamid": "DAEM",
-            "fireteamid": "BH",
-            "seq": 0,
-            "fireteamname": "Blue Horrors",
-            "archetype": "Security/Recon",
-            "description": "",
-            "killteammax": 1,
-            "operatives": [
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
+                "killteamid": "DAEM24",
                 "fireteamid": "BH",
                 "opid": "BLUE",
                 "opseq": 0,
@@ -19462,7 +19238,7 @@
               },
               {
                 "factionid": "CHAOS",
-                "killteamid": "DAEM",
+                "killteamid": "DAEM24",
                 "fireteamid": "BH",
                 "opid": "BRIM",
                 "opseq": 0,
@@ -19519,230 +19295,6 @@
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "N/A"
-              }
-            ],
-            "fireteamcomp": "A BLUE HORROR fire team includes eight BLUE HORROR operatives."
-          },
-          {
-            "factionid": "CHAOS",
-            "killteamid": "DAEM",
-            "fireteamid": "DETTE",
-            "seq": 0,
-            "fireteamname": "Daemonettes",
-            "archetype": "Seek And Destroy/Recon",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "DETTE",
-                "opid": "AL",
-                "opseq": 1,
-                "opname": "Alluress",
-                "description": "Most beauteous and yet more repulsive than most Daemonettes, Alluresses orchestrate their kin's slaughter with trilling songs of praise to Slaanesh. Their hypnotic glamour causes foes to falter in their presence, helpless as barbed claws and needle-like teeth close in.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "9",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, SLAANESH, LEADER, DAEMONETTE, ALLURESS",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "AL",
-                    "wepid": "CLS",
-                    "wepseq": 0,
-                    "wepname": "Claws",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "DETTE",
-                        "opid": "AL",
-                        "wepid": "CLS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/5",
-                        "SR": "Relentless"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "AL",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "DETTE",
-                "opid": "IB",
-                "opseq": 2,
-                "opname": "Daemonette Icon Bearer",
-                "description": "The icons borne in the clawed grasp of some Daemonettes display the repulsive beauty embodied by Slaanesh. Under their baleful influence, the hedonistic daemons reach new heights of murderous excess.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, SLAANESH, DAEMONETTE, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "IB",
-                    "wepid": "CLS",
-                    "wepseq": 0,
-                    "wepname": "Claws",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "DETTE",
-                        "opid": "IB",
-                        "wepid": "CLS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Relentless"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "IB",
-                    "uniqueactionid": "DI",
-                    "title": "Daemonic Icon",
-                    "description": "Until the end of the Turning Point, while this operative is within 3\" of a friendly DAEMONETTE operative, that friendly operative is invigorated by Chaos. While an operative is invigorated by Chaos, improve its invulnerable save by 1.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "IB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "IB",
-                    "abilityid": "IB",
-                    "title": "Icon Bearer",
-                    "description": "When determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "DETTE",
-                "opid": "HB",
-                "opseq": 3,
-                "opname": "Daemonette Horn Bearer",
-                "description": "Some Daemonettes brandish sinuous instruments that they play with lascivious exuberance. Emitting a supernatural resonance, they inflame the passions of other Daemonettes, the unnatural music goading them to more inventive debaucheries.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, SLAANESH, DAEMONETTE, HORN BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "HB",
-                    "wepid": "CLS",
-                    "wepseq": 0,
-                    "wepname": "Claws",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "DETTE",
-                        "opid": "HB",
-                        "wepid": "CLS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/5",
-                        "SR": "Relentless"
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "HB",
-                    "uniqueactionid": "IOC",
-                    "title": "Instrument Of Chaos",
-                    "description": "Until the end of the Turning Point, each time a friendly DAEMONETTE operative performs a Normal Move or Charge action, it can move an additional 1\".",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "DETTE",
-                    "opid": "HB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Combat,Scout"
               },
               {
                 "factionid": "CHAOS",
@@ -19803,20 +19355,7 @@
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Combat,Scout"
-              }
-            ],
-            "fireteamcomp": "A DAEMONETTE fire team includes six DAEMONETTE operatives selected from the following list:\n<ul>\n<li>DAEMONETTE FIGHTER</li>\n<li>DAEMONETTE ICON BEARER</li>\n<li>DAEMONETTE HORN BEARER</li>\n</ul>\nOther than DAEMONETTE FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one DAEMONETTE FIGHTER operative for one DAEMONETTE fire team, you can select one ALLURESS operative."
-          },
-          {
-            "factionid": "CHAOS",
-            "killteamid": "DAEM",
-            "fireteamid": "PH",
-            "seq": 0,
-            "fireteamname": "Pink Horrors",
-            "archetype": "Security",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
+              },
               {
                 "factionid": "CHAOS",
                 "killteamid": "DAEM",
@@ -19906,299 +19445,6 @@
               {
                 "factionid": "CHAOS",
                 "killteamid": "DAEM",
-                "fireteamid": "PH",
-                "opid": "HB",
-                "opseq": 0,
-                "opname": "Pink Horror Horn Bearer",
-                "description": "Some Pink Horrors carry shimmering horns, often in the serpentine form of Tzeentch's own sigil. The daemons sound them at random moments, emitting mutating rhythms, streams of nebulous fire, or other strange discharges that send their kind wild with delight.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, TZEENTCH, PINK HORROR, HORN BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "HB",
-                    "wepid": "CF",
-                    "wepseq": 0,
-                    "wepname": "Coruscating Flames",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "HB",
-                        "wepid": "CF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "HB",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "HB",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "HB",
-                    "uniqueactionid": "IOC",
-                    "title": "Instrument Of Chaos",
-                    "description": "Until the end of the Turning Point, each time a friendly PINK HORROR operative performs a Normal Move or Charge action, it can move an additional 1\".",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "HB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PH",
-                "opid": "IB",
-                "opseq": 0,
-                "opname": "Pink Horror Icon Bearer",
-                "description": "Either held at the end of one gangling limb, or sprouting from the dameon's own flesh, favoured Pink Horrors carry a sorcerous icon of Tzeentch. Some of these devices burn with multi-hued fire, or twist into new shapes as their bearers gibber arcane litanies.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, TZEENTCH, PINK HORROR, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IB",
-                    "wepid": "CF",
-                    "wepseq": 0,
-                    "wepname": "Coruscating Flames",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "IB",
-                        "wepid": "CF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IB",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "IB",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IB",
-                    "uniqueactionid": "DI",
-                    "title": "Daemonic Icon",
-                    "description": "Until the end of the Turning Point, while this operative is within 3\" of a friendly PINK HORROR operative, that friendly operative is invigorated by Chaos. While an operative is invigorated by Chaos, improve its invulnerable save by 1.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PH",
-                "opid": "IR",
-                "opseq": 0,
-                "opname": "Pink Horror Iridescent",
-                "description": "Iridescent Horrors are imbued with a sliver of Tzeentch's immortal knowledge. They revel in leading their capering daemons in enacting Tzeentch's schemes.",
-                "M": "6\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "6+",
-                "W": "9",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, TZEENTCH, LEADER, PINK HORROR, IRIDESCENT",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IR",
-                    "wepid": "CF",
-                    "wepseq": 0,
-                    "wepname": "Coruscating Flames",
-                    "weptype": "R",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "IR",
-                        "wepid": "CF",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "3/4",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IR",
-                    "wepid": "F",
-                    "wepseq": 0,
-                    "wepname": "Fists",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PH",
-                        "opid": "IR",
-                        "wepid": "F",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "3",
-                        "BS": "4+",
-                        "D": "2/3",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PH",
-                    "opid": "IR",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0
-              }
-            ],
-            "fireteamcomp": "A PINK HORROR fire team includes six PINK HORROR operatives selected from the following list:\n<ul>\n<li>PINK HORROR FIGHTER</li>\n<li>PINK HORROR ICON BEARER</li>\n<li>PINK HORROR HORN BEARER</li>\n</ul>\nOther than PINK HORROR FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one PINK HORROR FIGHTER operative for one PINK HORROR fire team, you can select one PINK HORROR IRIDESCENT operative."
-          },
-          {
-            "factionid": "CHAOS",
-            "killteamid": "DAEM",
-            "fireteamid": "PB",
-            "seq": 0,
-            "fireteamname": "PlagueBearers",
-            "archetype": "Security",
-            "description": "",
-            "killteammax": 0,
-            "operatives": [
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
                 "fireteamid": "PB",
                 "opid": "FTR",
                 "opseq": 0,
@@ -20264,245 +19510,63 @@
                 "edition": "hidden",
                 "fireteammax": 0,
                 "specialisms": "Staunch"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PB",
-                "opid": "HB",
-                "opseq": 0,
-                "opname": "Plaguebearer Horn Bearer",
-                "description": "Plaguebearers utter a constant drone as they interminably tally all of Nurgle's endless diseases. Some of these fell daemons carry horns of pipes carved from rotten remains. From these, the elicit a dirge that stirs their kind into rapid advance.",
-                "M": "5\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, NURGLE, PLAGUEBEARER, HORN BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "HB",
-                    "wepid": "PS",
-                    "wepseq": 0,
-                    "wepname": "Plaguesword",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PB",
-                        "opid": "HB",
-                        "wepid": "PS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "HB",
-                    "uniqueactionid": "IOC",
-                    "title": "Instrument Of Chaos",
-                    "description": "Until the end of the Turning Point, each time a friendly PLAGUEBEARER operative performs a Normal Move or Charge action, it can move an additional 1\".",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "HB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "HB",
-                    "abilityid": "DR",
-                    "title": "Disgustingly Resilient",
-                    "description": "Each time this operative would lose a wound, roll one D6: on a 5+, that wound is not lost. Other than the effects of Battle Scars, this operative cannot be injured."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PB",
-                "opid": "IB",
-                "opseq": 0,
-                "opname": "Plaguebearer Icon Bearer",
-                "description": "These daemons carry stinking icons of Nurgle into the realm of realspace, the poisonous totems dripping with pus and surrounded by clouds of fat flies. Doleful bells hang from these grim icons, tolling out the death knells of the daemon's foes.",
-                "M": "5\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "8",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, NURGLE, PLAGUEBEARER, ICON BEARER",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "IB",
-                    "wepid": "PS",
-                    "wepseq": 0,
-                    "wepname": "Plaguesword",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PB",
-                        "opid": "IB",
-                        "wepid": "PS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "3+",
-                        "D": "4/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "IB",
-                    "uniqueactionid": "DI",
-                    "title": "Daemonic Icon",
-                    "description": "Until the end of the Turning Point, while this operative is within 3\" of a friendly PLAGUEBEARER operative, that friendly operative is invigorated by Chaos. While an operative is invigorated by Chaos, improve its invulnerable save by 1.",
-                    "AP": 1
-                  }
-                ],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "IB",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "IB",
-                    "abilityid": "DR",
-                    "title": "Disgustingly Resilient",
-                    "description": "Each time this operative would lose a wound, roll one D6: on a 5+, that wound is not lost. Other than the effects of Battle Scars, this operative cannot be injured."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "IB",
-                    "abilityid": "IB",
-                    "title": "Icon Bearer",
-                    "description": "When determining control of an objective marker, treat this operative’s APL characteristic as being 1 higher. Note that this is not a modifier. In narrative play, this is cumulative with the Focused Battle Honour."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch"
-              },
-              {
-                "factionid": "CHAOS",
-                "killteamid": "DAEM",
-                "fireteamid": "PB",
-                "opid": "PR",
-                "opseq": 0,
-                "opname": "Plagueridden",
-                "description": "Despite their death's head rictus grin, Plageridden are devoted to the serious business of spreading Nurgle's bounteous plagues across reality. They often bear signs fo Nurgle's favour - such as more elaborate horns - and direct other Plaguebearers in his grand plans.",
-                "M": "5\"",
-                "APL": "2",
-                "GA": "1",
-                "DF": "3",
-                "SV": "5+",
-                "W": "9",
-                "keywords": "CHAOS DAEMON, CHAOS, DAEMON, NURGLE, LEADER, PLAGUEBEARER, PLAGUERIDDEN",
-                "weapons": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "PR",
-                    "wepid": "PS",
-                    "wepseq": 0,
-                    "wepname": "Plaguesword",
-                    "weptype": "M",
-                    "isdefault": 1,
-                    "profiles": [
-                      {
-                        "factionid": "CHAOS",
-                        "killteamid": "DAEM",
-                        "fireteamid": "PB",
-                        "opid": "PR",
-                        "wepid": "PS",
-                        "profileid": "0",
-                        "name": "",
-                        "A": "4",
-                        "BS": "2+",
-                        "D": "4/6",
-                        "SR": ""
-                      }
-                    ],
-                    "isselected": true
-                  }
-                ],
-                "uniqueactions": [],
-                "abilities": [
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "PR",
-                    "abilityid": "DAEM",
-                    "title": "Daemon",
-                    "description": "This operative ignores the Piercing weapon rule."
-                  },
-                  {
-                    "factionid": "CHAOS",
-                    "killteamid": "DAEM",
-                    "fireteamid": "PB",
-                    "opid": "PR",
-                    "abilityid": "DR",
-                    "title": "Disgustingly Resilient",
-                    "description": "Each time this operative would lose a wound, roll one D6: on a 5+, that wound is not lost. Other than the effects of Battle Scars, this operative cannot be injured."
-                  }
-                ],
-                "edition": "hidden",
-                "fireteammax": 0,
-                "specialisms": "Staunch"
               }
+            ],
+            "fireteamcomp": "A BLOOTLETTER fire team includes six BLOODLETTER operatives selected from the following list:\n<ul>\n<li>BLOODLETTER FIGHTER</li>\n<li>BLOODLETTER ICON BEARER</li>\n<li>BLOODLETTER HORN BEARER</li>\n</ul>\nOther than BLOODLETTER FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one BLOODLETTER FIGHTER operative for one BLOODLETTER fire team, you can select one BLOODREAPER operative."
+          },
+          {
+            "factionid": "CHAOS",
+            "killteamid": "DAEM",
+            "fireteamid": "BH",
+            "seq": 0,
+            "fireteamname": "Blue Horrors",
+            "archetype": "Security/Recon",
+            "description": "",
+            "killteammax": 1,
+            "operatives": [
+
+            ],
+            "fireteamcomp": "A BLUE HORROR fire team includes eight BLUE HORROR operatives."
+          },
+          {
+            "factionid": "CHAOS",
+            "killteamid": "DAEM",
+            "fireteamid": "DETTE",
+            "seq": 0,
+            "fireteamname": "Daemonettes",
+            "archetype": "Seek And Destroy/Recon",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+
+            ],
+            "fireteamcomp": "A DAEMONETTE fire team includes six DAEMONETTE operatives selected from the following list:\n<ul>\n<li>DAEMONETTE FIGHTER</li>\n<li>DAEMONETTE ICON BEARER</li>\n<li>DAEMONETTE HORN BEARER</li>\n</ul>\nOther than DAEMONETTE FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one DAEMONETTE FIGHTER operative for one DAEMONETTE fire team, you can select one ALLURESS operative."
+          },
+          {
+            "factionid": "CHAOS",
+            "killteamid": "DAEM",
+            "fireteamid": "PH",
+            "seq": 0,
+            "fireteamname": "Pink Horrors",
+            "archetype": "Security",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+
+            ],
+            "fireteamcomp": "A PINK HORROR fire team includes six PINK HORROR operatives selected from the following list:\n<ul>\n<li>PINK HORROR FIGHTER</li>\n<li>PINK HORROR ICON BEARER</li>\n<li>PINK HORROR HORN BEARER</li>\n</ul>\nOther than PINK HORROR FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one PINK HORROR FIGHTER operative for one PINK HORROR fire team, you can select one PINK HORROR IRIDESCENT operative."
+          },
+          {
+            "factionid": "CHAOS",
+            "killteamid": "DAEM",
+            "fireteamid": "PB",
+            "seq": 0,
+            "fireteamname": "PlagueBearers",
+            "archetype": "Security",
+            "description": "",
+            "killteammax": 0,
+            "operatives": [
+
             ],
             "fireteamcomp": "A PLAGUEBEARER fire team includes six PLAGUEBEARER operatives selected from the following list:\n<ul>\n<li>PLAGUEBEARER FIGHTER</li>\n<li>PLAGUEBEARER ICON BEARER</li>\n<li>PLAGUEBEARER HORN BEARER</li>\n</ul>\nOther than PLAGUEBEARER FIGHTER operatives, your kill team can only include each operative above once.\n<br/>\nIf your kill team does not include any other LEADER operatives, instead of selecting one PLAGUEBEARER FIGHTER operative for one PLAGUEBEARER fire team, you can select one PLAGUERIDDEN operative."
           }
@@ -23282,7 +22346,7 @@
                 "opname": "Tyranid Warrior Prime",
                 "description": "Tyranid Warriors are synapse creatures, psychic resonators for the Hive Mind. In many broods one bioform will dominate, having a deeper connection to the alien will that drives them. This bioform directs where its brood hunts and where it spreads the malignancy of the Hive Mind.",
                 "M": "6\"",
-                "APL": "2",
+                "APL": "3",
                 "GA": "1",
                 "DF": "3",
                 "SV": "4+",
@@ -23551,7 +22615,7 @@
                 "opname": "Tyranid Warrior Fighter",
                 "description": "Tyranid Warriors are the most adaptable of all Tyranid bioforms. They are unstoppable killing machines protected by a carapace of thick chitin, yet with reactions as fast as a whip. In battle they can be found in the thick of the fighting, in close quarters or at range.",
                 "M": "6\"",
-                "APL": "2",
+                "APL": "3",
                 "GA": "1",
                 "DF": "3",
                 "SV": "4+",
@@ -23809,7 +22873,7 @@
                 "opname": "Tyranid Warrior Heavy Gunner",
                 "description": "Tyranid Warriors have the mental flexibility to employ a wide variety of weapon-symbiotes, including heavy bio-cannons. They are dangerous and unforgiving foes, able to identify and exploit the weaknesses of their targets with innate shrewdness.",
                 "M": "6\"",
-                "APL": "2",
+                "APL": "3",
                 "GA": "1",
                 "DF": "3",
                 "SV": "4+",
