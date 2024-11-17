@@ -4,15 +4,7 @@
     padding-bottom: rem(130px);
     background: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, .75), rgba(32, 32, 32, 1)), url('../../assets/homesplash_5.jpg');
     background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-
-    @media (max-width: $mantine-breakpoint-xs) {
-        padding-top: rem(80px);
-        padding-bottom: rem(50px);
-    }
 }
 
 .inner {
@@ -24,7 +16,6 @@
 .title {
     font-weight: 800;
     font-size: 50px !important;
-    letter-spacing: rem(-1px);
     padding-left: var(--mantine-spacing-md);
     padding-right: var(--mantine-spacing-md);
     color: var(--mantine-color-white);

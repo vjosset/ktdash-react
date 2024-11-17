@@ -1,5 +1,5 @@
 'use client'
-import { Title, Text, Container, Card, Stack, Image, Group, SimpleGrid, Anchor, Accordion, AccordionItem, AccordionControl, AccordionPanel } from "@mantine/core";
+import { Title, Text, Container, Card, Stack, Image, Group, SimpleGrid, Anchor, Accordion, AccordionItem, AccordionControl, AccordionPanel, Paper } from "@mantine/core";
 import classes from './home.module.css';
 import { API_PATH, request } from "../../hooks/use-api";
 import { IconEye, IconFileImport, IconStar, IconStarFilled } from "@tabler/icons-react";
@@ -12,9 +12,10 @@ import useSWR from "swr";
 
 function News() {
     const { data: news } = useSWR('/news.php?max=10', request);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     const items = news.map((item) => (
         <AccordionItem key={item.newsid} value={item.newsid.toString()}>
-            <AccordionControl><Title order={4}>{item.date}</Title></AccordionControl>
+            <AccordionControl><Title order={4}>{new Date(item.date).toLocaleDateString("en-US", options)}</Title></AccordionControl>
             <AccordionPanel><span dangerouslySetInnerHTML={{ __html: `${item.content}` }} /></AccordionPanel>
         </AccordionItem>
     ));
@@ -37,30 +38,30 @@ export default function Home() {
     const { user } = useAuth();
     const router = useRouter();
     return (
-        <Stack>
-            <div className={classes.wrapper}>
-                <div className={classes.inner}>
-                    <Group gap={0} justify="center">
-                        <Image alt="App Logo" h={80}
-                            component={NextImage}
-                            w="auto"
-                            fit="contain" src={MainLogo} />
-                        <Title mb="md" className={classes.title}>
-                            KTDASH
-                        </Title>
-                    </Group>
-                    <Container className={classes.description} size={640}>
-                        <Text>KTDash is a web-based application for running your KillTeam games.</Text>
-                        <ul>
-                            <li>Browse the <Link href="/allfactions">Factions</Link></li>
-                            <li>{user?.username ? <Link href={`/u/${user?.username}`}>Build a roster</Link> : <>Build a roster</>} or <Link href="/u/KTDash">import a pre-built roster</Link></li>
-                            <li><Link href="/name">Generate names</Link> for your operatives</li>
-                            <li>Use the Dashboard view to play your games and track operative wounds, TacOps, Ploys, operative orders and activation, TP/CP/VP, and more</li>
-                        </ul>
-                    </Container>
-                </div>
-            </div>
-            <Container fluid>
+        <Container my="md" fluid>
+            <Stack>
+                <Paper shadow="md" className={classes.wrapper}>
+                    <div className={classes.inner}>
+                        <Group gap={0} justify="center">
+                            <Image alt="App Logo" h={80}
+                                component={NextImage}
+                                w="auto"
+                                fit="contain" src={MainLogo} />
+                            <Title mb="md" className={classes.title}>
+                                KTDASH
+                            </Title>
+                        </Group>
+                        <Container className={classes.description} size={640}>
+                            <Text>KTDash is a web-based application for running your KillTeam games.</Text>
+                            <ul>
+                                <li>Browse the <Link href="/allfactions">Factions</Link></li>
+                                <li>{user?.username ? <Link href={`/u/${user?.username}`}>Build a roster</Link> : <>Build a roster</>} or <Link href="/u/KTDash">import a pre-built roster</Link></li>
+                                <li><Link href="/name">Generate names</Link> for your operatives</li>
+                                <li>Use the Dashboard view to play your games and track operative wounds, TacOps, Ploys, operative orders and activation, TP/CP/VP, and more</li>
+                            </ul>
+                        </Container>
+                    </div>
+                </Paper>
                 <Stack>
                     <Card key={spotlight.factionid} radius="sm" style={{ cursor: 'pointer' }} onClick={() => router.push(`/r/${spotlight.rosterid}`)} className={classes.card}>
                         <Stack>
@@ -94,7 +95,7 @@ export default function Home() {
                         <News />
                     </Card>
                 </Stack>
-            </Container>
-        </Stack>
+            </Stack>
+        </Container>
     );
 }
