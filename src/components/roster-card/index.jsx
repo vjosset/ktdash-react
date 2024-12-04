@@ -21,7 +21,7 @@ export default function RosterCard(props) {
                     </Menu.Target>
 
                     <Menu.Dropdown onClick={(event) => { event.preventDefault(); event.stopPropagation() }}>
-                        <Menu.Item leftSection={<IconEye />} onClick={() => navigate(`/r/${roster.rosterid}`)}>
+                        <Menu.Item leftSection={<IconEye />} onClick={() => router.push(`/r/${roster.rosterid}`)}>
                             View
                         </Menu.Item>
 
@@ -31,7 +31,7 @@ export default function RosterCard(props) {
                         >
                             Deploy
                         </Menu.Item>}
-                        <Menu.Item leftSection={<IconPhoto />} onClick={() => navigate(`/r/${roster.rosterid}/g`)}>
+                        <Menu.Item leftSection={<IconPhoto />} onClick={() => router.push(`/r/${roster.rosterid}/g`)}>
                             Photo Gallery
                         </Menu.Item>
                         <Menu.Item leftSection={<IconCopy />} onClick={() => onCopy(roster)}>
