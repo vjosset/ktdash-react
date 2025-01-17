@@ -12,7 +12,7 @@ import useSWR from "swr";
 
 function News() {
     const { data: news } = useSWR('/news.php?max=10', request);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const items = news.map((item) => (
         <AccordionItem key={item.newsid} value={item.newsid.toString()}>
             <AccordionControl><Title order={4}>{new Date(item.date).toLocaleDateString("en-US", options)}</Title></AccordionControl>
@@ -20,7 +20,7 @@ function News() {
         </AccordionItem>
     ));
     return (
-        <Accordion defaultValue="1">
+        <Accordion defaultValue={news[0]?.newsid?.toString()}>
             {items}
         </Accordion>
     )
