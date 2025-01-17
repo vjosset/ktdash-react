@@ -11,6 +11,8 @@ export default function useAuth() {
         });
         if (auth?.userid) {
             setUser(auth);
+        } else {
+            setUser();
         }
     }, [setUser]);
 
